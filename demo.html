@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Website Demo | Dominion Web Design Pro</title>
+<meta name="description" content="See a real website built for your business in under a minute. Free, no card, no commitment. Dominion Web Design Pro, East Texas.">
+<link rel="canonical" href="https://dominionwebdesignpro.com/demo.html">
+<meta name="robots" content="index,follow">
+<style>
+:root{
+  --blue:#2563EB; --blue-dark:#1D4ED8; --dark:#0A0F1A; --dark2:#111827;
+  --dark3:#1F2937; --text:#F9FAFB; --muted:#9CA3AF; --green:#22C55E; --gold:#F5A623;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--dark);color:var(--text);line-height:1.6;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+
+nav{background:rgba(10,15,26,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--dark3);
+  position:sticky;top:0;z-index:50}
+.nav-inner{max-width:1140px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}
+.logo-icon{width:32px;height:32px;border-radius:8px;background:var(--blue);display:grid;place-items:center;font-size:17px}
+.nav-links{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.9em}
+.nav-links a:hover{color:var(--text)}
+
+.wrap{max-width:840px;margin:0 auto;padding:52px 22px 70px}
+.eyebrow{display:inline-block;border:1px solid var(--dark3);border-radius:999px;padding:6px 15px;
+  font-size:.74em;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
+h1 span{color:var(--blue)}
+.lede{color:var(--muted);font-size:1.06em;max-width:600px}
+
+.card{background:var(--dark2);border:1px solid var(--dark3);border-radius:16px;padding:28px;margin-top:32px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+label{display:block;font-size:.76em;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 14px;border-radius:9px;border:1.5px solid var(--dark3);
+  background:var(--dark);color:var(--text);font:inherit}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--blue)}
+input[aria-invalid="true"]{border-color:#EF4444}
+textarea{resize:vertical;min-height:74px}
+.hint{font-size:.8em;color:var(--muted);margin-top:6px}
+.err{display:block;color:#F87171;font-size:.82em;font-weight:600;margin-top:5px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;
+  padding:15px 30px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;transition:background .15s ease}
+.btn-blue{background:var(--blue);color:#fff;width:100%}
+.btn-blue:hover:not(:disabled){background:var(--blue-dark)}
+.btn-blue:disabled{opacity:.6;cursor:default}
+.btn-green{background:var(--green);color:#04240F}
+.btn-ghost{background:none;border:1px solid var(--dark3);color:var(--text)}
+
+.status{display:none;margin-top:26px;text-align:center;padding:34px 22px;
+  background:var(--dark2);border:1px solid var(--dark3);border-radius:16px}
+.status.on{display:block}
+.spinner{width:38px;height:38px;border:3px solid var(--dark3);border-top-color:var(--blue);
+  border-radius:50%;margin:0 auto 16px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status h2{font-size:1.15em;margin-bottom:6px}
+.status p{color:var(--muted);font-size:.92em}
+.slow{color:var(--gold);font-size:.86em;margin-top:12px;display:none}
+
+.result{display:none;margin-top:32px}
+.result.on{display:block}
+.result-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.result-bar h2{font-size:1.2em;margin-right:auto}
+.ref{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8em;color:var(--muted);
+  border:1px solid var(--dark3);border-radius:6px;padding:5px 10px}
+.frame{border:1px solid var(--dark3);border-radius:14px;overflow:hidden;background:#fff;height:660px}
+.frame iframe{width:100%;height:100%;border:0;display:block}
+
+.claim{background:linear-gradient(135deg,var(--dark2),var(--dark3));border:1px solid var(--dark3);
+  border-radius:16px;padding:26px;margin-top:22px}
+.claim h3{font-size:1.1em;margin-bottom:6px}
+.claim p{color:var(--muted);font-size:.92em;margin-bottom:18px}
+.done{text-align:center;padding:30px}
+.done h3{color:var(--green);margin-bottom:8px}
+
+footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;padding:28px 22px;font-size:.85em}
+
+@media(max-width:640px){.row{grid-template-columns:1fr}.frame{height:460px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><span class="logo-icon">🌐</span><span>Dominion Web Design Pro</span></a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/service-areas.html">Service Areas</a>
+      <a href="tel:+19036367511">903-636-7511</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <span class="eyebrow">Free · No card · No commitment</span>
+  <h1>See your new website <span>before you pay a dime.</span></h1>
+  <p class="lede">Tell us about your business and we'll build you a real, working homepage in
+  about a minute. Written for your trade, your town, your customers. If you like it, we'll
+  make it yours.</p>
+
+  <div class="card" id="formCard">
+    <form id="demoForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="businessName">Business name</label>
+          <input id="businessName" name="businessName" type="text" autocomplete="organization" placeholder="Rose City Air">
+        </div>
+        <div class="field">
+          <label for="businessType">Type of business</label>
+          <input id="businessType" name="businessType" type="text" placeholder="HVAC contractor" list="types">
+          <datalist id="types">
+            <option value="HVAC contractor"><option value="Roofing contractor"><option value="Plumber">
+            <option value="Electrician"><option value="Dentist"><option value="Attorney">
+            <option value="Chiropractor"><option value="Auto repair shop"><option value="Real estate agent">
+            <option value="Restaurant"><option value="General contractor"><option value="Landscaping company">
+            <option value="Insurance agency"><option value="Gym"><option value="Hair salon">
+            <option value="Nail salon"><option value="Veterinary clinic"><option value="Accountant">
+            <option value="Photographer"><option value="Cleaning service"><option value="Pest control">
+            <option value="Tree service">
+          </datalist>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" placeholder="Tyler">
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <input id="state" name="state" type="text" placeholder="TX" maxlength="20">
+        </div>
+      </div>
+      <div class="field">
+        <label for="customRequest">Anything specific? <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+        <textarea id="customRequest" name="customRequest" placeholder="We do emergency service 24/7 and we've been family owned since 1998."></textarea>
+      </div>
+      <button class="btn btn-blue" type="submit" id="goBtn">Build my free demo →</button>
+      <p class="hint">Takes about a minute. Nothing is published — this is yours to look at.</p>
+    </form>
+  </div>
+
+  <div class="status" id="status">
+    <div class="spinner"></div>
+    <h2>Building your website…</h2>
+    <p>Writing your copy, choosing photos, and laying out the page.</p>
+    <p class="slow" id="slow">Still going — the first build of the day takes a little longer to wake up. Hang tight.</p>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-bar">
+      <h2>Here's your site</h2>
+      <span class="ref" id="refBadge"></span>
+      <button class="btn btn-ghost" type="button" id="againBtn">Try another</button>
+    </div>
+    <div class="frame"><iframe id="preview" title="Your website preview" sandbox="allow-same-origin"></iframe></div>
+
+    <div class="claim" id="claim">
+      <h3>Want this to be your real website?</h3>
+      <p>Leave your name and number and Maurice will call you to go over it. No obligation.</p>
+      <form id="claimForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="cname">Your name</label>
+            <input id="cname" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cphone">Phone</label>
+            <input id="cphone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cemail">Email <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <input id="cemail" type="email" autocomplete="email">
+        </div>
+        <button class="btn btn-green" type="submit" id="claimBtn" style="width:100%">Claim this website</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Dominion Web Design Pro · East Texas · <a href="tel:+19036367511">903-636-7511</a>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var API = "https://dominion-demo-backend.onrender.com";
+
+  var form = document.getElementById("demoForm");
+  var card = document.getElementById("formCard");
+  var status = document.getElementById("status");
+  var slow = document.getElementById("slow");
+  var result = document.getElementById("result");
+  var preview = document.getElementById("preview");
+  var refBadge = document.getElementById("refBadge");
+  var goBtn = document.getElementById("goBtn");
+  var currentRef = "";
+  var slowTimer = null;
+
+  function err(el, msg) {
+    clear(el);
+    el.setAttribute("aria-invalid", "true");
+    var s = document.createElement("span");
+    s.className = "err"; s.textContent = msg;
+    el.parentNode.appendChild(s);
+  }
+  function clear(el) {
+    el.removeAttribute("aria-invalid");
+    var e = el.parentNode.querySelector(".err");
+    if (e) e.remove();
+  }
+
+  // clear a field's error as soon as the visitor starts fixing it
+  document.addEventListener("input", function (e) {
+    if (e.target.matches("input, textarea")) clear(e.target);
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("businessName");
+    var type = document.getElementById("businessType");
+    var city = document.getElementById("city");
+    [name, type, city].forEach(clear);
+
+    var ok = true;
+    if (!name.value.trim()) { err(name, "Tell us the business name"); ok = false; }
+    if (!type.value.trim()) { err(type, "What kind of business is it?"); ok = false; }
+    if (!city.value.trim()) { err(city, "Which town?"); ok = false; }
+    if (!ok) return;
+
+    goBtn.disabled = true;
+    card.style.display = "none";
+    result.classList.remove("on");
+    status.classList.add("on");
+    slow.style.display = "none";
+    slowTimer = setTimeout(function () { slow.style.display = "block"; }, 12000);
+
+    fetch(API + "/generate-demo", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        businessName: name.value.trim(),
+        businessType: type.value.trim(),
+        city: city.value.trim(),
+        state: document.getElementById("state").value.trim(),
+        customRequest: document.getElementById("customRequest").value.trim()
+      })
+    })
+    .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+    .then(function (res) {
+      clearTimeout(slowTimer);
+      status.classList.remove("on");
+      goBtn.disabled = false;
+      if (!res.ok || !res.body.html) {
+        card.style.display = "block";
+        alert(res.body.error || "Something went wrong building that one. Give it another try, or call 903-636-7511.");
+        return;
+      }
+      currentRef = res.body.refCode || "";
+      refBadge.textContent = currentRef ? "Ref " + currentRef : "";
+      preview.srcdoc = res.body.html;
+      result.classList.add("on");
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    })
+    .catch(function () {
+      clearTimeout(slowTimer);
+      status.classList.remove("on");
+      card.style.display = "block";
+      goBtn.disabled = false;
+      alert("Couldn't reach the builder just now. Please try again, or call 903-636-7511.");
+    });
+  });
+
+  document.getElementById("againBtn").addEventListener("click", function () {
+    result.classList.remove("on");
+    card.style.display = "block";
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  document.getElementById("claimForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = document.getElementById("cname");
+    var p = document.getElementById("cphone");
+    [n, p].forEach(clear);
+    var ok = true;
+    if (!n.value.trim()) { err(n, "Your name, please"); ok = false; }
+    if (p.value.replace(/\D/g, "").length < 10) { err(p, "A 10-digit phone number"); ok = false; }
+    if (!ok) return;
+
+    var btn = document.getElementById("claimBtn");
+    btn.disabled = true; btn.textContent = "Sending…";
+
+    fetch(API + "/claim-preview", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        refCode: currentRef,
+        name: n.value.trim(),
+        phone: p.value.trim(),
+        email: document.getElementById("cemail").value.trim(),
+        businessName: document.getElementById("businessName").value.trim()
+      })
+    })
+    .then(function () {
+      document.getElementById("claim").innerHTML =
+        '<div class="done"><h3>Got it.</h3><p>Maurice will call you shortly. ' +
+        'If you\'d rather not wait, ring 903-636-7511.</p></div>';
+    })
+    .catch(function () {
+      btn.disabled = false; btn.textContent = "Claim this website";
+      alert("Couldn't send that. Please call 903-636-7511.");
+    });
+  });
+})();
+</script>
+</body>
+</html>
