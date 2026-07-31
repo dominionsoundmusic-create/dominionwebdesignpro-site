@@ -42,8 +42,6 @@ nav{background:#0f172a;padding:0 48px;display:flex;align-items:center;justify-co
 .lstep{display:flex;align-items:center;gap:10px;font-size:0.84em;color:rgba(255,255,255,0.4);padding:9px 14px;border-radius:8px;background:rgba(255,255,255,0.04);transition:all 0.3s}
 .lstep.active{color:var(--white);background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25)}
 .lstep.done{color:var(--green)}
-
-/* PREVIEW */
 #preview-section{display:none;flex-direction:column;height:calc(100vh - 64px)}
 .preview-toolbar{background:#0f172a;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid rgba(201,168,76,0.15);flex-shrink:0}
 .preview-info strong{font-size:0.92em;color:var(--white)}
@@ -54,8 +52,6 @@ nav{background:#0f172a;padding:0 48px;display:flex;align-items:center;justify-co
 .btn-open{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3)}.btn-open:hover{background:rgba(201,168,76,0.25)}
 .btn-claim{background:var(--gold);color:var(--navy)}.btn-claim:hover{background:var(--gold2)}
 #preview-frame{flex:1;width:100%;border:none;display:block;background:var(--white)}
-
-/* HOW IT WORKS */
 .how{background:#0f172a;padding:56px 48px;text-align:center;border-top:1px solid rgba(255,255,255,0.05)}
 .how h2{font-size:1.5em;font-weight:800;color:var(--white);margin-bottom:36px}
 .steps-row{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;max-width:800px;margin:0 auto}
@@ -63,8 +59,6 @@ nav{background:#0f172a;padding:0 48px;display:flex;align-items:center;justify-co
 .step-num{width:44px;height:44px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--gold);font-size:1em;margin:0 auto 10px}
 .step-title{font-weight:700;color:var(--white);font-size:0.9em;margin-bottom:5px}
 .step-desc{color:rgba(255,255,255,0.45);font-size:0.8em;line-height:1.6}
-
-/* MODAL */
 .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.75);z-index:200;align-items:center;justify-content:center;padding:24px}
 .modal-overlay.show{display:flex}
 .modal{background:#1e2d3d;border-radius:16px;padding:36px;max-width:460px;width:100%;position:relative;border:1px solid rgba(201,168,76,0.2)}
@@ -78,136 +72,125 @@ nav{background:#0f172a;padding:0 48px;display:flex;align-items:center;justify-co
 .modal-success .check{font-size:2.8em;margin-bottom:10px}
 .modal-success h4{font-size:1.15em;font-weight:700;color:var(--gold);margin-bottom:8px}
 .modal-success p{color:rgba(255,255,255,0.55);font-size:0.88em;line-height:1.6}
-
 @media(max-width:640px){
-  nav{padding:0 16px}.hero{padding:40px 20px}.form-wrap{padding:24px 16px}
-  .form-row{grid-template-columns:1fr}.how{padding:40px 20px}
-  .preview-toolbar{padding:10px 16px}
+nav{padding:0 16px}.hero{padding:40px 20px}.form-wrap{padding:24px 16px}
+.form-row{grid-template-columns:1fr}.how{padding:40px 20px}
+.preview-toolbar{padding:10px 16px}
 }
 </style>
 </head>
 <body>
-
 <nav>
-  <a href="/" class="nav-logo">Dominion <span>Web Design Pro</span></a>
-  <a href="/" class="nav-back">← Back to main site</a>
+<a href="/" class="nav-logo">Dominion <span>Web Design Pro</span></a>
+<a href="/" class="nav-back">← Back to main site</a>
 </nav>
-
 <div id="main-section">
-  <div class="hero">
-    <div class="hero-badge">✨ Free · No Obligation · Instant Results</div>
-    <h1>See Your Business Website <span>Right Now.</span></h1>
-    <p class="hero-sub">Enter your business info and our AI builds a custom demo site in about 30 seconds. No credit card, no commitment.</p>
-  </div>
-
-  <div class="form-wrap">
-    <div class="form-card" id="form-section">
-      <div class="form-title">⚡ Generate Your Free Demo Site</div>
-      <div class="form-group">
-        <label>Business Name</label>
-        <input type="text" id="businessName" placeholder="e.g. Johnson's Plumbing" maxlength="80">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Business Type</label>
-          <select id="businessType">
-            <option value="">Select type...</option>
-            <option value="plumber">Plumber</option>
-            <option value="hvac">HVAC</option>
-            <option value="electrician">Electrician</option>
-            <option value="roofer">Roofer</option>
-            <option value="contractor">General Contractor</option>
-            <option value="landscaper">Landscaping</option>
-            <option value="cleaner">Cleaning Service</option>
-            <option value="pest control">Pest Control</option>
-            <option value="salon">Hair / Nail Salon</option>
-            <option value="restaurant">Restaurant</option>
-            <option value="auto">Auto Repair</option>
-            <option value="dentist">Dentist</option>
-            <option value="chiropractor">Chiropractor</option>
-            <option value="lawyer">Law Firm</option>
-            <option value="real estate">Real Estate</option>
-            <option value="gym">Gym / Fitness</option>
-            <option value="vet">Veterinarian</option>
-            <option value="accountant">Accountant / CPA</option>
-            <option value="photographer">Photographer</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>City</label>
-          <input type="text" id="city" placeholder="e.g. Longview, TX" maxlength="60">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Special Request <span style="font-weight:400;color:rgba(255,255,255,0.35)">(optional)</span></label>
-        <input type="text" id="customRequest" placeholder="e.g. focus on emergency services, bilingual" maxlength="120">
-      </div>
-      <button class="btn-generate" id="generateBtn" onclick="generateDemo()">⚡ Build My Free Demo Site</button>
-      <p class="form-note">🔒 No credit card · Up to 5 free demos · Takes ~30 seconds</p>
-      <div class="error-msg" id="errorMsg"></div>
-    </div>
-  </div>
-
-  <div class="loading" id="loadingSection">
-    <div class="spinner"></div>
-    <div class="loading-text">Building your demo site...</div>
-    <div class="loading-sub">AI is writing custom copy and selecting photos for your business</div>
-    <div class="loading-steps">
-      <div class="lstep active" id="ls1">✍️ Writing custom copy</div>
-      <div class="lstep" id="ls2">📸 Selecting photos</div>
-      <div class="lstep" id="ls3">🎨 Designing layout</div>
-      <div class="lstep" id="ls4">✅ Finalizing demo</div>
-    </div>
-  </div>
-
-  <div class="how" id="howSection">
-    <h2>How It Works</h2>
-    <div class="steps-row">
-      <div class="step-item"><div class="step-num">1</div><div class="step-title">Enter Your Info</div><div class="step-desc">Business name, type, and city — that's all we need.</div></div>
-      <div class="step-item"><div class="step-num">2</div><div class="step-title">AI Builds It</div><div class="step-desc">Custom copy and real photos in about 30 seconds.</div></div>
-      <div class="step-item"><div class="step-num">3</div><div class="step-title">See Your Demo</div><div class="step-desc">Preview your full custom website instantly.</div></div>
-      <div class="step-item"><div class="step-num">4</div><div class="step-title">Claim It</div><div class="step-desc">Love it? We build your real site within 48 hours.</div></div>
-    </div>
-  </div>
+<div class="hero">
+<div class="hero-badge">✨ Free · No Obligation · Instant Results</div>
+<h1>See Your Business Website <span>Right Now.</span></h1>
+<p class="hero-sub">Enter your business info and our AI builds a custom demo site in about 30 seconds. No credit card, no commitment.</p>
 </div>
-
-<!-- PREVIEW - Full height -->
+<div class="form-wrap">
+<div class="form-card" id="form-section">
+<div class="form-title">⚡ Generate Your Free Demo Site</div>
+<div class="form-group">
+<label>Business Name</label>
+<input type="text" id="businessName" placeholder="e.g. Johnson's Plumbing" maxlength="80">
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Business Type</label>
+<select id="businessType">
+<option value="">Select type...</option>
+<option value="plumber">Plumber</option>
+<option value="hvac">HVAC</option>
+<option value="electrician">Electrician</option>
+<option value="roofer">Roofer</option>
+<option value="contractor">General Contractor</option>
+<option value="landscaper">Landscaping</option>
+<option value="cleaner">Cleaning Service</option>
+<option value="pest control">Pest Control</option>
+<option value="salon">Hair / Nail Salon</option>
+<option value="restaurant">Restaurant</option>
+<option value="auto">Auto Repair</option>
+<option value="dentist">Dentist</option>
+<option value="chiropractor">Chiropractor</option>
+<option value="lawyer">Law Firm</option>
+<option value="real estate">Real Estate</option>
+<option value="gym">Gym / Fitness</option>
+<option value="vet">Veterinarian</option>
+<option value="accountant">Accountant / CPA</option>
+<option value="photographer">Photographer</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label>City</label>
+<input type="text" id="city" placeholder="e.g. Longview, TX" maxlength="60">
+</div>
+</div>
+<div class="form-group">
+<label>Special Request <span style="font-weight:400;color:rgba(255,255,255,0.35)">(optional)</span></label>
+<input type="text" id="customRequest" placeholder="e.g. focus on emergency services, bilingual" maxlength="120">
+</div>
+<button class="btn-generate" id="generateBtn" onclick="generateDemo()">⚡ Build My Free Demo Site</button>
+<p class="form-note">🔒 No credit card · Up to 5 free demos · Takes ~30 seconds</p>
+<div class="error-msg" id="errorMsg"></div>
+</div>
+</div>
+<div class="loading" id="loadingSection">
+<div class="spinner"></div>
+<div class="loading-text">Building your demo site...</div>
+<div class="loading-sub">AI is writing custom copy and selecting photos for your business</div>
+<div class="loading-steps">
+<div class="lstep active" id="ls1">✍️ Writing custom copy</div>
+<div class="lstep" id="ls2">📸 Selecting photos</div>
+<div class="lstep" id="ls3">🎨 Designing layout</div>
+<div class="lstep" id="ls4">✅ Finalizing demo</div>
+</div>
+</div>
+<div class="how" id="howSection">
+<h2>How It Works</h2>
+<div class="steps-row">
+<div class="step-item"><div class="step-num">1</div><div class="step-title">Enter Your Info</div><div class="step-desc">Business name, type, and city — that's all we need.</div></div>
+<div class="step-item"><div class="step-num">2</div><div class="step-title">AI Builds It</div><div class="step-desc">Custom copy and real photos in about 30 seconds.</div></div>
+<div class="step-item"><div class="step-num">3</div><div class="step-title">See Your Demo</div><div class="step-desc">Preview your full custom website instantly.</div></div>
+<div class="step-item"><div class="step-num">4</div><div class="step-title">Claim It</div><div class="step-desc">Love it? We build your real site within 48 hours.</div></div>
+</div>
+</div>
+</div>
 <div id="preview-section">
-  <div class="preview-toolbar">
-    <div class="preview-info">
-      <strong id="preview-title">Your Demo Site</strong>
-      <span id="preview-ref"></span>
-    </div>
-    <div class="preview-actions">
-      <button class="btn-act btn-back" onclick="goBack()">← New Demo</button>
-      <button class="btn-act btn-open" onclick="openFullPreview()">🔗 Open Full Preview</button>
-      <button class="btn-act btn-claim" onclick="showClaim()">🎉 Claim This Site →</button>
-    </div>
-  </div>
-  <iframe id="preview-frame" scrolling="yes" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+<div class="preview-toolbar">
+<div class="preview-info">
+<strong id="preview-title">Your Demo Site</strong>
+<span id="preview-ref"></span>
 </div>
-
-<!-- CLAIM MODAL -->
+<div class="preview-actions">
+<button class="btn-act btn-back" onclick="goBack()">← New Demo</button>
+<button class="btn-act btn-open" onclick="openFullPreview()">🔗 Open Full Preview</button>
+<button class="btn-act btn-claim" onclick="showClaim()">🎉 Claim This Site →</button>
+</div>
+</div>
+<iframe id="preview-frame" scrolling="yes" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+</div>
 <div class="modal-overlay" id="claimModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div id="modal-form-content">
-      <h3>🎉 Claim Your Demo Site</h3>
-      <p>Love it? Leave your info and our team calls you within 24 hours. Starting at just $497 + $149/month.</p>
-      <div class="form-group"><label>Your Name</label><input type="text" id="claimName" placeholder="Your full name"></div>
-      <div class="form-group"><label>Phone Number</label><input type="tel" id="claimPhone" placeholder="Your phone number"></div>
-      <div class="form-group"><label>Email <span style="font-weight:400;color:rgba(255,255,255,0.35)">(optional)</span></label><input type="email" id="claimEmail" placeholder="Your email address"></div>
-      <button class="btn-submit" id="claimBtn" onclick="submitClaim()">Send My Info — Let's Do This! →</button>
-    </div>
-    <div class="modal-success" id="modal-success">
-      <div class="check">🎉</div>
-      <h4>We'll be in touch soon!</h4>
-      <p>Your reference code is <strong id="success-ref"></strong>.<br>Our team will call or text you within 24 hours.</p>
-    </div>
-  </div>
+<div class="modal">
+<button class="modal-close" onclick="closeModal()">×</button>
+<div id="modal-form-content">
+<h3>🎉 Claim Your Demo Site</h3>
+<p>Love it? Leave your info and our team calls you within 24 hours. Starting at just $497 + $149/month.</p>
+<div class="form-group"><label>Your Name</label><input type="text" id="claimName" placeholder="Your full name"></div>
+<div class="form-group"><label>Phone Number</label><input type="tel" id="claimPhone" placeholder="Your phone number"></div>
+<div class="form-group"><label>Email <span style="font-weight:400;color:rgba(255,255,255,0.35)">(optional)</span></label><input type="email" id="claimEmail" placeholder="Your email address"></div>
+<button class="btn-submit" id="claimBtn" onclick="submitClaim()">Send My Info — Let's Do This! →</button>
 </div>
-
+<div class="modal-success" id="modal-success">
+<div class="check">🎉</div>
+<h4>We'll be in touch soon!</h4>
+<p>Your reference code is <strong id="success-ref"></strong>.<br>Our team will call or text you within 24 hours.</p>
+</div>
+</div>
+</div>
 <script>
 const BACKEND = 'https://dominion-demo-backend.onrender.com';
 let currentRefCode = '';
@@ -215,100 +198,99 @@ let currentHtml = '';
 let lastParams = {};
 
 async function generateDemo() {
-  const businessName = document.getElementById('businessName').value.trim();
-  const businessType = document.getElementById('businessType').value;
-  const city = document.getElementById('city').value.trim();
-  const customRequest = document.getElementById('customRequest').value.trim();
-  if (!businessName) return showError('Please enter your business name.');
-  if (!businessType) return showError('Please select your business type.');
-  if (!city) return showError('Please enter your city.');
-  lastParams = {businessName,businessType,city,customRequest};
-  hideError();
-  showLoading();
-  animateSteps();
-  try {
-    const res = await fetch(`${BACKEND}/generate-demo`,{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({businessName,businessType,city,customRequest})
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      showError(res.status===429 ? (data.error||'You\'ve reached the 5 demo limit. Call us at 903-636-7511!') : (data.error||'Something went wrong. Please try again.'));
-      hideLoading(); return;
-    }
-    currentRefCode = data.refCode;
-    currentHtml = data.html;
-    showPreview(data.html, businessName, data.refCode);
-  } catch(err) {
-    showError('Connection error — the server may be waking up. Please try again in 30 seconds.');
-    hideLoading();
-  }
+const businessName = document.getElementById('businessName').value.trim();
+const businessType = document.getElementById('businessType').value;
+const city = document.getElementById('city').value.trim();
+const customRequest = document.getElementById('customRequest').value.trim();
+if (!businessName) return showError('Please enter your business name.');
+if (!businessType) return showError('Please select your business type.');
+if (!city) return showError('Please enter your city.');
+lastParams = {businessName,businessType,city,customRequest};
+hideError();
+showLoading();
+animateSteps();
+try {
+const res = await fetch(`${BACKEND}/generate-demo`,{
+method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({businessName,businessType,city,customRequest})
+});
+const data = await res.json();
+if (!res.ok) {
+showError(res.status===429 ? (data.error||'You\'ve reached the 5 demo limit. Call us at 903-636-7511!') : (data.error||'Something went wrong. Please try again.'));
+hideLoading(); return;
+}
+currentRefCode = data.refCode;
+currentHtml = data.html;
+showPreview(data.html, businessName, data.refCode);
+} catch(err) {
+showError('Connection error — the server may be waking up. Please try again in 30 seconds.');
+hideLoading();
+}
 }
 
 function animateSteps() {
-  const steps = ['ls1','ls2','ls3','ls4'];
-  let i = 0;
-  const iv = setInterval(()=>{
-    if(i>0){const prev=document.getElementById(steps[i-1]);prev.classList.remove('active');prev.classList.add('done');}
-    if(i<steps.length){document.getElementById(steps[i]).classList.add('active');}
-    i++;
-    if(i>steps.length) clearInterval(iv);
-  },5000);
+const steps = ['ls1','ls2','ls3','ls4'];
+let i = 0;
+const iv = setInterval(()=>{
+if(i>0){const prev=document.getElementById(steps[i-1]);prev.classList.remove('active');prev.classList.add('done');}
+if(i<steps.length){document.getElementById(steps[i]).classList.add('active');}
+i++;
+if(i>steps.length) clearInterval(iv);
+},5000);
 }
 
 function showPreview(html, name, ref) {
-  hideLoading();
-  document.getElementById('main-section').style.display='none';
-  const ps = document.getElementById('preview-section');
-  ps.style.display='flex';
-  document.getElementById('preview-title').textContent = name + ' — Demo Site';
-  document.getElementById('preview-ref').textContent = 'Ref: ' + ref + ' · Click "Open Full Preview" to see full page';
-  const frame = document.getElementById('preview-frame');
-  frame.srcdoc = html;
-  window.scrollTo(0,0);
+hideLoading();
+document.getElementById('main-section').style.display='none';
+const ps = document.getElementById('preview-section');
+ps.style.display='flex';
+document.getElementById('preview-title').textContent = name + ' — Demo Site';
+document.getElementById('preview-ref').textContent = 'Ref: ' + ref + ' · Click "Open Full Preview" to see full page';
+const frame = document.getElementById('preview-frame');
+frame.srcdoc = html;
+window.scrollTo(0,0);
 }
 
 function openFullPreview() {
-  // Open the generated HTML in a new tab
-  const blob = new Blob([currentHtml], {type:'text/html'});
-  const url = URL.createObjectURL(blob);
-  window.open(url, '_blank');
+const blob = new Blob([currentHtml], {type:'text/html'});
+const url = URL.createObjectURL(blob);
+window.open(url, '_blank');
 }
 
 function goBack() {
-  document.getElementById('preview-section').style.display='none';
-  document.getElementById('main-section').style.display='block';
-  ['ls1','ls2','ls3','ls4'].forEach((id,i)=>{
-    const el=document.getElementById(id);
-    el.classList.remove('active','done');
-    if(i===0) el.classList.add('active');
-  });
-  window.scrollTo(0,0);
+document.getElementById('preview-section').style.display='none';
+document.getElementById('main-section').style.display='block';
+['ls1','ls2','ls3','ls4'].forEach((id,i)=>{
+const el=document.getElementById(id);
+el.classList.remove('active','done');
+if(i===0) el.classList.add('active');
+});
+window.scrollTo(0,0);
 }
 
 function showClaim(){document.getElementById('claimModal').classList.add('show');document.getElementById('modal-form-content').style.display='block';document.getElementById('modal-success').style.display='none';}
 function closeModal(){document.getElementById('claimModal').classList.remove('show');}
 
 async function submitClaim() {
-  const name=document.getElementById('claimName').value.trim();
-  const phone=document.getElementById('claimPhone').value.trim();
-  const email=document.getElementById('claimEmail').value.trim();
-  if(!name) return alert('Please enter your name.');
-  if(!phone) return alert('Please enter your phone number.');
-  const btn=document.getElementById('claimBtn');
-  btn.disabled=true;btn.textContent='Sending...';
-  try {
-    await fetch(`${BACKEND}/claim-preview`,{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({refCode:currentRefCode,name,phone,email,businessName:lastParams.businessName})
-    });
-    document.getElementById('modal-form-content').style.display='none';
-    document.getElementById('modal-success').style.display='block';
-    document.getElementById('success-ref').textContent=currentRefCode;
-  } catch(err) {
-    btn.disabled=false;btn.textContent='Send My Info — Let\'s Do This! →';
-    alert('Something went wrong. Please call us at 903-636-7511.');
-  }
+const name=document.getElementById('claimName').value.trim();
+const phone=document.getElementById('claimPhone').value.trim();
+const email=document.getElementById('claimEmail').value.trim();
+if(!name) return alert('Please enter your name.');
+if(!phone) return alert('Please enter your phone number.');
+const btn=document.getElementById('claimBtn');
+btn.disabled=true;btn.textContent='Sending...';
+try {
+await fetch(`${BACKEND}/claim-preview`,{
+method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({refCode:currentRefCode,name,phone,email,businessName:lastParams.businessName})
+});
+document.getElementById('modal-form-content').style.display='none';
+document.getElementById('modal-success').style.display='block';
+document.getElementById('success-ref').textContent=currentRefCode;
+} catch(err) {
+btn.disabled=false;btn.textContent='Send My Info — Let\'s Do This! →';
+alert('Something went wrong. Please call us at 903-636-7511.');
+}
 }
 
 function showError(msg){const el=document.getElementById('errorMsg');el.textContent=msg;el.style.display='block';}
@@ -318,6 +300,13 @@ function hideLoading(){document.getElementById('loadingSection').style.display='
 
 document.getElementById('claimModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 document.addEventListener('keydown',function(e){if(e.key==='Enter'&&document.getElementById('form-section').style.display!=='none')generateDemo();});
+
+(function(){
+const p=new URLSearchParams(window.location.search);
+if(p.get('biz'))document.getElementById('businessName').value=p.get('biz');
+if(p.get('city'))document.getElementById('city').value=p.get('city');
+})();
 </script>
+
 </body>
 </html>
