@@ -28,6 +28,3 @@
 /website-redesign/  /web-design/  301
 /wordpress-web-design/*  /web-design/:splat  301
 /wordpress-web-design/  /web-design/  301
-
-# legacy /cities/ pages from the older drop-deployed site
-/cities/*  /  301
