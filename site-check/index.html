@@ -142,6 +142,8 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
 <script>
 (function(){
   var API = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+  // Restricted to this domain and to the PageSpeed Insights API only.
+  var KEY = 'AIzaSyDsJYSxsZ1gV9QUV3sborVqGaADKqlCXm8';
   var strategy = 'mobile';
   var urlEl = document.getElementById('url');
   var msg = document.getElementById('msg');
@@ -202,7 +204,8 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
     msg.innerHTML = '<span class="spin"></span>Running the tests. This takes 20 to 40 seconds — Google is loading the page the way a real visitor would.';
 
     var q = API + '?url=' + encodeURIComponent(raw) + '&strategy=' + strategy
-          + '&category=performance&category=seo&category=accessibility&category=best-practices';
+          + '&category=performance&category=seo&category=accessibility&category=best-practices'
+          + (KEY ? '&key=' + KEY : '');
 
     fetch(q).then(function(r){
       if (r.status === 429 || r.status === 403){
