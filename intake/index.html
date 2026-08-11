@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Intake | Dominion Web Design Pro</title>
+<meta name="description" content="Tell us about your business so we can build your site right the first time. Takes about ten minutes.">
+<link rel="canonical" href="https://dominionwebdesignpro.com/intake/">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{
+  --dark:#0A0F1A; --dark2:#111827; --line:#1F2937;
+  --blue:#2563EB; --blue-dark:#1D4ED8; --gold:#F5A623;
+  --text:#E5E7EB; --dim:#9CA3AF;
+  --rail:clamp(22px,5.5vw,140px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--dark);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px}
+a{color:var(--gold)}
+.rail{padding-inline:var(--rail)}
+
+nav{background:var(--dark2);border-bottom:1px solid var(--line);height:70px;
+  display:flex;align-items:center;justify-content:space-between}
+nav b{font-size:19px} nav a{text-decoration:none;color:var(--text)}
+
+header{background:var(--dark2);padding-block:clamp(40px,5vw,70px);border-bottom:1px solid var(--line)}
+h1{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.06;margin:0 0 14px;max-width:20ch}
+h1 span{color:var(--gold)}
+header p{max-width:60ch;margin:0;color:var(--dim)}
+.meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.9rem;color:var(--dim)}
+.meta b{color:var(--gold);font-weight:600}
+
+main{padding-block:clamp(34px,4vw,58px);max-width:900px}
+fieldset{border:0;padding:0;margin:0 0 42px}
+legend{padding:0;margin-bottom:6px;font-size:1.22rem;font-weight:700}
+.hint{color:var(--dim);font-size:.92rem;margin:0 0 22px}
+.num{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.76rem;letter-spacing:.14em;color:var(--gold);margin-bottom:8px}
+
+label{display:block;margin-bottom:18px}
+label span{display:block;font-size:.92rem;margin-bottom:6px;font-weight:600}
+label em{font-style:normal;color:var(--dim);font-weight:400}
+input,textarea,select{width:100%;background:#0d131f;color:var(--text);
+  border:1px solid var(--line);border-radius:5px;padding:11px 13px;
+  font:inherit;font-size:.97rem}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+textarea{min-height:92px;resize:vertical}
+.two{display:grid;gap:0 20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.req{color:var(--gold)}
+
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 30px}
+button{font:inherit;font-weight:700;border:0;border-radius:5px;padding:14px 28px;cursor:pointer}
+.primary{background:var(--blue);color:#fff}
+.primary:hover{background:var(--blue-dark)}
+.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+#out{display:none;margin-top:10px}
+#out.show{display:block}
+#brief{width:100%;min-height:420px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.85rem;line-height:1.5;background:#070b12}
+.note{background:var(--dark2);border-left:3px solid var(--gold);padding:16px 18px;
+  margin-bottom:28px;font-size:.94rem}
+.ok{color:#22C55E;font-weight:600}
+
+footer{background:var(--dark2);border-top:1px solid var(--line);
+  padding-block:28px;font-size:.88rem;color:var(--dim);margin-top:40px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="rail"><a href="/"><b>Dominion Web Design Pro</b></a><a href="/">Home</a></nav>
+
+<header class="rail">
+  <h1>Tell us about <span>your business</span>.</h1>
+  <p>Every question here exists because guessing at the answer makes a worse website. Skip anything that doesn't apply — but the more you fill in, the less back-and-forth later.</p>
+  <div class="meta">
+    <span><b>10 minutes</b> to complete</span>
+    <span><b>Nothing is sent</b> until you press the button</span>
+    <span><b>No account</b> needed</span>
+  </div>
+</header>
+
+<main class="rail">
+
+<div class="note">
+  This form runs entirely in your browser. When you're done it builds a summary you can copy or email — nothing is stored on this page and nothing is submitted automatically.
+</div>
+
+<form id="f">
+
+<fieldset>
+  <span class="num">SECTION 01</span>
+  <legend>The basics</legend>
+  <p class="hint">Exactly as you want it to appear on the site. If your business name shows up in different forms anywhere, tell us which one is correct.</p>
+  <label><span>Official business name <em class="req">*</em></span><input name="Official business name" required></label>
+  <label><span>Short name <em>if people call you something shorter</em></span><input name="Short name"></label>
+  <div class="two">
+    <label><span>Primary city <em class="req">*</em></span><input name="Primary city" required></label>
+    <label><span>State <em class="req">*</em></span><input name="State" required></label>
+  </div>
+  <label><span>Full business address <em>leave blank if you work from home and don't want it published</em></span><input name="Business address"></label>
+  <div class="two">
+    <label><span>Phone <em class="req">*</em></span><input name="Phone" type="tel" required></label>
+    <label><span>Email <em class="req">*</em></span><input name="Email" type="email" required></label>
+  </div>
+  <label><span>Existing website or social pages <em>Facebook, Instagram, Google listing</em></span><textarea name="Existing web presence"></textarea></label>
+  <label><span>Business hours <em>or "call for hours" if they vary</em></span><input name="Hours"></label>
+</fieldset>
+
+<fieldset>
+  <span class="num">SECTION 02</span>
+  <legend>What you do</legend>
+  <p class="hint">The services list becomes the structure of the site, so be thorough. The last question matters as much as the first — we've built pages for services people didn't actually offer.</p>
+  <label><span>Every service you offer <em class="req">*</em> <em>one per line</em></span><textarea name="All services" required></textarea></label>
+  <label><span>Your two or three most profitable services</span><textarea name="Most profitable services"></textarea></label>
+  <label><span>Services you do NOT offer <em>things people wrongly assume you do</em></span><textarea name="Services NOT offered"></textarea></label>
+  <label><span>Do you offer emergency or after-hours service?</span>
+    <select name="Emergency service"><option value="">— select —</option><option>Yes, 24/7</option><option>Yes, limited after-hours</option><option>No</option></select></label>
+</fieldset>
+
+<fieldset>
+  <span class="num">SECTION 03</span>
+  <legend>Where you work</legend>
+  <p class="hint">This drives the location pages, which is where most of your search traffic will come from.</p>
+  <label><span>Primary service area <em class="req">*</em></span><input name="Primary service area" required></label>
+  <label><span>Towns and cities you'll travel to <em>one per line — list generously</em></span><textarea name="Surrounding areas"></textarea></label>
+  <label><span>How far will you travel before it stops being worth it?</span><input name="Travel limit"></label>
+</fieldset>
+
+<fieldset>
+  <span class="num">SECTION 04</span>
+  <legend>Look and feel</legend>
+  <p class="hint">If you have a logo, colours from it work best. If you don't know the hex codes, describe them — "dark green and cream" is enough.</p>
+  <div class="two">
+    <label><span>Main brand colour</span><input name="Primary colour" placeholder="#1a4d2e or 'dark green'"></label>
+    <label><span>Secondary colour</span><input name="Secondary colour"></label>
+  </div>
+  <label><span>Accent colour <em>used for buttons and highlights</em></span><input name="Accent colour"></label>
+  <label><span>Do you have a logo? <em>and where can we get the file</em></span><input name="Logo"></label>
+  <label><span>Websites you like the look of <em>any industry — paste links</em></span><textarea name="Sites they like"></textarea></label>
+  <label><span>Anything you definitely don't want</span><textarea name="Dislikes"></textarea></label>
+</fieldset>
+
+<fieldset>
+  <span class="num">SECTION 05</span>
+  <legend>What should visitors do</legend>
+  <p class="hint">A site with one clear action outperforms a site with five.</p>
+  <label><span>Main thing you want a visitor to do <em class="req">*</em></span>
+    <select name="Primary call to action" required><option value="">— select —</option>
+      <option>Call us</option><option>Text us</option><option>Fill in a quote form</option>
+      <option>Book an appointment online</option><option>Message on Facebook</option><option>Other (explain below)</option></select></label>
+  <label><span>Second-best action</span><input name="Secondary call to action"></label>
+  <label><span>Where should form enquiries be sent?</span><input name="Where enquiries go" placeholder="email address or phone for texts"></label>
+  <label><span>Existing booking or scheduling link</span><input name="Booking link"></label>
+</fieldset>
+
+<fieldset>
+  <span class="num">SECTION 06</span>
+  <legend>Why people should trust you</legend>
+  <p class="hint">This is the section most people rush and it's the one that closes customers.</p>
+  <div class="two">
+    <label><span>Years in business</span><input name="Years in business"></label>
+    <label><span>Licence numbers</span><input name="Licences"></label>
+  </div>
+  <label><span>Certifications, insurance, memberships</span><textarea name="Certifications"></textarea></label>
+  <label><span>Brands or products you work with <em>manufacturers, materials, equipment</em></span><textarea name="Brands used"></textarea></label>
+  <label><span>Where are your reviews? <em>Google, Facebook, anywhere</em></span><textarea name="Reviews"></textarea></label>
+  <label><span>Two or three jobs you're proudest of</span><textarea name="Notable work"></textarea></label>
+  <label><span>What makes you different from the other guys in town?</span><textarea name="Differentiator"></textarea></label>
+</fieldset>
+
+<fieldset>
+  <span class="num">SECTION 07</span>
+  <legend>Photos</legend>
+  <p class="hint">Your own photos beat stock every time, even taken on a phone. Blurry ones we can work around; missing ones we can't.</p>
+  <label><span>Do you have photos of your own work?</span>
+    <select name="Has photos"><option value="">— select —</option>
+      <option>Yes, plenty</option><option>Yes, a few</option><option>Only what's on Facebook</option><option>None</option></select></label>
+  <label><span>Where are they? <em>Facebook page, phone, Google Drive</em></span><input name="Where photos are"></label>
+  <label><span>Anything else we should know</span><textarea name="Anything else"></textarea></label>
+</fieldset>
+
+<div class="actions">
+  <button type="button" class="primary" id="build">Build my summary</button>
+  <button type="button" class="ghost" id="clear">Start over</button>
+</div>
+
+</form>
+
+<div id="out">
+  <h2 style="font-size:1.2rem;margin:0 0 6px">Your project summary</h2>
+  <p class="hint" id="status">Copy this and send it over, or use the email button.</p>
+  <textarea id="brief" readonly></textarea>
+  <div class="actions">
+    <button type="button" class="primary" id="copy">Copy to clipboard</button>
+    <button type="button" class="ghost" id="mail">Open in email</button>
+  </div>
+</div>
+
+</main>
+
+<footer class="rail">© 2026 Dominion Web Design Pro · <a href="/">dominionwebdesignpro.com</a></footer>
+
+<script>
+(function(){
+  var form = document.getElementById('f');
+  var out = document.getElementById('out');
+  var brief = document.getElementById('brief');
+  var status = document.getElementById('status');
+
+  function collect(){
+    var lines = ['PROJECT INTAKE — DOMINION WEB DESIGN PRO',
+                 'Submitted ' + new Date().toLocaleDateString(), ''];
+    form.querySelectorAll('fieldset').forEach(function(fs){
+      var section = fs.querySelector('legend').textContent.toUpperCase();
+      var rows = [];
+      fs.querySelectorAll('input,textarea,select').forEach(function(el){
+        var v = (el.value || '').trim();
+        if (!v) return;
+        rows.push('  ' + el.name + ': ' + v.replace(/\n/g, '\n      '));
+      });
+      if (rows.length){ lines.push(section); lines.push.apply(lines, rows); lines.push(''); }
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('build').addEventListener('click', function(){
+    var missing = [];
+    form.querySelectorAll('[required]').forEach(function(el){
+      if (!(el.value || '').trim()) missing.push(el.previousElementSibling ? el.name : el.name);
+    });
+    if (missing.length){
+      status.innerHTML = 'Still needed: <span style="color:#F5A623">' + missing.join(', ') + '</span>';
+      out.classList.add('show');
+      brief.value = collect();
+      out.scrollIntoView({behavior:'smooth'});
+      return;
+    }
+    brief.value = collect();
+    status.innerHTML = '<span class="ok">Looks complete.</span> Copy this and send it over, or use the email button.';
+    out.classList.add('show');
+    out.scrollIntoView({behavior:'smooth'});
+  });
+
+  document.getElementById('copy').addEventListener('click', function(){
+    brief.select();
+    try { document.execCommand('copy'); this.textContent = 'Copied'; 
+          var b = this; setTimeout(function(){ b.textContent = 'Copy to clipboard'; }, 2000); }
+    catch(e){ status.textContent = 'Select the text above and copy it manually.'; }
+  });
+
+  document.getElementById('mail').addEventListener('click', function(){
+    var name = (form.querySelector('[name="Official business name"]').value || 'New').trim();
+    window.location.href = 'mailto:?subject=' + encodeURIComponent('Website intake — ' + name)
+      + '&body=' + encodeURIComponent(brief.value);
+  });
+
+  document.getElementById('clear').addEventListener('click', function(){
+    form.reset(); out.classList.remove('show'); window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Website Speed &amp; SEO Test | Dominion Web Design Pro</title>
+<meta name="description" content="Test any website's speed, SEO and mobile performance free. Same engine Google uses. Results in about thirty seconds, no signup.">
+<link rel="canonical" href="https://dominionwebdesignpro.com/site-check/">
+<meta property="og:title" content="Free Website Speed &amp; SEO Test">
+<meta property="og:description" content="See how your site scores on the same tests Google runs. Free, no signup.">
+<meta property="og:url" content="https://dominionwebdesignpro.com/site-check/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{
+  --dark:#0A0F1A; --dark2:#111827; --line:#1F2937;
+  --blue:#2563EB; --blue-dark:#1D4ED8; --gold:#F5A623;
+  --good:#22C55E; --mid:#F5A623; --bad:#EF4444;
+  --text:#E5E7EB; --dim:#9CA3AF;
+  --rail:clamp(22px,5.5vw,140px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--dark);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6}
+a{color:var(--gold)}
+.rail{padding-inline:var(--rail)}
+nav{background:var(--dark2);border-bottom:1px solid var(--line);height:70px;
+  display:flex;align-items:center;justify-content:space-between}
+nav b{font-size:19px} nav a{text-decoration:none;color:var(--text)}
+
+header{background:var(--dark2);padding-block:clamp(42px,5.5vw,76px);border-bottom:1px solid var(--line)}
+h1{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.05;margin:0 0 14px;max-width:18ch}
+h1 span{color:var(--gold)}
+header p{max-width:58ch;margin:0;color:var(--dim);font-size:1.04rem}
+
+.tool{padding-block:clamp(30px,4vw,50px);max-width:1000px}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.bar input{flex:1 1 320px;background:#0d131f;color:var(--text);border:1px solid var(--line);
+  border-radius:6px;padding:15px 16px;font:inherit;font-size:1rem}
+.bar input:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+button{font:inherit;font-weight:700;border:0;border-radius:6px;padding:15px 30px;cursor:pointer}
+.primary{background:var(--blue);color:#fff}
+.primary:hover{background:var(--blue-dark)}
+.primary:disabled{opacity:.55;cursor:wait}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{background:transparent;color:var(--dim);padding:14px 20px;border-radius:0;font-weight:600}
+.seg button[aria-pressed="true"]{background:var(--line);color:var(--text)}
+.tip{color:var(--dim);font-size:.88rem;margin-top:12px}
+
+#msg{margin-top:26px;color:var(--dim)}
+#msg.err{color:var(--bad)}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--line);
+  border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;
+  vertical-align:-2px;margin-right:9px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+#res{display:none;margin-top:34px}
+#res.show{display:block}
+.who{font-size:.9rem;color:var(--dim);margin:0 0 20px;word-break:break-all}
+.scores{display:grid;gap:2px;background:var(--line);grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.score{background:var(--dark2);padding:24px 20px;text-align:center}
+.dial{width:88px;height:88px;margin:0 auto 12px;position:relative}
+.dial svg{transform:rotate(-90deg)}
+.dial b{position:absolute;inset:0;display:grid;place-items:center;font-size:1.5rem}
+.score p{margin:0;font-size:.86rem;color:var(--dim);letter-spacing:.03em;text-transform:uppercase}
+
+h2{font-size:1.25rem;margin:34px 0 6px}
+.sub{color:var(--dim);font-size:.92rem;margin:0 0 18px}
+.vitals{display:grid;gap:2px;background:var(--line);grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vital{background:var(--dark2);padding:20px}
+.vital b{display:block;font-size:1.4rem;margin-bottom:3px}
+.vital span{font-size:.86rem;color:var(--dim)}
+.vital em{font-style:normal;font-size:.8rem;display:block;margin-top:6px}
+
+ul.fix{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+ul.fix li{background:var(--dark2);padding:16px 20px;border-bottom:1px solid var(--line);
+  display:flex;gap:16px;justify-content:space-between;align-items:baseline}
+ul.fix li:last-child{border-bottom:0}
+ul.fix li span{color:var(--dim);font-size:.86rem;white-space:nowrap}
+
+.cta{margin-top:38px;background:var(--dark2);border:1px solid var(--line);
+  border-left:3px solid var(--gold);border-radius:8px;padding:26px 24px}
+.cta h3{margin:0 0 8px;font-size:1.15rem}
+.cta p{margin:0 0 18px;color:var(--dim)}
+.cta a{display:inline-block;background:var(--gold);color:#0A0F1A;text-decoration:none;
+  font-weight:700;padding:13px 26px;border-radius:6px}
+
+footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28px;
+  font-size:.88rem;color:var(--dim);margin-top:46px}
+@media(prefers-reduced-motion:reduce){.spin{animation:none}}
+</style>
+</head>
+<body>
+
+<nav class="rail"><a href="/"><b>Dominion Web Design Pro</b></a><a href="/">Home</a></nav>
+
+<header class="rail">
+  <h1>How fast is <span>your website</span>, really?</h1>
+  <p>Type in any web address and see how it scores on speed, mobile performance and search readiness. These are the same tests Google runs — we just show you the results. Free, no signup, about thirty seconds.</p>
+</header>
+
+<section class="tool rail">
+  <div class="bar">
+    <input id="url" type="url" placeholder="yourbusiness.com" autocomplete="url" spellcheck="false">
+    <div class="seg" role="group" aria-label="Device">
+      <button type="button" id="mob" aria-pressed="true">Mobile</button>
+      <button type="button" id="desk" aria-pressed="false">Desktop</button>
+    </div>
+    <button type="button" class="primary" id="go">Test my site</button>
+  </div>
+  <p class="tip">Test mobile first — that's what most of your customers use, and it's what Google scores you on.</p>
+
+  <div id="msg"></div>
+
+  <div id="res">
+    <p class="who" id="who"></p>
+    <div class="scores" id="scores"></div>
+
+    <h2>Real-world loading</h2>
+    <p class="sub">What a visitor actually experiences. Lower is better.</p>
+    <div class="vitals" id="vitals"></div>
+
+    <h2>Biggest things slowing it down</h2>
+    <p class="sub">Ordered by how much time each one is costing you.</p>
+    <ul class="fix" id="fix"></ul>
+
+    <div class="cta">
+      <h3>Want these numbers fixed?</h3>
+      <p>We build sites that score in the nineties, and we'll tell you straight whether yours needs rebuilding or just tuning.</p>
+      <a href="/intake/">Start a project</a>
+    </div>
+  </div>
+</section>
+
+<footer class="rail">
+  © 2026 Dominion Web Design Pro · Results provided by Google PageSpeed Insights · <a href="/">dominionwebdesignpro.com</a>
+</footer>
+
+<script>
+(function(){
+  var API = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+  var strategy = 'mobile';
+  var urlEl = document.getElementById('url');
+  var msg = document.getElementById('msg');
+  var res = document.getElementById('res');
+  var go = document.getElementById('go');
+
+  function setDevice(s){
+    strategy = s;
+    document.getElementById('mob').setAttribute('aria-pressed', s === 'mobile');
+    document.getElementById('desk').setAttribute('aria-pressed', s === 'desktop');
+  }
+  document.getElementById('mob').addEventListener('click', function(){ setDevice('mobile'); });
+  document.getElementById('desk').addEventListener('click', function(){ setDevice('desktop'); });
+
+  function colour(v){ return v >= 90 ? 'var(--good)' : v >= 50 ? 'var(--mid)' : 'var(--bad)'; }
+
+  function dial(value, label){
+    var c = 2 * Math.PI * 38, off = c - (value / 100) * c;
+    return '<div class="score"><div class="dial">'
+      + '<svg width="88" height="88" viewBox="0 0 88 88">'
+      + '<circle cx="44" cy="44" r="38" fill="none" stroke="#1F2937" stroke-width="7"/>'
+      + '<circle cx="44" cy="44" r="38" fill="none" stroke="' + colour(value) + '" stroke-width="7"'
+      + ' stroke-linecap="round" stroke-dasharray="' + c + '" stroke-dashoffset="' + off + '"/>'
+      + '</svg><b style="color:' + colour(value) + '">' + value + '</b></div>'
+      + '<p>' + label + '</p></div>';
+  }
+
+  function vital(a, label, hint){
+    if (!a) return '';
+    var col = a.score >= 0.9 ? 'var(--good)' : a.score >= 0.5 ? 'var(--mid)' : 'var(--bad)';
+    return '<div class="vital"><b style="color:' + col + '">' + a.displayValue + '</b>'
+      + '<span>' + label + '</span><em>' + hint + '</em></div>';
+  }
+
+  function run(){
+    var raw = (urlEl.value || '').trim();
+    if (!raw){ msg.className = 'err'; msg.textContent = 'Type a web address first.'; return; }
+    if (!/^https?:\/\//i.test(raw)) raw = 'https://' + raw;
+
+    res.classList.remove('show');
+    go.disabled = true;
+    msg.className = '';
+    msg.innerHTML = '<span class="spin"></span>Running the tests. This takes 20 to 40 seconds — Google is loading the page the way a real visitor would.';
+
+    var q = API + '?url=' + encodeURIComponent(raw) + '&strategy=' + strategy
+          + '&category=performance&category=seo&category=accessibility&category=best-practices';
+
+    fetch(q).then(function(r){
+      if (!r.ok) throw new Error(r.status === 429
+        ? 'Google is rate limiting requests right now. Wait a minute and try again.'
+        : 'Could not test that address. Check it is spelled correctly and the site is publicly reachable.');
+      return r.json();
+    }).then(function(d){
+      var lh = d.lighthouseResult, cats = lh.categories, aud = lh.audits;
+
+      document.getElementById('who').textContent =
+        lh.finalUrl + '  ·  tested on ' + (strategy === 'mobile' ? 'a mobile phone' : 'a desktop computer');
+
+      document.getElementById('scores').innerHTML =
+          dial(Math.round(cats.performance.score * 100), 'Speed')
+        + dial(Math.round(cats.seo.score * 100), 'SEO')
+        + dial(Math.round(cats.accessibility.score * 100), 'Accessibility')
+        + dial(Math.round(cats['best-practices'].score * 100), 'Best practices');
+
+      document.getElementById('vitals').innerHTML =
+          vital(aud['largest-contentful-paint'], 'Largest Contentful Paint', 'How long before the main content appears')
+        + vital(aud['total-blocking-time'], 'Total Blocking Time', 'How long the page ignores taps and clicks')
+        + vital(aud['cumulative-layout-shift'], 'Layout Shift', 'How much the page jumps around while loading')
+        + vital(aud['speed-index'], 'Speed Index', 'How quickly the page looks finished');
+
+      var items = Object.keys(aud).map(function(k){ return aud[k]; }).filter(function(a){
+        return a.details && a.details.type === 'opportunity'
+            && a.details.overallSavingsMs && a.details.overallSavingsMs > 100;
+      }).sort(function(a, b){
+        return b.details.overallSavingsMs - a.details.overallSavingsMs;
+      }).slice(0, 6);
+
+      document.getElementById('fix').innerHTML = items.length
+        ? items.map(function(a){
+            return '<li>' + a.title + '<span>saves ' + (a.details.overallSavingsMs / 1000).toFixed(1) + 's</span></li>';
+          }).join('')
+        : '<li>Nothing major found — this page is already well optimised.<span></span></li>';
+
+      msg.textContent = '';
+      res.classList.add('show');
+      res.scrollIntoView({behavior:'smooth', block:'start'});
+    }).catch(function(e){
+      msg.className = 'err';
+      msg.textContent = e.message || 'Something went wrong. Try again in a moment.';
+    }).finally(function(){
+      go.disabled = false;
+    });
+  }
+
+  go.addEventListener('click', run);
+  urlEl.addEventListener('keydown', function(e){ if (e.key === 'Enter') run(); });
+})();
+</script>
+</body>
+</html>
