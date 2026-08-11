@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Before &amp; After — Website Comparison | Dominion Web Design Pro</title>
+<meta name="description" content="Compare two websites side by side on speed, SEO and mobile performance. Same tests Google runs. Free, no signup.">
+<link rel="canonical" href="https://dominionwebdesignpro.com/compare/">
+<meta property="og:title" content="Before &amp; After — Website Comparison">
+<meta property="og:description" content="See the difference a rebuild makes, measured by Google's own tests.">
+<meta property="og:url" content="https://dominionwebdesignpro.com/compare/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--dark:#0A0F1A;--dark2:#111827;--line:#1F2937;--blue:#2563EB;--blue-dark:#1D4ED8;
+ --gold:#F5A623;--good:#22C55E;--mid:#F5A623;--bad:#EF4444;--text:#E5E7EB;--dim:#9CA3AF;
+ --rail:clamp(22px,5.5vw,140px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--dark);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+a{color:var(--gold)}
+.rail{padding-inline:var(--rail)}
+nav{background:var(--dark2);border-bottom:1px solid var(--line);height:70px;display:flex;
+ align-items:center;justify-content:space-between}
+nav b{font-size:19px} nav a{text-decoration:none;color:var(--text);font-size:15px}
+header{background:var(--dark2);padding-block:clamp(40px,5vw,72px);border-bottom:1px solid var(--line)}
+h1{font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.05;margin:0 0 14px;max-width:19ch}
+h1 span{color:var(--gold)}
+header p{max-width:60ch;margin:0;color:var(--dim);font-size:1.04rem}
+
+main{padding-block:clamp(28px,4vw,48px);max-width:1080px}
+.inputs{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.field label{display:block;font-size:.86rem;font-weight:700;letter-spacing:.06em;
+ text-transform:uppercase;margin-bottom:7px}
+.field.before label{color:var(--bad)} .field.after label{color:var(--good)}
+.field input{width:100%;background:#0d131f;color:var(--text);border:1px solid var(--line);
+ border-radius:6px;padding:14px 15px;font:inherit}
+.field input:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+button{font:inherit;font-weight:700;border:0;border-radius:6px;padding:14px 28px;cursor:pointer}
+.primary{background:var(--blue);color:#fff}.primary:hover{background:var(--blue-dark)}
+.primary:disabled{opacity:.5;cursor:wait}
+.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{background:transparent;color:var(--dim);padding:13px 20px;border-radius:0;font-weight:600}
+.seg button[aria-pressed="true"]{background:var(--line);color:var(--text)}
+
+#msg{margin-top:22px;color:var(--dim);min-height:24px}
+#msg.err{color:var(--bad)}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--line);
+ border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;
+ vertical-align:-2px;margin-right:9px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+#res{display:none}#res.show{display:block}
+.who{font-size:.86rem;color:var(--dim);margin:26px 0 18px;word-break:break-all}
+table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+th,td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--dark2);font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+tr:last-child td{border-bottom:0}
+td.metric{color:var(--dim);font-size:.95rem}
+.val{font-size:1.5rem;font-weight:700}
+.delta{display:inline-block;margin-left:9px;font-size:.82rem;font-weight:700;
+ padding:3px 9px;border-radius:20px;vertical-align:2px}
+.up{background:rgba(34,197,94,.15);color:var(--good)}
+.down{background:rgba(239,68,68,.15);color:var(--bad)}
+.same{background:rgba(156,163,175,.15);color:var(--dim)}
+
+.headline{margin:30px 0 0;background:var(--dark2);border:1px solid var(--line);
+ border-left:3px solid var(--gold);border-radius:8px;padding:24px}
+.headline h2{margin:0 0 8px;font-size:1.2rem}
+.headline p{margin:0;color:var(--dim)}
+.share{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+#link{width:100%;background:#070b12;color:var(--dim);border:1px solid var(--line);
+ border-radius:6px;padding:12px 14px;font-family:ui-monospace,Menlo,monospace;font-size:.82rem;margin-top:14px}
+footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28px;
+ font-size:.88rem;color:var(--dim);margin-top:44px}
+@media(prefers-reduced-motion:reduce){.spin{animation:none}}
+</style>
+</head>
+<body>
+
+<nav class="rail"><a href="/"><b>Dominion Web Design Pro</b></a><a href="/site-check/">Single site check</a></nav>
+
+<header class="rail">
+  <h1>See the difference, <span>side by side</span>.</h1>
+  <p>Put the old site and the new one against each other on the same tests Google runs. Speed, SEO, accessibility and real-world loading — measured, not claimed.</p>
+</header>
+
+<main class="rail">
+  <div class="inputs">
+    <div class="field before">
+      <label for="a">Their current site</label>
+      <input id="a" type="url" placeholder="oldsite.com" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="field after">
+      <label for="b">The new site</label>
+      <input id="b" type="url" placeholder="newsite.netlify.app" autocomplete="off" spellcheck="false">
+    </div>
+  </div>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Device">
+      <button type="button" id="mob" aria-pressed="true">Mobile</button>
+      <button type="button" id="desk" aria-pressed="false">Desktop</button>
+    </div>
+    <button type="button" class="primary" id="go">Compare</button>
+  </div>
+  <div id="msg"></div>
+
+  <div id="res">
+    <p class="who" id="who"></p>
+    <table>
+      <thead><tr><th>Measure</th><th>Current site</th><th>New site</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="headline"><h2 id="hl"></h2><p id="hlsub"></p></div>
+    <div class="share">
+      <button type="button" class="primary" id="copy">Copy summary</button>
+      <button type="button" class="ghost" id="mail">Email this</button>
+      <button type="button" class="ghost" id="permalink">Copy shareable link</button>
+    </div>
+    <input id="link" readonly>
+  </div>
+</main>
+
+<footer class="rail">© 2026 Dominion Web Design Pro · Results from Google PageSpeed Insights · <a href="/">dominionwebdesignpro.com</a></footer>
+
+<script>
+(function(){
+  var API='https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+  var KEY='AIzaSyDsJYSxsZ1gV9QUV3sborVqGaADKqlCXm8';
+  var strategy='mobile', data={}, urls={};
+  var A=document.getElementById('a'), B=document.getElementById('b');
+  var msg=document.getElementById('msg'), res=document.getElementById('res'), go=document.getElementById('go');
+
+  function dev(s){ strategy=s;
+    document.getElementById('mob').setAttribute('aria-pressed', s==='mobile');
+    document.getElementById('desk').setAttribute('aria-pressed', s==='desktop'); }
+  document.getElementById('mob').onclick=function(){dev('mobile');};
+  document.getElementById('desk').onclick=function(){dev('desktop');};
+
+  function norm(v){ v=(v||'').trim(); if(!v) return ''; return /^https?:\/\//i.test(v)?v:'https://'+v; }
+  function col(v){ return v>=90?'var(--good)':v>=50?'var(--mid)':'var(--bad)'; }
+
+  function run(url){
+    var q=API+'?url='+encodeURIComponent(url)+'&strategy='+strategy
+      +'&category=performance&category=seo&category=accessibility&category=best-practices&key='+KEY;
+    return fetch(q).then(function(r){
+      if(!r.ok) throw new Error('Could not test '+url+'. Check the address is right and the site is public.');
+      return r.json();
+    });
+  }
+
+  function score(d,k){ return Math.round(d.lighthouseResult.categories[k].score*100); }
+  function audit(d,k){ var a=d.lighthouseResult.audits[k]; return a?a.displayValue:'—'; }
+  function secs(d,k){ var a=d.lighthouseResult.audits[k]; return a?a.numericValue:null; }
+
+  function delta(before,after,higherBetter){
+    var diff=after-before;
+    if(!diff) return '<span class="delta same">no change</span>';
+    var better=higherBetter?diff>0:diff<0;
+    var txt=(higherBetter?(diff>0?'+':'')+diff:(diff<0?'':'+')+(diff/1000).toFixed(1)+'s');
+    return '<span class="delta '+(better?'up':'down')+'">'+txt+'</span>';
+  }
+
+  function render(){
+    var d1=data.before, d2=data.after;
+    document.getElementById('who').textContent =
+      urls.before+'  vs  '+urls.after+'   ·   tested on '+(strategy==='mobile'?'a mobile phone':'a desktop computer');
+
+    var cats=[['performance','Speed'],['seo','SEO'],['accessibility','Accessibility'],['best-practices','Best practices']];
+    var html='';
+    cats.forEach(function(c){
+      var v1=score(d1,c[0]), v2=score(d2,c[0]);
+      html+='<tr><td class="metric">'+c[1]+'</td>'
+        +'<td><span class="val" style="color:'+col(v1)+'">'+v1+'</span></td>'
+        +'<td><span class="val" style="color:'+col(v2)+'">'+v2+'</span>'+delta(v1,v2,true)+'</td></tr>';
+    });
+    var vitals=[['largest-contentful-paint','Main content appears'],
+                ['total-blocking-time','Page ignores taps for'],
+                ['speed-index','Looks finished after']];
+    vitals.forEach(function(v){
+      var n1=secs(d1,v[0]), n2=secs(d2,v[0]);
+      html+='<tr><td class="metric">'+v[1]+'</td>'
+        +'<td>'+audit(d1,v[0])+'</td><td>'+audit(d2,v[0])
+        +(n1!=null&&n2!=null?delta(n1,n2,false):'')+'</td></tr>';
+    });
+    document.getElementById('rows').innerHTML=html;
+
+    var p1=score(d1,'performance'), p2=score(d2,'performance');
+    var gain=p2-p1;
+    document.getElementById('hl').textContent = gain>0
+      ? 'The new site scores '+gain+' points higher on speed.'
+      : gain<0 ? 'The current site is still faster by '+Math.abs(gain)+' points.'
+               : 'Both sites score the same on speed.';
+    var l1=secs(d1,'largest-contentful-paint'), l2=secs(d2,'largest-contentful-paint');
+    document.getElementById('hlsub').textContent = (l1&&l2&&l2<l1)
+      ? 'Main content shows up '+((l1-l2)/1000).toFixed(1)+' seconds sooner, which is what a visitor actually feels.'
+      : 'Scores are from Google PageSpeed Insights, the same engine that feeds Google Search.';
+
+    var pl=location.origin+location.pathname+'?before='+encodeURIComponent(urls.before)
+      +'&after='+encodeURIComponent(urls.after)+'&d='+strategy;
+    document.getElementById('link').value=pl;
+    res.classList.add('show');
+    res.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  function summary(){
+    var d1=data.before,d2=data.after;
+    var L=['Website comparison — '+(strategy==='mobile'?'mobile':'desktop'),'',
+      'Current site: '+urls.before,'New site:     '+urls.after,''];
+    [['performance','Speed'],['seo','SEO'],['accessibility','Accessibility'],['best-practices','Best practices']]
+      .forEach(function(c){ L.push(c[1]+': '+score(d1,c[0])+'  ->  '+score(d2,c[0])); });
+    L.push('', 'Main content appears: '+audit(d1,'largest-contentful-paint')+'  ->  '+audit(d2,'largest-contentful-paint'));
+    L.push('', 'Measured with Google PageSpeed Insights.');
+    return L.join('\n');
+  }
+
+  function start(){
+    urls.before=norm(A.value); urls.after=norm(B.value);
+    if(!urls.before||!urls.after){ msg.className='err'; msg.textContent='Enter both addresses.'; return; }
+    res.classList.remove('show'); go.disabled=true; msg.className='';
+    msg.innerHTML='<span class="spin"></span>Testing the current site…';
+    run(urls.before).then(function(d){
+      data.before=d;
+      msg.innerHTML='<span class="spin"></span>Testing the new site…';
+      return run(urls.after);
+    }).then(function(d){
+      data.after=d; msg.textContent=''; render();
+    }).catch(function(e){
+      msg.className='err'; msg.textContent=e.message||'Something went wrong. Try again in a moment.';
+    }).finally(function(){ go.disabled=false; });
+  }
+
+  go.onclick=start;
+  [A,B].forEach(function(el){ el.addEventListener('keydown',function(e){ if(e.key==='Enter') start(); }); });
+
+  document.getElementById('copy').onclick=function(){
+    var t=document.createElement('textarea'); t.value=summary(); document.body.appendChild(t);
+    t.select(); try{document.execCommand('copy');}catch(e){} t.remove();
+    this.textContent='Copied'; var b=this; setTimeout(function(){b.textContent='Copy summary';},2000);
+  };
+  document.getElementById('mail').onclick=function(){
+    location.href='mailto:?subject='+encodeURIComponent('Your website, before and after')
+      +'&body='+encodeURIComponent(summary()+'\n\nSee it live: '+document.getElementById('link').value);
+  };
+  document.getElementById('permalink').onclick=function(){
+    var el=document.getElementById('link'); el.select();
+    try{document.execCommand('copy');}catch(e){}
+    this.textContent='Copied'; var b=this; setTimeout(function(){b.textContent='Copy shareable link';},2000);
+  };
+
+  // open a shared link and it runs itself
+  var p=new URLSearchParams(location.search);
+  if(p.get('before')&&p.get('after')){
+    A.value=p.get('before'); B.value=p.get('after');
+    if(p.get('d')==='desktop') dev('desktop');
+    start();
+  }
+})();
+</script>
+</body>
+</html>
