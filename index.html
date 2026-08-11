@@ -5,6 +5,9 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dominion Web Design Pro | Professional Websites for Local Businesses</title>
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://translate.google.com">
 <meta name="description" content="Professional website design for local businesses. Custom websites, AI chat widgets, and digital marketing starting at $497. Serving businesses nationwide.">
 <link rel="canonical" href="https://dominionwebdesignpro.com/">
 <style>
@@ -277,7 +280,14 @@ section[id],div[id]{scroll-margin-top:88px}
     <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:12px;color:var(--text)">See How <span style="color:#60A5FA">Dominion Web Design Pro</span> Works</h2>
     <p style="color:var(--muted);margin-bottom:24px">Watch how we build websites that actually get you customers.</p>
     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border)">
-      <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/RbXFjyWE-Ek" title="Web Design for Local Businesses | Dominion Web Design Pro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <button type="button" id="ytplay" aria-label="Play video"
+        style="position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;cursor:pointer;background:#000 url(https://i.ytimg.com/vi/RbXFjyWE-Ek/hqdefault.jpg) center/cover no-repeat">
+        <span style="position:absolute;inset:0;display:grid;place-items:center">
+          <span style="width:70px;height:70px;border-radius:50%;background:rgba(37,99,235,.92);display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.45)">
+            <svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M0 0 L26 15 L0 30 Z" fill="#fff"/></svg>
+          </span>
+        </span>
+      </button>
     </div>
   </div>
 </div>
@@ -330,6 +340,35 @@ section[id],div[id]{scroll-margin-top:88px}
 <script type="text/javascript">
 function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"es,pt,fr,zh-CN,vi,ko,tl",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+(function(){
+  // Swap the video thumbnail for the real player only on click. Saves ~1.5MB on load.
+  var b = document.getElementById('ytplay');
+  if (b) b.addEventListener('click', function(){
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube.com/embed/RbXFjyWE-Ek?autoplay=1';
+    f.title = 'Web Design for Local Businesses | Dominion Web Design Pro';
+    f.setAttribute('style','position:absolute;top:0;left:0;width:100%;height:100%;border:0');
+    f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    f.setAttribute('allowfullscreen','');
+    b.replaceWith(f);
+  });
+
+  // Load Google Translate lazily — on first interaction, or after the page settles.
+  var loaded = false;
+  function loadTranslate(){
+    if (loaded) return; loaded = true;
+    var t = document.createElement('script');
+    t.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(t);
+  }
+  var el = document.getElementById('google_translate_element');
+  if (el) el.addEventListener('mouseenter', loadTranslate, {once:true});
+  ['scroll','touchstart','keydown'].forEach(function(e){
+    window.addEventListener(e, loadTranslate, {once:true, passive:true});
+  });
+  window.addEventListener('load', function(){ setTimeout(loadTranslate, 3000); });
+})();
+</script>
 </body>
 </html>
