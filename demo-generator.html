@@ -210,20 +210,26 @@ hideError();
 showLoading();
 animateSteps();
 try {
-const res = await fetch(`${BACKEND}/generate-demo`,{
-method:'POST',headers:{'Content-Type':'application/json'},
-body:JSON.stringify({businessName,businessType,city,customRequest})
-});
+const ctl = new AbortController();
+const bail = setTimeout(function(){ ctl.abort(); }, 90000);
+let res;
+try {
+  res = await fetch(`${BACKEND}/generate-demo`,{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({businessName,businessType,city,customRequest}),
+    signal: ctl.signal
+  });
+} finally { clearTimeout(bail); }
 const data = await res.json();
 if (!res.ok) {
-showError(res.status===429 ? (data.error||'You\'ve reached the 5 demo limit. Call us at 903-636-7511!') : (data.error||'Something went wrong. Please try again.'));
+showError(res.status===429 ? (data.error||'You\'ve reached the 5 demo limit. Call us at 903-636-7511!') : (data.error||'Something went wrong. Please try again.'), res.status!==429);
 hideLoading(); return;
 }
 currentRefCode = data.refCode;
 currentHtml = data.html;
 showPreview(data.html, businessName, data.refCode);
 } catch(err) {
-showError('Connection error — the server may be waking up. Please try again in 30 seconds.');
+showError(err && err.name==='AbortError' ? 'That took longer than 90 seconds and was stopped. The build usually works on a second run.' : 'Connection error reaching the server. Try again in a moment.');
 hideLoading();
 }
 }
@@ -293,7 +299,20 @@ alert('Something went wrong. Please call us at 903-636-7511.');
 }
 }
 
-function showError(msg){const el=document.getElementById('errorMsg');el.textContent=msg;el.style.display='block';}
+function showError(msg,retryable){
+  const el=document.getElementById('errorMsg');
+  el.innerHTML='';
+  const t=document.createElement('div'); t.textContent=msg; el.appendChild(t);
+  if(retryable!==false){
+    const b=document.createElement('button');
+    b.type='button'; b.textContent='Try again';
+    b.style.cssText='margin-top:12px;background:#2563EB;color:#fff;border:0;border-radius:6px;'
+      +'padding:11px 22px;font:inherit;font-weight:700;cursor:pointer';
+    b.onclick=function(){ hideError(); generateDemo(); };
+    el.appendChild(b);
+  }
+  el.style.display='block';
+}
 function hideError(){document.getElementById('errorMsg').style.display='none';}
 function showLoading(){document.getElementById('form-section').style.display='none';document.getElementById('howSection').style.display='none';document.getElementById('loadingSection').style.display='block';}
 function hideLoading(){document.getElementById('loadingSection').style.display='none';document.getElementById('form-section').style.display='block';document.getElementById('howSection').style.display='block';}
