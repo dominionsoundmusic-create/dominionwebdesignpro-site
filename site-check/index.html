@@ -50,7 +50,7 @@ button{font:inherit;font-weight:700;border:0;border-radius:6px;padding:15px 30px
 
 #msg{margin-top:26px;color:var(--dim)}
 #msg.err{color:var(--bad)}
-.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--line);
+.spin{display:inline-block;width:20px;height:20px;border:3px solid var(--line);
   border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;
   vertical-align:-2px;margin-right:9px}
 @keyframes sp{to{transform:rotate(360deg)}}
@@ -91,6 +91,16 @@ ul.fix li span{color:var(--dim);font-size:.86rem;white-space:nowrap}
 footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28px;
   font-size:.88rem;color:var(--dim);margin-top:46px}
 @media(prefers-reduced-motion:reduce){.spin{animation:none}}
+
+.runbox{margin-top:8px;padding:16px 18px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02)}
+.runtop{display:flex;align-items:center;gap:12px}
+.runtop .lbl{font-weight:600;color:var(--text)}
+.runclock{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--dim);font-size:.92rem}
+.runstage{margin-top:8px;color:var(--dim);font-size:.9rem}
+.runtrack{height:4px;border-radius:3px;background:var(--line);margin-top:14px;overflow:hidden}
+.runtrack i{display:block;height:100%;width:34%;background:var(--gold);border-radius:3px;animation:slide 1.6s ease-in-out infinite}
+@keyframes slide{0%{margin-left:-34%}100%{margin-left:100%}}
+@media(prefers-reduced-motion:reduce){.runtrack i{animation:none;width:100%}}
 </style>
 </head>
 <body>
@@ -181,6 +191,7 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
   var attempt = 0, MAX = 4, timer = null;
 
   function countdown(secs, then){
+    stopRun();
     clearInterval(timer);
     var left = secs;
     function tick(){
@@ -192,6 +203,22 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
     timer = setInterval(tick, 1000);
   }
 
+  var runTimer=null, runT0=0;
+  var runStages=['Sending the address to Google…','Loading the page on a simulated phone…',
+                 'Measuring how fast it paints…','Checking SEO and accessibility…',
+                 'Working out what is slowing it down…','Nearly finished…'];
+  function startRun(){
+    stopRun(); runT0=Date.now(); var st=0;
+    runTimer=setInterval(function(){
+      var s=Math.round((Date.now()-runT0)/1000);
+      var c=document.getElementById('runclock'); if(c) c.textContent=s+'s';
+      if(s>0 && s%7===0 && st<runStages.length-1){
+        st++; var e=document.getElementById('runstage'); if(e) e.textContent=runStages[st];
+      }
+    },1000);
+  }
+  function stopRun(){ if(runTimer){ clearInterval(runTimer); runTimer=null; } }
+
   function run(retrying){
     var raw = (urlEl.value || '').trim();
     if (!raw){ msg.className = 'err'; msg.textContent = 'Type a web address first.'; return; }
@@ -201,7 +228,12 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
     res.classList.remove('show');
     go.disabled = true;
     msg.className = '';
-    msg.innerHTML = '<span class="spin"></span>Running the tests. This takes 20 to 40 seconds — Google is loading the page the way a real visitor would.';
+    msg.innerHTML = '<div class="runbox">'
+      + '<div class="runtop"><span class="spin"></span><span class="lbl">Running the tests</span>'
+      + '<span class="runclock" id="runclock">0s</span></div>'
+      + '<div class="runstage" id="runstage">Sending the address to Google…</div>'
+      + '<div class="runtrack"><i></i></div></div>';
+    startRun();
 
     var q = API + '?url=' + encodeURIComponent(raw) + '&strategy=' + strategy
           + '&category=performance&category=seo&category=accessibility&category=best-practices'
@@ -244,6 +276,7 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
           }).join('')
         : '<li>Nothing major found — this page is already well optimised.<span></span></li>';
 
+      stopRun();
       msg.textContent = '';
       attempt = 0;
       res.classList.add('show');
@@ -255,6 +288,7 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
         countdown(20 * attempt, function(){ run(true); });
         return;
       }
+      stopRun();
       msg.className = 'err';
       msg.textContent = e.busy
         ? 'Google\'s free test queue is still busy after several tries. Give it a few minutes and test again — or send us the address and we will run it for you.'

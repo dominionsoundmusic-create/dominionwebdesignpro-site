@@ -48,7 +48,7 @@ button{font:inherit;font-weight:700;border:0;border-radius:6px;padding:14px 28px
 
 #msg{margin-top:22px;color:var(--dim);min-height:24px}
 #msg.err{color:var(--bad)}
-.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--line);
+.spin{display:inline-block;width:20px;height:20px;border:3px solid var(--line);
  border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;
  vertical-align:-2px;margin-right:9px}
 @keyframes sp{to{transform:rotate(360deg)}}
@@ -77,6 +77,16 @@ td.metric{color:var(--dim);font-size:.95rem}
 footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28px;
  font-size:.88rem;color:var(--dim);margin-top:44px}
 @media(prefers-reduced-motion:reduce){.spin{animation:none}}
+
+.runbox{margin-top:8px;padding:16px 18px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02)}
+.runtop{display:flex;align-items:center;gap:12px}
+.runtop .lbl{font-weight:600;color:var(--text)}
+.runclock{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--dim);font-size:.92rem}
+.runstage{margin-top:8px;color:var(--dim);font-size:.9rem}
+.runtrack{height:4px;border-radius:3px;background:var(--line);margin-top:14px;overflow:hidden}
+.runtrack i{display:block;height:100%;width:34%;background:var(--gold);border-radius:3px;animation:slide 1.6s ease-in-out infinite}
+@keyframes slide{0%{margin-left:-34%}100%{margin-left:100%}}
+@media(prefers-reduced-motion:reduce){.runtrack i{animation:none;width:100%}}
 </style>
 </head>
 <body>
@@ -142,6 +152,21 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
 
   function norm(v){ v=(v||'').trim(); if(!v) return ''; return /^https?:\/\//i.test(v)?v:'https://'+v; }
   function col(v){ return v>=90?'var(--good)':v>=50?'var(--mid)':'var(--bad)'; }
+
+  var runTimer=null, runT0=0;
+  var runStages=['Google is loading it on a simulated phone…','Measuring how fast it paints…',
+                 'Checking SEO and accessibility…','Working out what is slowing it down…','Nearly finished…'];
+  function startRun(){
+    stopRun(); runT0=Date.now(); var st=0;
+    runTimer=setInterval(function(){
+      var s=Math.round((Date.now()-runT0)/1000);
+      var c=document.getElementById('runclock'); if(c) c.textContent=s+'s';
+      if(s>0 && s%7===0 && st<runStages.length-1){
+        st++; var e=document.getElementById('runstage'); if(e) e.textContent=runStages[st];
+      }
+    },1000);
+  }
+  function stopRun(){ if(runTimer){ clearInterval(runTimer); runTimer=null; } }
 
   function run(url){
     var q=API+'?url='+encodeURIComponent(url)+'&strategy='+strategy
@@ -221,14 +246,15 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
     urls.before=norm(A.value); urls.after=norm(B.value);
     if(!urls.before||!urls.after){ msg.className='err'; msg.textContent='Enter both addresses.'; return; }
     res.classList.remove('show'); go.disabled=true; msg.className='';
-    msg.innerHTML='<span class="spin"></span>Testing the current site…';
+    msg.innerHTML='<div class="runbox"><div class="runtop"><span class="spin"></span><span class="lbl">Testing the current site</span><span class="runclock" id="runclock">0s</span></div><div class="runstage" id="runstage">Google is loading it on a simulated phone…</div><div class="runtrack"><i></i></div></div>'; startRun();
     run(urls.before).then(function(d){
       data.before=d;
-      msg.innerHTML='<span class="spin"></span>Testing the new site…';
+      msg.innerHTML='<div class="runbox"><div class="runtop"><span class="spin"></span><span class="lbl">Testing the new site</span><span class="runclock" id="runclock">0s</span></div><div class="runstage" id="runstage">Google is loading it on a simulated phone…</div><div class="runtrack"><i></i></div></div>'; startRun();
       return run(urls.after);
     }).then(function(d){
-      data.after=d; msg.textContent=''; render();
+      data.after=d; stopRun(); msg.textContent=''; render();
     }).catch(function(e){
+      stopRun();
       msg.className='err'; msg.textContent=e.message||'Something went wrong. Try again in a moment.';
     }).finally(function(){ go.disabled=false; });
   }
