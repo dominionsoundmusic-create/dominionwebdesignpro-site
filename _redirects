@@ -22,3 +22,11 @@
 /wordpress-web-design/  /small-business-website/  301
 /lead-generation-website/*  /small-business-website/:splat  301
 /lead-generation-website/  /small-business-website/  301
+
+# St Louis was renamed in the city pool; the old slug had a duplicate page
+# in five folders. 301 so nothing is lost.
+/web-design/saint-louis-mo.html  /web-design/st-louis-mo.html  301
+/contractor-website-design/saint-louis-mo.html  /contractor-website-design/st-louis-mo.html  301
+/restaurant-website-design/saint-louis-mo.html  /restaurant-website-design/st-louis-mo.html  301
+/medical-website-design/saint-louis-mo.html  /medical-website-design/st-louis-mo.html  301
+/real-estate-website-design/saint-louis-mo.html  /real-estate-website-design/st-louis-mo.html  301
