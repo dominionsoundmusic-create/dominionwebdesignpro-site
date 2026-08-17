@@ -70,8 +70,28 @@ textarea{resize:vertical;min-height:74px}
 .result-bar h2{font-size:1.2em;margin-right:auto}
 .ref{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8em;color:var(--muted);
   border:1px solid var(--dark3);border-radius:6px;padding:5px 10px}
-.frame{border:1px solid var(--dark3);border-radius:14px;overflow:hidden;background:#fff;height:660px}
-.frame iframe{width:100%;height:100%;border:0;display:block}
+/* The generated demo is a full desktop site. Rendering it inside the 840px
+   .wrap forced it below its own 900px/768px breakpoints, so prospects saw the
+   collapsed mobile layout instead of the real design. Break it out full-bleed. */
+.preview-wide{width:96vw;max-width:1800px;margin-left:calc(50% - 48vw);margin-right:calc(50% - 48vw)}
+@media(min-width:1900px){.preview-wide{margin-left:calc(50% - 900px);margin-right:calc(50% - 900px)}}
+.frame{border:1px solid var(--dark3);border-radius:14px;overflow:hidden;background:#fff;
+  height:calc(100vh - 190px);min-height:660px;position:relative}
+/* The iframe is rendered at a real desktop width (--vw) and scaled to fit the
+   box. Without this the demo renders at whatever the box happens to be — on a
+   laptop that is ~1100px, below its own 1200px layout, so the prospect sees a
+   cramped version rather than the site as it will actually look. */
+.frame iframe{
+  width:var(--vw,1440px);
+  height:calc(100% / var(--scale,1));
+  border:0;display:block;
+  transform:scale(var(--scale,1));
+  transform-origin:top left;
+}
+.frame:fullscreen{border:0;border-radius:0;height:100vh;min-height:0}
+.frame:fullscreen iframe{--scale:1;width:100%;height:100vh;transform:none}
+.exit-fs{display:none;position:absolute;top:14px;right:14px;z-index:5}
+.frame:fullscreen .exit-fs{display:inline-flex}
 
 .claim{background:linear-gradient(135deg,var(--dark2),var(--dark3));border:1px solid var(--dark3);
   border-radius:16px;padding:26px;margin-top:22px}
@@ -82,7 +102,7 @@ textarea{resize:vertical;min-height:74px}
 
 footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;padding:28px 22px;font-size:.85em}
 
-@media(max-width:640px){.row{grid-template-columns:1fr}.frame{height:460px}}
+@media(max-width:640px){.row{grid-template-columns:1fr}.frame{height:70vh;min-height:460px}.preview-wide{width:100%;margin-left:0;margin-right:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -159,9 +179,15 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
     <div class="result-bar">
       <h2>Here's your site</h2>
       <span class="ref" id="refBadge"></span>
+      <button class="btn btn-ghost" type="button" id="fsBtn">⛶ Full screen</button>
       <button class="btn btn-ghost" type="button" id="againBtn">Try another</button>
     </div>
-    <div class="frame"><iframe id="preview" title="Your website preview" sandbox="allow-same-origin"></iframe></div>
+    <div class="preview-wide">
+      <div class="frame" id="frame">
+        <button class="btn btn-ghost exit-fs" type="button" id="exitFsBtn">Exit full screen</button>
+        <iframe id="preview" title="Your website preview" sandbox="allow-same-origin"></iframe>
+      </div>
+    </div>
 
     <div class="claim" id="claim">
       <h3>Want this to be your real website?</h3>
@@ -270,6 +296,7 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
       refBadge.textContent = currentRef ? "Ref " + currentRef : "";
       preview.srcdoc = res.body.html;
       result.classList.add("on");
+      fitPreview();
       result.scrollIntoView({ behavior: "smooth", block: "start" });
     })
     .catch(function () {
@@ -280,6 +307,35 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
       alert("Couldn't reach the builder just now. Please try again, or call 903-636-7511.");
     });
   });
+
+  var frameEl = document.getElementById("frame");
+  var DESKTOP_W = 1440;
+  function fitPreview() {
+    if (document.fullscreenElement === frameEl) return;
+    var boxW = frameEl.clientWidth;
+    if (!boxW) return;
+    var scale = Math.min(1, boxW / DESKTOP_W);
+    frameEl.style.setProperty("--vw", DESKTOP_W + "px");
+    frameEl.style.setProperty("--scale", scale);
+  }
+  window.addEventListener("resize", fitPreview);
+  document.addEventListener("fullscreenchange", function () {
+    if (document.fullscreenElement === frameEl) {
+      frameEl.style.removeProperty("--vw");
+      frameEl.style.removeProperty("--scale");
+    } else { fitPreview(); }
+  });
+  function enterFs() {
+    var fn = frameEl.requestFullscreen || frameEl.webkitRequestFullscreen || frameEl.msRequestFullscreen;
+    if (fn) { fn.call(frameEl); }
+    else { frameEl.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  }
+  function exitFs() {
+    var fn = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+    if (fn) { fn.call(document); }
+  }
+  document.getElementById("fsBtn").addEventListener("click", enterFs);
+  document.getElementById("exitFsBtn").addEventListener("click", exitFs);
 
   document.getElementById("againBtn").addEventListener("click", function () {
     result.classList.remove("on");
