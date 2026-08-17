@@ -314,9 +314,14 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
     if (document.fullscreenElement === frameEl) return;
     var boxW = frameEl.clientWidth;
     if (!boxW) return;
-    var scale = Math.min(1, boxW / DESKTOP_W);
-    frameEl.style.setProperty("--vw", DESKTOP_W + "px");
-    frameEl.style.setProperty("--scale", scale);
+    if (boxW >= DESKTOP_W) {
+      // Box is already desktop-width or wider: fill it, no scaling, no gap.
+      frameEl.style.setProperty("--vw", "100%");
+      frameEl.style.setProperty("--scale", 1);
+    } else {
+      frameEl.style.setProperty("--vw", DESKTOP_W + "px");
+      frameEl.style.setProperty("--scale", boxW / DESKTOP_W);
+    }
   }
   window.addEventListener("resize", fitPreview);
   document.addEventListener("fullscreenchange", function () {
