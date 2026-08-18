@@ -1,146 +1,56 @@
 {
-  "bellingham-wa": {
-    "author": "JanetCaen",
-    "licence": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Whatcom_County_Courthouse_-_Bellingham,_Washington.jpg",
-    "title": "File:Whatcom County Courthouse - Bellingham, Washington.jpg"
-  },
-  "st-petersburg-fl": {
-    "author": "Ebyabe",
-    "licence": "CC BY 2.5",
-    "source": "https://commons.wikimedia.org/wiki/File:Clearwater_Pinellas_cty_crths01.jpg",
-    "title": "File:Clearwater Pinellas cty crths01.jpg"
-  },
   "baton-rouge-la": {
-    "author": "Unknown authorUnknown author",
+    "author": "theMinsk",
     "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Sanborn_Fire_Insurance_Map_from_Baton_Rouge,_East_Baton_Rouge_Parish,_Louisiana._LOC_sanborn03275_001-3.jpg",
-    "title": "File:Sanborn Fire Insurance Map from Baton Rouge, East Baton Rouge Parish, Louisiana. LOC sanborn03275 001-3.jpg"
-  },
-  "harrisburg-pa": {
-    "author": "Niagara",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Dauphin_County_Courthouse.jpg",
-    "title": "File:Dauphin County Courthouse.jpg"
-  },
-  "castle-rock-co": {
-    "author": "Smallbones",
-    "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Castle_Rock_Cafe.JPG",
-    "title": "File:Castle Rock Cafe.JPG"
-  },
-  "columbia-sc": {
-    "author": "Billy Hathorn",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Richland_County,_SC_Courthouse_IMG_4801.JPG",
-    "title": "File:Richland County, SC Courthouse IMG 4801.JPG"
-  },
-  "indianapolis-in": {
-    "author": "Chris Light at English Wikipedia",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Grant_County_Courthhouse,_Marion,_Indiana.JPG",
-    "title": "File:Grant County Courthhouse, Marion, Indiana.JPG"
-  },
-  "durham-nc": {
-    "author": "DiscoA340",
-    "licence": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Durham_County_Courthouse_(April_2023).jpg",
-    "title": "File:Durham County Courthouse (April 2023).jpg"
-  },
-  "tyler-tx": {
-    "author": "Larry D. Moore",
-    "licence": "CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Smith_courthouse_tx_2010.jpg",
-    "title": "File:Smith courthouse tx 2010.jpg"
-  },
-  "anaheim-ca": {
-    "author": "Asfandyar at en.wikipedia",
-    "licence": "Attribution",
-    "source": "https://commons.wikimedia.org/wiki/File:Old_OC_Courthouse_02.jpg",
-    "title": "File:Old OC Courthouse 02.jpg"
-  },
-  "boise-id": {
-    "author": "Unknown authorUnknown author",
-    "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:326,_Ada_County_Court_House_(NBY_432229).jpg",
-    "title": "File:326, Ada County Court House (NBY 432229).jpg"
-  },
-  "chattanooga-tn": {
-    "author": "Brian Stansberry",
-    "licence": "CC BY 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Hamilton-county-courthouse-tn1.jpg",
-    "title": "File:Hamilton-county-courthouse-tn1.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Downtown_Baton_Rouge,_Louisiana,_10_Feb_2022_-_11.jpg",
+    "title": "File:Downtown Baton Rouge, Louisiana, 10 Feb 2022 - 11.jpg"
   },
   "savannah-ga": {
-    "author": "Billy Hathorn",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Chatham_County,_GA_Courthouse_IMG_4702.JPG",
-    "title": "File:Chatham County, GA Courthouse IMG 4702.JPG"
-  },
-  "spokane-wa": {
-    "author": "Murderbike",
-    "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Spokane_County_Courthouse.JPG",
-    "title": "File:Spokane County Courthouse.JPG"
-  },
-  "fort-collins-co": {
-    "author": "Xnatedawgx",
+    "author": "Jrozwado",
     "licence": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Larimer_County_Courthouse_Offices,_SW_corner.jpg",
-    "title": "File:Larimer County Courthouse Offices, SW corner.jpg"
-  },
-  "asheville-nc": {
-    "author": "Warren LeMay from Cincinnati, OH, United States",
-    "licence": "CC0",
-    "source": "https://commons.wikimedia.org/wiki/File:Buncombe_County_Courthouse,_Asheville,_NC_(46019892484).jpg",
-    "title": "File:Buncombe County Courthouse, Asheville, NC (46019892484).jpg"
-  },
-  "lubbock-tx": {
-    "author": "The original uploader was Billy Hathorn at English Wikipedia.",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Lubbock_County,_TX,_Courthouse_IMG_0074.JPG",
-    "title": "File:Lubbock County, TX, Courthouse IMG 0074.JPG"
-  },
-  "springfield-mo": {
-    "author": "Kbh3rd",
-    "licence": "CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Greene_County_MO_Courthouse_20151022-143.jpg",
-    "title": "File:Greene County MO Courthouse 20151022-143.jpg"
-  },
-  "wichita-ks": {
-    "author": "Ichabod",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Sedgwick_county_kansas_courthouse_2009.jpg",
-    "title": "File:Sedgwick county kansas courthouse 2009.jpg"
-  },
-  "tacoma-wa": {
-    "author": "Publichall",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Tacoma_Public_Library.jpg",
-    "title": "File:Tacoma Public Library.jpg"
-  },
-  "reno-nv": {
-    "author": "Ken Lund",
-    "licence": "CC BY-SA 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Washoe_County_Courthouse_in_Reno,_Nevada.jpg",
-    "title": "File:Washoe County Courthouse in Reno, Nevada.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Savannah,_GA_-_Historic_District_-_German_Memorial_Fountain.jpg",
+    "title": "File:Savannah, GA - Historic District - German Memorial Fountain.jpg"
   },
   "mobile-al": {
-    "author": "Alex Bush, Photographer.",
+    "author": "Altairisfar",
     "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Old_Marengo_Courthouse_4.jpg",
-    "title": "File:Old Marengo Courthouse 4.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Mobile_Skyline_01.JPG",
+    "title": "File:Mobile Skyline 01.JPG"
   },
-  "fayetteville-ar": {
-    "author": "Flickr user Clinton Seeds",
+  "durham-nc": {
+    "author": "Warren LeMay",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carolina_Theatre,_Durham,_NC.jpg",
+    "title": "File:Carolina Theatre, Durham, NC.jpg"
+  },
+  "boise-id": {
+    "author": "SniperProgrammer",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Downtown_Boise_Midnight_Skyline_2013.jpg",
+    "title": "File:Downtown Boise Midnight Skyline 2013.jpg"
+  },
+  "tacoma-wa": {
+    "author": "Murderbike",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:US_Post_Office-Tacoma_Downtown_Station-Federal_Building.jpg",
+    "title": "File:US Post Office-Tacoma Downtown Station-Federal Building.jpg"
+  },
+  "anaheim-ca": {
+    "author": "Boris Dzhingarov",
     "licence": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Washington_County_Arkansas_Courthouse.jpg",
-    "title": "File:Washington County Arkansas Courthouse.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Disneyland_park_-_Anaheim_Los_Angeles_California_USA_(9894972503).jpg",
+    "title": "File:Disneyland park - Anaheim Los Angeles California USA (9894972503).jpg"
   },
-  "knoxville-tn": {
-    "author": "Brian Stansberry",
-    "licence": "CC BY 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Knox-county-courthouse-tn3.jpg",
-    "title": "File:Knox-county-courthouse-tn3.jpg"
+  "boulder-co": {
+    "author": "Unknown",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pearl_Street_Mall_(Boulder,_CO_-_2004).jpg",
+    "title": "File:Pearl Street Mall (Boulder, CO - 2004).jpg"
+  },
+  "greenville-sc": {
+    "author": "P. Hughes",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Greenville_-_Reedy_River,_Falls_Park.jpg",
+    "title": "File:Greenville - Reedy River, Falls Park.jpg"
   }
 }
