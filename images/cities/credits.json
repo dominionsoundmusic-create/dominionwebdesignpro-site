@@ -1,56 +1,14 @@
 {
-  "baton-rouge-la": {
-    "author": "theMinsk",
-    "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Downtown_Baton_Rouge,_Louisiana,_10_Feb_2022_-_11.jpg",
-    "title": "File:Downtown Baton Rouge, Louisiana, 10 Feb 2022 - 11.jpg"
-  },
-  "savannah-ga": {
-    "author": "Jrozwado",
-    "licence": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Savannah,_GA_-_Historic_District_-_German_Memorial_Fountain.jpg",
-    "title": "File:Savannah, GA - Historic District - German Memorial Fountain.jpg"
-  },
-  "mobile-al": {
-    "author": "Altairisfar",
-    "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Mobile_Skyline_01.JPG",
-    "title": "File:Mobile Skyline 01.JPG"
-  },
-  "durham-nc": {
-    "author": "Warren LeMay",
-    "licence": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Carolina_Theatre,_Durham,_NC.jpg",
-    "title": "File:Carolina Theatre, Durham, NC.jpg"
+  "anaheim-ca": {
+    "author": "Roman Eugeniusz",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Disneyland_Town_Square.jpg",
+    "title": "File:Disneyland Town Square.jpg"
   },
   "boise-id": {
-    "author": "SniperProgrammer",
+    "author": "Lordchadwick79",
     "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Downtown_Boise_Midnight_Skyline_2013.jpg",
-    "title": "File:Downtown Boise Midnight Skyline 2013.jpg"
-  },
-  "tacoma-wa": {
-    "author": "Murderbike",
-    "licence": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:US_Post_Office-Tacoma_Downtown_Station-Federal_Building.jpg",
-    "title": "File:US Post Office-Tacoma Downtown Station-Federal Building.jpg"
-  },
-  "anaheim-ca": {
-    "author": "Boris Dzhingarov",
-    "licence": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Disneyland_park_-_Anaheim_Los_Angeles_California_USA_(9894972503).jpg",
-    "title": "File:Disneyland park - Anaheim Los Angeles California USA (9894972503).jpg"
-  },
-  "boulder-co": {
-    "author": "Unknown",
-    "licence": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Pearl_Street_Mall_(Boulder,_CO_-_2004).jpg",
-    "title": "File:Pearl Street Mall (Boulder, CO - 2004).jpg"
-  },
-  "greenville-sc": {
-    "author": "P. Hughes",
-    "licence": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Greenville_-_Reedy_River,_Falls_Park.jpg",
-    "title": "File:Greenville - Reedy River, Falls Park.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Downtown_Boise;_2013.jpg",
+    "title": "File:Downtown Boise; 2013.jpg"
   }
 }
