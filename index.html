@@ -109,6 +109,16 @@ section[id],div[id]{scroll-margin-top:88px}
   border-color:transparent transparent transparent #fff;margin-left:6px}
 .cp-video button:hover .cp-play::after{border-left-color:var(--ink)}
 .cp-video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:6px;display:block}
+.pricing-head{display:grid;grid-template-columns:1fr minmax(300px,440px);gap:clamp(24px,4vw,52px);
+  align-items:center;max-width:1120px;margin:0 auto 40px;text-align:left}
+.pricing-head h2{margin:0 0 12px}
+.pricing-head-txt>p{margin:0 0 12px}
+.cp-note{font-size:.95rem;color:var(--muted);max-width:48ch}
+.cp-note a{color:var(--gold)}
+.cp-cap{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  margin-top:10px;text-align:center}
+@media(max-width:860px){.pricing-head{grid-template-columns:1fr;text-align:center}
+  .cp-note{margin-left:auto;margin-right:auto}}
 </style>
 </head>
 <body>
@@ -229,9 +239,22 @@ section[id],div[id]{scroll-margin-top:88px}
 
 <!-- PRICING -->
 <div class="section" id="pricing">
-  <div class="section-title">
-    <h2>Simple, <span class="accent">Transparent Pricing</span></h2>
-    <p>No hidden fees. No long-term contracts. Just great websites that generate leads.</p>
+  <div class="pricing-head">
+    <div class="pricing-head-txt">
+      <h2>Simple, <span class="accent">Transparent Pricing</span></h2>
+      <p>No hidden fees. No long-term contracts. Just great websites that generate leads.</p>
+      <p class="cp-note">Wondering what &ldquo;city pages&rdquo; means, and why one plan has ten
+        and another a hundred? <a href="/how-city-pages-work.html">Here is the plain
+        explanation</a> &mdash; or watch the two&#8209;minute version.</p>
+    </div>
+    <div class="cp-video">
+      <button type="button" onclick="this.parentNode.innerHTML='&lt;iframe src=\'https://www.youtube-nocookie.com/embed/0Z_lJVQ9GtI?autoplay=1\' title=\'Why 10 city pages and 100 city pages are not the same thing\' allow=\'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen&gt;&lt;/iframe&gt;'"
+              aria-label="Play the video about how city pages work">
+        <img src="https://i.ytimg.com/vi/0Z_lJVQ9GtI/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720">
+        <span class="cp-play" aria-hidden="true"></span>
+      </button>
+      <p class="cp-cap">City pages explained &mdash; 2 min</p>
+    </div>
   </div>
   <div class="pricing-grid">
     <div class="price-card">
@@ -303,24 +326,6 @@ section[id],div[id]{scroll-margin-top:88px}
       </button>
     </div>
   </div>
-</div>
-
-<div style="max-width:900px;margin:0 auto;padding:8px 24px 56px">
-  <div style="text-align:center;margin-bottom:20px">
-    <h3 style="font-size:1.28rem;margin:0 0 8px">Not sure what &ldquo;city pages&rdquo; actually means?</h3>
-    <p style="color:var(--muted);margin:0">Two minutes, in plain terms &mdash; and why ten is not
-       simply a smaller version of a hundred.</p>
-  </div>
-  <div class="cp-video">
-    <button type="button" onclick="this.parentNode.innerHTML='&lt;iframe src=\'https://www.youtube-nocookie.com/embed/0Z_lJVQ9GtI?autoplay=1\' title=\'Why 10 city pages and 100 city pages are not the same thing\' allow=\'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen&gt;&lt;/iframe&gt;'"
-            aria-label="Play the video about how city pages work">
-      <img src="https://i.ytimg.com/vi/0Z_lJVQ9GtI/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720">
-      <span class="cp-play" aria-hidden="true"></span>
-    </button>
-  </div>
-  <p style="text-align:center;margin-top:14px">
-    <a href="/how-city-pages-work.html" style="color:var(--gold)">Read the full explanation &rarr;</a>
-  </p>
 </div>
 
 <div style="max-width:1200px;margin:0 auto;padding:64px 24px 8px">
