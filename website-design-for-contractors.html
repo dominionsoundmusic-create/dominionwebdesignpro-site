@@ -125,7 +125,7 @@ footer a{color:#9a9ab4}
 <b>2 of 348</b>
 <span>Pages Google indexed on one of those sites. The rest sat in Search Console under "Discovered — currently not indexed", meaning Google found them and chose not to bother.</span>
 </div>
-<p>We measured the pages against each other and they came back between 94.7% and 98.8% identical. Around 390 words each, differing only in the town name and a few shuffled sentences. Google did not reject them as duplicates — it simply declined to spend crawl budget on them.</p>
+<p>We measured the pages against each other properly &mdash; comparing overlapping five-word sequences, which is how near-duplicate detection actually works. Two pages for the same service in different towns share about 46% of their wording. Two different services in the same town share about 77%. Each page runs roughly 390 words, and what differs is largely the town name and a few shuffled sentences. Google did not reject them as duplicates &mdash; it simply declined to spend crawl budget on them.</p><p>An earlier version of this page put those figures at 94.7% and 98.8%. That was wrong: it came from a text-comparison function that counts characters rather than word sequences, which scores almost any two English texts of similar length above 90%. The corrected numbers are lower and the conclusion is unchanged.</p>
 <p>The instructive part is that a sister site built by the same script, with the same duplication, indexed 359 pages. Same code, very different outcome. Which tells you the problem was never a clever technical fix waiting to be found — it was that neither site had given Google a reason to care.</p>
 <div class="note">
 <h3>What that means for you</h3>
