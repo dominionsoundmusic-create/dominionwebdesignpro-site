@@ -101,7 +101,7 @@ footer a{color:var(--muted)}
      terms.</p>
 
   <div class="video">
-    <button type="button" onclick="this.parentNode.innerHTML='&lt;iframe src='https://www.youtube-nocookie.com/embed/0Z_lJVQ9GtI?autoplay=1' title='Why 10 city pages and 100 city pages are not the same thing' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen&gt;&lt;/iframe&gt;'"
+    <button type="button" id="ytplay-city"
             aria-label="Play the video: why ten city pages and a hundred are not the same thing">
       <img src="https://i.ytimg.com/vi/0Z_lJVQ9GtI/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720">
       <span class="play" aria-hidden="true"></span>
@@ -220,4 +220,22 @@ footer a{color:var(--muted)}
   <a href="/about.html">About</a>
 </div></footer>
 
+<script>
+(function(){
+  // Swap the thumbnail for the real player only on click. Saves ~1.5MB on load.
+  var b = document.getElementById('ytplay-city');
+  if (!b) return;
+  b.addEventListener('click', function(){
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/0Z_lJVQ9GtI?autoplay=1';
+    f.title = 'Why 10 city pages and 100 city pages are not the same thing';
+    // the button carried the positioning and is about to be removed,
+    // so size the iframe on its own terms and keep the same rounded corners
+    f.setAttribute('style','display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:5px');
+    f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    f.setAttribute('allowfullscreen','');
+    b.replaceWith(f);
+  });
+})();
+</script>
 </body></html>
