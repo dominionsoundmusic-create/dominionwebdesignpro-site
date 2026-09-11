@@ -1,24 +1,36 @@
 # retired URL structures -> current service pages
 
-/website-design/*  /small-business-website/:splat  301
+/website-design/*  /small-business-website/  301
 /website-design/  /small-business-website/  301
-/custom-website-design/*  /small-business-website/:splat  301
+/custom-website-design/*  /small-business-website/  301
 /custom-website-design/  /small-business-website/  301
-/local-business-website/*  /small-business-website/:splat  301
+/local-business-website/*  /small-business-website/  301
 /local-business-website/  /small-business-website/  301
-/affordable-web-design/*  /small-business-website/:splat  301
+/affordable-web-design/*  /small-business-website/  301
 /affordable-web-design/  /small-business-website/  301
-/business-website-design/*  /small-business-website/:splat  301
+/business-website-design/*  /small-business-website/  301
 /business-website-design/  /small-business-website/  301
-/mobile-website-design/*  /small-business-website/:splat  301
+/mobile-website-design/*  /small-business-website/  301
 /mobile-website-design/  /small-business-website/  301
-/ai-website-design/*  /small-business-website/:splat  301
+/ai-website-design/*  /small-business-website/  301
 /ai-website-design/  /small-business-website/  301
-/website-designer/*  /small-business-website/:splat  301
+/website-designer/*  /small-business-website/  301
 /website-designer/  /small-business-website/  301
-/website-redesign/*  /small-business-website/:splat  301
+/website-redesign/*  /small-business-website/  301
 /website-redesign/  /small-business-website/  301
-/wordpress-web-design/*  /small-business-website/:splat  301
+/wordpress-web-design/*  /small-business-website/  301
 /wordpress-web-design/  /small-business-website/  301
-/lead-generation-website/*  /small-business-website/:splat  301
+/lead-generation-website/*  /small-business-website/  301
 /lead-generation-website/  /small-business-website/  301
+
+# Sep 11 2026 - templated city pages retired; wildcards send them to the service hub.
+# Netlify serves real files first, so the hand-written pages below are unaffected.
+/small-business-website/*  /small-business-website/  301
+/seo-web-design/*  /seo-web-design/  301
+/restaurant-website-design/*  /restaurant-website-design/  301
+/real-estate-website-design/*  /real-estate-website-design/  301
+/professional-website-design/*  /professional-website-design/  301
+/medical-website-design/*  /medical-website-design/  301
+/ecommerce-website-design/*  /ecommerce-website-design/  301
+/contractor-website-design/*  /contractor-website-design/  301
+/web-design/*  /web-design/  301
