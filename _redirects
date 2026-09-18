@@ -1,3 +1,8 @@
+# Sep 18 2026 - the welcome email links to /onboarding; send it to the intake form
+/onboarding  /intake/  301
+/onboarding/  /intake/  301
+/onboarding/*  /intake/  301
+
 # retired URL structures -> current service pages
 
 /website-design/*  /small-business-website/  301
