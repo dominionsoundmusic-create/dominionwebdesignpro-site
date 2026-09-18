@@ -128,5 +128,35 @@
     "author": "P. Hughes",
     "licence": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/"
+  },
+  "atlanta-small-business": {
+    "author": "Dominion Web Design Pro",
+    "licence": "proprietary",
+    "source": "original"
+  },
+  "atlanta-sole-proprietor": {
+    "author": "Dominion Web Design Pro",
+    "licence": "proprietary",
+    "source": "original"
+  },
+  "atlanta-food-truck": {
+    "author": "Dominion Web Design Pro",
+    "licence": "proprietary",
+    "source": "original"
+  },
+  "lawrenceville-storefronts": {
+    "author": "Dominion Web Design Pro",
+    "licence": "proprietary",
+    "source": "original"
+  },
+  "lawrenceville-courthouse-district": {
+    "author": "Dominion Web Design Pro",
+    "licence": "proprietary",
+    "source": "original"
+  },
+  "gwinnett-international-corridor": {
+    "author": "Dominion Web Design Pro",
+    "licence": "proprietary",
+    "source": "original"
   }
 }
