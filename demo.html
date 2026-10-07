@@ -160,6 +160,16 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
         </div>
       </div>
       <div class="field">
+        <label for="bizPhone">Business phone <span style="text-transform:none;letter-spacing:0">(optional, goes on your demo)</span></label>
+        <input id="bizPhone" name="phone" type="tel" autocomplete="tel" placeholder="(903) 555-1234">
+      </div>
+      <div class="field">
+        <label for="service1">Your main services <span style="text-transform:none;letter-spacing:0">(up to three, each gets its own section)</span></label>
+        <input id="service1" type="text" maxlength="60" placeholder="AC repair">
+        <input id="service2" type="text" maxlength="60" placeholder="New system installs" style="margin-top:8px">
+        <input id="service3" type="text" maxlength="60" placeholder="Seasonal tune-ups" style="margin-top:8px">
+      </div>
+      <div class="field">
         <label for="customRequest">Anything specific? <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
         <textarea id="customRequest" name="customRequest" placeholder="We do emergency service 24/7 and we've been family owned since 1998."></textarea>
       </div>
@@ -279,7 +289,9 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
         businessType: type.value.trim(),
         city: city.value.trim(),
         state: document.getElementById("state").value.trim(),
-        customRequest: document.getElementById("customRequest").value.trim()
+        customRequest: document.getElementById("customRequest").value.trim(),
+        phone: document.getElementById("bizPhone").value.trim(),
+        services: ["service1", "service2", "service3"].map(function (id) { return document.getElementById(id).value.trim(); }).filter(Boolean)
       })
     })
     .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
