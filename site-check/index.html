@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Free Website Speed &amp; SEO Test | Dominion Web Design Pro</title>
-<meta name="description" content="Test any website's speed, SEO and mobile performance free. Same engine Google uses. Results in about thirty seconds, no signup.">
+<title>Free Website SEO Audit &amp; Speed Test | Dominion Web Design Pro</title>
+<meta name="description" content="Free SEO audit for any business website: Google speed scores plus 20+ checks on titles, mobile setup, local business details, phone, schema and more. Results in about thirty seconds.">
 <link rel="canonical" href="https://dominionwebdesignpro.com/site-check/">
-<meta property="og:title" content="Free Website Speed &amp; SEO Test">
-<meta property="og:description" content="See how your site scores on the same tests Google runs. Free, no signup.">
+<meta property="og:title" content="Free Website SEO Audit &amp; Speed Test">
+<meta property="og:description" content="See how your business website scores on speed, SEO and local search basics, with a plain-English fix list.">
 <meta property="og:url" content="https://dominionwebdesignpro.com/site-check/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -101,6 +101,51 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
 .runtrack i{display:block;height:100%;width:34%;background:var(--gold);border-radius:3px;animation:slide 1.6s ease-in-out infinite}
 @keyframes slide{0%{margin-left:-34%}100%{margin-left:100%}}
 @media(prefers-reduced-motion:reduce){.runtrack i{animation:none;width:100%}}
+
+/* Oct 9 2026: full SEO audit added (on-page checks + lead capture + printable report) */
+.grade{display:flex;flex-wrap:wrap;gap:26px;align-items:center;background:var(--dark2);border:1px solid var(--line);border-radius:8px;padding:24px;margin-bottom:22px}
+.grade .letter{width:108px;height:108px;border-radius:14px;display:grid;place-items:center;font-size:3.6rem;font-weight:800;color:#0A0F1A}
+.grade h2{margin:0 0 6px}
+.grade p{margin:0;color:var(--dim);max-width:60ch}
+.tally{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.pill{font-size:.84rem;font-weight:700;border-radius:999px;padding:4px 12px}
+.p-fail{background:rgba(239,68,68,.16);color:#FCA5A5}.p-warn{background:rgba(245,166,35,.16);color:#FCD34D}.p-pass{background:rgba(34,197,94,.16);color:#86EFAC}
+.gate{margin-top:30px;background:var(--dark2);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:8px;padding:26px 24px}
+.gate h3{margin:0 0 6px;font-size:1.2rem}.gate p{margin:0 0 16px;color:var(--dim)}
+.gate form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.gate label{display:grid;gap:5px;font-size:.88rem;color:var(--dim)}
+.gate input{background:#0d131f;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:13px 14px;font:inherit}
+.gate input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.gate .full{grid-column:1/-1}
+.hp{position:absolute;left:-9999px}
+#full{display:none}#full.show{display:block}
+.checks{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.chk{background:var(--dark2);padding:16px 20px;display:grid;grid-template-columns:78px minmax(0,1fr);gap:14px}
+.chk .st{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;padding:3px 0;text-align:center;align-self:start}
+.st.fail{background:var(--bad);color:#fff}.st.warn{background:var(--mid);color:#0A0F1A}.st.pass{background:var(--good);color:#0A0F1A}
+.chk b{display:block}.chk span{display:block;color:var(--dim);font-size:.9rem;overflow-wrap:anywhere}
+.chk em{display:block;font-style:normal;font-size:.9rem;margin-top:6px;color:var(--text)}
+.chk em::before{content:"Fix: ";color:var(--gold);font-weight:700}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.prep{display:none;margin:0 0 18px;font-size:.95rem}
+.prep b{color:var(--gold)}
+.pro-only{display:none}
+body.pro .pro-only{display:flex}
+@media print{
+  .letter,.st,.pill,.dial svg{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important;color:#111!important;padding-top:0!important}
+  nav,header,.bar,.tip,#msg,.gate,.tools,.cta,#gt-bar,footer .noprint{display:none!important}
+  #res,#full{display:block!important}
+  .score,.vital,.chk,ul.fix li,.grade{background:#fff!important;color:#111!important;break-inside:avoid}
+  .scores,.vitals,.checks,ul.fix{background:#ccc!important;border-color:#ccc!important}
+  .chk span,.vital span,.score p,.sub,.who,.grade p{color:#444!important}
+  .chk em{color:#111!important}
+  .prep{display:block!important;color:#111}
+  footer{background:#fff!important;color:#444!important;border:0!important}
+  .rail{padding-inline:0!important}
+  a{color:#111}
+}
 </style>
 </head>
 <body>
@@ -108,45 +153,80 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
 <nav class="rail"><a href="/"><img src="/images/dominion-logo.svg" alt="Dominion Web Design Pro" width="264" height="64" style="height:44px;width:auto;display:block;max-width:100%"></a><a href="/">Home</a></nav>
 
 <header class="rail">
-  <h1>How fast is <span>your website</span>, really?</h1>
-  <p>Type in any web address and see how it scores on speed, mobile performance and search readiness. These are the same tests Google runs — we just show you the results. Free, no signup, about thirty seconds.</p>
+  <h1>Free SEO audit for <span>your website</span></h1>
+  <p>Type in any web address. In about thirty seconds you get Google's own speed scores plus more than 20 search checks: titles, mobile setup, local business details, tap-to-call, schema, sitemap and more. Every problem comes with a plain-English fix.</p>
 </header>
 
 <section class="tool rail">
   <div class="bar">
-    <input id="url" type="url" placeholder="yourbusiness.com" autocomplete="url" spellcheck="false">
+    <input id="url" type="url" placeholder="yourbusiness.com" autocomplete="url" spellcheck="false" aria-label="Website address">
     <div class="seg" role="group" aria-label="Device">
       <button type="button" id="mob" aria-pressed="true">Mobile</button>
       <button type="button" id="desk" aria-pressed="false">Desktop</button>
     </div>
-    <button type="button" class="primary" id="go">Test my site</button>
+    <button type="button" class="primary" id="go">Audit my site</button>
   </div>
-  <p class="tip">Test mobile first — that's what most of your customers use, and it's what Google scores you on.</p>
+  <p class="tip">Test mobile first. That's what most of your customers use, and it's what Google scores you on.</p>
+  <div class="bar pro-only" style="margin-top:14px">
+    <input id="prepfor" type="text" placeholder="Prepared for (business name)" aria-label="Prepared for">
+  </div>
 
   <div id="msg"></div>
 
   <div id="res">
+    <p class="prep" id="prep"></p>
     <p class="who" id="who"></p>
+
+    <div class="grade" id="grade"></div>
+
     <div class="scores" id="scores"></div>
 
-    <h2>Real-world loading</h2>
-    <p class="sub">What a visitor actually experiences. Lower is better.</p>
-    <div class="vitals" id="vitals"></div>
+    <div class="gate" id="gate">
+      <h3>Get the full report and fix list</h3>
+      <p>See every check, what is wrong, and exactly how to fix it, plus a copy you can save as a PDF.</p>
+      <form name="site-check" method="POST" data-netlify="true" netlify-honeypot="company_url" id="lead">
+        <input type="hidden" name="form-name" value="site-check">
+        <input type="hidden" name="website" id="f-site">
+        <input type="hidden" name="grade" id="f-grade">
+        <p class="hp"><label>Leave blank <input name="company_url"></label></p>
+        <label>Your name <input name="name" id="f-name" required autocomplete="name"></label>
+        <label>Business name <input name="business" autocomplete="organization"></label>
+        <label>Email <input name="email" type="email" required autocomplete="email"></label>
+        <label>Phone <input name="phone" type="tel" autocomplete="tel"></label>
+        <div class="full"><button type="submit" class="primary" id="unlock">Show my full report</button></div>
+      </form>
+    </div>
 
-    <h2>Biggest things slowing it down</h2>
-    <p class="sub">Ordered by how much time each one is costing you.</p>
-    <ul class="fix" id="fix"></ul>
+    <div id="full">
+      <h2>Search checks</h2>
+      <p class="sub">Problems first, then warnings, then what is already right.</p>
+      <div class="checks" id="checks"></div>
 
-    <div class="cta">
-      <h3>Want these numbers fixed?</h3>
-      <p>We build sites that score in the nineties, and we'll tell you straight whether yours needs rebuilding or just tuning.</p>
-      <a href="/intake/">Start a project</a>
+      <div id="speedwrap">
+        <h2>Real-world loading</h2>
+        <p class="sub">What a visitor actually experiences. Lower is better.</p>
+        <div class="vitals" id="vitals"></div>
+        <h2>Biggest things slowing it down</h2>
+        <p class="sub">Ordered by how much time each one is costing.</p>
+        <ul class="fix" id="fix"></ul>
+      </div>
+
+      <div class="tools">
+        <button type="button" class="primary" id="pdf">Save as PDF</button>
+        <button type="button" class="ghost" id="again">Audit another site</button>
+      </div>
+
+      <div class="cta">
+        <h3>Want these fixed?</h3>
+        <p>We build sites that score in the nineties on speed and pass these checks, and we'll tell you straight whether yours needs rebuilding or just tuning.</p>
+        <a href="/intake/">Start a project</a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer class="rail">
-  © 2026 Dominion Web Design Pro · Results provided by Google PageSpeed Insights · <a href="/">dominionwebdesignpro.com</a>
+  © 2026 Dominion Web Design Pro · Speed scores from Google PageSpeed Insights · <a href="https://dominionwebdesignpro.com/">dominionwebdesignpro.com</a>
 </footer>
 
 <script>
@@ -154,23 +234,29 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
   var API = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
   // Restricted to this domain and to the PageSpeed Insights API only.
   var KEY = 'AIzaSyDsJYSxsZ1gV9QUV3sborVqGaADKqlCXm8';
+  var params = new URLSearchParams(location.search);
+  // Report mode for prospect audits and Legiit orders: /site-check/?report=dominion
+  var PRO = params.get('report') === 'dominion';
+  if (PRO) document.body.classList.add('pro');
+  var unlocked = PRO;
+  try { if (localStorage.getItem('sc-unlocked') === '1') unlocked = true; } catch(e) {}
   var strategy = 'mobile';
-  var urlEl = document.getElementById('url');
-  var msg = document.getElementById('msg');
-  var res = document.getElementById('res');
-  var go = document.getElementById('go');
+  var $ = function(id){ return document.getElementById(id); };
+  var urlEl = $('url'), msg = $('msg'), res = $('res'), go = $('go');
+  var last = null;
 
   function setDevice(s){
     strategy = s;
-    document.getElementById('mob').setAttribute('aria-pressed', s === 'mobile');
-    document.getElementById('desk').setAttribute('aria-pressed', s === 'desktop');
+    $('mob').setAttribute('aria-pressed', s === 'mobile');
+    $('desk').setAttribute('aria-pressed', s === 'desktop');
   }
-  document.getElementById('mob').addEventListener('click', function(){ setDevice('mobile'); });
-  document.getElementById('desk').addEventListener('click', function(){ setDevice('desktop'); });
+  $('mob').addEventListener('click', function(){ setDevice('mobile'); });
+  $('desk').addEventListener('click', function(){ setDevice('desktop'); });
 
   function colour(v){ return v >= 90 ? 'var(--good)' : v >= 50 ? 'var(--mid)' : 'var(--bad)'; }
-
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function dial(value, label){
+    if (value == null) return '<div class="score"><div class="dial"><b style="color:var(--dim)">n/a</b></div><p>' + label + '</p></div>';
     var c = 2 * Math.PI * 38, off = c - (value / 100) * c;
     return '<div class="score"><div class="dial">'
       + '<svg width="88" height="88" viewBox="0 0 88 88">'
@@ -180,125 +266,151 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
       + '</svg><b style="color:' + colour(value) + '">' + value + '</b></div>'
       + '<p>' + label + '</p></div>';
   }
-
   function vital(a, label, hint){
     if (!a) return '';
     var col = a.score >= 0.9 ? 'var(--good)' : a.score >= 0.5 ? 'var(--mid)' : 'var(--bad)';
-    return '<div class="vital"><b style="color:' + col + '">' + a.displayValue + '</b>'
+    return '<div class="vital"><b style="color:' + col + '">' + esc(a.displayValue) + '</b>'
       + '<span>' + label + '</span><em>' + hint + '</em></div>';
   }
 
-  var attempt = 0, MAX = 4, timer = null;
-
-  function countdown(secs, then){
-    stopRun();
-    clearInterval(timer);
-    var left = secs;
-    function tick(){
-      msg.className = '';
-      msg.innerHTML = '<span class="spin"></span>Google\'s free test queue is busy. Retrying in ' + left + 's…';
-      if (left-- <= 0){ clearInterval(timer); then(); }
-    }
-    tick();
-    timer = setInterval(tick, 1000);
-  }
-
-  var runTimer=null, runT0=0;
-  var runStages=['Sending the address to Google…','Loading the page on a simulated phone…',
-                 'Measuring how fast it paints…','Checking SEO and accessibility…',
-                 'Working out what is slowing it down…','Nearly finished…'];
+  var runTimer = null, runT0 = 0;
+  var runStages = ['Sending the address to Google…','Reading the page like a search engine…',
+                   'Loading the page on a simulated phone…','Checking titles, headings and local details…',
+                   'Measuring how fast it paints…','Working out what to fix first…','Nearly finished…'];
   function startRun(){
-    stopRun(); runT0=Date.now(); var st=0;
-    runTimer=setInterval(function(){
-      var s=Math.round((Date.now()-runT0)/1000);
-      var c=document.getElementById('runclock'); if(c) c.textContent=s+'s';
-      if(s>0 && s%7===0 && st<runStages.length-1){
-        st++; var e=document.getElementById('runstage'); if(e) e.textContent=runStages[st];
-      }
-    },1000);
+    stopRun(); runT0 = Date.now(); var st = 0;
+    runTimer = setInterval(function(){
+      var s = Math.round((Date.now() - runT0) / 1000);
+      var c = $('runclock'); if (c) c.textContent = s + 's';
+      if (s > 0 && s % 6 === 0 && st < runStages.length - 1){ st++; var e = $('runstage'); if (e) e.textContent = runStages[st]; }
+    }, 1000);
   }
-  function stopRun(){ if(runTimer){ clearInterval(runTimer); runTimer=null; } }
+  function stopRun(){ if (runTimer){ clearInterval(runTimer); runTimer = null; } }
 
-  function run(retrying){
-    var raw = (urlEl.value || '').trim();
-    if (!raw){ msg.className = 'err'; msg.textContent = 'Type a web address first.'; return; }
-    if (!/^https?:\/\//i.test(raw)) raw = 'https://' + raw;
-    if (!retrying) attempt = 0;
+  function psi(url){
+    var q = API + '?url=' + encodeURIComponent(url) + '&strategy=' + strategy
+      + '&category=performance&category=seo&category=accessibility&category=best-practices' + (KEY ? '&key=' + KEY : '');
+    var tries = 0;
+    function once(){
+      return fetch(q).then(function(r){
+        if ((r.status === 429 || r.status === 403 || r.status >= 500) && tries < 3){
+          tries++;
+          var e = $('runstage'); if (e) e.textContent = 'Google\'s free test queue is busy. Retrying…';
+          return new Promise(function(ok){ setTimeout(ok, 12000 * tries); }).then(once);
+        }
+        if (!r.ok) throw new Error('psi');
+        return r.json();
+      });
+    }
+    return once();
+  }
+  function audit(url){
+    return fetch('/api/seo-audit?url=' + encodeURIComponent(url)).then(function(r){
+      return r.json().then(function(d){ if (!r.ok) throw new Error(d.error || 'audit'); return d; });
+    });
+  }
 
-    res.classList.remove('show');
-    go.disabled = true;
-    msg.className = '';
-    msg.innerHTML = '<div class="runbox">'
-      + '<div class="runtop"><span class="spin"></span><span class="lbl">Running the tests</span>'
-      + '<span class="runclock" id="runclock">0s</span></div>'
-      + '<div class="runstage" id="runstage">Sending the address to Google…</div>'
-      + '<div class="runtrack"><i></i></div></div>';
-    startRun();
+  function letter(n){ return n >= 90 ? 'A' : n >= 80 ? 'B' : n >= 70 ? 'C' : n >= 60 ? 'D' : 'F'; }
+  function verdict(l){
+    return {A:'Strong. A few small things left to tidy up.', B:'Good, with some fixes that would help it rank and convert better.',
+            C:'Average. Several issues are likely holding it back on Google.', D:'Weak. Customers searching for you are probably finding competitors first.',
+            F:'Serious problems. This site is likely costing the business calls every week.'}[l];
+  }
 
-    var q = API + '?url=' + encodeURIComponent(raw) + '&strategy=' + strategy
-          + '&category=performance&category=seo&category=accessibility&category=best-practices'
-          + (KEY ? '&key=' + KEY : '');
+  function render(){
+    var a = last.audit, p = last.psi;
+    var perf = p ? Math.round(p.lighthouseResult.categories.performance.score * 100) : null;
+    var gseo = p ? Math.round(p.lighthouseResult.categories.seo.score * 100) : null;
+    var acc = p ? Math.round(p.lighthouseResult.categories.accessibility.score * 100) : null;
+    var parts = [[a.onpage, .55]]; if (perf != null) parts.push([perf, .3]); if (gseo != null) parts.push([gseo, .15]);
+    var wsum = parts.reduce(function(s,x){ return s + x[1]; }, 0);
+    var overall = Math.round(parts.reduce(function(s,x){ return s + x[0] * x[1]; }, 0) / wsum);
+    var L = letter(overall);
+    last.overall = overall; last.letter = L;
+    var colr = {A:'var(--good)',B:'#84CC16',C:'var(--mid)',D:'#F97316',F:'var(--bad)'}[L];
+    var who = p ? p.lighthouseResult.finalUrl : a.url;
+    $('who').textContent = who + '  ·  ' + new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})
+      + (p ? '  ·  speed tested on ' + (strategy === 'mobile' ? 'a mobile phone' : 'a desktop computer') : '');
+    var pf = ($('prepfor').value || '').trim();
+    $('prep').innerHTML = '<b>SEO Audit Report</b>' + (pf ? ' prepared for ' + esc(pf) : '') + ' by Maurice Johnson, Dominion Web Design Pro · dominionwebdesignpro.com';
+    $('grade').innerHTML = '<div class="letter" style="background:' + colr + '">' + L + '</div>'
+      + '<div><h2>Overall grade: ' + overall + ' out of 100</h2><p>' + verdict(L) + '</p>'
+      + '<div class="tally"><span class="pill p-fail">' + a.counts.fail + ' problems</span><span class="pill p-warn">' + a.counts.warn + ' warnings</span><span class="pill p-pass">' + a.counts.pass + ' passed</span></div></div>';
+    $('scores').innerHTML = dial(a.onpage, 'Search checks') + dial(perf, 'Speed') + dial(gseo, 'Google SEO score') + dial(acc, 'Accessibility');
 
-    fetch(q).then(function(r){
-      if (r.status === 429 || r.status === 403){
-        var e = new Error('busy'); e.busy = true; throw e;
-      }
-      if (!r.ok) throw new Error('Could not test that address. Check it is spelled correctly and that the site is publicly reachable.');
-      return r.json();
-    }).then(function(d){
-      var lh = d.lighthouseResult, cats = lh.categories, aud = lh.audits;
+    var order = {fail:0, warn:1, pass:2};
+    var list = a.checks.slice().sort(function(x,y){ return order[x.status] - order[y.status] || y.weight - x.weight; });
+    $('checks').innerHTML = list.map(function(c){
+      return '<div class="chk"><span class="st ' + c.status + '">' + (c.status === 'fail' ? 'Problem' : c.status === 'warn' ? 'Warning' : 'Passed') + '</span>'
+        + '<div><b>' + esc(c.label) + '</b><span>' + esc(c.detail) + '</span>' + (c.fix ? '<em>' + esc(c.fix) + '</em>' : '') + '</div></div>';
+    }).join('');
 
-      document.getElementById('who').textContent =
-        lh.finalUrl + '  ·  tested on ' + (strategy === 'mobile' ? 'a mobile phone' : 'a desktop computer');
-
-      document.getElementById('scores').innerHTML =
-          dial(Math.round(cats.performance.score * 100), 'Speed')
-        + dial(Math.round(cats.seo.score * 100), 'SEO')
-        + dial(Math.round(cats.accessibility.score * 100), 'Accessibility')
-        + dial(Math.round(cats['best-practices'].score * 100), 'Best practices');
-
-      document.getElementById('vitals').innerHTML =
-          vital(aud['largest-contentful-paint'], 'Largest Contentful Paint', 'How long before the main content appears')
+    if (p){
+      var aud = p.lighthouseResult.audits;
+      $('speedwrap').style.display = '';
+      $('vitals').innerHTML = vital(aud['largest-contentful-paint'], 'Largest Contentful Paint', 'How long before the main content appears')
         + vital(aud['total-blocking-time'], 'Total Blocking Time', 'How long the page ignores taps and clicks')
         + vital(aud['cumulative-layout-shift'], 'Layout Shift', 'How much the page jumps around while loading')
         + vital(aud['speed-index'], 'Speed Index', 'How quickly the page looks finished');
+      var items = Object.keys(aud).map(function(k){ return aud[k]; }).filter(function(x){
+        return x.details && x.details.type === 'opportunity' && x.details.overallSavingsMs && x.details.overallSavingsMs > 100;
+      }).sort(function(x,y){ return y.details.overallSavingsMs - x.details.overallSavingsMs; }).slice(0, 6);
+      $('fix').innerHTML = items.length ? items.map(function(x){ return '<li>' + esc(x.title) + '<span>saves ' + (x.details.overallSavingsMs/1000).toFixed(1) + 's</span></li>'; }).join('')
+        : '<li>Nothing major found. This page already loads well.<span></span></li>';
+    } else {
+      $('speedwrap').style.display = 'none';
+    }
+    $('f-site').value = who; $('f-grade').value = L + ' (' + overall + ')';
+    showFull(unlocked);
+  }
 
-      var items = Object.keys(aud).map(function(k){ return aud[k]; }).filter(function(a){
-        return a.details && a.details.type === 'opportunity'
-            && a.details.overallSavingsMs && a.details.overallSavingsMs > 100;
-      }).sort(function(a, b){
-        return b.details.overallSavingsMs - a.details.overallSavingsMs;
-      }).slice(0, 6);
+  function showFull(on){
+    $('gate').style.display = on ? 'none' : '';
+    $('full').classList.toggle('show', !!on);
+  }
 
-      document.getElementById('fix').innerHTML = items.length
-        ? items.map(function(a){
-            return '<li>' + a.title + '<span>saves ' + (a.details.overallSavingsMs / 1000).toFixed(1) + 's</span></li>';
-          }).join('')
-        : '<li>Nothing major found — this page is already well optimised.<span></span></li>';
-
+  function run(){
+    var raw = (urlEl.value || '').trim();
+    if (!raw){ msg.className = 'err'; msg.textContent = 'Type a web address first.'; return; }
+    if (!/^https?:\/\//i.test(raw)) raw = 'https://' + raw;
+    res.classList.remove('show'); go.disabled = true; msg.className = '';
+    msg.innerHTML = '<div class="runbox"><div class="runtop"><span class="spin"></span><span class="lbl">Running the audit</span>'
+      + '<span class="runclock" id="runclock">0s</span></div><div class="runstage" id="runstage">' + runStages[0] + '</div>'
+      + '<div class="runtrack"><i></i></div></div>';
+    startRun();
+    var A = audit(raw), P = psi(raw).catch(function(){ return null; });
+    Promise.all([A, P]).then(function(r){
+      last = { audit: r[0], psi: r[1] };
+      render();
       stopRun();
-      msg.textContent = '';
-      attempt = 0;
+      msg.textContent = r[1] ? '' : 'Google\'s speed test was busy, so this report shows the search checks only. Run it again in a few minutes to add speed scores.';
       res.classList.add('show');
       res.scrollIntoView({behavior:'smooth', block:'start'});
       go.disabled = false;
     }).catch(function(e){
-      if (e.busy && attempt < MAX){
-        attempt++;
-        countdown(20 * attempt, function(){ run(true); });
-        return;
-      }
-      stopRun();
-      msg.className = 'err';
-      msg.textContent = e.busy
-        ? 'Google\'s free test queue is still busy after several tries. Give it a few minutes and test again — or send us the address and we will run it for you.'
-        : (e.message || 'Something went wrong. Try again in a moment.');
+      stopRun(); msg.className = 'err';
+      msg.textContent = (e && e.message && e.message !== 'audit') ? e.message : 'Something went wrong. Check the address and try again.';
       go.disabled = false;
     });
   }
 
-  go.addEventListener('click', function(){ run(false); });
-  urlEl.addEventListener('keydown', function(e){ if (e.key === 'Enter') run(false); });
+  $('lead').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, data = new URLSearchParams(new FormData(f)).toString();
+    $('unlock').disabled = true;
+    fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data })
+      .catch(function(){})
+      .then(function(){
+        unlocked = true; try { localStorage.setItem('sc-unlocked','1'); } catch(x) {}
+        showFull(true); $('unlock').disabled = false;
+        $('full').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+  });
+  $('pdf').addEventListener('click', function(){ if (last) render(); window.print(); });
+  $('again').addEventListener('click', function(){ urlEl.value=''; res.classList.remove('show'); urlEl.focus(); window.scrollTo({top:0,behavior:'smooth'}); });
+  go.addEventListener('click', run);
+  urlEl.addEventListener('keydown', function(e){ if (e.key === 'Enter') run(); });
+  if (params.get('url')){ urlEl.value = params.get('url'); if (params.get('for')) $('prepfor').value = params.get('for'); run(); }
 })();
 </script>
 <div id="gt-bar" style="position:fixed;top:0;left:0;right:0;height:34px;z-index:10000;background:#0b1220;border-bottom:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:flex-end;padding:0 12px;box-sizing:border-box"><div id="gt-wrap" style="display:flex;align-items:center;gap:6px;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:3px 12px;font:600 13px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;cursor:pointer"><span aria-hidden="true">&#127760;</span><span id="gt-label">Espa&ntilde;ol</span><div id="google_translate_element"></div></div></div>
@@ -306,5 +418,6 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
 <script>(function(){var H=34,b=document.body;b.style.paddingTop=((parseFloat(getComputedStyle(b).paddingTop)||0)+H)+'px';document.documentElement.style.scrollPaddingTop=H+'px';var all=b.getElementsByTagName('*');for(var i=0;i<all.length;i++){var el=all[i];if(el.id==='gt-bar'||(el.closest&&el.closest('#gt-bar')))continue;var cs=getComputedStyle(el);if((cs.position==='fixed'||cs.position==='sticky')&&cs.top!=='auto'&&parseFloat(cs.top)<150){el.style.setProperty('top',(parseFloat(cs.top)+H)+'px','important');}}var mb=0;for(var j=0;j<all.length;j++){var e2=all[j],c2=getComputedStyle(e2);if(c2.position==='fixed'&&e2.getBoundingClientRect().top<160){var bt=e2.getBoundingClientRect().bottom;if(bt<220&&bt>mb)mb=bt;}}var q=document.querySelector('.quote-bar');if(q&&getComputedStyle(q).position==='static'){var qt=q.getBoundingClientRect().top+window.scrollY;if(qt<mb)q.style.marginTop=(mb-qt)+'px';}})();
 function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,pt,fr,zh-CN,vi,ko,tl',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');var l=document.getElementById('gt-label');if(l)l.style.display='none';}
 (function(){var d=false;function go(){if(d)return;d=true;var s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';s.async=true;document.body.appendChild(s);}['mousemove','scroll','touchstart','keydown'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true});});var w=document.getElementById('gt-wrap');if(w)w.addEventListener('click',go);setTimeout(go,3000);})();</script>
+
 </body>
 </html>
