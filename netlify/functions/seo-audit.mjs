@@ -7,7 +7,7 @@ import net from "node:net";
 export const config = { path: "/api/seo-audit" };
 
 const UA = "Mozilla/5.0 (compatible; DominionSiteCheck/1.0; +https://dominionwebdesignpro.com/site-check/)";
-const TIMEOUT = 12000;
+const TIMEOUT = 7000;
 const MAX_BYTES = 3_000_000;
 
 function json(body, status = 200) {
