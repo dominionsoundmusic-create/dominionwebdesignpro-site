@@ -122,7 +122,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:48px 2
 @media(max-width:640px){.nav-cta{display:none}.nav-phone{font-size:.9rem;padding:8px 12px}}
 
 section[id],div[id]{scroll-margin-top:88px}
-.scripture-bar{background:#060612;border-bottom:1px solid rgba(255,255,255,.07);padding:7px 24px;font-size:.78rem;font-weight:700;letter-spacing:.08em;color:#c9a84c}
+.scripture-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#060612;border-bottom:1px solid rgba(255,255,255,.07);padding:7px 24px;font-size:.78rem;font-weight:700;letter-spacing:.08em;color:#c9a84c}
 .cp-video button{position:relative;display:block;width:100%;border:0;padding:0;cursor:pointer;
   background:#000;border-radius:6px;overflow:hidden;line-height:0}
 .cp-video img{width:100%;height:auto;display:block;opacity:.86;transition:opacity .2s}
@@ -149,7 +149,7 @@ section[id],div[id]{scroll-margin-top:88px}
 </head>
 <body>
 
-<div class="scripture-bar"><span>John 3:16</span></div>
+<div class="scripture-bar"><span>John 3:16</span><div class="dlang notranslate" translate="no" role="group" aria-label="Language"><button type="button" class="dlang__btn" data-lang="en">EN</button><button type="button" class="dlang__btn" data-lang="es">ES</button></div><div id="google_translate_element" hidden></div></div>
 <nav>
   <div class="nav-inner">
     <a class="logo" href="/" style="display:inline-block"><img src="/images/dominion-logo.svg" alt="Dominion Web Design Pro" width="264" height="64" style="height:44px;width:auto;display:block;max-width:100%"></a>
@@ -433,10 +433,7 @@ section[id],div[id]{scroll-margin-top:88px}
   </div>
 </footer>
 
-<div id="google_translate_element" style="position:fixed;top:10px;right:12px;z-index:10000;background:rgba(10,22,40,.96);border:1px solid rgba(201,168,76,.45);border-radius:8px;padding:6px 10px;box-shadow:0 3px 14px rgba(0,0,0,.35);font-size:.9em"></div>
-<script type="text/javascript">
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"es,pt,fr,zh-CN,vi,ko,tl",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}
-</script>
+
 <script>
 (function(){
   // Swap the video thumbnail for the real player only on click. Saves ~1.5MB on load.
@@ -451,21 +448,16 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
     b.replaceWith(f);
   });
 
-  // Load Google Translate lazily — on first interaction, or after the page settles.
-  var loaded = false;
-  function loadTranslate(){
-    if (loaded) return; loaded = true;
-    var t = document.createElement('script');
-    t.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    document.body.appendChild(t);
-  }
-  var el = document.getElementById('google_translate_element');
-  if (el) el.addEventListener('mouseenter', loadTranslate, {once:true});
-  ['scroll','touchstart','keydown'].forEach(function(e){
-    window.addEventListener(e, loadTranslate, {once:true, passive:true});
-  });
-  window.addEventListener('load', function(){ setTimeout(loadTranslate, 3000); });
 })();
 </script>
+<style>#lang-bar{position:fixed;top:0;left:0;right:0;height:34px;z-index:10000;background:#0A0F1A;border-bottom:1px solid #1F2937;display:flex;align-items:center;justify-content:flex-end;padding:0 14px;box-sizing:border-box}.dlang{display:inline-flex;align-items:center;border:1px solid #F5A623;border-radius:999px;overflow:hidden;background:#111827}.dlang__btn{background:none;border:0;color:#E5E7EB;font:700 12px/1 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.06em;padding:6px 11px;cursor:pointer;min-height:24px}.dlang__btn:hover{color:#fff}.dlang__btn[aria-pressed="true"]{background:#2563EB;color:#fff}.dlang__btn:focus-visible{outline:2px solid #F5A623;outline-offset:-2px}.skiptranslate iframe,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}.skiptranslate{display:none!important}.goog-text-highlight{background:none!important;box-shadow:none!important}body{top:0!important}</style><script>(function(){
+var host=location.hostname;
+function setCookie(v){var exp=v?"":"; expires=Thu, 01 Jan 1970 00:00:00 GMT";document.cookie="googtrans="+v+"; path=/"+exp;if(host.indexOf(".")>-1){var r=host.split(".").slice(-2).join(".");document.cookie="googtrans="+v+"; path=/; domain=."+r+exp;}}
+function cur(){return /googtrans=\/en\/es/.test(document.cookie)?"es":"en";}
+var lang=cur();
+document.querySelectorAll(".dlang__btn").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===lang?"true":"false");
+b.addEventListener("click",function(){var w=b.getAttribute("data-lang");if(w===cur())return;setCookie(w==="es"?"/en/es":"");location.reload();});});
+if(lang==="es"){document.documentElement.lang="es";window.googleTranslateElementInit=function(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"es",autoDisplay:false},"google_translate_element");};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";s.async=true;document.body.appendChild(s);}
+})();</script>
 </body>
 </html>
