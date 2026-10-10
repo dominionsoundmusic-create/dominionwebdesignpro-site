@@ -206,33 +206,77 @@ export function analyze(page, extras = {}) {
   };
 }
 
-export default async (req) => {
-  const q = new URL(req.url).searchParams.get("url") || "";
-  let raw = q.trim();
-  if (!raw) return json({ error: "Type a web address first." }, 400);
-  if (!/^https?:\/\//i.test(raw)) raw = "https://" + raw;
-  let start;
-  try { start = new URL(raw); } catch { return json({ error: "That does not look like a web address." }, 400); }
-  let page;
-  try { page = await get(start.href); }
-  catch (e) {
-    if (start.protocol === "https:") { try { page = await get(start.href.replace(/^https:/, "http:")); } catch {} }
-    if (!page) return json({ error: "Could not reach that website. Check the spelling and that the site is public." }, 502);
-  }
-  if (!/html/i.test(page.headers.get("content-type") || "html")) return json({ error: "That address is not a web page." }, 400);
+const SKIP_EXT = /\.(pdf|jpe?g|png|gif|webp|svg|zip|mp4|mp3|docx?|xlsx?|pptx?|xml|txt|css|js|ico)(\?|$)/i;
+const locs = (xml) => [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/gi)].map((m) => decode(m[1]));
 
-  const origin = new URL(page.url).origin;
-  const extras = {};
+async function findSitemap(origin) {
   const [rob, smap] = await Promise.allSettled([get(origin + "/robots.txt", { redirects: 2 }), get(origin + "/sitemap.xml", { redirects: 2 })]);
   const robotsText = rob.status === "fulfilled" && rob.value.status === 200 && !/<html/i.test(rob.value.text) ? rob.value.text : "";
-  extras.robots = !!robotsText;
   let smText = smap.status === "fulfilled" && smap.value.status === 200 && /<(urlset|sitemapindex)/i.test(smap.value.text) ? smap.value.text : "";
   const smLine = robotsText.match(/^\s*sitemap:\s*(\S+)/im);
   if (!smText && smLine) {
     try { const s = await get(new URL(smLine[1], origin).href, { redirects: 2 }); if (s.status === 200 && /<(urlset|sitemapindex)/i.test(s.text)) smText = s.text; } catch {}
   }
-  extras.sitemap = !!smText;
-  extras.sitemapCount = smText ? (smText.match(/<loc>/gi) || []).length : 0;
+  return { robotsText, smText };
+}
 
-  return json(analyze(page, extras));
+async function loadPage(raw) {
+  if (!/^https?:\/\//i.test(raw)) raw = "https://" + raw;
+  const start = new URL(raw);
+  try { return await get(start.href); }
+  catch (e) {
+    if (start.protocol === "https:") return await get(start.href.replace(/^https:/, "http:"));
+    throw e;
+  }
+}
+
+// mode=pages: list up to `limit` page addresses on the same site (sitemap first, homepage links as a fallback)
+async function listPages(raw, limit) {
+  const home = await loadPage(raw);
+  const base = new URL(home.url);
+  const host = base.hostname.replace(/^www\./, "");
+  const same = (u) => { try { const x = new URL(u, base); return x.hostname.replace(/^www\./, "") === host && /^https?:$/.test(x.protocol) && !SKIP_EXT.test(x.pathname); } catch { return false; } };
+  const norm = (u) => { const x = new URL(u, base); x.hash = ""; return x.href; };
+  const out = new Set([norm(home.url)]);
+  let source = "links";
+  const { smText } = await findSitemap(base.origin);
+  if (smText) {
+    source = "sitemap";
+    let pageLocs = [];
+    if (/<sitemapindex/i.test(smText)) {
+      const children = locs(smText).slice(0, 8);
+      const got = await Promise.allSettled(children.map((c) => get(c, { redirects: 2 })));
+      for (const g of got) if (g.status === "fulfilled" && g.value.status === 200) pageLocs.push(...locs(g.value.text));
+    } else pageLocs = locs(smText);
+    for (const u of pageLocs) { if (out.size >= limit) break; if (same(u)) out.add(norm(u)); }
+  }
+  if (out.size < limit) {
+    const hrefs = (tags(home.text, "a").map((t) => attr(t, "href") || "")).filter((h) => h && !h.startsWith("#") && !/^(mailto|tel|javascript):/i.test(h));
+    for (const h of hrefs) { if (out.size >= limit) break; if (same(h)) out.add(norm(h)); }
+  }
+  return { home: home.url, source, pages: [...out].slice(0, limit) };
+}
+
+export default async (req) => {
+  const params = new URL(req.url).searchParams;
+  const raw = (params.get("url") || "").trim();
+  if (!raw) return json({ error: "Type a web address first." }, 400);
+  try { new URL(/^https?:\/\//i.test(raw) ? raw : "https://" + raw); } catch { return json({ error: "That does not look like a web address." }, 400); }
+
+  if (params.get("mode") === "pages") {
+    const limit = Math.max(1, Math.min(500, parseInt(params.get("limit") || "30", 10) || 30));
+    try { return json(await listPages(raw, limit)); }
+    catch { return json({ error: "Could not reach that website. Check the spelling and that the site is public." }, 502); }
+  }
+
+  let page;
+  try { page = await loadPage(raw); }
+  catch { return json({ error: "Could not reach that website. Check the spelling and that the site is public." }, 502); }
+  if (!/html/i.test(page.headers.get("content-type") || "html")) return json({ error: "That address is not a web page." }, 400);
+
+  // light=1: per-page check inside a multi-page audit (skip the site-wide robots and sitemap fetches)
+  if (params.get("light") === "1") return json(analyze(page, {}));
+
+  const { robotsText, smText } = await findSitemap(new URL(page.url).origin);
+  return json(analyze(page, { robots: !!robotsText, sitemap: !!smText, sitemapCount: smText ? (smText.match(/<loc>/gi) || []).length : 0 }));
 };

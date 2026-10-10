@@ -131,6 +131,17 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
 .prep{display:none;margin:0 0 18px;font-size:.95rem}
 .prep b{color:var(--gold)}
 .pro-only{display:none}
+#pages{background:#0d131f;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:14px 12px;font:inherit}
+.chk details{margin-top:8px;font-size:.88rem;color:var(--dim)}
+.chk details summary{cursor:pointer;color:var(--gold);font-weight:600}
+.chk details ul{margin:6px 0 0;padding-left:18px;overflow-wrap:anywhere}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+.ptable{width:100%;border-collapse:collapse;font-size:.9rem;min-width:640px}
+.ptable th,.ptable td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.ptable th{background:var(--line);color:var(--text);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.ptable td{background:var(--dark2)}
+.ptable td.num{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.ptable td.u{overflow-wrap:anywhere;max-width:340px}
 body.pro .pro-only{display:flex}
 @media print{
   .letter,.st,.pill,.dial svg{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -142,6 +153,9 @@ body.pro .pro-only{display:flex}
   .chk span,.vital span,.score p,.sub,.who,.grade p{color:#444!important}
   .chk em{color:#111!important}
   .prep{display:block!important;color:#111}
+  .ptable th{background:#ddd!important;color:#111!important}.ptable td{background:#fff!important;color:#111!important;border-color:#ccc!important}
+  .tablewrap{overflow:visible;border-color:#ccc}.ptable{min-width:0}
+  .chk details{color:#444!important}.chk details summary{color:#111!important}
   footer{background:#fff!important;color:#444!important;border:0!important}
   .rail{padding-inline:0!important}
   a{color:#111}
@@ -169,6 +183,13 @@ body.pro .pro-only{display:flex}
   <p class="tip">Test mobile first. That's what most of your customers use, and it's what Google scores you on.</p>
   <div class="bar pro-only" style="margin-top:14px">
     <input id="prepfor" type="text" placeholder="Prepared for (business name)" aria-label="Prepared for">
+    <select id="pages" aria-label="How many pages to check">
+      <option value="1">Just this page</option>
+      <option value="10">Up to 10 pages</option>
+      <option value="30">Up to 30 pages</option>
+      <option value="100">Up to 100 pages</option>
+      <option value="500">Up to 500 pages</option>
+    </select>
   </div>
 
   <div id="msg"></div>
@@ -198,12 +219,17 @@ body.pro .pro-only{display:flex}
     </div>
 
     <div id="full">
-      <h2>Search checks</h2>
-      <p class="sub">Problems first, then warnings, then what is already right.</p>
+      <h2 id="checksH">Search checks</h2>
+      <p class="sub" id="checksSub">Problems first, then warnings, then what is already right.</p>
       <div class="checks" id="checks"></div>
+      <div id="pagewrap" style="display:none">
+        <h2>Page by page</h2>
+        <p class="sub">Every page checked, lowest score first.</p>
+        <div class="tablewrap"><table class="ptable" id="ptable"></table></div>
+      </div>
 
       <div id="speedwrap">
-        <h2>Real-world loading</h2>
+        <h2 id="speedH">Real-world loading</h2>
         <p class="sub">What a visitor actually experiences. Lower is better.</p>
         <div class="vitals" id="vitals"></div>
         <h2>Biggest things slowing it down</h2>
@@ -336,6 +362,7 @@ body.pro .pro-only{display:flex}
     $('grade').innerHTML = '<div class="letter" style="background:' + colr + '">' + L + '</div>'
       + '<div><h2>Overall grade: ' + overall + ' out of 100</h2><p>' + verdict(L) + '</p>'
       + '<div class="tally"><span class="pill p-fail">' + a.counts.fail + ' problems</span><span class="pill p-warn">' + a.counts.warn + ' warnings</span><span class="pill p-pass">' + a.counts.pass + ' passed</span></div></div>';
+    $('checksH').textContent = 'Search checks'; $('checksSub').textContent = 'Problems first, then warnings, then what is already right.'; $('pagewrap').style.display = 'none'; $('speedH').textContent = 'Real-world loading';
     $('scores').innerHTML = dial(a.onpage, 'Search checks') + dial(perf, 'Speed') + dial(gseo, 'Google SEO score') + dial(acc, 'Accessibility');
 
     var order = {fail:0, warn:1, pass:2};
@@ -364,6 +391,121 @@ body.pro .pro-only{display:flex}
     showFull(unlocked);
   }
 
+
+  // ---------- Multi-page audit (report mode only) ----------
+  function pathOf(u){ try { var x = new URL(u); return (x.pathname + x.search) || '/'; } catch(e){ return u; } }
+  function getJSON(url, tries){
+    tries = tries || 0;
+    return fetch(url).then(function(r){
+      if ((r.status === 429 || r.status >= 500) && tries < 2) return new Promise(function(ok){ setTimeout(ok, 2500 * (tries + 1)); }).then(function(){ return getJSON(url, tries + 1); });
+      return r.json().then(function(d){ if (!r.ok && !d.error) d.error = 'Could not check this page.'; return d; });
+    }).catch(function(){ return { error: 'Could not check this page.' }; });
+  }
+  function runMulti(raw, limit){
+    getJSON('/api/seo-audit?mode=pages&limit=' + limit + '&url=' + encodeURIComponent(raw)).then(function(list){
+      if (list.error) throw new Error(list.error);
+      var pages = list.pages, n = pages.length, done = 0, next = 1, results = new Array(n);
+      function tick(){ var e = $('runstage'); if (e) e.textContent = 'Checked ' + done + ' of ' + n + ' pages…'; }
+      tick();
+      var P = psi(list.home).catch(function(){ return null; });
+      var H = audit(list.home).then(function(h){ results[0] = h; done++; tick(); return h; });
+      function worker(){
+        if (next >= n) return Promise.resolve();
+        var i = next++;
+        return getJSON('/api/seo-audit?light=1&url=' + encodeURIComponent(pages[i])).then(function(d){
+          results[i] = d.error ? { url: pages[i], error: d.error } : d; done++; tick();
+        }).then(worker);
+      }
+      var workers = []; for (var w = 0; w < 4; w++) workers.push(worker());
+      return Promise.all([H, P, Promise.all(workers)]).then(function(r){
+        last = { multi: true, audit: r[0], psi: r[1], pages: results, source: list.source, limit: limit };
+        renderMulti();
+        stopRun();
+        msg.textContent = r[1] ? '' : 'Google\'s speed test was busy, so speed scores are missing. Run it again in a few minutes to add them.';
+        res.classList.add('show');
+        res.scrollIntoView({behavior:'smooth', block:'start'});
+        go.disabled = false;
+      });
+    }).catch(function(e){
+      stopRun(); msg.className = 'err';
+      msg.textContent = (e && e.message) ? e.message : 'Something went wrong. Check the address and try again.';
+      go.disabled = false;
+    });
+  }
+
+  function renderMulti(){
+    var p = last.psi, all = last.pages.filter(Boolean);
+    var ok = all.filter(function(x){ return !x.error; }), bad = all.filter(function(x){ return x.error; });
+    var avg = ok.length ? Math.round(ok.reduce(function(s,x){ return s + x.onpage; }, 0) / ok.length) : 0;
+    var perf = p ? Math.round(p.lighthouseResult.categories.performance.score * 100) : null;
+    var gseo = p ? Math.round(p.lighthouseResult.categories.seo.score * 100) : null;
+    var acc = p ? Math.round(p.lighthouseResult.categories.accessibility.score * 100) : null;
+
+    // site-wide issues
+    var agg = {}, order = [];
+    ok.forEach(function(pg){ pg.checks.forEach(function(c){
+      if (c.status === 'pass') return;
+      if (!agg[c.id]){ agg[c.id] = { label:c.label, fix:c.fix, fail:0, warn:0, weight:c.weight, pages:[] }; order.push(c.id); }
+      agg[c.id][c.status]++; agg[c.id].pages.push({ url: pg.url, detail: c.detail });
+    }); });
+    var items = order.map(function(k){ return agg[k]; });
+    function dupes(field, label, fix){
+      var g = {};
+      ok.forEach(function(pg){ var v = (pg[field] || '').trim(); if (v) (g[v] = g[v] || []).push(pg.url); });
+      Object.keys(g).forEach(function(v){ if (g[v].length > 1) items.push({ label: label + ' on ' + g[v].length + ' pages', fix: fix, fail: 0, warn: g[v].length, weight: 2, dup: v, pages: g[v].map(function(u){ return { url: u }; }) }); });
+    }
+    dupes('title', 'Same page title used', 'Give every page its own title that names that page\'s service or town.');
+    dupes('description', 'Same search description used', 'Write a different description for each page so Google shows the right one.');
+    items.sort(function(a,b){ return (b.fail > 0) - (a.fail > 0) || (b.fail + b.warn) * b.weight - (a.fail + a.warn) * a.weight; });
+
+    var probs = items.filter(function(i){ return i.fail > 0; }).length, warns = items.length - probs;
+    var parts = [[avg, .55]]; if (perf != null) parts.push([perf, .3]); if (gseo != null) parts.push([gseo, .15]);
+    var wsum = parts.reduce(function(s,x){ return s + x[1]; }, 0);
+    var overall = Math.round(parts.reduce(function(s,x){ return s + x[0] * x[1]; }, 0) / wsum);
+    var L = letter(overall); last.overall = overall; last.letter = L;
+    var colr = {A:'var(--good)',B:'#84CC16',C:'var(--mid)',D:'#F97316',F:'var(--bad)'}[L];
+    var host = ''; try { host = new URL(last.audit.url).hostname; } catch(e){}
+    $('who').textContent = host + '  ·  ' + ok.length + ' pages checked (found from the site\'s ' + (last.source === 'sitemap' ? 'sitemap' : 'homepage links') + ')'
+      + (bad.length ? '  ·  ' + bad.length + ' could not be loaded' : '') + '  ·  ' + new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+    var pf = ($('prepfor').value || '').trim();
+    $('prep').innerHTML = '<b>SEO Audit Report</b>' + (pf ? ' prepared for ' + esc(pf) : '') + ' by Maurice Johnson, Dominion Web Design Pro · dominionwebdesignpro.com';
+    $('grade').innerHTML = '<div class="letter" style="background:' + colr + '">' + L + '</div>'
+      + '<div><h2>Overall grade: ' + overall + ' out of 100</h2><p>' + verdict(L) + '</p>'
+      + '<div class="tally"><span class="pill p-pass">' + ok.length + ' pages checked</span><span class="pill p-fail">' + probs + ' site-wide problems</span><span class="pill p-warn">' + warns + ' warnings</span></div></div>';
+    $('scores').innerHTML = dial(avg, 'Search checks (average)') + dial(perf, 'Homepage speed') + dial(gseo, 'Google SEO score') + dial(acc, 'Accessibility');
+
+    $('checksH').textContent = 'Issues across the site';
+    $('checksSub').textContent = 'Each issue shows how many pages have it, how to fix it, and which pages. Biggest problems first.';
+    $('checks').innerHTML = items.length ? items.map(function(it){
+      var st = it.fail > 0 ? 'fail' : 'warn', cnt = it.fail + it.warn;
+      var line = it.dup ? '"' + it.dup.slice(0, 140) + '"' : (it.fail ? it.fail + ' page' + (it.fail > 1 ? 's' : '') + ' with a problem' : '') + (it.fail && it.warn ? ', ' : '') + (it.warn ? it.warn + ' with a warning' : '') + ' (out of ' + ok.length + ')';
+      var list = it.pages.slice(0, 60).map(function(x){ return '<li>' + esc(pathOf(x.url)) + (x.detail && !it.dup ? ' <span style="display:inline">· ' + esc(x.detail.slice(0, 110)) + '</span>' : '') + '</li>'; }).join('')
+        + (it.pages.length > 60 ? '<li>…and ' + (it.pages.length - 60) + ' more</li>' : '');
+      return '<div class="chk"><span class="st ' + st + '">' + (st === 'fail' ? 'Problem' : 'Warning') + '</span><div><b>' + esc(it.label) + '</b><span>' + esc(line) + '</span>'
+        + (it.fix ? '<em>' + esc(it.fix) + '</em>' : '') + '<details><summary>Show the ' + cnt + ' page' + (cnt > 1 ? 's' : '') + '</summary><ul>' + list + '</ul></details></div></div>';
+    }).join('') : '<div class="chk"><span class="st pass">Passed</span><div><b>No site-wide issues found</b><span>Every page passed the search checks.</span></div></div>';
+
+    var rows = ok.slice().sort(function(a,b){ return a.onpage - b.onpage; }).map(function(pg){
+      var top = pg.checks.filter(function(c){ return c.status === 'fail'; })[0] || pg.checks.filter(function(c){ return c.status === 'warn'; })[0];
+      return '<tr><td class="u">' + esc(pathOf(pg.url)) + '</td><td class="num" style="color:' + colour(pg.onpage) + '">' + pg.onpage + '</td><td class="num">' + pg.counts.fail + '</td><td class="num">' + pg.counts.warn + '</td><td>' + (top ? esc(top.label) : 'All passed') + '</td></tr>';
+    }).join('') + bad.map(function(b){ return '<tr><td class="u">' + esc(pathOf(b.url)) + '</td><td class="num">n/a</td><td></td><td></td><td>Could not be loaded</td></tr>'; }).join('');
+    $('ptable').innerHTML = '<thead><tr><th>Page</th><th>Score</th><th>Problems</th><th>Warnings</th><th>Biggest issue</th></tr></thead><tbody>' + rows + '</tbody>';
+    $('pagewrap').style.display = '';
+
+    if (p){
+      var aud = p.lighthouseResult.audits;
+      $('speedwrap').style.display = ''; $('speedH').textContent = 'Homepage loading speed';
+      $('vitals').innerHTML = vital(aud['largest-contentful-paint'], 'Largest Contentful Paint', 'How long before the main content appears')
+        + vital(aud['total-blocking-time'], 'Total Blocking Time', 'How long the page ignores taps and clicks')
+        + vital(aud['cumulative-layout-shift'], 'Layout Shift', 'How much the page jumps around while loading')
+        + vital(aud['speed-index'], 'Speed Index', 'How quickly the page looks finished');
+      var opp = Object.keys(aud).map(function(k){ return aud[k]; }).filter(function(x){ return x.details && x.details.type === 'opportunity' && x.details.overallSavingsMs > 100; })
+        .sort(function(x,y){ return y.details.overallSavingsMs - x.details.overallSavingsMs; }).slice(0, 6);
+      $('fix').innerHTML = opp.length ? opp.map(function(x){ return '<li>' + esc(x.title) + '<span>saves ' + (x.details.overallSavingsMs/1000).toFixed(1) + 's</span></li>'; }).join('') : '<li>Nothing major found. The homepage already loads well.<span></span></li>';
+    } else $('speedwrap').style.display = 'none';
+    showFull(true);
+  }
+
   function showFull(on){
     $('gate').style.display = on ? 'none' : '';
     $('full').classList.toggle('show', !!on);
@@ -378,6 +520,8 @@ body.pro .pro-only{display:flex}
       + '<span class="runclock" id="runclock">0s</span></div><div class="runstage" id="runstage">' + runStages[0] + '</div>'
       + '<div class="runtrack"><i></i></div></div>';
     startRun();
+    var lim = PRO ? parseInt($('pages').value, 10) : 1;
+    if (lim > 1){ $('runstage').textContent = 'Finding the pages on the site…'; return runMulti(raw, lim); }
     var A = audit(raw), P = psi(raw).catch(function(){ return null; });
     Promise.all([A, P]).then(function(r){
       last = { audit: r[0], psi: r[1] };
@@ -406,11 +550,11 @@ body.pro .pro-only{display:flex}
         $('full').scrollIntoView({behavior:'smooth', block:'start'});
       });
   });
-  $('pdf').addEventListener('click', function(){ if (last) render(); window.print(); });
+  $('pdf').addEventListener('click', function(){ if (last) (last.multi ? renderMulti : render)(); document.querySelectorAll('#checks details').forEach(function(d){ d.open = true; }); window.print(); });
   $('again').addEventListener('click', function(){ urlEl.value=''; res.classList.remove('show'); urlEl.focus(); window.scrollTo({top:0,behavior:'smooth'}); });
   go.addEventListener('click', run);
   urlEl.addEventListener('keydown', function(e){ if (e.key === 'Enter') run(); });
-  if (params.get('url')){ urlEl.value = params.get('url'); if (params.get('for')) $('prepfor').value = params.get('for'); run(); }
+  if (params.get('url')){ urlEl.value = params.get('url'); if (params.get('for')) $('prepfor').value = params.get('for'); if (params.get('pages')) $('pages').value = params.get('pages'); run(); }
 })();
 </script>
 <div id="gt-bar" style="position:fixed;top:0;left:0;right:0;height:34px;z-index:10000;background:#0b1220;border-bottom:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:flex-end;padding:0 12px;box-sizing:border-box"><div id="gt-wrap" style="display:flex;align-items:center;gap:6px;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:3px 12px;font:600 13px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;cursor:pointer"><span aria-hidden="true">&#127760;</span><span id="gt-label">Espa&ntilde;ol</span><div id="google_translate_element"></div></div></div>
