@@ -176,8 +176,9 @@ export function analyze(page, extras = {}) {
     `The footer copyright says ${copyYear}.`, "Update the copyright year. An old year makes customers wonder if the business is still open.", 1);
 
   // Local business
-  add("Local business", "schema", "Business details for Google (schema)", localTypes.length ? "pass" : types.size ? "warn" : "fail",
-    localTypes.length ? `Found: ${localTypes.join(", ")}` : types.size ? `Found schema (${[...types].slice(0, 5).join(", ")}) but no LocalBusiness details.` : "No structured data. Google has to guess the business name, address, phone and hours.",
+  const isHome = (new URL(page.url).pathname.replace(/index\.html?$/, "") || "/") === "/";
+  add("Local business", "schema", "Business details for Google (schema)", localTypes.length || (!isHome && types.size) ? "pass" : types.size ? "warn" : "fail",
+    localTypes.length ? `Found: ${localTypes.join(", ")}` : (!isHome && types.size) ? `Found: ${[...types].slice(0, 5).join(", ")}` : types.size ? `Found schema (${[...types].slice(0, 5).join(", ")}) but no LocalBusiness details.` : "No structured data. Google has to guess the business name, address, phone and hours.",
     "Add LocalBusiness schema with the name, address, phone, hours, service area and website.", 2);
   add("Local business", "phone", "Phone number on the page", phoneText ? "pass" : "fail",
     phoneText ? "A phone number is shown on the page." : "No phone number found in the page text.", "Show the phone number at the top of every page.", 2);
@@ -237,7 +238,10 @@ async function listPages(raw, limit) {
   const host = base.hostname.replace(/^www\./, "");
   const same = (u) => { try { const x = new URL(u, base); return x.hostname.replace(/^www\./, "") === host && /^https?:$/.test(x.protocol) && !SKIP_EXT.test(x.pathname); } catch { return false; } };
   const norm = (u) => { const x = new URL(u, base); x.hash = ""; return x.href; };
-  const out = new Set([norm(home.url)]);
+  const key = (u) => { const x = new URL(u, base); return x.pathname.toLowerCase().replace(/\/index\.html?$/, "/").replace(/\.html?$/, "").replace(/\/+$/, "") || "/"; };
+  const seen = new Set();
+  const out = { size: 0, list: [], add(u) { const k = key(u); if (seen.has(k)) return; seen.add(k); this.list.push(u); this.size++; } };
+  out.add(norm(home.url));
   let source = "links";
   const { smText } = await findSitemap(base.origin);
   if (smText) {
@@ -254,7 +258,7 @@ async function listPages(raw, limit) {
     const hrefs = (tags(home.text, "a").map((t) => attr(t, "href") || "")).filter((h) => h && !h.startsWith("#") && !/^(mailto|tel|javascript):/i.test(h));
     for (const h of hrefs) { if (out.size >= limit) break; if (same(h)) out.add(norm(h)); }
   }
-  return { home: home.url, source, pages: [...out].slice(0, limit) };
+  return { home: home.url, source, pages: out.list.slice(0, limit) };
 }
 
 export default async (req) => {
