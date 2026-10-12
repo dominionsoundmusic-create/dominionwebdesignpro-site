@@ -167,7 +167,7 @@ class Builder:
         )
         self.env.filters["striptags_plain"] = strip_tags
         self.env.filters["tojson_ld"] = lambda v: Markup(
-            json.dumps(v, ensure_ascii=False, indent=1).replace("</", "<\\/")
+            json.dumps(v, ensure_ascii=False, indent=1, default=str).replace("</", "<\\/")
         )
 
     def find(self, key):
