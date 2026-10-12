@@ -24,7 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DROP = [r'<ol class="how-strip">.*?</ol>', r'<div class="note">\s*<p><strong>(?:About the phone line|Straight answer on location).*?</div>',
-        r'<div class="plans">.*?</div>\s*</article>\s*</div>', r'<p class="plans__note">.*?</p>', r'<form.*?</form>',
+        r'<div class="cards cards--areas">.*?</article>\s*</div>', r'<div class="plans">.*?</div>\s*</article>\s*</div>', r'<p class="plans__note">.*?</p>', r'<form.*?</form>',
         r'<aside class="sources".*?</aside>', r'<ul class="pill-list">.*?</ul>', r'<div class="cards">.*?</div>\s*</div>\s*</article>\s*</div>',
         r'<div class="note note--gold">.*?</div>', r'<script.*?</script>', r'<style.*?</style>', r'<!--.*?-->',
         r'<figure.*?</figure>', r'<table.*?</table>']
