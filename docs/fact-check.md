@@ -45,3 +45,35 @@ INTAKE ("no contract", the receptionist taking messages, free changes outside up
 **Still open:** Texas HB 3344 (a 2025 bill for a state reroofing license through TDLR). Searches found
 the committee documents but not its final status; the roofing page describes it only as a proposed
 2025 bill and tells roofers to check TDLR and their city.
+
+## Atlanta add-on (Oct 12 2026)
+
+Three independent sub-agents that did not write the pages checked the six Atlanta add-on pages
+against docs/fact-check/BRIEF.md, using web searches of official and credible sources, and fixed
+the pages in place. Full tables: docs/fact-check/fc10.md, fc11.md, fc12.md.
+
+| Checker | Pages | Checked | Confirmed | Corrected | Softened | Removed |
+|---|---|---:|---:|---:|---:|---:|
+| fc10 | /black-owned-web-design/ | 16 | 12 | 1 | 3 | 0 |
+| fc10 | /web-design/decatur-ga.html | 21 | 16 | 1 | 3 | 1 |
+| fc11 | /web-design/conyers-ga.html | 18 | 17 | 0 | 1 | 0 |
+| fc11 | /web-design/mcdonough-ga.html | 15 | 9 | 2 | 4 | 0 |
+| fc11 | /web-design/douglasville-ga.html | 17 | 12 | 2 | 3 | 0 |
+| fc12 | /web-design/atlanta-ga.html | 28 | 25 | 1 | 1 | 0 |
+| | **Total** | **115** | **91** | **7** | **15** | **1** |
+
+**Notable corrections:** the Federal Reserve Small Business Credit Survey figure on the Black-owned
+page now gives its fielding date (fall 2020) and scope (non-emergency financing); a Google Maps
+"Black-owned filter" was softened to the opt-in Google Business Profile attribute; Decatur's
+unconfirmed 2021 Main Street approval removed; Douglasville's county-seat history reworded to the
+1875 act that established the town; McDonough's festival years, road-widening timing and SBDC
+schedule softened to what current sources confirm; the Atlanta grant window softened to "check with
+Invest Atlanta". Business claims: "domain in your name" wording on four pages changed to "the site is
+yours outright" (INTAKE says the client owns the site, not whose name the domain is in); schema
+described as a Pro feature; the contact form described as INTAKE does; the McDonough FAQ given the AI
+receptionist wording. Every page states Black ownership as INTAKE section 7 allows and claims no
+certification or membership.
+
+**For Maurice to confirm:** the Atlanta FAQ "Do you do WordPress web design for Atlanta businesses?"
+says the packages are sold by what you get, not by a platform name, and asks anyone who needs
+WordPress to say so when requesting the demo. INTAKE does not say what platform sites are built on.
