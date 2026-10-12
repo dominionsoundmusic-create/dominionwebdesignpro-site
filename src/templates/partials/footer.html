@@ -16,17 +16,19 @@
       <ul>{% for t in site.tools if t.slug in ('demo', 'site-check', 'compare', 'tools') %}<li><a href="{{ t.url }}">{{ t.short }}</a></li>{% endfor %}</ul>
     </div>
     <div>
-      <p class="site-footer__label">Web design by city</p>
-      <ul class="site-footer__cities"><li><a href="/web-design/">All cities</a></li><li><a href="/service-areas.html">Service areas</a></li>{% for a in site.areas %}<li><a href="{{ a.url }}">{{ a.short }}</a></li>{% endfor %}</ul>
-    </div>
-    <div>
       <p class="site-footer__label">Guides</p>
       <ul>{% for g in site.guides %}<li><a href="{{ g.url }}">{{ g.short }}</a></li>{% endfor %}</ul>
-      <p class="site-footer__label">Company</p>
-      <ul>{% for l in site.footer_links %}<li><a href="{{ l.href }}">{{ l.label }}</a></li>{% endfor %}</ul>
       <p class="site-footer__label">Sister brands</p>
       <ul>{% for s in site.sister_brands %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}<span class="sr"> (opens in a new tab)</span></a></li>{% endfor %}</ul>
     </div>
+    <div>
+      <p class="site-footer__label">Company</p>
+      <ul>{% for l in site.footer_links %}<li><a href="{{ l.href }}">{{ l.label }}</a></li>{% endfor %}</ul>
+    </div>
+  </div>
+  <div class="wide site-footer__citybar">
+    <p class="site-footer__label">Web design by city</p>
+    <ul class="site-footer__cities"><li><a href="/web-design/">All cities</a></li><li><a href="/service-areas.html">Service areas</a></li>{% for a in site.areas %}<li><a href="{{ a.url }}">{{ a.short }}</a></li>{% endfor %}</ul>
   </div>
   <div class="site-footer__bottom">
     <p>{{ b.copyright }} <span class="dot" aria-hidden="true">·</span> {{ b.base }}</p>

@@ -542,7 +542,12 @@ body > .skiptranslate { display: none !important; }
 /* footer */
 .site-footer { background: var(--navy-deep); }
 .site-footer__phone { color: var(--gold) !important; }
-.site-footer__cities { columns: 2; column-gap: 18px; }
+/* Oct 12 2026: the city list gets its own full-width row under the columns, so no single column runs long */
+.site-footer__citybar { border-top: 1px solid rgba(255, 255, 255, .1); padding-top: 28px; padding-bottom: 28px; }
+.site-footer__cities { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px 24px; }
+.site-footer__cities li { margin: 0; }
+@media (max-width: 1100px) { .site-footer__cities { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 700px) { .site-footer__cities { grid-template-columns: repeat(2, 1fr); } }
 .site-footer .social a { background: transparent; border: 2px solid var(--white); color: var(--white); }
 .site-footer .social a:hover { background: var(--gold); border-color: var(--gold); color: var(--navy-deep); }
 .sub a[aria-current="page"] { font-weight: 700; }
@@ -553,3 +558,13 @@ body > .skiptranslate { display: none !important; }
   #sub-services, #sub-guides, #sub-tools { min-width: 280px; }
 }
 .title-band { background: var(--brand); }
+
+/* Oct 12 2026 look check: card rows use 3 / 2 / 1 columns with any short last row centered,
+   and the four contact fields fill the form's full width. */
+.cards { display: flex; flex-wrap: wrap; justify-content: center; }
+.cards > * { flex: 0 0 calc((100% - 2 * 22px) / 3); }
+@media (max-width: 1100px) { .cards > * { flex-basis: calc((100% - 22px) / 2); } }
+@media (max-width: 700px) { .cards > * { flex-basis: 100%; } }
+@media (min-width: 900px) { .lead-form { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.lead-form input, .lead-form textarea { width: 100%; min-width: 0; }
+.how-strip + p, .how-strip ~ p { margin-top: 22px; }
