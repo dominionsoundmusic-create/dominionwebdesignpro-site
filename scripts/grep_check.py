@@ -38,7 +38,9 @@ def main():
     for p in PATS:
         hits = []
         for u, vis in pages.items():
-            for m in re.finditer(re.escape(p), vis, re.I):
+            # "#1" as a ranking claim, not the start of a hex color such as #1D4ED8
+            pat = r"#1(?![0-9a-f])" if p == "#1" else re.escape(p)
+            for m in re.finditer(pat, vis, re.I):
                 hits.append(f"{u}: ...{vis[max(0, m.start()-50): m.end()+50]}...")
         total += len(hits)
         print(f"{p!r}: {len(hits)} hits")
