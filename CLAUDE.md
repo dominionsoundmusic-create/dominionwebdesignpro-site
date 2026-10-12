@@ -76,6 +76,18 @@ docs/keyword-plan.md BEFORE writing pages. Expect at least:
   agency dallas 590 SD 7), /web-design/tyler-tx (140 SD 23), and an East Texas page. Rebuild ALL 20
   existing city pages in web-design/ at their same URLs, keeping their researched local facts.
   Austin and Longview already exist; strengthen them for their keywords.
+- MAURICE'S 10+ RULE: every keyword in the file with a volume of 10 or more searches a month
+  (794 of the 1,501) must be either assigned to a page as a target or supporting keyword, or listed
+  in docs/keyword-plan.md as deliberately unused with a one-line reason (jobs, salary, courses,
+  weather, other agencies' brand names, wrong country). And ANY Texas town with a web design
+  keyword at 10 or more searches a month gets its own city page. From the data that adds Waco
+  (web design waco tx 50/mo, SD 14), El Paso (web design el paso 880/mo, SD 14) and Kingwood
+  (web design kingwood 30/mo, SD 12) to Houston, Dallas, Austin, Tyler, Longview and East Texas.
+  Check each town in the data yourself and record its exact keyword and volume in SERVICES.md.
+- Out-of-state cities with 10+ searches (New York, San Diego, Chicago, Orange County, Huntsville
+  AL, Richmond VA, Tucson, Louisville, Jacksonville FL, Fort Lauderdale, Las Vegas, Wilmington NC,
+  Vancouver WA and others): list them in docs/keyword-plan.md under "Wave 2 candidates" with
+  keyword, volume and SD. Do not build them in this run unless Maurice adds them here.
 - Every city page is written for THAT city (its business makeup, real neighborhoods and corridors,
   its chamber or small business resources, why local search matters there). Never imply an office
   there. Be honest: built remotely from East Texas.
