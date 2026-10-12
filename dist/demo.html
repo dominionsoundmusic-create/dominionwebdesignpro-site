@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!-- dwdp:handwritten 2026-10-12 -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Website Demo | Dominion Web Design Pro</title>
+<meta name="description" content="See a real website built for your business in under a minute. Free, no card, no commitment. Dominion Web Design Pro, East Texas.">
+<link rel="canonical" href="https://dominionwebdesignpro.com/demo.html">
+<meta name="robots" content="index,follow">
+<style>
+:root{
+  --blue:#2563EB; --blue-dark:#1D4ED8; --dark:#0A0F1A; --dark2:#111827;
+  --dark3:#1F2937; --text:#F9FAFB; --muted:#9CA3AF; --green:#22C55E; --gold:#F5A623;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--dark);color:var(--text);line-height:1.6;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+
+nav{background:rgba(10,15,26,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--dark3);
+  position:sticky;top:0;z-index:50}
+.nav-inner{max-width:1140px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}
+.logo-icon{width:32px;height:32px;border-radius:8px;background:var(--blue);display:grid;place-items:center;font-size:17px}
+.nav-links{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.9em}
+.nav-links a:hover{color:var(--text)}
+
+.wrap{max-width:840px;margin:0 auto;padding:52px 22px 70px}
+.eyebrow{display:inline-block;border:1px solid var(--dark3);border-radius:999px;padding:6px 15px;
+  font-size:.74em;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
+h1 span{color:var(--blue)}
+.lede{color:var(--muted);font-size:1.06em;max-width:600px}
+
+.card{background:var(--dark2);border:1px solid var(--dark3);border-radius:16px;padding:28px;margin-top:32px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+label{display:block;font-size:.76em;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 14px;border-radius:9px;border:1.5px solid var(--dark3);
+  background:var(--dark);color:var(--text);font:inherit}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--blue)}
+input[aria-invalid="true"]{border-color:#EF4444}
+textarea{resize:vertical;min-height:74px}
+.hint{font-size:.8em;color:var(--muted);margin-top:6px}
+.err{display:block;color:#F87171;font-size:.82em;font-weight:600;margin-top:5px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;
+  padding:15px 30px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;transition:background .15s ease}
+.btn-blue{background:var(--blue);color:#fff;width:100%}
+.btn-blue:hover:not(:disabled){background:var(--blue-dark)}
+.btn-blue:disabled{opacity:.6;cursor:default}
+.btn-green{background:var(--green);color:#04240F}
+.btn-ghost{background:none;border:1px solid var(--dark3);color:var(--text)}
+
+.status{display:none;margin-top:26px;text-align:center;padding:34px 22px;
+  background:var(--dark2);border:1px solid var(--dark3);border-radius:16px}
+.status.on{display:block}
+.spinner{width:38px;height:38px;border:3px solid var(--dark3);border-top-color:var(--blue);
+  border-radius:50%;margin:0 auto 16px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status h2{font-size:1.15em;margin-bottom:6px}
+.status p{color:var(--muted);font-size:.92em}
+.slow{color:var(--gold);font-size:.86em;margin-top:12px;display:none}
+
+.result{display:none;margin-top:32px}
+.result.on{display:block}
+.result-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.result-bar h2{font-size:1.2em;margin-right:auto}
+.ref{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8em;color:var(--muted);
+  border:1px solid var(--dark3);border-radius:6px;padding:5px 10px}
+/* The generated demo is a full desktop site. Rendering it inside the 840px
+   .wrap forced it below its own 900px/768px breakpoints, so prospects saw the
+   collapsed mobile layout instead of the real design. Break it out full-bleed. */
+.preview-wide{width:96vw;max-width:1800px;margin-left:calc(50% - 48vw);margin-right:calc(50% - 48vw)}
+@media(min-width:1900px){.preview-wide{margin-left:calc(50% - 900px);margin-right:calc(50% - 900px)}}
+.frame{border:1px solid var(--dark3);border-radius:14px;overflow:hidden;background:#fff;
+  height:calc(100vh - 190px);min-height:660px;position:relative}
+/* The iframe is rendered at a real desktop width (--vw) and scaled to fit the
+   box. Without this the demo renders at whatever the box happens to be — on a
+   laptop that is ~1100px, below its own 1200px layout, so the prospect sees a
+   cramped version rather than the site as it will actually look. */
+.frame iframe{
+  width:var(--vw,1440px);
+  height:calc(100% / var(--scale,1));
+  border:0;display:block;
+  transform:scale(var(--scale,1));
+  transform-origin:top left;
+}
+.frame:fullscreen{border:0;border-radius:0;height:100vh;min-height:0}
+.frame:fullscreen iframe{--scale:1;width:100%;height:100vh;transform:none}
+.exit-fs{display:none;position:absolute;top:14px;right:14px;z-index:5}
+.frame:fullscreen .exit-fs{display:inline-flex}
+
+.claim{background:linear-gradient(135deg,var(--dark2),var(--dark3));border:1px solid var(--dark3);
+  border-radius:16px;padding:26px;margin-top:22px}
+.claim h3{font-size:1.1em;margin-bottom:6px}
+.claim p{color:var(--muted);font-size:.92em;margin-bottom:18px}
+.done{text-align:center;padding:30px}
+.done h3{color:var(--green);margin-bottom:8px}
+
+footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;padding:28px 22px;font-size:.85em}
+
+@media(max-width:640px){.row{grid-template-columns:1fr}.frame{height:70vh;min-height:460px}.preview-wide{width:100%;margin-left:0;margin-right:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><script async src="https://www.googletagmanager.com/gtag/js?id=G-3MZXMC1JKS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3MZXMC1JKS');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(a){gtag('event','phone_call_click',{phone_number:a.getAttribute('href').slice(4),link_url:location.pathname});}},true);</script>
+</head>
+<body><div class="dwdp-social-strip" style="background:#0a0a12;color:#c9a84c;padding:5px 22px;text-align:right;line-height:1;border-bottom:1px solid rgba(201,168,76,.25)"><span class="dwdp-verse" style="float:left;font-weight:700;letter-spacing:.08em;font-size:.78rem;line-height:26px">John 3:16</span><span class="dwdp-social-top" style="display:inline-flex;align-items:center;gap:6px;vertical-align:middle;line-height:1"><a href="https://www.facebook.com/dominionwebdesignpro" target="_blank" rel="noopener" aria-label="Dominion Web Design Pro on Facebook (opens in a new tab)" style="display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;color:inherit;text-decoration:none"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V14h2.7v8h3.3z"/></svg></a><a href="https://www.youtube.com/@DominionWebDesignPro" target="_blank" rel="noopener" aria-label="Dominion Web Design Pro on YouTube (opens in a new tab)" style="display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;color:inherit;text-decoration:none"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15.1V8.9l5.2 3.1-5.2 3.1z"/></svg></a></span></div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/"><img src="/images/dominion-logo.svg" alt="Dominion Web Design Pro" width="264" height="64" style="height:44px;width:auto;display:block;max-width:100%"></a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/service-areas.html">Service Areas</a>
+      <a href="tel:+19036367511">903-636-7511</a>
+    </div>
+  </div>
+</nav>
+<div class="dwdp-quote" style="background:#0a1628;border-bottom:1px solid rgba(201,168,76,.3);padding:9px 22px;text-align:center"><p style="font-size:.85em;color:#eae4d8;font-style:italic;margin:0">&ldquo;I believe the unbelievable, I receive the impossible, because it&rsquo;s doable.&rdquo; <span style="color:#c9a84c;font-style:normal;font-weight:700">&mdash; Jesse Duplantis</span></p></div>
+
+<div class="wrap">
+  <span class="eyebrow">Free · No card · No commitment</span>
+  <h1>See your new website <span>before you pay a dime.</span></h1>
+  <p class="lede">Tell us about your business and we'll build you a real, working homepage in
+  about a minute. Written for your trade, your town, your customers. If you like it, we'll
+  make it yours.</p>
+
+  <div class="card" id="formCard">
+    <form id="demoForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="businessName">Business name</label>
+          <input id="businessName" name="businessName" type="text" autocomplete="organization" placeholder="Rose City Air">
+        </div>
+        <div class="field">
+          <label for="businessType">Type of business</label>
+          <input id="businessType" name="businessType" type="text" placeholder="HVAC contractor" list="types">
+          <datalist id="types">
+            <option value="HVAC contractor"><option value="Roofing contractor"><option value="Plumber">
+            <option value="Electrician"><option value="Dentist"><option value="Attorney">
+            <option value="Chiropractor"><option value="Auto repair shop"><option value="Real estate agent">
+            <option value="Restaurant"><option value="General contractor"><option value="Landscaping company">
+            <option value="Insurance agency"><option value="Gym"><option value="Hair salon">
+            <option value="Nail salon"><option value="Veterinary clinic"><option value="Accountant">
+            <option value="Photographer"><option value="Cleaning service"><option value="Pest control">
+            <option value="Tree service">
+          </datalist>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" placeholder="Tyler">
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <input id="state" name="state" type="text" placeholder="TX" maxlength="20">
+        </div>
+      </div>
+      <div class="field">
+        <label for="customRequest">Anything specific? <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+        <textarea id="customRequest" name="customRequest" placeholder="We do emergency service 24/7 and we've been family owned since 1998."></textarea>
+      </div>
+      <button class="btn btn-blue" type="submit" id="goBtn">Build my free demo →</button>
+      <p class="hint">Takes about a minute. Nothing is published — this is yours to look at.</p>
+    </form>
+  </div>
+
+  <div class="status" id="status">
+    <div class="spinner"></div>
+    <h2>Building your website…</h2>
+    <p>Writing your copy, choosing photos, and laying out the page.</p>
+    <p class="slow" id="slow">Still going — the first build of the day takes a little longer to wake up. Hang tight.</p>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-bar">
+      <h2>Here's your site</h2>
+      <span class="ref" id="refBadge"></span>
+      <button class="btn btn-ghost" type="button" id="fsBtn">⛶ Full screen</button>
+      <button class="btn btn-ghost" type="button" id="againBtn">Try another</button>
+    </div>
+    <div class="preview-wide">
+      <div class="frame" id="frame">
+        <button class="btn btn-ghost exit-fs" type="button" id="exitFsBtn">Exit full screen</button>
+        <iframe id="preview" title="Your website preview" sandbox="allow-same-origin"></iframe>
+      </div>
+    </div>
+
+    <div class="claim" id="claim">
+      <h3>Want this to be your real website?</h3>
+      <p>Leave your name and number and Maurice will call you to go over it. No obligation.</p>
+      <form id="claimForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="cname">Your name</label>
+            <input id="cname" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cphone">Phone</label>
+            <input id="cphone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cemail">Email <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <input id="cemail" type="email" autocomplete="email">
+        </div>
+        <button class="btn btn-green" type="submit" id="claimBtn" style="width:100%">Claim this website</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Dominion Web Design Pro · East Texas · <a href="tel:+19036367511">903-636-7511</a>
+<div class="dwdp-social" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;padding:16px 0 18px;color:#ffffff"><span style="font-weight:700;font-size:.95rem">Follow us:</span><a href="https://www.facebook.com/dominionwebdesignpro" target="_blank" rel="noopener" aria-label="Dominion Web Design Pro on Facebook (opens in a new tab)" style="display:inline-flex;width:42px;height:42px;border-radius:50%;align-items:center;justify-content:center;border:2px solid #ffffff;color:#ffffff;text-decoration:none"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V14h2.7v8h3.3z"/></svg></a><a href="https://www.youtube.com/@DominionWebDesignPro" target="_blank" rel="noopener" aria-label="Dominion Web Design Pro on YouTube (opens in a new tab)" style="display:inline-flex;width:42px;height:42px;border-radius:50%;align-items:center;justify-content:center;border:2px solid #ffffff;color:#ffffff;text-decoration:none"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15.1V8.9l5.2 3.1-5.2 3.1z"/></svg></a></div></footer>
+
+<script>
+(function () {
+  "use strict";
+  var API = "https://dominion-demo-backend.onrender.com";
+
+  var form = document.getElementById("demoForm");
+  var card = document.getElementById("formCard");
+  var status = document.getElementById("status");
+  var slow = document.getElementById("slow");
+  var result = document.getElementById("result");
+  var preview = document.getElementById("preview");
+  var refBadge = document.getElementById("refBadge");
+  var goBtn = document.getElementById("goBtn");
+  var currentRef = "";
+  var slowTimer = null;
+
+  function err(el, msg) {
+    clear(el);
+    el.setAttribute("aria-invalid", "true");
+    var s = document.createElement("span");
+    s.className = "err"; s.textContent = msg;
+    el.parentNode.appendChild(s);
+  }
+  function clear(el) {
+    el.removeAttribute("aria-invalid");
+    var e = el.parentNode.querySelector(".err");
+    if (e) e.remove();
+  }
+
+  // clear a field's error as soon as the visitor starts fixing it
+  document.addEventListener("input", function (e) {
+    if (e.target.matches("input, textarea")) clear(e.target);
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("businessName");
+    var type = document.getElementById("businessType");
+    var city = document.getElementById("city");
+    [name, type, city].forEach(clear);
+
+    var ok = true;
+    if (!name.value.trim()) { err(name, "Tell us the business name"); ok = false; }
+    if (!type.value.trim()) { err(type, "What kind of business is it?"); ok = false; }
+    if (!city.value.trim()) { err(city, "Which town?"); ok = false; }
+    if (!ok) return;
+
+    goBtn.disabled = true;
+    card.style.display = "none";
+    result.classList.remove("on");
+    status.classList.add("on");
+    slow.style.display = "none";
+    slowTimer = setTimeout(function () { slow.style.display = "block"; }, 12000);
+
+    fetch(API + "/generate-demo", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        businessName: name.value.trim(),
+        businessType: type.value.trim(),
+        city: city.value.trim(),
+        state: document.getElementById("state").value.trim(),
+        customRequest: document.getElementById("customRequest").value.trim()
+      })
+    })
+    .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+    .then(function (res) {
+      clearTimeout(slowTimer);
+      status.classList.remove("on");
+      goBtn.disabled = false;
+      if (!res.ok || !res.body.html) {
+        card.style.display = "block";
+        alert(res.body.error || "Something went wrong building that one. Give it another try, or call 903-636-7511.");
+        return;
+      }
+      currentRef = res.body.refCode || "";
+      refBadge.textContent = currentRef ? "Ref " + currentRef : "";
+      preview.srcdoc = res.body.html;
+      result.classList.add("on");
+      fitPreview();
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    })
+    .catch(function () {
+      clearTimeout(slowTimer);
+      status.classList.remove("on");
+      card.style.display = "block";
+      goBtn.disabled = false;
+      alert("Couldn't reach the builder just now. Please try again, or call 903-636-7511.");
+    });
+  });
+
+  var frameEl = document.getElementById("frame");
+  var DESKTOP_W = 1440;
+  function fitPreview() {
+    if (document.fullscreenElement === frameEl) return;
+    var boxW = frameEl.clientWidth;
+    if (!boxW) return;
+    if (boxW >= DESKTOP_W) {
+      // Box is already desktop-width or wider: fill it, no scaling, no gap.
+      frameEl.style.setProperty("--vw", "100%");
+      frameEl.style.setProperty("--scale", 1);
+    } else {
+      frameEl.style.setProperty("--vw", DESKTOP_W + "px");
+      frameEl.style.setProperty("--scale", boxW / DESKTOP_W);
+    }
+  }
+  window.addEventListener("resize", fitPreview);
+  document.addEventListener("fullscreenchange", function () {
+    if (document.fullscreenElement === frameEl) {
+      frameEl.style.removeProperty("--vw");
+      frameEl.style.removeProperty("--scale");
+    } else { fitPreview(); }
+  });
+  function enterFs() {
+    var fn = frameEl.requestFullscreen || frameEl.webkitRequestFullscreen || frameEl.msRequestFullscreen;
+    if (fn) { fn.call(frameEl); }
+    else { frameEl.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  }
+  function exitFs() {
+    var fn = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+    if (fn) { fn.call(document); }
+  }
+  document.getElementById("fsBtn").addEventListener("click", enterFs);
+  document.getElementById("exitFsBtn").addEventListener("click", exitFs);
+
+  document.getElementById("againBtn").addEventListener("click", function () {
+    result.classList.remove("on");
+    card.style.display = "block";
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  document.getElementById("claimForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = document.getElementById("cname");
+    var p = document.getElementById("cphone");
+    [n, p].forEach(clear);
+    var ok = true;
+    if (!n.value.trim()) { err(n, "Your name, please"); ok = false; }
+    if (p.value.replace(/\D/g, "").length < 10) { err(p, "A 10-digit phone number"); ok = false; }
+    if (!ok) return;
+
+    var btn = document.getElementById("claimBtn");
+    btn.disabled = true; btn.textContent = "Sending…";
+
+    fetch(API + "/claim-preview", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        refCode: currentRef,
+        name: n.value.trim(),
+        phone: p.value.trim(),
+        email: document.getElementById("cemail").value.trim(),
+        businessName: document.getElementById("businessName").value.trim()
+      })
+    })
+    .then(function () {
+      document.getElementById("claim").innerHTML =
+        '<div class="done"><h3>Got it.</h3><p>Maurice will call you shortly. ' +
+        'If you\'d rather not wait, ring 903-636-7511.</p></div>';
+    })
+    .catch(function () {
+      btn.disabled = false; btn.textContent = "Claim this website";
+      alert("Couldn't send that. Please call 903-636-7511.");
+    });
+  });
+})();
+</script>
+<style>#lang-bar{position:fixed;top:0;left:0;right:0;height:34px;z-index:10000;background:#0A0F1A;border-bottom:1px solid #1F2937;display:flex;align-items:center;justify-content:flex-end;padding:0 14px;box-sizing:border-box}.dlang{display:inline-flex;align-items:center;border:1px solid #F5A623;border-radius:999px;overflow:hidden;background:#111827}.dlang__btn{background:none;border:0;color:#E5E7EB;font:700 12px/1 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.06em;padding:6px 11px;cursor:pointer;min-height:24px}.dlang__btn:hover{color:#fff}.dlang__btn[aria-pressed="true"]{background:#2563EB;color:#fff}.dlang__btn:focus-visible{outline:2px solid #F5A623;outline-offset:-2px}.skiptranslate iframe,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}.skiptranslate{display:none!important}.goog-text-highlight{background:none!important;box-shadow:none!important}body{top:0!important}</style><div id="lang-bar"><div class="dlang notranslate" translate="no" role="group" aria-label="Language"><button type="button" class="dlang__btn" data-lang="en">EN</button><button type="button" class="dlang__btn" data-lang="es">ES</button></div><div id="google_translate_element" hidden></div></div><script>(function(){var H=34,b=document.body;b.style.paddingTop=((parseFloat(getComputedStyle(b).paddingTop)||0)+H)+'px';document.documentElement.style.scrollPaddingTop=H+'px';var all=b.getElementsByTagName('*');for(var i=0;i<all.length;i++){var el=all[i];if(el.id==='lang-bar'||(el.closest&&el.closest('#lang-bar')))continue;var cs=getComputedStyle(el);if((cs.position==='fixed'||cs.position==='sticky')&&cs.top!=='auto'&&parseFloat(cs.top)<150){el.style.setProperty('top',(parseFloat(cs.top)+H)+'px','important');}}})();</script><script>(function(){
+var host=location.hostname;
+function setCookie(v){var exp=v?"":"; expires=Thu, 01 Jan 1970 00:00:00 GMT";document.cookie="googtrans="+v+"; path=/"+exp;if(host.indexOf(".")>-1){var r=host.split(".").slice(-2).join(".");document.cookie="googtrans="+v+"; path=/; domain=."+r+exp;}}
+function cur(){return /googtrans=\/en\/es/.test(document.cookie)?"es":"en";}
+var lang=cur();
+document.querySelectorAll(".dlang__btn").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===lang?"true":"false");
+b.addEventListener("click",function(){var w=b.getAttribute("data-lang");if(w===cur())return;setCookie(w==="es"?"/en/es":"");location.reload();});});
+if(lang==="es"){document.documentElement.lang="es";window.googleTranslateElementInit=function(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"es",autoDisplay:false},"google_translate_element");};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";s.async=true;document.body.appendChild(s);}
+})();</script>
+</body>
+</html>

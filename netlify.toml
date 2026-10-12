@@ -1,0 +1,20 @@
+# Static site: the built pages are committed in dist/ (run `python3 build.py` before committing).
+# No build command runs on Netlify. Netlify serves dist/404.html for any path that does not exist.
+# Functions stay in netlify/functions (the Site Check tool calls /api/seo-audit, served by
+# netlify/functions/seo-audit.mjs through its own `config.path`).
+[build]
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

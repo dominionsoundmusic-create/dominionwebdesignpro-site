@@ -1,0 +1,19 @@
+{% set b = site.business %}
+<section class="band band--navy cta" aria-labelledby="cta-title">
+  <div class="wide cta__grid">
+    <div class="cta__text">
+      <h2 id="cta-title">{{ page.cta_title | default('See your website before you pay for it') }}</h2>
+      <p>{{ page.cta_text | default('Give us your business name and what you do, and a demo site gets built for you to look at on your own phone. If you like it, pick a package. If you do not, you have spent nothing but the minute it took to look.') }}</p>
+      <div class="btn-row">
+        <a class="btn btn--gold btn--big" href="{{ site.cta.primary_href }}">{{ site.cta.primary_label }}</a>
+        <a class="btn btn--ghost btn--big" href="tel:{{ b.phone_tel }}">{{ site.cta.call_label }}</a>
+      </div>
+    </div>
+    <ul class="cta__facts">
+      <li><strong>Demo first, invoice second</strong>The free demo comes before any payment, and there is no obligation to buy.</li>
+      <li><strong>Prices on the page</strong>$497, $997 or $1,997 one time. You own the site outright.</li>
+      <li><strong>Phone answered any hour</strong>An AI receptionist picks up {{ b.phone_display }} and can transfer you to Maurice.</li>
+      <li><strong>Built in East Texas</strong>Written and built by Maurice Johnson in Big Sandy, delivered to businesses anywhere.</li>
+    </ul>
+  </div>
+</section>

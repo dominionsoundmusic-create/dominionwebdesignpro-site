@@ -1,0 +1,34 @@
+{% set b = site.business %}
+<footer class="site-footer">
+  <div class="wide site-footer__grid">
+    <div class="site-footer__brand">
+      <a href="/" class="logo"><img src="{{ b.logo }}" alt="{{ b.name }}" width="{{ b.logo_width }}" height="{{ b.logo_height }}" loading="lazy"></a>
+      <p>Hand-written websites for local businesses. Built by {{ b.owner }} in {{ b.base }}, delivered remotely anywhere in the U.S.</p>
+      <p><a class="site-footer__phone" href="tel:{{ b.phone_tel }}">{{ b.phone_display }}</a><br><span class="small">{{ b.phone_note }}</span><br><a href="mailto:{{ b.email }}">{{ b.email }}</a></p>
+      <p class="site-footer__label">Follow us</p>
+      {% with top=False %}{% include "partials/social.html" %}{% endwith %}
+      <p class="small"><a href="{{ b.google_review_url }}" target="_blank" rel="noopener">Review us on Google<span class="sr"> (opens in a new tab)</span></a></p>
+    </div>
+    <div>
+      <p class="site-footer__label">Services</p>
+      <ul><li><a href="/services/">All services</a></li>{% for s in site.services %}<li><a href="{{ s.url }}">{{ s.short }}</a></li>{% endfor %}</ul>
+      <p class="site-footer__label">Free tools</p>
+      <ul>{% for t in site.tools if t.slug in ('demo', 'site-check', 'compare', 'tools') %}<li><a href="{{ t.url }}">{{ t.short }}</a></li>{% endfor %}</ul>
+    </div>
+    <div>
+      <p class="site-footer__label">Web design by city</p>
+      <ul class="site-footer__cities"><li><a href="/web-design/">All cities</a></li><li><a href="/service-areas.html">Service areas</a></li>{% for a in site.areas %}<li><a href="{{ a.url }}">{{ a.short }}</a></li>{% endfor %}</ul>
+    </div>
+    <div>
+      <p class="site-footer__label">Guides</p>
+      <ul>{% for g in site.guides %}<li><a href="{{ g.url }}">{{ g.short }}</a></li>{% endfor %}</ul>
+      <p class="site-footer__label">Company</p>
+      <ul>{% for l in site.footer_links %}<li><a href="{{ l.href }}">{{ l.label }}</a></li>{% endfor %}</ul>
+      <p class="site-footer__label">Sister brands</p>
+      <ul>{% for s in site.sister_brands %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}<span class="sr"> (opens in a new tab)</span></a></li>{% endfor %}</ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p>{{ b.copyright }} <span class="dot" aria-hidden="true">·</span> {{ b.base }}</p>
+  </div>
+</footer>

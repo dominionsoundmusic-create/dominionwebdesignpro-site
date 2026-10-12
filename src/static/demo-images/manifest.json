@@ -1,0 +1,23 @@
+{
+  "accounting": 4,
+  "auto-repair": 4,
+  "chiropractic": 8,
+  "cleaning": 4,
+  "construction": 4,
+  "default": 4,
+  "dental": 4,
+  "electrical": 4,
+  "gym": 4,
+  "hvac": 4,
+  "insurance": 4,
+  "landscaping": 4,
+  "legal": 4,
+  "pest-control": 4,
+  "photography": 4,
+  "plumbing": 4,
+  "real-estate": 4,
+  "restaurant": 4,
+  "roofing": 4,
+  "salon": 4,
+  "veterinary": 4
+}

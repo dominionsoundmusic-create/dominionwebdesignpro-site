@@ -1,0 +1,637 @@
+{
+ "business": {
+  "name": "Dominion Web Design Pro",
+  "legal_name": "Dominion Digital Group",
+  "dba_note": "Dominion Web Design Pro is a d/b/a of Dominion Digital Group.",
+  "owner": "Maurice Johnson",
+  "category": "Web design for local businesses",
+  "origin": "https://dominionwebdesignpro.com",
+  "phone_display": "(903) 636-7511",
+  "phone_tel": "+19036367511",
+  "phone_note": "Our AI receptionist answers any hour and can put you straight through to Maurice.",
+  "email": "maurice@dominionwebdesignpro.com",
+  "street": "279 Boyd Road",
+  "city": "Big Sandy",
+  "region": "TX",
+  "postal": "75755",
+  "base": "Big Sandy, Texas",
+  "logo": "/images/dominion-logo.svg",
+  "logo_width": 264,
+  "logo_height": 64,
+  "theme_color": "#1D4ED8",
+  "description": "Hand-written websites for local businesses, built by Maurice Johnson in Big Sandy, East Texas, and delivered remotely nationwide. See a free demo of your site before you pay.",
+  "quote_text": "I believe the unbelievable, I receive the impossible, because it's doable.",
+  "quote_author": "Jesse Duplantis",
+  "scripture": "John 3:16",
+  "copyright": "© 2026 Dominion Web Design Pro, a d/b/a of Dominion Digital Group. All rights reserved.",
+  "google_review_url": "https://g.page/r/Ce0hSTxb0nFNEAI/review",
+  "demo_url": "/demo.html"
+ },
+ "pricing": {
+  "plans": [
+   {
+    "slug": "starter",
+    "name": "Starter",
+    "price": "$497",
+    "price_num": 497,
+    "term": "one-time",
+    "summary": "For a business that needs a clean, working website and nothing complicated.",
+    "stripe": "https://buy.stripe.com/bJecN59ERe8u6OB4RwcMM0b",
+    "features": [
+     "5-page website: home, services, about, contact and service area",
+     "Every page written for your business by hand, never filled into a template",
+     "Works on phones, tablets and desktop",
+     "Contact form that emails you every lead",
+     "Page titles, descriptions and sitemap submitted to Google",
+     "Google Maps and your hours on the page",
+     "Links to your Facebook and Instagram",
+     "Live in 7 to 14 days",
+     "You own it outright"
+    ]
+   },
+   {
+    "slug": "pro",
+    "name": "Pro",
+    "price": "$997",
+    "price_num": 997,
+    "term": "one-time",
+    "popular": true,
+    "summary": "For a business that wants the website to bring in calls from more than one town.",
+    "stripe": "https://buy.stripe.com/eVq8wP9ERc0m1uh3NscMM0c",
+    "features": [
+     "Everything in Starter, plus:",
+     "10-page website with a photo gallery",
+     "Lead capture on every page, not only the contact page",
+     "Local SEO: schema markup and Google Business Profile setup",
+     "10 city pages, each town researched, then written from scratch",
+     "Your Google reviews displayed on the site",
+     "AI chat widget that answers visitors 24/7 and takes their name and number: free for 14 days, then $297/mo"
+    ]
+   },
+   {
+    "slug": "agency",
+    "name": "Agency",
+    "price": "$1,997",
+    "price_num": 1997,
+    "term": "one-time",
+    "summary": "For a business that wants to cover its whole service area, town by town.",
+    "stripe": "https://buy.stripe.com/bJe4gz2cpfcy0qdbfUcMM0d",
+    "features": [
+     "Everything in Pro, plus:",
+     "Keyword research across your whole service area first",
+     "A hand-written page for every town-and-service combination the research says is worth having, usually 30 to 60 pages",
+     "Pages delivered in waves, the first ones live inside two weeks",
+     "Custom design for your brand",
+     "AI phone agent setup. The agent itself is free for 7 days, then $297/mo for up to 750 minutes, cancel any time (not part of the one-time price)"
+    ]
+   }
+  ],
+  "hosting_note": "Hosting, maintenance and updates are included while you keep the AI agent. Without it, they are $49/mo.",
+  "page_count_note": "We do not sell page counts. Every page on every plan is researched and written by hand for your business and your town. That is slower than generating a few hundred pages from a template, and it is the reason these pages get read. If the research says your service area needs thirty pages, you get thirty good ones rather than a hundred thin ones."
+ },
+ "cta": {
+  "primary_label": "Get a free demo",
+  "primary_href": "/demo.html",
+  "call_label": "Call {phone}",
+  "secondary_label": "See the packages",
+  "secondary_href": "/pricing/"
+ },
+ "analytics": {
+  "ga4": "G-3MZXMC1JKS"
+ },
+ "social": {
+  "facebook": "https://www.facebook.com/dominionwebdesignpro",
+  "youtube": "https://www.youtube.com/@DominionWebDesignPro"
+ },
+ "same_as": [
+  "https://www.facebook.com/dominionwebdesignpro",
+  "https://www.youtube.com/@DominionWebDesignPro",
+  "https://x.com/dominionwebpro"
+ ],
+ "sister_brands": [
+  {
+   "name": "AI Voice Agent Pros",
+   "url": "https://aivoiceagentpros.com"
+  },
+  {
+   "name": "Dominion Review Pro",
+   "url": "https://dominionreviewpro.com"
+  },
+  {
+   "name": "Dominion AI Agency",
+   "url": "https://dominionaiagency.com"
+  }
+ ],
+ "nav": [
+  {
+   "label": "Services",
+   "menu": "services",
+   "href": "/services/"
+  },
+  {
+   "label": "Pricing",
+   "href": "/pricing/"
+  },
+  {
+   "label": "Cities",
+   "menu": "areas",
+   "href": "/web-design/"
+  },
+  {
+   "label": "Guides",
+   "menu": "guides"
+  },
+  {
+   "label": "Free Tools",
+   "menu": "tools"
+  },
+  {
+   "label": "About",
+   "href": "/about.html"
+  },
+  {
+   "label": "Contact",
+   "href": "/contact/"
+  }
+ ],
+ "tools": [
+  {
+   "slug": "demo",
+   "url": "/demo.html",
+   "name": "Free website demo",
+   "short": "Free website demo"
+  },
+  {
+   "slug": "site-check",
+   "url": "/site-check/",
+   "name": "Free Site Check (SEO and speed audit)",
+   "short": "Free Site Check"
+  },
+  {
+   "slug": "compare",
+   "url": "/compare/",
+   "name": "Before and After speed comparison",
+   "short": "Before and After"
+  },
+  {
+   "slug": "tools",
+   "url": "/tools/",
+   "name": "Software we use",
+   "short": "Software we use"
+  },
+  {
+   "slug": "how-it-works",
+   "url": "/how-it-works/",
+   "name": "How it works",
+   "short": "How it works"
+  },
+  {
+   "slug": "faq",
+   "url": "/faq/",
+   "name": "Questions and answers",
+   "short": "FAQ"
+  }
+ ],
+ "footer_links": [
+  {
+   "label": "How It Works",
+   "href": "/how-it-works/"
+  },
+  {
+   "label": "Pricing",
+   "href": "/pricing/"
+  },
+  {
+   "label": "How City Pages Work",
+   "href": "/how-city-pages-work.html"
+  },
+  {
+   "label": "About Maurice",
+   "href": "/about.html"
+  },
+  {
+   "label": "FAQ",
+   "href": "/faq/"
+  },
+  {
+   "label": "Contact",
+   "href": "/contact/"
+  },
+  {
+   "label": "Client Intake Form",
+   "href": "/intake/"
+  },
+  {
+   "label": "Privacy Policy",
+   "href": "/privacy-policy.html"
+  },
+  {
+   "label": "Terms of Service",
+   "href": "/terms.html"
+  }
+ ],
+ "services": [
+  {
+   "slug": "small-business-website",
+   "url": "/small-business-website/",
+   "name": "Small Business Website Design",
+   "short": "Small Business Websites",
+   "summary": "A hand-written website for a local business: the pages a customer actually reads, a contact form that reaches you, and the search basics set up from day one.",
+   "card_image": "demo-images/default/2.jpg",
+   "card_alt": "Owner of a small shop standing behind the counter"
+  },
+  {
+   "slug": "contractor-website-design",
+   "url": "/contractor-website-design/",
+   "name": "Contractor Website Design",
+   "short": "Contractor Websites",
+   "summary": "Websites for builders, remodelers and trades that show the work, name the towns you cover and make the phone number impossible to miss.",
+   "card_image": "images/contractors/contractor-work.jpg",
+   "card_alt": "Contractor working on a job site"
+  },
+  {
+   "slug": "seo-web-design",
+   "url": "/seo-web-design/",
+   "name": "SEO Web Design",
+   "short": "SEO Web Design",
+   "summary": "A site built so Google can read it: titles, headings, schema, speed and pages for the towns and services people search for.",
+   "card_image": "demo-images/accounting/2.jpg",
+   "card_alt": "Laptop on a desk showing charts"
+  },
+  {
+   "slug": "small-business-website-redesign",
+   "url": "/small-business-website-redesign/",
+   "name": "Small Business Website Redesign",
+   "short": "Website Redesign",
+   "summary": "When the old site is slow, out of date or rented, a rebuild that keeps the pages and links already working for you.",
+   "card_image": "demo-images/default/3.jpg",
+   "card_alt": "Small business owner reviewing a website on a laptop"
+  },
+  {
+   "slug": "affordable-website-design",
+   "url": "/affordable-website-design/",
+   "name": "Affordable Website Design for Small Business",
+   "short": "Affordable Web Design",
+   "summary": "What a fair, low one-time price buys, what it leaves out, and how to keep a small budget from turning into a monthly bill forever.",
+   "card_image": "demo-images/default/1.jpg",
+   "card_alt": "Small storefront on a main street"
+  },
+  {
+   "slug": "web-design-for-plumbers",
+   "url": "/web-design-for-plumbers/",
+   "name": "Web Design for Plumbers",
+   "short": "Plumber Websites",
+   "summary": "Plumbing websites built around the emergency call: the number up top, the services listed plainly and the towns you drive to.",
+   "card_image": "demo-images/plumbing/1.jpg",
+   "card_alt": "Plumber working under a sink"
+  },
+  {
+   "slug": "roofing-contractor-website-design",
+   "url": "/roofing-contractor-website-design/",
+   "name": "Roofing Contractor Website Design",
+   "short": "Roofer Websites",
+   "summary": "Roofing websites for storm season and the rest of the year: inspections, repairs, replacements, insurance questions and the counties you serve.",
+   "card_image": "demo-images/roofing/1.jpg",
+   "card_alt": "Roofer working on a shingle roof"
+  },
+  {
+   "slug": "web-design-for-law-firms",
+   "url": "/web-design-for-law-firms/",
+   "name": "Web Design for Law Firms",
+   "short": "Law Firm Websites",
+   "summary": "Websites for small and solo law practices that explain each practice area clearly and stay inside the lawyer advertising rules.",
+   "card_image": "demo-images/legal/1.jpg",
+   "card_alt": "Law office desk with books and documents"
+  },
+  {
+   "slug": "web-design-for-therapists",
+   "url": "/web-design-for-therapists/",
+   "name": "Web Design for Therapists",
+   "short": "Therapist Websites",
+   "summary": "Calm, private-practice websites that help the right clients find you, with contact forms that do not ask for health details.",
+   "card_image": "demo-images/chiropractic/6.jpg",
+   "card_alt": "Quiet, bright office with two chairs"
+  }
+ ],
+ "guides": [
+  {
+   "slug": "small-business-website-cost",
+   "url": "/small-business-website-cost.html",
+   "name": "How Much Does a Website Cost for a Small Business?",
+   "short": "Small Business Website Cost",
+   "summary": "What each way of getting a site actually costs, up front and every month, and where the money goes."
+  },
+  {
+   "slug": "how-much-does-a-website-designer-cost",
+   "url": "/how-much-does-a-website-designer-cost/",
+   "name": "How Much Does a Website Designer Cost?",
+   "short": "Website Designer Cost",
+   "summary": "Hourly rates, project prices and retainers, and what changes the number a designer quotes you."
+  },
+  {
+   "slug": "website-cost-per-month",
+   "url": "/website-cost-per-month/",
+   "name": "How Much Does a Website Cost per Month?",
+   "short": "Website Cost per Month",
+   "summary": "Domain, hosting, email, maintenance and add-ons: the running costs after the site is built."
+  },
+  {
+   "slug": "web-design-packages-explained",
+   "url": "/web-design-packages-explained/",
+   "name": "Web Design Packages Explained",
+   "short": "Web Design Packages",
+   "summary": "How agencies bundle pages, SEO and support into packages, and how to compare two quotes line by line."
+  },
+  {
+   "slug": "website-builder-vs-web-designer",
+   "url": "/website-builder-vs-web-designer/",
+   "name": "Website Builder or Web Designer?",
+   "short": "Builder or Designer",
+   "summary": "What Wix, Squarespace and the other builders cost, what they do well, and when paying a person is worth it."
+  },
+  {
+   "slug": "how-to-hire-a-web-designer",
+   "url": "/how-to-hire-a-web-designer/",
+   "name": "How to Find and Hire a Web Designer",
+   "short": "Hiring a Web Designer",
+   "summary": "Where to look, what to ask, what the contract should say and who should own the domain."
+  },
+  {
+   "slug": "why-small-businesses-need-a-website",
+   "url": "/why-small-businesses-need-a-website/",
+   "name": "Does a Small Business Need a Website?",
+   "short": "Does My Business Need a Website?",
+   "summary": "An honest answer, with the survey numbers on how many small businesses have one and why customers look for it."
+  }
+ ],
+ "area_groups": [
+  {
+   "key": "east-texas",
+   "name": "East Texas"
+  },
+  {
+   "key": "houston",
+   "name": "Houston area"
+  },
+  {
+   "key": "dfw",
+   "name": "Dallas-Fort Worth"
+  },
+  {
+   "key": "austin",
+   "name": "Austin and the Hill Country"
+  },
+  {
+   "key": "central-west",
+   "name": "Central and West Texas"
+  },
+  {
+   "key": "georgia",
+   "name": "Georgia"
+  }
+ ],
+ "areas": [
+  {
+   "slug": "tyler-tx",
+   "url": "/web-design/tyler-tx.html",
+   "name": "Tyler",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Tyler",
+   "summary": ""
+  },
+  {
+   "slug": "longview-tx",
+   "url": "/web-design/longview-tx.html",
+   "name": "Longview",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Longview",
+   "summary": ""
+  },
+  {
+   "slug": "east-texas",
+   "url": "/web-design/east-texas.html",
+   "name": "East Texas",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "East Texas",
+   "summary": ""
+  },
+  {
+   "slug": "gilmer-tx",
+   "url": "/web-design/gilmer-tx.html",
+   "name": "Gilmer",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Gilmer",
+   "summary": ""
+  },
+  {
+   "slug": "kilgore-tx",
+   "url": "/web-design/kilgore-tx.html",
+   "name": "Kilgore",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Kilgore",
+   "summary": ""
+  },
+  {
+   "slug": "marshall-tx",
+   "url": "/web-design/marshall-tx.html",
+   "name": "Marshall",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Marshall",
+   "summary": ""
+  },
+  {
+   "slug": "gladewater-tx",
+   "url": "/web-design/gladewater-tx.html",
+   "name": "Gladewater",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Gladewater",
+   "summary": ""
+  },
+  {
+   "slug": "houston-tx",
+   "url": "/web-design/houston-tx.html",
+   "name": "Houston",
+   "state": "TX",
+   "group": "houston",
+   "short": "Houston",
+   "summary": ""
+  },
+  {
+   "slug": "kingwood-tx",
+   "url": "/web-design/kingwood-tx.html",
+   "name": "Kingwood",
+   "state": "TX",
+   "group": "houston",
+   "short": "Kingwood",
+   "summary": ""
+  },
+  {
+   "slug": "dallas-tx",
+   "url": "/web-design/dallas-tx.html",
+   "name": "Dallas",
+   "state": "TX",
+   "group": "dfw",
+   "short": "Dallas",
+   "summary": ""
+  },
+  {
+   "slug": "plano-tx",
+   "url": "/web-design/plano-tx.html",
+   "name": "Plano",
+   "state": "TX",
+   "group": "dfw",
+   "short": "Plano",
+   "summary": ""
+  },
+  {
+   "slug": "frisco-tx",
+   "url": "/web-design/frisco-tx.html",
+   "name": "Frisco",
+   "state": "TX",
+   "group": "dfw",
+   "short": "Frisco",
+   "summary": ""
+  },
+  {
+   "slug": "mckinney-tx",
+   "url": "/web-design/mckinney-tx.html",
+   "name": "McKinney",
+   "state": "TX",
+   "group": "dfw",
+   "short": "McKinney",
+   "summary": ""
+  },
+  {
+   "slug": "denton-tx",
+   "url": "/web-design/denton-tx.html",
+   "name": "Denton",
+   "state": "TX",
+   "group": "dfw",
+   "short": "Denton",
+   "summary": ""
+  },
+  {
+   "slug": "austin-tx",
+   "url": "/web-design/austin-tx.html",
+   "name": "Austin",
+   "state": "TX",
+   "group": "austin",
+   "short": "Austin",
+   "summary": ""
+  },
+  {
+   "slug": "cedar-park-tx",
+   "url": "/web-design/cedar-park-tx.html",
+   "name": "Cedar Park",
+   "state": "TX",
+   "group": "austin",
+   "short": "Cedar Park",
+   "summary": ""
+  },
+  {
+   "slug": "leander-tx",
+   "url": "/web-design/leander-tx.html",
+   "name": "Leander",
+   "state": "TX",
+   "group": "austin",
+   "short": "Leander",
+   "summary": ""
+  },
+  {
+   "slug": "pflugerville-tx",
+   "url": "/web-design/pflugerville-tx.html",
+   "name": "Pflugerville",
+   "state": "TX",
+   "group": "austin",
+   "short": "Pflugerville",
+   "summary": ""
+  },
+  {
+   "slug": "kyle-tx",
+   "url": "/web-design/kyle-tx.html",
+   "name": "Kyle",
+   "state": "TX",
+   "group": "austin",
+   "short": "Kyle",
+   "summary": ""
+  },
+  {
+   "slug": "san-marcos-tx",
+   "url": "/web-design/san-marcos-tx.html",
+   "name": "San Marcos",
+   "state": "TX",
+   "group": "austin",
+   "short": "San Marcos",
+   "summary": ""
+  },
+  {
+   "slug": "dripping-springs-tx",
+   "url": "/web-design/dripping-springs-tx.html",
+   "name": "Dripping Springs",
+   "state": "TX",
+   "group": "austin",
+   "short": "Dripping Springs",
+   "summary": ""
+  },
+  {
+   "slug": "new-braunfels-tx",
+   "url": "/web-design/new-braunfels-tx.html",
+   "name": "New Braunfels",
+   "state": "TX",
+   "group": "austin",
+   "short": "New Braunfels",
+   "summary": ""
+  },
+  {
+   "slug": "waco-tx",
+   "url": "/web-design/waco-tx.html",
+   "name": "Waco",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Waco",
+   "summary": ""
+  },
+  {
+   "slug": "el-paso-tx",
+   "url": "/web-design/el-paso-tx.html",
+   "name": "El Paso",
+   "state": "TX",
+   "group": "central-west",
+   "short": "El Paso",
+   "summary": ""
+  },
+  {
+   "slug": "atlanta-ga",
+   "url": "/web-design/atlanta-ga.html",
+   "name": "Atlanta",
+   "state": "GA",
+   "group": "georgia",
+   "short": "Atlanta",
+   "summary": ""
+  },
+  {
+   "slug": "lawrenceville-ga",
+   "url": "/web-design/lawrenceville-ga.html",
+   "name": "Lawrenceville",
+   "state": "GA",
+   "group": "georgia",
+   "short": "Lawrenceville",
+   "summary": ""
+  }
+ ],
+ "tool_sitemap": [
+  "/compare/",
+  "/demo-generator.html",
+  "/demo.html",
+  "/intake/",
+  "/site-check/",
+  "/tools/"
+ ]
+}

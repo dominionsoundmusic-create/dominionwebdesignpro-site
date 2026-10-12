@@ -1,0 +1,127 @@
+{# Shared page components. Every page body can call these as m.<name>(...). #}
+
+{% macro service_cards(slugs=None, more='Read more') -%}
+<div class="cards">
+{% for s in site.services if slugs is none or s.slug in slugs %}
+  <article class="card">
+    {% if s.card_image and image_exists(s.card_image) %}{% set sz = img_size(s.card_image) %}{{ picture(s.card_image, s.card_alt, sz[0], sz[1], "(max-width: 700px) 100vw, 400px", ' loading="lazy" decoding="async"') }}{% endif %}
+    <div class="card__body">
+      <h3><a href="{{ s.url }}">{{ s.name }}</a></h3>
+      <p>{{ s.summary }}</p>
+      <p class="card__more" aria-hidden="true">{{ more }}</p>
+    </div>
+  </article>
+{% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro guide_cards(slugs=None) -%}
+<div class="cards">
+{% for g in site.guides if slugs is none or g.slug in slugs %}
+  <article class="card card--text">
+    <div class="card__body">
+      <h3><a href="{{ g.url }}">{{ g.name }}</a></h3>
+      <p>{{ g.summary }}</p>
+      <p class="card__more" aria-hidden="true">Read the guide</p>
+    </div>
+  </article>
+{% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro area_pills(exclude=None, group=None) -%}
+<ul class="pill-list">
+  <li><a href="/web-design/">All cities</a></li>
+{% for a in site.areas if a.slug != exclude and (group is none or a.group == group) %}
+  <li><a href="{{ a.url }}">{{ a.short }}{{ ', ' ~ a.state if a.slug != 'east-texas' else '' }}</a></li>
+{% endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro area_directory() -%}
+{% for g in site.area_groups %}
+<h3>{{ g.name }}</h3>
+<div class="cards cards--areas">
+{% for a in site.areas if a.group == g.key %}
+  <article class="card card--text">
+    <div class="card__body">
+      <h4 class="card__title"><a href="{{ a.url }}">{{ 'Web design in ' ~ a.name ~ (', ' ~ a.state if a.slug != 'east-texas' else '') }}</a></h4>
+      <p>{{ a.summary }}</p>
+    </div>
+  </article>
+{% endfor %}
+</div>
+{% endfor %}
+{%- endmacro %}
+
+{% macro related(slugs, title='Related pages') -%}
+<h2>{{ title }}</h2>
+<ul class="pill-list">
+{% for slug in slugs %}
+  {% if slug.startswith('guide:') %}{% set g = guide(slug[6:]) %}<li><a href="{{ g.url }}">{{ g.short }}</a></li>
+  {% elif slug.startswith('area:') %}{% set a = area(slug[5:]) %}<li><a href="{{ a.url }}">Web design in {{ a.name }}</a></li>
+  {% else %}{% set s = svc(slug) %}<li><a href="{{ s.url }}">{{ s.short }}</a></li>{% endif %}
+{% endfor %}
+</ul>
+{%- endmacro %}
+
+{# The three packages, exactly as INTAKE.md states them. Used on the home page and /pricing/. #}
+{% macro pricing_cards(heading_level=3) -%}
+<div class="plans">
+{% for p in plans %}
+  <article class="plan{% if p.popular %} plan--popular{% endif %}" aria-labelledby="plan-{{ p.slug }}">
+    <h{{ heading_level }} class="plan__name" id="plan-{{ p.slug }}">{{ p.name }}{% if p.popular %} <span class="plan__flag">Most Popular</span>{% endif %}</h{{ heading_level }}>
+    <p class="plan__price"><strong>{{ p.price }}</strong> <span>{{ p.term }}</span></p>
+    <p class="plan__summary">{{ p.summary }}</p>
+    <ul class="plan__list">
+    {% for f in p.features %}<li{% if f.endswith('plus:') %} class="plan__plus"{% endif %}>{{ f }}</li>{% endfor %}
+    </ul>
+    <div class="plan__actions">
+      <a class="btn {{ 'btn--gold' if p.popular else 'btn--blue' }} btn--block" href="{{ p.stripe }}" rel="noopener">Buy {{ p.name }}, {{ p.price }}</a>
+      <a class="plan__demo" href="{{ site.cta.primary_href }}">Or get a free demo first</a>
+    </div>
+  </article>
+{% endfor %}
+</div>
+<p class="plans__note">{{ site.pricing.hosting_note }}</p>
+<p class="plans__note"><strong>We do not sell page counts.</strong> {{ site.pricing.page_count_note | replace("We do not sell page counts. ", "") }}</p>
+{%- endmacro %}
+
+{% macro process_steps() -%}
+<ol class="how-strip">
+  <li><strong>Ask for the demo</strong>Give your business name and what you do on the demo page, or call {{ site.business.phone_display }}.</li>
+  <li><strong>Look at it on your phone</strong>You get a link to a site built for your business. Show it to whoever you show things to.</li>
+  <li><strong>Pick a package or walk away</strong>Starter, Pro or Agency, one-time price. If it is not right, you owe nothing.</li>
+  <li><strong>Maurice writes and builds it</strong>Every page written by hand, then launched on your domain, usually in 7 to 14 days for Starter.</li>
+</ol>
+{%- endmacro %}
+
+{% macro demo_box(text='Not sure yet? Ask for the free demo. You see a site built for your business before anyone mentions an invoice.') -%}
+<div class="note note--gold">
+  <p>{{ text }}</p>
+  <p class="btn-row"><a class="btn btn--blue btn--sm" href="{{ site.cta.primary_href }}">{{ site.cta.primary_label }}</a> <a class="btn btn--outline btn--sm" href="tel:{{ site.business.phone_tel }}">{{ site.cta.call_label }}</a></p>
+</div>
+{%- endmacro %}
+
+{% macro phone_note() -%}
+<div class="note">
+  <p><strong>About the phone line:</strong> {{ site.business.phone_display }} is answered any hour by an AI receptionist. Ask about a website preview, or ask for Maurice or a person, and it transfers you to Maurice.</p>
+</div>
+{%- endmacro %}
+
+{% macro no_office(city) -%}
+<div class="note">
+  <p><strong>Straight answer on location:</strong> Dominion Web Design Pro has no office in {{ city }}. Maurice Johnson builds every site from Big Sandy in East Texas and delivers it remotely, by link, phone and email.</p>
+</div>
+{%- endmacro %}
+
+{% macro sources(items) -%}
+<aside class="sources" aria-labelledby="sources-title">
+  <h2 id="sources-title">Sources</h2>
+  <ul>
+  {% for s in items %}
+    <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}<span class="sr"> (opens in a new tab)</span></a></li>
+  {% endfor %}
+  </ul>
+</aside>
+{%- endmacro %}
