@@ -255,8 +255,8 @@
    "name": "SEO Web Design",
    "short": "SEO Web Design",
    "summary": "A site built so Google can read it: titles, headings, schema, speed and pages for the towns and services people search for.",
-   "card_image": "demo-images/accounting/2.jpg",
-   "card_alt": "Laptop on a desk showing charts"
+   "card_image": "demo-images/insurance/2.jpg",
+   "card_alt": "Bright office with a desk and chairs by tall windows"
   },
   {
    "slug": "small-business-website-redesign",
@@ -300,8 +300,8 @@
    "name": "Web Design for Law Firms",
    "short": "Law Firm Websites",
    "summary": "Websites for small and solo law practices that explain each practice area clearly and stay inside the lawyer advertising rules.",
-   "card_image": "demo-images/legal/1.jpg",
-   "card_alt": "Law office desk with books and documents"
+   "card_image": "demo-images/legal/3.jpg",
+   "card_alt": "Law office with a wooden desk and shelves of books"
   },
   {
    "slug": "web-design-for-therapists",
@@ -309,8 +309,8 @@
    "name": "Web Design for Therapists",
    "short": "Therapist Websites",
    "summary": "Calm, private-practice websites that help the right clients find you, with contact forms that do not ask for health details.",
-   "card_image": "demo-images/chiropractic/6.jpg",
-   "card_alt": "Quiet, bright office with two chairs"
+   "card_image": "demo-images/insurance/4.jpg",
+   "card_alt": "Bright, quiet office with desks and tall windows"
   }
  ],
  "guides": [
