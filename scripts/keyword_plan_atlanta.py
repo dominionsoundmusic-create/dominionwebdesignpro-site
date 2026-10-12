@@ -49,7 +49,7 @@ TARGETS = {
 U_GOV = "someone looking for a city or county government's own website, not hiring a designer"
 U_JOBS = "jobs, pay, training or whether web design is a good career: no hiring intent"
 U_LOOKALIKE = "a look-alike phrase about something else (lighting, stone, TV shows, parks, home builders, GIS maps, other companies)"
-U_BRAND = "names another agency (CLAUDE.md: other agencies' brand names are not used)"
+U_BRAND = "names or reads like the name of another agency (CLAUDE.md: other agencies' brand names are not used)"
 U_TRIVIA = "trivia or craft questions about the industry, not someone hiring a designer"
 U_GA_WAVE2 = "a Georgia city with no page yet: Atlanta wave 2 candidate (see the table below)"
 U_OUT = "a U.S. city or state outside Texas and Georgia: national Wave 2 candidate, not built in this run"
@@ -60,7 +60,7 @@ U_LOW = "under 10 searches a month and no page fits it (the 10+ rule does not re
 RULES = [  # (regex, page key or ("unused", reason)); first match wins
     (r"^web design clayton$", ("unused", U_AMBIG)),
     (r"^(clayton county website|henry county website|clayton website|lithonia website)$", ("unused", U_GOV)),
-    (r"m16 marketing", ("unused", U_BRAND)),
+    (r"m16 marketing|atlanta web design group", ("unused", U_BRAND)),
     (r"william webb|^how mcdonough$|^mcdonough we$", ("unused", U_LOOKALIKE)),
     (r"jobs?\b|salary|paid|make$|training|colleges?|class\b|code examples|in demand|work from home|happy|obsolete|replaced", ("unused", U_JOBS)),
     (r"^black owned (web|website|internet)|^what brands are black owned", "black-owned"),
