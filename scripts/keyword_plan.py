@@ -277,7 +277,11 @@ def main():
     print(f"{len(rows)} rows, {n10} at 10+: {assigned10} assigned, {unused10} unused, {len(missing)} problems")
     for m in missing:
         print("UNCLASSIFIED", m)
-    return 1 if missing else 0
+    # The Atlanta add-on keyword file gets its own section at the end of the same plan.
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import keyword_plan_atlanta
+    atl = keyword_plan_atlanta.main()
+    return 1 if missing or atl else 0
 
 
 if __name__ == "__main__":

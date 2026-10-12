@@ -56,7 +56,7 @@ Written before the pages, from keywords/Web-Design-Keywords.xlsx (Ubersuggest, U
 | waco | /web-design/waco-tx.html | web design waco tx | 50 | 14 | new |
 | el-paso | /web-design/el-paso-tx.html | web design el paso | 880 | 14 | new |
 | kingwood | /web-design/kingwood-tx.html | web design kingwood | 30 | 12 | new |
-| atlanta | /web-design/atlanta-ga.html | web design company atlanta | 1,300 | 58 | rebuilt, same URL |
+| atlanta | /web-design/atlanta-ga.html | web design company atlanta | 1,300 | 58 | rebuilt, same URL; strengthened in the Atlanta add-on |
 
 ## Texas towns with a web design keyword at 10+ searches a month (Maurice's 10+ rule)
 
@@ -132,3 +132,25 @@ Statewide Texas keywords (web design tx 1,600/mo SD 79; texas web designer 260 S
 | Terms | /terms.html | rebuilt, same URL, no FAQ |
 | 404 | /404.html | new, noindex |
 | Tool pages | /demo.html, /demo-generator.html, /site-check/, /compare/, /tools/, /intake/, /intake/thanks/, /contact/thanks/ | copied through from the live site; scripts and forms byte for byte |
+
+## Atlanta add-on (Oct 12 2026, keywords/Atlanta-Web-Design-Keywords.xlsx)
+
+Full keyword assignments and the unused list are in docs/keyword-plan.md, section "Atlanta add-on".
+
+| Page | URL | Target keyword | Vol | SD | Status |
+|---|---|---|---:|---:|---|
+| black-owned | /black-owned-web-design/ | black owned web developers | 880 | 10 | new (national service page) |
+| atlanta | /web-design/atlanta-ga.html | web design company atlanta (plus web developers in atlanta 1,300 SD 11; web design in atlanta ga 1,300 SD 36; atlanta web designer 590 SD 20; atlanta web design 880 SD 36; web design company atlanta ga 1,300 SD 46; atlanta wordpress web design 50 SD 19; best web designers in atlanta 10 SD 5) | 1,300 | 58 | strengthened, same URL |
+| decatur | /web-design/decatur-ga.html | web design decatur ga | 20 | 5 | new |
+| mcdonough | /web-design/mcdonough-ga.html | web design mcdonough ga (plus mcdonough website 10 SD 18) | 10 | 5 | new |
+| conyers | /web-design/conyers-ga.html | web design conyers ga | 10 | 5 | new |
+| douglasville | /web-design/douglasville-ga.html | web design douglasville ga (plus douglas web design 10 SD 13) | 10 | 5 | new |
+
+Black-owned page supporting keywords: black owned website design companies (50, SD 9), black owned web design company
+(50, SD 14), black owned web designers near me (30, SD 15), black owned web designers (20, SD 24), black owned web
+design agency (10, SD 21), black owned web design (10, SD 28), black owned web design atlanta (seed, no measured volume).
+
+Atlanta-area cities checked in the data with 0 measured searches (no page this run, "Atlanta wave 2"): South Fulton,
+College Park, East Point, Union City, Fairburn, Stonecrest, Lithonia, Stockbridge, Riverdale, Jonesboro, Morrow,
+Forest Park. Georgia cities with 10+ searches but outside this add-on's list (Macon, Marietta, Athens, Buford,
+Kennesaw, Columbus, Gainesville) are listed as Atlanta wave 2 candidates in docs/keyword-plan.md.

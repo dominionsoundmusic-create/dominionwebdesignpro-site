@@ -121,3 +121,32 @@ be reversed later.
 31. **Demo photos with words printed on them are not used on content pages** (accounting, most
     chiropractic, construction, three of the legal, pest control and one each of landscaping, roofing
     and real estate) and default/4.jpg (shows a coffee chain's logo).
+
+## Atlanta add-on (Oct 12 2026, ATLANTA-ADDON.md)
+
+32. **Keyword source and the 10+ rule.** keywords/Atlanta-Web-Design-Keywords.xlsx (385 unique keywords,
+    154 at 10+). scripts/keyword_plan_atlanta.py classifies every one and writes the "Atlanta add-on"
+    section of docs/keyword-plan.md; scripts/keyword_plan.py runs it and fails if any 10+ keyword is
+    unclassified. 44 are assigned to pages, 110 listed as unused with a reason.
+33. **Six pages.** NEW /black-owned-web-design/ (national service page, target "black owned web
+    developers" 880/mo SD 10), STRENGTHENED /web-design/atlanta-ga.html (same URL; adds "web developers
+    in atlanta" 1,300 SD 11 and the other Atlanta phrases), NEW /web-design/decatur-ga.html,
+    /web-design/mcdonough-ga.html, /web-design/conyers-ga.html, /web-design/douglasville-ga.html. City
+    pages keep the flat /web-design/<town>.html pattern every other city page uses.
+34. **Black-owned wording.** INTAKE section 7: the business is Black-owned (Maurice Johnson, owner) and
+    the site may say so. No MBE, NMSDC, state or city certification and no association membership is
+    claimed anywhere; certification programs are explained on the page only as something a reader can
+    check for any vendor. "Certified" stays a banned word in scripts/check.py.
+35. **The black-owned page is type "service"** (it sells the same packages to a defined audience) but it
+    is not added to the Services menu; it is linked from the footer Company list, the About page and
+    the Atlanta page, as ATLANTA-ADDON.md asks.
+36. **Georgia cities with 0 measured volume** (South Fulton, College Park, East Point, Union City,
+    Fairburn, Stonecrest, Lithonia, Stockbridge, Riverdale, Jonesboro, Morrow, Forest Park) get no page;
+    listed as "Atlanta wave 2 (0 measured volume)". Georgia cities that do show 10+ but were not in the
+    add-on (Macon, Marietta, Athens, Buford, Kennesaw, Columbus, Gainesville) are listed as Atlanta
+    wave 2 candidates rather than built, since ATLANTA-ADDON.md names the pages for this run.
+37. **County-government searches** ("clayton county website" 140, "henry county website" 110, "clayton
+    website", "lithonia website") are people looking for the government's own site: unused.
+38. **Links.** The four new towns are in site.json's Georgia area group, so they appear automatically in
+    the city directory, the service areas pills, the footer city list and the sitemap. The service
+    areas Georgia panel, the Atlanta page and the Lawrenceville page link them by name.

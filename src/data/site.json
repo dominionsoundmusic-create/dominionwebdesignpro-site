@@ -210,6 +210,10 @@
    "href": "/about.html"
   },
   {
+   "label": "Black-Owned Web Design",
+   "href": "/black-owned-web-design/"
+  },
+  {
    "label": "FAQ",
    "href": "/faq/"
   },
@@ -623,6 +627,42 @@
    "state": "GA",
    "group": "georgia",
    "short": "Lawrenceville",
+   "summary": ""
+  },
+  {
+   "slug": "decatur-ga",
+   "url": "/web-design/decatur-ga.html",
+   "name": "Decatur",
+   "state": "GA",
+   "group": "georgia",
+   "short": "Decatur",
+   "summary": ""
+  },
+  {
+   "slug": "mcdonough-ga",
+   "url": "/web-design/mcdonough-ga.html",
+   "name": "McDonough",
+   "state": "GA",
+   "group": "georgia",
+   "short": "McDonough",
+   "summary": ""
+  },
+  {
+   "slug": "conyers-ga",
+   "url": "/web-design/conyers-ga.html",
+   "name": "Conyers",
+   "state": "GA",
+   "group": "georgia",
+   "short": "Conyers",
+   "summary": ""
+  },
+  {
+   "slug": "douglasville-ga",
+   "url": "/web-design/douglasville-ga.html",
+   "name": "Douglasville",
+   "state": "GA",
+   "group": "georgia",
+   "short": "Douglasville",
    "summary": ""
   }
  ],
