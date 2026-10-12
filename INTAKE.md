@@ -79,3 +79,8 @@ Nationwide, remote delivery. Home turf: East Texas (Big Sandy, Gilmer, Tyler, Lo
 Logo: images/dominion-logo.svg (keep). Brand colors from the live site: blue #2563EB (dark
   #1D4ED8), gold #F5A623, near-black #0A0F1A. The new design is mostly WHITE sections with
   occasional bold bands (see CLAUDE.md design rules); the current all-dark look is replaced.
+
+7. OWNERSHIP (stated by Maurice Oct 12 2026)
+Dominion Web Design Pro / Dominion Digital Group is a Black-owned business (Maurice Johnson, owner).
+This may be stated on the site. Do NOT claim any minority-business certification (MBE, NMSDC,
+state or city certification) or membership in any association unless Maurice confirms it.
