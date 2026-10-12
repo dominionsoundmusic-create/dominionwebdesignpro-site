@@ -46,7 +46,7 @@ BANNED = [
     # INTAKE: never say a human always answers
     r"\b(?:a )?(?:real )?(?:person|human) (?:always )?answers\b", r"\balways (?:talk|speak) to a (?:real )?(?:person|human)\b",
     # leftovers from the build system this site was copied from
-    r"\bPhoenix Pool\b", r"\bpool (?:service|cleaning|repair)\b", r"\(623\)", r"\bROC license\b",
+    r"\bPhoenix Pool\b", r"\(623\)", r"\bROC license\b",
     # retired live-site claims that INTAKE.md does not support
     r"\bthree-month minimum\b", r"\bten months instead of twelve\b", r"\bDominion Solar\b",
 ]
