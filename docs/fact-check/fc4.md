@@ -68,4 +68,4 @@ Checker: fc4, independent (did not write these pages). Method: WebSearch only (W
 | "Three tiers / most popular" market pattern; red flags | Opinion and advice, no factual claim | n/a | none |
 
 ## Summary
-Checked 48 claims: 35 confirmed, 8 corrected, 4 softened, 1 removed.
+Checked 44 claims (plus one advice section with no factual claim): 33 confirmed, 7 corrected, 3 softened, 1 removed.

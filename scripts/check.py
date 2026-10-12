@@ -157,10 +157,12 @@ def main():
     titles, descs = defaultdict(list), defaultdict(list)
     files = sorted(dist.rglob("*.html"))
     sitemap = (dist / "sitemap.xml").read_text() if (dist / "sitemap.xml").exists() else ""
+    checked = 0
     for f in files:
         url = url_of(f, dist)
         if args.only and not url.startswith(args.only):
             continue
+        checked += 1
         raw = f.read_text()
         p = PageParser()
         p.feed(raw)
@@ -350,7 +352,7 @@ def main():
         print("WARN ", w)
     for e in errors:
         print("ERROR", e)
-    print(f"\n{len(files)} pages checked, {len(errors)} errors, {len(warnings)} warnings")
+    print(f"\n{checked} pages checked, {len(errors)} errors, {len(warnings)} warnings")
     return 1 if errors else 0
 
 
