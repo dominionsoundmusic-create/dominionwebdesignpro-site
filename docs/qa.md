@@ -1,5 +1,20 @@
 # QA record (Oct 12 2026, final run on the `build` branch)
 
+## Atlanta add-on run (Oct 12 2026)
+
+| Check | Result |
+|---|---|
+| Build `python3 build.py` | 60 content pages (6 added or rebuilt in this run: /black-owned-web-design/, Atlanta strengthened, Decatur, McDonough, Conyers, Douglasville); 58 planned photos in docs/image-list.md (10 new: 5 heroes, 5 in-body) |
+| Rules and SEO `python3 scripts/check.py` | 68 pages checked, **0 errors, 0 warnings** |
+| Old URLs `python3 scripts/check_old_urls.py` | **285 old URLs checked, 0 would 404** |
+| Final grep `python3 scripts/grep_check.py` | **0 hits** across 68 pages |
+| Tool pages `check_tool_pages.py` and `tool_pages_browser.js` | unchanged byte for byte; 10 of 10 load with 0 JS errors, forms site-check, client-intake, homepage-contact present |
+| Duplication `python3 scripts/similarity.py` | area pairs max **4.3%** (new pages: 0.0% to 3.5%, highest Decatur vs Lawrenceville 3.4%), service pairs max **2.5%** (black-owned page at most 1.4%) |
+| Keywords `python3 scripts/keyword_plan.py` | Atlanta file: 385 keywords, 154 at 10+: **43 assigned, 111 unused with a reason, 0 unclassified** |
+| Responsive `responsive_check.js` | 282 page loads at 1440/1024/768/390 (all pages) and 1920/2560 (sample): **0 problems**; Atlanta and black-owned pages screenshotted at 1440 and 2560, H1 at the left rail (79px and 140px), no horizontal scroll |
+| Fact-check | 3 independent sub-agents: 115 claims, 91 confirmed, 7 corrected, 15 softened, 1 removed (docs/fact-check.md) |
+
+
 All commands run from the repo root against the production build in dist/.
 
 | Check | Command | Result |
