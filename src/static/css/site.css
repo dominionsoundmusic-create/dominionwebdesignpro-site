@@ -130,7 +130,7 @@ li { margin-bottom: .35em; }
 .site-header { background: var(--brand); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 14px rgba(0, 0, 0, .25); }
 .site-header__inner { max-width: none; margin: 0; padding: 0 var(--rail); min-height: var(--header-h); display: flex; align-items: center; gap: 18px; }
 .logo { flex: 0 0 auto; display: block; }
-.logo img { height: 46px; width: auto; }
+.logo img { height: 64px; width: auto; }
 .site-nav { margin-left: auto; }
 .site-nav__list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 2px; }
 .site-nav__list > li { margin: 0; position: relative; display: flex; align-items: center; }
@@ -169,7 +169,7 @@ li { margin-bottom: .35em; }
   .sub a:hover, .sub a[aria-current="page"] { background: rgba(255, 255, 255, .08); }
 }
 @media (max-width: 560px) {
-  .logo img { height: 36px; }
+  .logo img { height: 50px; }
   .header-call__long { display: none; }
   .header-call__short { display: inline; }
   .site-header__inner { gap: 8px; }
@@ -178,7 +178,7 @@ li { margin-bottom: .35em; }
 }
 @media (max-width: 400px) {
   .site-header__inner { padding: 0 12px; gap: 6px; }
-  .logo img { height: 28px; }
+  .logo img { height: 36px; }
   .header-actions { gap: 6px; }
   .header-call { padding: 9px 12px; }
   .nav-toggle { padding: 8px 10px; }
@@ -340,7 +340,7 @@ tbody th { color: var(--navy); background: var(--tint); }
 .site-footer__grid ul { list-style: none; padding: 0; margin: 0 0 18px; }
 .site-footer__grid li { margin: 0 0 6px; }
 .site-footer__label { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8fa3bd; margin: 0 0 10px; }
-.site-footer__brand .logo img { height: 44px; width: auto; margin-bottom: 16px; }
+.site-footer__brand .logo img { height: 60px; width: auto; margin-bottom: 16px; }
 .site-footer__brand p { max-width: 42ch; }
 .site-footer__phone { font-size: 1.25rem; font-weight: 800; color: var(--gold) !important; }
 .site-footer__bottom { border-top: 1px solid rgba(255, 255, 255, .1); padding: 18px var(--gutter); text-align: center; font-size: .88rem; }

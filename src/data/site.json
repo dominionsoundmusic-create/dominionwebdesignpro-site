@@ -16,6 +16,7 @@
   "postal": "75755",
   "base": "Big Sandy, Texas",
   "logo": "/images/dominion-logo.svg",
+  "logo_header": "/images/dominion-logo-header.svg",
   "logo_width": 264,
   "logo_height": 64,
   "theme_color": "#1D4ED8",
