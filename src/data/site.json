@@ -395,6 +395,10 @@
   {
    "key": "georgia",
    "name": "Georgia"
+  },
+  {
+   "key": "other-us",
+   "name": "Other U.S. cities"
   }
  ],
  "areas": [
@@ -666,6 +670,123 @@
    "state": "GA",
    "group": "georgia",
    "short": "Douglasville",
+   "summary": ""
+  },
+  {
+   "slug": "st-louis-mo",
+   "url": "/web-design/st-louis-mo.html",
+   "name": "St. Louis",
+   "state": "MO",
+   "group": "other-us",
+   "short": "St. Louis",
+   "summary": ""
+  },
+  {
+   "slug": "kansas-city-mo",
+   "url": "/web-design/kansas-city-mo.html",
+   "name": "Kansas City",
+   "state": "MO",
+   "group": "other-us",
+   "short": "Kansas City",
+   "summary": ""
+  },
+  {
+   "slug": "chicago-il",
+   "url": "/web-design/chicago-il.html",
+   "name": "Chicago",
+   "state": "IL",
+   "group": "other-us",
+   "short": "Chicago",
+   "summary": ""
+  },
+  {
+   "slug": "indianapolis-in",
+   "url": "/web-design/indianapolis-in.html",
+   "name": "Indianapolis",
+   "state": "IN",
+   "group": "other-us",
+   "short": "Indianapolis",
+   "summary": ""
+  },
+  {
+   "slug": "cleveland-oh",
+   "url": "/web-design/cleveland-oh.html",
+   "name": "Cleveland",
+   "state": "OH",
+   "group": "other-us",
+   "short": "Cleveland",
+   "summary": ""
+  },
+  {
+   "slug": "nashville-tn",
+   "url": "/web-design/nashville-tn.html",
+   "name": "Nashville",
+   "state": "TN",
+   "group": "other-us",
+   "short": "Nashville",
+   "summary": ""
+  },
+  {
+   "slug": "miami-fl",
+   "url": "/web-design/miami-fl.html",
+   "name": "Miami",
+   "state": "FL",
+   "group": "other-us",
+   "short": "Miami",
+   "summary": ""
+  },
+  {
+   "slug": "orlando-fl",
+   "url": "/web-design/orlando-fl.html",
+   "name": "Orlando",
+   "state": "FL",
+   "group": "other-us",
+   "short": "Orlando",
+   "summary": ""
+  },
+  {
+   "slug": "phoenix-az",
+   "url": "/web-design/phoenix-az.html",
+   "name": "Phoenix",
+   "state": "AZ",
+   "group": "other-us",
+   "short": "Phoenix",
+   "summary": ""
+  },
+  {
+   "slug": "las-vegas-nv",
+   "url": "/web-design/las-vegas-nv.html",
+   "name": "Las Vegas",
+   "state": "NV",
+   "group": "other-us",
+   "short": "Las Vegas",
+   "summary": ""
+  },
+  {
+   "slug": "los-angeles-ca",
+   "url": "/web-design/los-angeles-ca.html",
+   "name": "Los Angeles",
+   "state": "CA",
+   "group": "other-us",
+   "short": "Los Angeles",
+   "summary": ""
+  },
+  {
+   "slug": "san-diego-ca",
+   "url": "/web-design/san-diego-ca.html",
+   "name": "San Diego",
+   "state": "CA",
+   "group": "other-us",
+   "short": "San Diego",
+   "summary": ""
+  },
+  {
+   "slug": "sacramento-ca",
+   "url": "/web-design/sacramento-ca.html",
+   "name": "Sacramento",
+   "state": "CA",
+   "group": "other-us",
+   "short": "Sacramento",
    "summary": ""
   }
  ],
