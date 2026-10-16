@@ -77,3 +77,45 @@ certification or membership.
 **For Maurice to confirm:** the Atlanta FAQ "Do you do WordPress web design for Atlanta businesses?"
 says the packages are sold by what you get, not by a platform name, and asks anyone who needs
 WordPress to say so when requesting the demo. INTAKE does not say what platform sites are built on.
+
+## Wave 2 (Oct 16 2026): 13 national city pages
+
+Run by four independent sub-agents that did not write the pages, using docs/fact-check/BRIEF.md and the
+writer notes docs/writers/w2-a.md to w2-e.md. Each checked every factual claim and every source URL with
+web searches, fixed the source file in place, rebuilt and re-ran check.py. Full tables (Claim | Verdict |
+Source | Action): docs/fact-check/fc-w2-a.md, fc-w2-b.md, fc-w2-c.md, fc-w2-d.md.
+
+| Checker | Page | Checked | Confirmed | Corrected | Softened | Removed |
+|---|---|---:|---:|---:|---:|---:|
+| fc-w2-a | /web-design/st-louis-mo.html | 22 | 18 | 3 | 1 | 0 |
+| fc-w2-a | /web-design/kansas-city-mo.html | 19 | 15 | 3 | 1 | 0 |
+| fc-w2-a | /web-design/indianapolis-in.html | 16 | 16 | 0 | 0 | 0 |
+| fc-w2-b | /web-design/phoenix-az.html | 18 | 12 | 2 | 3 | 1 |
+| fc-w2-b | /web-design/las-vegas-nv.html | 17 | 14 | 2 | 0 | 1 |
+| fc-w2-b | /web-design/sacramento-ca.html | 25 | 21 | 1 | 1 | 2 |
+| fc-w2-c | /web-design/los-angeles-ca.html | 20 | 15 | 3 | 2 | 0 |
+| fc-w2-c | /web-design/san-diego-ca.html | 19 (1 not a claim) | 13 | 3 | 1 | 1 |
+| fc-w2-c | /web-design/chicago-il.html | 19 (1 not a claim) | 15 | 2 | 1 | 0 |
+| fc-w2-c | /web-design/cleveland-oh.html | 17 | 13 | 2 | 2 | 0 |
+| fc-w2-d | /web-design/miami-fl.html | 21 | 17 | 1 | 3 | 0 |
+| fc-w2-d | /web-design/orlando-fl.html | 17 | 13 | 2 | 2 | 0 |
+| fc-w2-d | /web-design/nashville-tn.html | 15 | 12 | 2 | 1 | 0 |
+| | **Total** | **245** | **194** | **26** | **18** | **5** |
+
+**Notable corrections:** Phoenix's record heat example moved to Oct 1, 2024 (first 110 degree day in
+October) and an unsourced Peoria population removed; SCORE workshops no longer called free everywhere;
+Nevada's State Business License wording allows for exemptions and an unsourced chamber member count was
+removed; Sacramento's 90,000 state jobs dated to the 2019 study (2017 data), an unconfirmed department list
+and a conflicting Metro Chamber/SBDC claim removed; St. Louis populations updated to the newest Census
+estimates and the facade program credited to the Community Development Administration; Kansas City,
+Missouri now spans Jackson, Clay, Platte and Cass counties and the contractor-exam reciprocity was
+corrected to one direction; Los Angeles County population updated, the business tax exemption worded as
+the city states it; San Diego's "one-third of the Marine Corps" removed and the SBDC center list replaced
+from official sources; Chicago now 58 active SSAs; Cleveland Clinic employer figures updated to the Dec
+2022 Ohio Major Employers Report and West Side Market to "more than 70" vendors; Orlando's Main Street
+program dated 2008; Nashville's Kurdish Heritage Month proclamation attributed correctly (Mayor John
+Cooper, 2022). Business claims on all 13 pages match INTAKE.md (prices, 7 to 14 day Starter launch, 14-day
+chat trial, 7-day phone agent trial then $297/mo for up to 750 minutes, $49/mo hosting without the agent,
+AI receptionist wording, no office or clients in the city). The Sacramento page states that Dominion does
+not hold California's Small Business certification; the Miami page states the site's EN/ES button is
+machine translation and does not claim Maurice writes Spanish.

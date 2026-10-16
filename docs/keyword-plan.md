@@ -581,7 +581,7 @@ Target: **web design in san diego** (2,900/mo, SD 9)
 
 Supporting: san diego website design (2,400, SD 51); website design san diego (1,300, SD 37); san diego web design company (320, SD 48); san diego web design experts (70, SD 37); san diego website developer (20, SD 22); best web design company san diego (10, SD 5); web design services in san diego (10, SD 5)
 
-Used as FAQ questions: how much do web designers charge (210, SD 65); how much web design cost (40, SD 28)
+Answered in an FAQ (exact or close wording): how much do web designers charge (210, SD 65); how much web design cost (40, SD 28)
 
 Rows under 10/mo in this city's data: 12 (not required by the 10+ rule).
 
@@ -591,7 +591,7 @@ Target: **website design las vegas nevada** (2,900/mo, SD 9)
 
 Supporting: web design in las vegas (3,600, SD 60); web design vegas (1,900, SD 42); las vegas website design (880, SD 10); las vegas web developers (70, SD 46); las vegas web design agency (50, SD 20)
 
-Used as FAQ questions: how much do web designers charge per hour (50, SD 14); how much web design cost (40, SD 28)
+Answered in an FAQ (exact or close wording): how much do web designers charge per hour (50, SD 14); how much web design cost (40, SD 28)
 
 Rows under 10/mo in this city's data: 3 (not required by the 10+ rule).
 
@@ -601,7 +601,7 @@ Target: **los angeles web design companies** (1,900/mo, SD 9)
 
 Supporting: website design in los angeles (9,900, SD 50); web design in los angeles (4,400, SD 37); web design in la (1,000, SD 13); los angeles web design agency (880, SD 70); web design firms los angeles (720, SD 51); web design agency in los angeles (260, SD 46); top web design companies los angeles (50, SD 58); best web design los angeles (40, SD 26); los angeles website design experts (40, SD 18)
 
-Used as FAQ questions: how much do web designers charge for a website (210, SD 52); how much web design cost (40, SD 28)
+Answered in an FAQ (exact or close wording): how much do web designers charge for a website (210, SD 52); how much web design cost (40, SD 28)
 
 Rows under 10/mo in this city's data: 16 (not required by the 10+ rule).
 
@@ -633,7 +633,7 @@ Rows under 10/mo in this city's data: 4 (not required by the 10+ rule).
 
 Target: **web design in orlando** (1,600/mo, SD 13)
 
-Used as FAQ questions: how much web design cost (40, SD 28)
+Answered in an FAQ (exact or close wording): how much web design cost (40, SD 28)
 
 Rows under 10/mo in this city's data: 7 (not required by the 10+ rule).
 
@@ -643,7 +643,7 @@ Target: **indianapolis website design** (1,900/mo, SD 16)
 
 Supporting: indianapolis web design company (210, SD 43); indiana web design (210, SD 14); website design indiana (110, SD 39)
 
-Used as FAQ questions: web design rates (40, SD 34); how much do web designers charge per hour (50, SD 14); how much web design cost (40, SD 28)
+Answered in an FAQ (exact or close wording): web design rates (40, SD 34); how much do web designers charge per hour (50, SD 14); how much web design cost (40, SD 28)
 
 Rows under 10/mo in this city's data: 2 (not required by the 10+ rule).
 

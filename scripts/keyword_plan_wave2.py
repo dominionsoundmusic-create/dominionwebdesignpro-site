@@ -144,7 +144,7 @@ def section():
             out.append("Supporting: " + "; ".join(f"{r[0]} ({r[1]:,}, SD {r[2]})" for r in sup))
             out.append("")
         if faq:
-            out.append("Used as FAQ questions: " + "; ".join(f"{r[0]} ({r[1]:,}, SD {r[2]})" for r in faq))
+            out.append("Answered in an FAQ (exact or close wording): " + "; ".join(f"{r[0]} ({r[1]:,}, SD {r[2]})" for r in faq))
             out.append("")
         if low:
             out.append(f"Rows under 10/mo in this city's data: {low} (not required by the 10+ rule).")

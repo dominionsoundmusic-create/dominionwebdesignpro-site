@@ -358,3 +358,38 @@ Top 15 pairs:
 | /wordpress-web-design/ | 301 | redirect to /small-business-website/ (rule /wordpress-web-design/) |
 
 285 old URLs checked, 0 would 404.
+
+## Wave 2 (Oct 16 2026): 13 national city pages
+
+| Check | How | Result |
+|---|---|---|
+| Build | `python3 build.py` | 73 pages built, 13 planned hero images listed in docs/image-list.md |
+| Page rules | `python3 scripts/check.py` | 81 pages checked, **0 errors, 0 warnings** |
+| Old URLs | `python3 scripts/check_old_urls.py` | 285 old URLs checked, **0 would 404** |
+| Banned phrases, dashes, numbers | `python3 scripts/grep_check.py` | **0 hits** across 81 pages |
+| Keyword 10+ rule | `python3 scripts/keyword_plan.py` (runs keyword_plan_wave2.py) | 150 Wave 2 keywords at 10+: 85 on a page, 65 unused with a reason, 0 unclassified |
+| Responsive | `node scripts/responsive_check.js` (dist served locally) | 334 page loads at 1440/1024/768/390 plus 1920/2560 samples: **0 problems** (no overflow, no JS errors, no broken images, hero on the left rail). Miami page screenshot at 1440 reviewed |
+| Tool pages and forms | `node scripts/tool_pages_browser.js`, `python3 scripts/check_tool_pages.py` | all OK, forms present with original names, 0 JS errors, scripts byte-for-byte unchanged, seo-audit function present |
+| Fact-check | 4 independent sub-agents (docs/fact-check.md, Wave 2) | 245 claims: 194 confirmed, 26 corrected, 18 softened, 5 removed |
+
+### Similarity (Jaccard, 5-word shingles, `python3 scripts/similarity.py`)
+
+All 43 city pages, 903 pairs: min 0.0%, mean 0.9%, max 4.3%.
+
+| New page | Words | Highest pair | Jaccard |
+|---|---:|---|---:|
+| /web-design/st-louis-mo.html | 1,735 | /web-design/indianapolis-in.html | 4.0% |
+| /web-design/kansas-city-mo.html | 1,357 | /web-design/lawrenceville-ga.html | 3.2% |
+| /web-design/indianapolis-in.html | 1,429 | /web-design/st-louis-mo.html | 4.0% |
+| /web-design/phoenix-az.html | 1,804 | /web-design/sacramento-ca.html | 2.6% |
+| /web-design/las-vegas-nv.html | 1,457 | /web-design/indianapolis-in.html | 2.3% |
+| /web-design/sacramento-ca.html | 1,667 | /web-design/phoenix-az.html | 2.6% |
+| /web-design/los-angeles-ca.html | 1,902 | /web-design/orlando-fl.html | 2.7% |
+| /web-design/san-diego-ca.html | 1,447 | /web-design/indianapolis-in.html | 2.0% |
+| /web-design/miami-fl.html | 1,932 | /web-design/decatur-ga.html | 2.4% |
+| /web-design/orlando-fl.html | 1,538 | /web-design/cleveland-oh.html | 4.0% |
+| /web-design/nashville-tn.html | 1,639 | /web-design/los-angeles-ca.html | 2.2% |
+| /web-design/chicago-il.html | 1,804 | /web-design/cleveland-oh.html | 2.2% |
+| /web-design/cleveland-oh.html | 1,458 | /web-design/orlando-fl.html | 4.0% |
+
+Pairs involving a Wave 2 page: 546 (pairs counted from each side), range 0.0% to 4.0%. Limit 15%: none over.
