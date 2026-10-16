@@ -145,6 +145,13 @@ li { margin-bottom: .35em; }
 .sub a:hover, .sub a[aria-current="page"] { background: var(--tint); }
 .sub-open > .sub { display: block; }
 .header-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+/* Header refresh (Oct 16 2026): deep navy into royal blue, with a thin gold strip underneath,
+   the same accent idea as the Dominion AI Agency site. */
+.site-header { background: linear-gradient(90deg, #0B1B3F 0%, #12307a 48%, #1D4ED8 100%); border-bottom: 3px solid var(--gold); box-shadow: 0 4px 18px rgba(10, 15, 26, .35); }
+.site-nav__link { position: relative; }
+.site-nav__link::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: 4px; height: 2px; background: var(--gold); border-radius: 2px; transform: scaleX(0); transition: transform .18s ease; }
+.site-nav__link:hover::after, .site-nav__link[aria-current="page"]::after, .site-nav__link.is-current::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .site-nav__link::after { transition: none; } }
 .header-call__short { display: none; }
 .nav-toggle { display: none; }
 
@@ -466,7 +473,7 @@ body > .skiptranslate { display: none !important; }
 @media (max-width: 560px) { .dlang__btn { padding: 9px 7px; min-width: 34px; } }
 
 /* header */
-.site-header { background: var(--brand); }
+/* .site-header background set in the header section above (navy to blue gradient with gold strip) */
 .header-call { font-weight: 800; }
 
 /* hero: full-strength photo, dark left-to-right fade behind the headline */
