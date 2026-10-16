@@ -30,6 +30,7 @@ PAGES = {
     "conyers": "/web-design/conyers-ga.html",
     "douglasville": "/web-design/douglasville-ga.html",
     "lawrenceville": "/web-design/lawrenceville-ga.html",
+    "kansas-city": "/web-design/kansas-city-mo.html",
     "east-texas": "/web-design/east-texas.html",
     "g-cost": "/small-business-website-cost.html",
     "g-designer": "/how-much-does-a-website-designer-cost/",
@@ -82,7 +83,8 @@ RULES = [  # (regex, page key or ("unused", reason)); first match wins
      r"web fair|web design union$|union website design|web design unit$|web design decal|southern web design|will web design", ("unused", U_LOOKALIKE)),
     (r"how many web|how web design goes|requirements|web design size|why city design|what website design software|why webflow", ("unused", U_TRIVIA)),
     (r"macon|marietta|athens ga|buford ga|kennesaw|columbus ga|gainesville ga|^web design gainesville$", ("unused", U_GA_WAVE2)),
-    (r"web design (kc|kansas city mo|greensboro|fort myers|chattanooga|iowa city|winston salem|fairfax|deland|quad cities|eau claire|"
+    (r"^web design (kc|kansas city mo)$", "kansas-city"),
+    (r"web design (greensboro|fort myers|chattanooga|iowa city|winston salem|fairfax|deland|quad cities|eau claire|"
      r"st george utah|st george ut|missouri|wilson nc|south carolina|erie pa|south florida|fairfield ct|fairfield|hendersonville nc|kansas|"
      r"cleveland tn|park city|ellsworth)$|web design company jacksonville fl|clayton nc web design|website design jonesboro ar", ("unused", U_OUT)),
 ]

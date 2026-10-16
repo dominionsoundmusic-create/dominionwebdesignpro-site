@@ -34,6 +34,14 @@ PAGES = {
     "tyler": "/web-design/tyler-tx.html", "longview": "/web-design/longview-tx.html", "east-texas": "/web-design/east-texas.html",
     "waco": "/web-design/waco-tx.html", "el-paso": "/web-design/el-paso-tx.html", "kingwood": "/web-design/kingwood-tx.html",
     "atlanta": "/web-design/atlanta-ga.html",
+    # Wave 2 national city pages (Oct 16 2026): main targets come from the national keyword file
+    # (scripts/keyword_plan_wave2.py); city phrases in this file are supporting keywords.
+    "st-louis": "/web-design/st-louis-mo.html", "kansas-city": "/web-design/kansas-city-mo.html",
+    "chicago": "/web-design/chicago-il.html", "indianapolis": "/web-design/indianapolis-in.html",
+    "cleveland": "/web-design/cleveland-oh.html", "nashville": "/web-design/nashville-tn.html",
+    "miami": "/web-design/miami-fl.html", "orlando": "/web-design/orlando-fl.html", "phoenix": "/web-design/phoenix-az.html",
+    "las-vegas": "/web-design/las-vegas-nv.html", "los-angeles": "/web-design/los-angeles-ca.html",
+    "san-diego": "/web-design/san-diego-ca.html", "sacramento": "/web-design/sacramento-ca.html",
 }
 
 # Primary target keyword of each page (the page's other keywords are supporting).
@@ -124,7 +132,12 @@ RULES = [  # (regex, page key or ("unused", reason)); first match wins
     (r"dallas", "dallas"), (r"austin", "austin"), (r"tyler", "tyler"), (r"longview", "longview"), (r"east texas", "east-texas"),
     (r"atlanta", "atlanta"),
     (r"texas web design|web design tx$|website design company texas", "areas"),
-    # U.S. cities outside Texas: Wave 2
+    # Wave 2 national city pages (Oct 16 2026)
+    (r"st\.? louis|\bstl\b", "st-louis"), (r"kansas city|\bkc$", "kansas-city"), (r"chicago", "chicago"),
+    (r"indianapolis", "indianapolis"), (r"cleveland(?! tn)", "cleveland"), (r"nashville", "nashville"),
+    (r"miami", "miami"), (r"orlando", "orlando"), (r"phoenix", "phoenix"), (r"las vegas|vegas", "las-vegas"),
+    (r"los angeles|\bla$", "los-angeles"), (r"san diego", "san-diego"), (r"sacramento", "sacramento"),
+    # U.S. cities outside Texas: still Wave 2 candidates
     (r"new york|nyc|long island|san diego|chicago|los angeles|orange county|tampa|phoenix|tucson|denver|orlando|nashville|"
      r"huntsville|richmond|louisville|wilmington|wichita|okc|kansas city|boston|jacksonville|fort lauderdale|las vegas|miami|"
      r"columbus|sacramento|boise|utah|michigan|maryland|hawaii|new jersey|\bnj\b|\bct\b|\bri\b|florida|california|"
@@ -264,7 +277,9 @@ def main():
         out.append("; ".join(f"{r[0]} ({r[1]:,})" for r in items))
         out.append("")
     out += ["## Wave 2 candidates: U.S. cities outside Texas with 10+ searches", "",
-            "Not built in this run (CLAUDE.md). Listed for Maurice to choose from.", "",
+            "Not built yet. Listed for Maurice to choose from. Thirteen cities from this list and the national keyword "
+            "files got pages in Wave 2 (Oct 16 2026, see the Wave 2 section at the end); their phrases from this file are "
+            "assigned to those pages above.", "",
             "| Keyword | Volume | SD |", "|---|---:|---:|"]
     for kw, vol, sd, typ in sorted(unused.get(U_WAVE2, []), key=lambda r: -r[1]):
         out.append(f"| {kw} | {vol:,} | {sd} |")
@@ -281,7 +296,10 @@ def main():
     sys.path.insert(0, str(ROOT / "scripts"))
     import keyword_plan_atlanta
     atl = keyword_plan_atlanta.main()
-    return 1 if missing or atl else 0
+    # Wave 2 national city pages (Oct 16 2026) come last.
+    import keyword_plan_wave2
+    w2 = keyword_plan_wave2.main()
+    return 1 if missing or atl or w2 else 0
 
 
 if __name__ == "__main__":

@@ -150,3 +150,34 @@ be reversed later.
 38. **Links.** The four new towns are in site.json's Georgia area group, so they appear automatically in
     the city directory, the service areas pills, the footer city list and the sitemap. The service
     areas Georgia panel, the Atlanta page and the Lawrenceville page link them by name.
+
+## Wave 2: 13 national city pages (Oct 16 2026, CITY-PAGES-WAVE2.md)
+
+39. **Branch.** All Wave 2 work is on `cities-wave2`, pushed as it goes. Nothing merged or pushed to main.
+40. **Keyword numbers re-read from the files.** Every main and supporting number in CITY-PAGES-WAVE2.md matched the
+    city tabs of keywords/Web-Design-National-Cities-Keywords.xlsx and the ALL tab of
+    keywords/Web-Design-5-Cities-Recheck.xlsx. scripts/keyword_plan_wave2.py classifies every 10+ row of the 13
+    cities (target, supporting, FAQ question, or unused with a reason) and fails on anything unclassified; it runs
+    from scripts/keyword_plan.py. Phrases for these cities in the original Web-Design-Keywords.xlsx (for example
+    "website design company chicago" 1,900) now count as supporting keywords on the new pages instead of
+    "Wave 2 candidate"; "web design kc" and "web design kansas city mo" from the Atlanta file go to the Kansas City page.
+41. **Orlando.** The only other 10+ Orlando web design phrase is "duogeeks web design in orlando", another agency's
+    brand: unused. The page relies on its main term plus generic cost questions as FAQs.
+42. **Kansas phrases.** "web design kansas" (30) and "kansas web design" (30) are assigned to the Kansas City page as
+    supporting, since that page covers the Kansas side of the metro; "web design cleveland tn" and "web design san
+    luis obispo" are different places and unused.
+43. **Grouping.** A new site.json area group "Other U.S. cities" (key other-us) holds the 13 pages, so they appear in the
+    city directory, the Cities menu, the footer city list, the service areas page (new "Other U.S. cities" pills plus
+    links in the "rest of the country" panel) and the sitemap, all from the one list.
+44. **One angle per city.** To keep every pair of city pages under 15% similarity and to make each page useful, each
+    city got its own angle (docs/writers/BRIEF-WAVE2.md): St. Louis city/county split, Kansas City two-state metro,
+    Indianapolis business-to-business firms, Phoenix service-area trades, Las Vegas locals' economy, Sacramento capital
+    economy, Los Angeles comparison shopping across 88 cities, San Diego neighborhood business districts, Miami
+    bilingual market, Orlando visitor versus resident economy, Nashville newcomers, Chicago agency versus one person
+    and neighborhood corridors, Cleveland old houses and design versus development.
+45. **Images.** No new in-body images: each page reuses generic photos already in the repo (demo-images and generic
+    images/body or images/contractors photos, none showing another named city), with alt text that describes what is
+    actually in the photo. Each city has one planned hero (images/heroes/<slug>-hero.jpg, 1920x1080) listed in
+    docs/image-list.md; until it arrives the build shows a reused generic hero (`fallback`) with its own accurate alt.
+46. **Spanish on the Miami page.** INTAKE.md does not say Maurice writes Spanish copy, so the page does not claim it;
+    it explains what a bilingual site needs and how to get the Spanish reviewed by a fluent person.

@@ -154,3 +154,26 @@ Atlanta-area cities checked in the data with 0 measured searches (no page this r
 College Park, East Point, Union City, Fairburn, Stonecrest, Lithonia, Stockbridge, Riverdale, Jonesboro, Morrow,
 Forest Park. Georgia cities with 10+ searches but outside this add-on's list (Macon, Marietta, Athens, Buford,
 Kennesaw, Columbus, Gainesville) are listed as Atlanta wave 2 candidates in docs/keyword-plan.md.
+
+## Wave 2: national city pages (Oct 16 2026, CITY-PAGES-WAVE2.md)
+
+Keyword sources: keywords/Web-Design-National-Cities-Keywords.xlsx (city tabs) and
+keywords/Web-Design-5-Cities-Recheck.xlsx (Cleveland). Every number below was re-read from those files.
+Full supporting and unused lists are in docs/keyword-plan.md, section "Wave 2". All 13 are in the
+site.json area group "Other U.S. cities" (city directory, service areas page, Cities menu, footer, sitemap).
+
+| Page | URL | Target keyword | Vol | SD | Main supporting terms | Status |
+|---|---|---|---:|---:|---|---|
+| st-louis-mo | /web-design/st-louis-mo.html | website design st louis | 2,400 | 8 | st louis website design 1,300; st louis web design company 1,600 | new |
+| phoenix-az | /web-design/phoenix-az.html | web design company in phoenix | 2,900 | 9 | web design in phoenix 1,900 (SD 7) | new |
+| san-diego-ca | /web-design/san-diego-ca.html | web design in san diego | 2,900 | 9 | san diego website design 2,400; website design san diego 1,300; san diego web design company 320 | new |
+| las-vegas-nv | /web-design/las-vegas-nv.html | website design las vegas nevada | 2,900 | 9 | las vegas website design 880 (SD 10); web design in las vegas 3,600; web design vegas 1,900 | new |
+| los-angeles-ca | /web-design/los-angeles-ca.html | los angeles web design companies | 1,900 | 9 | web design in la 1,000 (SD 13); web design in los angeles 4,400; website design in los angeles 9,900 | new |
+| miami-fl | /web-design/miami-fl.html | web design in miami | 1,900 | 10 | web design agency in miami 480 (SD 13); miami web design companies 210 | new |
+| nashville-tn | /web-design/nashville-tn.html | web design in nashville | 880 | 10 | website designer in nashville 140 (SD 9); nashville website design 1,000 | new |
+| chicago-il | /web-design/chicago-il.html | web design agency in chicago | 880 | 11 | web design in chicago 2,900; web design company in chicago 880 | new |
+| orlando-fl | /web-design/orlando-fl.html | web design in orlando | 1,600 | 13 | no other 10+ Orlando web design term except another agency's brand (unused) | new |
+| indianapolis-in | /web-design/indianapolis-in.html | indianapolis website design | 1,900 | 16 | indianapolis web design company 210; indiana web design 210 | new |
+| sacramento-ca | /web-design/sacramento-ca.html | website design sacramento | 2,400 | 17 | sacramento web design 1,600; web design in sacramento ca 2,400 | new |
+| kansas-city-mo | /web-design/kansas-city-mo.html | kansas city website design | 390 | 6 | kansas city web design 320; web design kansas city mo 590; website design in kansas city 720 | new |
+| cleveland-oh | /web-design/cleveland-oh.html | website design cleveland ohio | 880 | 8 | cleveland website design 480; website design cleveland 480; cleveland web development 720 | new |
