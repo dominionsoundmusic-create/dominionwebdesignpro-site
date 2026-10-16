@@ -27,7 +27,7 @@ About 40 WebSearch queries (WebFetch not used). Build: `python3 build.py --out /
 | Packages, prices, chat widget 14 days then $297/mo, phone agent setup, free 7 days then $297/mo up to 750 minutes, separate from one-time price; hosting $49/mo or included with AI agent; 7 to 14 days; first wave inside two weeks | Confirmed | INTAKE.md section 3 | none |
 | AI receptionist answers any hour and transfers to Maurice; no LA office; built from East Texas | Confirmed | INTAKE.md sections 1 and 5 | none |
 
-Summary LA: 20 claims checked: 14 confirmed, 3 corrected (population year, exemption threshold, Burbank rule), 2 softened (SCORE locations, chamber date), 0 removed (1 source swapped to official for Glendale, counted under confirmed).
+Summary LA: 20 claims checked: 15 confirmed, 3 corrected (population year, exemption threshold, Burbank rule), 2 softened (SCORE locations, chamber date), 0 removed. Glendale source upgraded to the city's own page.
 
 ## /web-design/san-diego-ca.html
 | Claim | Verdict | Source | Action |
@@ -52,7 +52,7 @@ Summary LA: 20 claims checked: 14 confirmed, 3 corrected (population year, exemp
 | No San Diego office; Big Sandy; AI receptionist wording | Confirmed | INTAKE.md | none |
 | Kearny Mesa chiropractor page plan | Not a factual claim | explicit hypothetical | none |
 
-Summary San Diego: 19 claims checked: 12 confirmed, 4 corrected (BID events wording, SBDC list, SCORE workshop topics, plus veterans wording clarified counted as confirmed), 1 softened (Navy concentration), 1 removed (one-third of Marine Corps), 1 not a claim.
+Summary San Diego: 19 claims checked: 13 confirmed, 3 corrected (BID events wording, SBDC list, SCORE workshop topics), 1 softened (Navy concentration), 1 removed (one-third of the Marine Corps), 1 not a factual claim.
 
 ## /web-design/chicago-il.html
 | Claim | Verdict | Source | Action |
@@ -100,7 +100,7 @@ Summary Chicago: 19 claims checked: 15 confirmed, 2 corrected (SSA count, commis
 | Prices, trials, schema and GBP on Pro, no Cleveland office, AI receptionist | Confirmed | INTAKE.md | none |
 | Wording avoids "certified" for the city's Lead Safe Certification | Confirmed | WRITING-GUIDE banned words | none |
 
-Summary Cleveland: 17 claims checked: 12 confirmed, 2 corrected (Ohio employer figures, West Side Market vendor count), 3 softened (Slavic Village label, SBDC host list, and the employer claim now dated), 0 removed.
+Summary Cleveland: 17 claims checked: 13 confirmed, 2 corrected (Ohio employer figures now dated to the December 2022 report, West Side Market vendor count), 2 softened (Slavic Village label, SBDC host list), 0 removed.
 
 ## Totals
-75 claims checked across 4 pages: 53 confirmed, 11 corrected, 7 softened, 1 removed, 3 not specific factual claims.
+75 claims checked across 4 pages: 56 confirmed, 10 corrected, 6 softened, 1 removed, 2 not specific factual claims.
