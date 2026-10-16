@@ -112,6 +112,9 @@ nav{padding:0 16px}.hero{padding:40px 20px}.form-wrap{padding:24px 16px}
 <option value="roofer">Roofer</option>
 <option value="contractor">General Contractor</option>
 <option value="landscaper">Landscaping</option>
+<option value="power washing">Power Washing
+<option value="pool service">Pool Service
+<option value="tree service">Tree Service
 <option value="cleaner">Cleaning Service</option>
 <option value="pest control">Pest Control</option>
 <option value="salon">Hair / Nail Salon</option>
@@ -195,6 +198,7 @@ nav{padding:0 16px}.hero{padding:40px 20px}.form-wrap{padding:24px 16px}
 </div>
 </div>
 </div>
+<script src="/js/demo-fix.js"></script>
 <script>
 const BACKEND = 'https://dominion-demo-backend.onrender.com';
 let currentRefCode = '';
@@ -230,8 +234,8 @@ showError(res.status===429 ? (data.error||'You\'ve reached the 5 demo limit. Cal
 hideLoading(); return;
 }
 currentRefCode = data.refCode;
-currentHtml = data.html;
-showPreview(data.html, businessName, data.refCode);
+currentHtml = window.dwdpFixDemo ? window.dwdpFixDemo(data.html, [businessType, businessName, customRequest]) : data.html;
+showPreview(currentHtml, businessName, data.refCode);
 } catch(err) {
 showError(err && err.name==='AbortError' ? 'That took longer than 90 seconds and was stopped. The build usually works on a second run.' : 'Connection error reaching the server. Try again in a moment.');
 hideLoading();
