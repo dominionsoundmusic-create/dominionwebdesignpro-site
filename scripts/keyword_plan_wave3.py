@@ -1,0 +1,191 @@
+#!/usr/bin/env python3
+"""Wave 3 keyword plan (Oct 17 2026): 8 more national city pages.
+
+Reads keywords/Web-Design-Wave3-Cities-Keywords.xlsx (one tab per city, Ubersuggest US, pulled Oct 16
+2026) and rewrites the "## Wave 3" section at the end of docs/keyword-plan.md.
+
+For the 8 built cities, every keyword with 10 or more searches a month in the Wave 3 file is assigned
+to that city's page (target, supporting, or an FAQ question) or listed as unused with a one-line
+reason. Three main targets come from the original keywords/Web-Design-Keywords.xlsx (New York, Tucson;
+Tampa's "website design company tampa" is supporting); the script reads those there. Exits 1 if any 10+
+keyword is unclassified or a page target is missing from the data. scripts/keyword_plan.py runs this
+after the Wave 2 section.
+
+Usage: python3 scripts/keyword_plan_wave3.py
+"""
+import re
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+import openpyxl
+
+ROOT = Path(__file__).resolve().parent.parent
+PLAN = ROOT / "docs" / "keyword-plan.md"
+HEAD = "## Wave 3"
+W3 = ROOT / "keywords" / "Web-Design-Wave3-Cities-Keywords.xlsx"
+ORIG = ROOT / "keywords" / "Web-Design-Keywords.xlsx"
+
+# tab name -> (slug, main target, regex that marks a keyword as this city's web design phrase)
+CITIES = {
+    "New York": ("new-york-ny", "website design company new york", r"new york|\bnyc\b|\bny\b"),
+    "Orange County": ("orange-county-ca", "orange county website design", r"orange county"),
+    "Tampa": ("tampa-fl", "web design tampa florida", r"tampa"),
+    "Huntsville AL": ("huntsville-al", "web design huntsville al", r"huntsville"),
+    "Tucson": ("tucson-az", "web design company tucson", r"tucson"),
+    "Richmond VA": ("richmond-va", "richmond va web design", r"richmond"),
+    "Louisville": ("louisville-ky", "web design louisville", r"louisville"),
+    "Wilmington NC": ("wilmington-nc", "web design wilmington nc", r"wilmington|^web design nc$"),
+}
+# Main targets that live in the original file, not the Wave 3 file.
+ORIG_TARGETS = {"New York": "website design company new york", "Tucson": "web design company tucson"}
+
+U_BRAND = "names another agency (creative813); other agencies' brand names are not used"
+U_JOBS = "jobs, salary or pay: a career search, not someone hiring a designer"
+U_TRIVIA = "a generic web design definition, tip, example or trivia question with no city and no hiring intent"
+U_PLACE = "a question about the city itself (districts, shops, who designed it, which state), not web design"
+U_OTHER = "a different place (Orange County NY, Williamsburg VA), not this city"
+U_HOST = "a national web hosting question, not hiring a designer in this city"
+U_ECOM = "an online store build: not in the INTAKE.md packages (the page says so where it comes up)"
+U_GENERIC_COST = "a national cost question already answered by the cost guides"
+
+UNUSED_RULES = [
+    (r"creative813", U_BRAND),
+    (r"jobs?\b|salary", U_JOBS),
+    (r"orange county ny|williamsburg", U_OTHER),
+    (r"fashion district|design stores|who designed new york|in new york or new jersey|new york times", U_PLACE),
+    (r"ecommerce", U_ECOM),
+    (r"host", U_HOST),
+    (r"definition|meaning|explain|tips|requirements|code examples|table examples|effects|benefits|"
+     r"why website design matters|why is web design so important|who designs websites|biggest web design companies", U_TRIVIA),
+]
+
+# Generic question rows that a page answers as an FAQ (tab -> keywords).
+FAQ_USE = {
+    "Tucson": {"web design rates"},
+    "Louisville": {"web design rates"},
+    "Wilmington NC": {"how much does web design cost", "how much web design cost"},
+}
+
+
+def rows_for(tab):
+    wb = openpyxl.load_workbook(W3, read_only=True)
+    out = []
+    for r in list(wb[tab].iter_rows(values_only=True))[1:]:
+        if r[0]:
+            kw, typ, _lst, vol, sd = r[:5]
+            out.append((kw, typ, vol, sd))
+    return out
+
+
+def orig_row(kw):
+    wb = openpyxl.load_workbook(ORIG, read_only=True)
+    for r in list(wb["ALL"].iter_rows(values_only=True))[1:]:
+        if (r[1] or "").lower().strip() == kw:
+            return (r[1], r[3] or 0, r[4])
+    return None
+
+
+def classify(tab, kw):
+    slug, target, pat = CITIES[tab]
+    k = kw.lower().strip()
+    if k == target:
+        return ("target", None)
+    for p, reason in UNUSED_RULES:
+        if re.search(p, k):
+            return ("unused", reason)
+    if re.search(pat, k):
+        return ("support", None)
+    if k in FAQ_USE.get(tab, set()):
+        return ("faq", None)
+    if re.search(r"how much|rates|per hour|cost", k):
+        return ("unused", U_GENERIC_COST)
+    return (None, None)
+
+
+def section():
+    out = [HEAD, "", "Eight more national city pages (CITY-PAGES-WAVE3.md, Oct 17 2026). Source: "
+           "keywords/Web-Design-Wave3-Cities-Keywords.xlsx (one tab per city, Ubersuggest US, pulled Oct 16 2026); "
+           "the New York and Tucson main targets come from the original keywords/Web-Design-Keywords.xlsx. Generated by "
+           "`python3 scripts/keyword_plan_wave3.py` (run by scripts/keyword_plan.py), which fails if any 10+ keyword is "
+           "unclassified. Every row of the Wave 3 file with 10 or more searches a month is either on the page (target, "
+           "supporting, or an FAQ question) or listed as unused with its reason. These 8 cities were moved out of the "
+           "\"Wave 2 candidates\" table above; their phrases in the original file are assigned to the new pages in "
+           "\"Keywords by page\".", ""]
+    problems, totals = [], defaultdict(int)
+    unused_all = defaultdict(list)
+    for tab, (slug, target, _) in CITIES.items():
+        rows = rows_for(tab)
+        seen, tgt, sup, faq, low = set(), None, [], [], 0
+        if tab in ORIG_TARGETS:
+            tgt = orig_row(ORIG_TARGETS[tab])
+            if tgt:
+                totals["target"] += 1
+        for kw, typ, vol, sd in rows:
+            k = kw.lower().strip()
+            if k in seen:
+                continue
+            seen.add(k)
+            vol = vol or 0
+            if vol < 10:
+                low += 1
+                continue
+            kind, reason = classify(tab, kw)
+            if kind == "target":
+                tgt = (kw, vol, sd)
+            elif kind == "support":
+                sup.append((kw, vol, sd, typ))
+            elif kind == "faq":
+                faq.append((kw, vol, sd))
+            elif kind == "unused":
+                unused_all[reason].append((kw, vol, sd, tab))
+            else:
+                problems.append((tab, kw, vol))
+            totals[kind or "missing"] += 1
+        if not tgt:
+            problems.append((tab, f"TARGET NOT IN DATA: {target}", 0))
+            continue
+        src = " (original file)" if tab in ORIG_TARGETS else ""
+        out.append(f"### /web-design/{slug}.html")
+        out.append("")
+        out.append(f"Target: **{tgt[0]}** ({tgt[1]:,}/mo, SD {tgt[2]}){src}")
+        out.append("")
+        if sup:
+            sup.sort(key=lambda r: -r[1])
+            out.append("Supporting: " + "; ".join(f"{r[0]} ({r[1]:,}, SD {r[2]})" for r in sup))
+            out.append("")
+        if faq:
+            out.append("Answered in an FAQ (exact or close wording): " + "; ".join(f"{r[0]} ({r[1]:,}, SD {r[2]})" for r in faq))
+            out.append("")
+        if low:
+            out.append(f"Rows under 10/mo in this city's data: {low} (not required by the 10+ rule).")
+            out.append("")
+    n_assigned = totals["target"] + totals["support"] + totals["faq"]
+    n_unused = totals["unused"]
+    out.insert(2, f"**10+ rule result for the 8 cities:** {n_assigned + n_unused + totals['missing']} keywords at 10+ "
+               f"(counted per city tab, 8 targets included); **{n_assigned} on a page** ({totals['target']} targets, "
+               f"{totals['support']} supporting, {totals['faq']} FAQ questions) and **{n_unused} deliberately unused**. "
+               f"Unclassified: **{totals['missing']}**.\n")
+    out += ["### Deliberately unused (10+ searches a month), Wave 3 file", ""]
+    for reason, items in sorted(unused_all.items(), key=lambda kv: -sum(r[1] for r in kv[1])):
+        items.sort(key=lambda r: -r[1])
+        out.append(f"**{reason}** ({len(items)} keywords): " + "; ".join(f"{r[0]} ({r[1]:,}, {r[3]} tab)" for r in items))
+        out.append("")
+    return "\n".join(out) + "\n", problems, totals
+
+
+def main():
+    text, problems, totals = section()
+    plan = PLAN.read_text()
+    i = plan.find("\n" + HEAD + "\n")
+    if i >= 0:
+        plan = plan[:i].rstrip() + "\n"
+    PLAN.write_text(plan + "\n" + text)
+    print(f"Wave 3: {dict(totals)}, {len(problems)} problems")
+    for p in problems:
+        print("UNCLASSIFIED", p)
+    return 1 if problems else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

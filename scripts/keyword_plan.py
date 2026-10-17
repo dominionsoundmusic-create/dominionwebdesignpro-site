@@ -42,6 +42,11 @@ PAGES = {
     "miami": "/web-design/miami-fl.html", "orlando": "/web-design/orlando-fl.html", "phoenix": "/web-design/phoenix-az.html",
     "las-vegas": "/web-design/las-vegas-nv.html", "los-angeles": "/web-design/los-angeles-ca.html",
     "san-diego": "/web-design/san-diego-ca.html", "sacramento": "/web-design/sacramento-ca.html",
+    # Wave 3 national city pages (Oct 17 2026, scripts/keyword_plan_wave3.py)
+    "new-york": "/web-design/new-york-ny.html", "orange-county": "/web-design/orange-county-ca.html",
+    "tampa": "/web-design/tampa-fl.html", "huntsville": "/web-design/huntsville-al.html",
+    "tucson": "/web-design/tucson-az.html", "richmond": "/web-design/richmond-va.html",
+    "louisville": "/web-design/louisville-ky.html", "wilmington": "/web-design/wilmington-nc.html",
 }
 
 # Primary target keyword of each page (the page's other keywords are supporting).
@@ -62,6 +67,8 @@ TARGETS = {
     "web design tyler tx": "tyler", "website design longview tx": "longview", "web design east texas": "east-texas",
     "web design waco tx": "waco", "web design el paso": "el-paso", "web design kingwood": "kingwood",
     "web design company atlanta": "atlanta",
+    "website design company new york": "new-york", "web design company tucson": "tucson",
+    "web design huntsville al": "huntsville", "web design louisville": "louisville", "web design wilmington nc": "wilmington",
 }
 
 U_JOBS = "jobs, salary, pay or internships: a career search, not someone hiring a web designer"
@@ -137,6 +144,10 @@ RULES = [  # (regex, page key or ("unused", reason)); first match wins
     (r"indianapolis", "indianapolis"), (r"cleveland(?! tn)", "cleveland"), (r"nashville", "nashville"),
     (r"miami", "miami"), (r"orlando", "orlando"), (r"phoenix", "phoenix"), (r"las vegas|vegas", "las-vegas"),
     (r"los angeles|\bla$", "los-angeles"), (r"san diego", "san-diego"), (r"sacramento", "sacramento"),
+    # Wave 3 national city pages (Oct 17 2026)
+    (r"new york|\bnyc\b", "new-york"), (r"orange county", "orange-county"), (r"tampa", "tampa"),
+    (r"huntsville", "huntsville"), (r"tucson", "tucson"), (r"richmond", "richmond"), (r"louisville", "louisville"),
+    (r"wilmington", "wilmington"),
     # U.S. cities outside Texas: still Wave 2 candidates
     (r"new york|nyc|long island|san diego|chicago|los angeles|orange county|tampa|phoenix|tucson|denver|orlando|nashville|"
      r"huntsville|richmond|louisville|wilmington|wichita|okc|kansas city|boston|jacksonville|fort lauderdale|las vegas|miami|"
@@ -278,8 +289,9 @@ def main():
         out.append("")
     out += ["## Wave 2 candidates: U.S. cities outside Texas with 10+ searches", "",
             "Not built yet. Listed for Maurice to choose from. Thirteen cities from this list and the national keyword "
-            "files got pages in Wave 2 (Oct 16 2026, see the Wave 2 section at the end); their phrases from this file are "
-            "assigned to those pages above.", "",
+            "files got pages in Wave 2 (Oct 16 2026) and eight more in Wave 3 (Oct 17 2026: New York, Orange County, Tampa, "
+            "Huntsville, Tucson, Richmond, Louisville, Wilmington NC), see those sections at the end; their phrases from "
+            "this file are assigned to those pages above.", "",
             "| Keyword | Volume | SD |", "|---|---:|---:|"]
     for kw, vol, sd, typ in sorted(unused.get(U_WAVE2, []), key=lambda r: -r[1]):
         out.append(f"| {kw} | {vol:,} | {sd} |")
@@ -299,7 +311,10 @@ def main():
     # Wave 2 national city pages (Oct 16 2026) come last.
     import keyword_plan_wave2
     w2 = keyword_plan_wave2.main()
-    return 1 if missing or atl or w2 else 0
+    # Wave 3 national city pages (Oct 17 2026) after Wave 2.
+    import keyword_plan_wave3
+    w3 = keyword_plan_wave3.main()
+    return 1 if missing or atl or w2 or w3 else 0
 
 
 if __name__ == "__main__":

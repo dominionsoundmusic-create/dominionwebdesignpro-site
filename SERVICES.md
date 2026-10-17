@@ -177,3 +177,22 @@ site.json area group "Other U.S. cities" (city directory, service areas page, Ci
 | sacramento-ca | /web-design/sacramento-ca.html | website design sacramento | 2,400 | 17 | sacramento web design 1,600; web design in sacramento ca 2,400 | new |
 | kansas-city-mo | /web-design/kansas-city-mo.html | kansas city website design | 390 | 6 | kansas city web design 320; web design kansas city mo 590; website design in kansas city 720 | new |
 | cleveland-oh | /web-design/cleveland-oh.html | website design cleveland ohio | 880 | 8 | cleveland website design 480; website design cleveland 480; cleveland web development 720 | new |
+
+## Wave 3: national city pages (Oct 17 2026, CITY-PAGES-WAVE3.md)
+
+Keyword sources: keywords/Web-Design-Wave3-Cities-Keywords.xlsx (city tabs, Ubersuggest US, pulled Oct 16 2026)
+and, for the New York and Tucson main targets and Tampa's "website design company tampa", the ALL tab of
+keywords/Web-Design-Keywords.xlsx ("original"). Every number below was re-read from those files. Full supporting
+and unused lists are in docs/keyword-plan.md, section "Wave 3". All 8 are in the site.json area group "Other U.S.
+cities" (city directory, service areas page, Cities menu, footer, sitemap).
+
+| Page | URL | Target keyword | Vol | SD | Main supporting terms | Status |
+|---|---|---|---:|---:|---|---|
+| new-york-ny | /web-design/new-york-ny.html | website design company new york (original) | 3,600 | 12 | new york web design company 2,400; website design new york 1,900; web design new york city 1,900; web design new york 1,600; web design company in new york 260 | new |
+| orange-county-ca | /web-design/orange-county-ca.html | orange county website design | 1,900 | 16 | orange county web design company 1,600 (SD 16); web design orange county california 1,600; web design orange county ca 1,300; orange county website designers 480 (SD 9) | new |
+| tampa-fl | /web-design/tampa-fl.html | web design tampa florida | 1,600 | 28 | website design company tampa 2,400 (original); web design company in tampa 2,400; web design in tampa 2,900; tampa web design company 210; tampa web design agency 170 | new |
+| huntsville-al | /web-design/huntsville-al.html | web design huntsville al | 880 | 29 | huntsville website design 210 | new |
+| tucson-az | /web-design/tucson-az.html | web design company tucson (original) | 590 | 7 | web design tucson az 590; web design tucson arizona 720; tucson website design 720; affordable web design tucson 10 | new |
+| richmond-va | /web-design/richmond-va.html | richmond va web design | 480 | 14 | web design richmond va 590 (SD 26); web design in richmond 590; richmond website design 720 | new |
+| louisville-ky | /web-design/louisville-ky.html | web design louisville | 480 | 20 | louisville web design 590 (SD 26); louisville website design 880; web design louisville ky 480 | new |
+| wilmington-nc | /web-design/wilmington-nc.html | web design wilmington nc | 260 | 30 | website design wilmington nc 260; wilmington website design 70 (Wilmington, North Carolina only) | new |

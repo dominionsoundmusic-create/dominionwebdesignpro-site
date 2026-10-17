@@ -43,6 +43,11 @@ CITIES = {
     "Cleveland": ("cleveland-oh", "website design cleveland ohio", r"cleveland(?! tn)"),
 }
 
+# Cities in this file that got Wave 3 pages (scripts/keyword_plan_wave3.py, newer Oct 16 pull); left out of the
+# remaining-candidates table.
+WAVE3_TABS = {"New York", "Orange County", "Tampa", "Huntsville", "Huntsville AL", "Tucson", "Richmond", "Richmond VA",
+              "Louisville", "Wilmington", "Wilmington NC"}
+
 U_BRAND = "names or reads like the name of another agency (other agencies' brand names are not used)"
 U_CITE = "a citation-style question (Chicago style for citing a website), nothing to do with hiring a designer"
 U_JOBS = "jobs, salary, pay or classes: a career search, not someone hiring a designer"
@@ -161,13 +166,14 @@ def section():
         out.append("")
     # Remaining candidates: cities in the files with no page yet.
     out += ["### Remaining national candidates (no page yet)", "",
-            "Cities in the two national files that did not get a page in Wave 2. The strongest city-specific "
+            "Cities in the two national files that did not get a page in Wave 2 or Wave 3 (New York, Tampa, Tucson, "
+            "Richmond and Louisville got Wave 3 pages from the newer Wave 3 keyword file). The strongest city-specific "
             "web design phrase for each (10+ searches a month, other agencies' names excluded):", "",
             "| City | Best keyword | Volume | SD |", "|---|---|---:|---:|"]
     wb = openpyxl.load_workbook(NAT, read_only=True)
     cand = []
     for tab in wb.sheetnames[1:]:
-        if tab in CITIES:
+        if tab in CITIES or tab in WAVE3_TABS:
             continue
         first = r"\b" + re.escape(tab.lower().split()[0]) + r"\b"
         best = None

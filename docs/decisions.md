@@ -181,3 +181,38 @@ be reversed later.
     docs/image-list.md; until it arrives the build shows a reused generic hero (`fallback`) with its own accurate alt.
 46. **Spanish on the Miami page.** INTAKE.md does not say Maurice writes Spanish copy, so the page does not claim it;
     it explains what a bilingual site needs and how to get the Spanish reviewed by a fluent person.
+
+## Wave 3: 8 more national city pages (Oct 17 2026, CITY-PAGES-WAVE3.md)
+
+47. **Branch.** All Wave 3 work is on `cities-wave3` (started from cities-wave2), pushed as it goes. Nothing merged or
+    pushed to main. The 13 Wave 2 pages were not rewritten; they are included in the similarity check.
+48. **Keyword numbers re-read from the files.** Every main and supporting number in CITY-PAGES-WAVE3.md matched the city
+    tabs of keywords/Web-Design-Wave3-Cities-Keywords.xlsx, and the three "original file" numbers (website design
+    company new york 3,600 SD 12; website design company tampa 2,400 SD 35; web design company tucson 590 SD 7) matched
+    the ALL tab of keywords/Web-Design-Keywords.xlsx. New scripts/keyword_plan_wave3.py classifies every 10+ row of the
+    Wave 3 file (target, supporting, FAQ question, or unused with a reason) and fails on anything unclassified; it runs
+    from scripts/keyword_plan.py after Wave 2.
+49. **Original-file phrases for the 8 cities** (for example "web design company new york" 1,900, "website design
+    companies orange county" 1,900, "web design company richmond va" 720) moved from "Wave 2 candidate" to supporting
+    keywords on the new pages, so the 8 cities no longer appear in the "Wave 2 candidates" table. "web design long
+    island" (1,300) and "web design rochester ny" (50) are different places and stay candidates. The older Oct 12 national
+    file also had New York, Tampa, Tucson, Richmond and Louisville tabs; the newer Wave 3 pull supersedes them, and the
+    Wave 2 "remaining national candidates" table now leaves those cities out.
+50. **Edge rows.** "web design nc" (170) is assigned to the Wilmington page (the only North Carolina page). "black web design
+    louisville" (10) is supporting on the Louisville page, which links /black-owned-web-design/ (INTAKE section 7; no
+    certification claimed). "ecommerce web design new york" and "ecommerce web design louisville" are unused: online
+    store builds are not in the INTAKE.md packages. The Huntsville tab's hosting questions ("web hosting low cost",
+    "who is hosting my website") and generic rows ("biggest web design companies", "web design definition") are unused.
+    "orange county ny" and "williamsburg va" are other places.
+51. **One angle per city** (docs/writers/BRIEF-WAVE3.md): New York five boroughs plus website accessibility lawsuits;
+    Orange County named cities and HOA-governed planned communities; Tampa storm season and a region split by the bay;
+    Huntsville small firms selling to prime contractors and the government; Tucson food businesses (City of Gastronomy)
+    and budget-minded owners; Richmond makers, breweries and historic districts; Louisville an event-calendar town;
+    Wilmington NC a coastal city that runs on seasons, plus the film industry.
+52. **Writers and checkers.** Four writer sub-agents (two cities each) wrote the pages; separate fact-check sub-agents
+    that wrote none of them checked every claim (docs/fact-check.md, Wave 3).
+53. **Images.** Same as Wave 2: no new in-body images; each page reuses generic repo photos with alt text describing what
+    is really in them; one planned hero per city (images/heroes/<slug>-hero.jpg, 1920x1080) listed in docs/image-list.md,
+    shown as a reused generic hero (`fallback`) with its own accurate alt until it arrives.
+54. **Copy counts.** The service areas page and the city directory now say twenty-one other U.S. cities and regions
+    (Orange County is a county, hence "and regions").

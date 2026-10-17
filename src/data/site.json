@@ -788,6 +788,78 @@
    "group": "other-us",
    "short": "Sacramento",
    "summary": ""
+  },
+  {
+   "slug": "new-york-ny",
+   "url": "/web-design/new-york-ny.html",
+   "name": "New York",
+   "state": "NY",
+   "group": "other-us",
+   "short": "New York",
+   "summary": ""
+  },
+  {
+   "slug": "orange-county-ca",
+   "url": "/web-design/orange-county-ca.html",
+   "name": "Orange County",
+   "state": "CA",
+   "group": "other-us",
+   "short": "Orange County",
+   "summary": ""
+  },
+  {
+   "slug": "tampa-fl",
+   "url": "/web-design/tampa-fl.html",
+   "name": "Tampa",
+   "state": "FL",
+   "group": "other-us",
+   "short": "Tampa",
+   "summary": ""
+  },
+  {
+   "slug": "huntsville-al",
+   "url": "/web-design/huntsville-al.html",
+   "name": "Huntsville",
+   "state": "AL",
+   "group": "other-us",
+   "short": "Huntsville",
+   "summary": ""
+  },
+  {
+   "slug": "tucson-az",
+   "url": "/web-design/tucson-az.html",
+   "name": "Tucson",
+   "state": "AZ",
+   "group": "other-us",
+   "short": "Tucson",
+   "summary": ""
+  },
+  {
+   "slug": "richmond-va",
+   "url": "/web-design/richmond-va.html",
+   "name": "Richmond",
+   "state": "VA",
+   "group": "other-us",
+   "short": "Richmond",
+   "summary": ""
+  },
+  {
+   "slug": "louisville-ky",
+   "url": "/web-design/louisville-ky.html",
+   "name": "Louisville",
+   "state": "KY",
+   "group": "other-us",
+   "short": "Louisville",
+   "summary": ""
+  },
+  {
+   "slug": "wilmington-nc",
+   "url": "/web-design/wilmington-nc.html",
+   "name": "Wilmington",
+   "state": "NC",
+   "group": "other-us",
+   "short": "Wilmington",
+   "summary": ""
   }
  ],
  "tool_sitemap": [
