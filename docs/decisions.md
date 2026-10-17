@@ -200,9 +200,11 @@ be reversed later.
     Wave 2 "remaining national candidates" table now leaves those cities out.
 50. **Edge rows.** "web design nc" (170) is assigned to the Wilmington page (the only North Carolina page). "black web design
     louisville" (10) is supporting on the Louisville page, which links /black-owned-web-design/ (INTAKE section 7; no
-    certification claimed). "ecommerce web design new york" and "ecommerce web design louisville" are unused: online
-    store builds are not in the INTAKE.md packages. The Huntsville tab's hosting questions ("web hosting low cost",
-    "who is hosting my website") and generic rows ("biggest web design companies", "web design definition") are unused.
+    certification claimed). "ecommerce web design new york" is unused (online store builds are
+    not in the INTAKE.md packages); the Louisville page answers "ecommerce web design louisville" honestly as an FAQ.
+    Huntsville answers "who is hosting my website" and "cheapest web design and hosting" as FAQs (hosting is part of the
+    offer); the other hosting rows ("web hosting low cost") and generic rows ("biggest web design companies", "web design
+    definition") are unused.
     "orange county ny" and "williamsburg va" are other places.
 51. **One angle per city** (docs/writers/BRIEF-WAVE3.md): New York five boroughs plus website accessibility lawsuits;
     Orange County named cities and HOA-governed planned communities; Tampa storm season and a region split by the bay;

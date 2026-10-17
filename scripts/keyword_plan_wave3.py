@@ -62,8 +62,9 @@ UNUSED_RULES = [
 
 # Generic question rows that a page answers as an FAQ (tab -> keywords).
 FAQ_USE = {
+    "Huntsville AL": {"who is hosting my website", "cheapest web design and hosting"},
     "Tucson": {"web design rates"},
-    "Louisville": {"web design rates"},
+    "Louisville": {"web design rates", "ecommerce web design louisville"},
     "Wilmington NC": {"how much does web design cost", "how much web design cost"},
 }
 
@@ -91,13 +92,13 @@ def classify(tab, kw):
     k = kw.lower().strip()
     if k == target:
         return ("target", None)
+    if k in FAQ_USE.get(tab, set()):
+        return ("faq", None)
     for p, reason in UNUSED_RULES:
         if re.search(p, k):
             return ("unused", reason)
     if re.search(pat, k):
         return ("support", None)
-    if k in FAQ_USE.get(tab, set()):
-        return ("faq", None)
     if re.search(r"how much|rates|per hour|cost", k):
         return ("unused", U_GENERIC_COST)
     return (None, None)
