@@ -293,7 +293,7 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### greensboro-nc (batch B1, aim for 1,000 to 1,400 words of your own copy)
 - Main: web design greensboro (390, SD 28)
-- Supporting: web design greensboro nc (30).
+- Supporting: web design greensboro nc (30); from keywords/Web-Design-5-Cities-Recheck.xlsx: website design greensboro (390, Question, SD 25); website designer greensboro nc (20, Question).
 - Angle: Makers of the Piedmont Triad. Textile and furniture history (High Point's furniture market is next door, verify), NC A&T (verify its HBCU size claim), UNC Greensboro, the 1960 Woolworth sit-ins and the International Civil Rights Center and Museum, and new manufacturing nearby such as the Toyota battery plant in Liberty (verify). Small suppliers, workshops and trades need plain capability pages. Places: downtown and Elm Street, Fisher Park, Lindley Park, Friendly Avenue. Resources: Greensboro Chamber, the SBTDC office serving Greensboro (verify host), City of Greensboro M/WBE office (verify).
 - Hero: reuse `image: images/heroes/website-designer-cost-hero.jpg` (no new file, no fallback), `alt: "Web designer sketching page layouts on paper beside a laptop in a bright home office"` (keep this alt or tighten it after looking at the photo; it must not claim the city).
 - In-body photos: `demo-images/auto-repair/2.jpg` (1344x768); `demo-images/plumbing/4.jpg` (1344x768); `demo-images/default/1.jpg` (1344x768)
@@ -307,7 +307,7 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### raleigh-nc (batch B2, aim for 1,300 to 1,900 words of your own copy)
 - Main: web design raleigh north carolina (590, SD 34)
-- Supporting: raleigh web design (720, Question); web design raleigh (590); raleigh web design company (50, Question); custom web design raleigh nc / raleigh (10 / 10); small business web design raleigh (10); shopify web design raleigh (10: answer honestly, online stores are not in the INTAKE packages).
+- Supporting: raleigh web design (720, Question); web design raleigh (590); raleigh web design company (50, Question); custom web design raleigh nc / raleigh (10 / 10); small business web design raleigh (10); shopify web design raleigh (10: answer honestly, online stores are not in the INTAKE packages); web design in nc (210, SD 6, statewide, from the Nacogdoches tab).
 - Angle: Wake County's string of towns. Raleigh plus Cary, Apex, Holly Springs, Wake Forest, Garner, Fuquay-Varina, Morrisville: each has its own identity and many residents are new homeowners (verify growth from Census). Customers search by their own town, so a business needs a page per town it really serves. Also the state government and Research Triangle Park. Do NOT reuse the Nashville newcomer framing. Raleigh places: downtown, Glenwood South, North Hills, Five Points, Warehouse District. Resources: SBTDC at NC State (verify), Greater Raleigh Chamber, City of Raleigh Office of Economic Development and Innovation (verify name), SCORE.
 - Hero: NEW planned Artistly hero `images/heroes/raleigh-nc-hero.jpg` (write `alt` and `desc` for it), `fallback: images/cost-page-hero.jpg`, `fallback_alt: "Small business owner working on a laptop at a sunny desk"`.
 - In-body photos: `demo-images/insurance/4.jpg` (1344x768); `demo-images/auto-repair/1.jpg` (1344x768); `demo-images/plumbing/3.jpg` (1344x768)
@@ -328,14 +328,14 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### charleston-sc (batch B3, aim for 1,300 to 1,900 words of your own copy)
 - Main: charleston website design (1,300, SD 40)
-- Supporting: web design charleston sc (1,000); charleston sc web design (880, Question); charleston web designer (320, Question). FAQ-able: how much do web designers charge for a website (210).
+- Supporting: web design charleston sc (1,000); charleston sc web design (880, Question); charleston web designer (320, Question); web design summerville sc (30, from the Sugar Land tab; Summerville is a Charleston suburb). FAQ-able: how much do web designers charge for a website (210).
 - Angle: Old houses, strict rules, and weddings. On the peninsula, exterior work on historic buildings goes through the city's Board of Architectural Review (verify scope), so contractors who restore old homes must explain that process; and Charleston is a big wedding and event market (verify a source), so planners, florists, photographers and venues compete online. Places: King Street, Upper King, Mount Pleasant, West Ashley, James Island, Johns Island, Summerville, North Charleston. Do NOT copy the Orange County HOA framing. Resources: SC SBDC Charleston office (verify host), Charleston Metro Chamber, SCORE.
 - Hero: NEW planned Artistly hero `images/heroes/charleston-sc-hero.jpg` (write `alt` and `desc` for it), `fallback: images/heroes/why-small-businesses-need-a-website-hero.jpg`, `fallback_alt: "Bakery owner arranging bread on shelves before opening, with the shop door propped open"`.
 - In-body photos: `demo-images/plumbing/2.jpg` (1344x768); `demo-images/cleaning/3.jpg` (1344x768); `demo-images/roofing/3.jpg` (1344x768)
 
 #### columbia-sc (batch B3, aim for 1,000 to 1,400 words of your own copy)
 - Main: web design columbia (720, SD 55)
-- Supporting: web design columbia sc (590); website design columbia sc (480, Question); columbia web design (50, Question). 'web design columbia mo' is Missouri: unused.
+- Supporting: web design columbia sc (590); website design columbia sc (480, Question); columbia web design (50, Question); web design lexington sc (70, from the Lexington KY tab; Lexington, SC is a Columbia suburb). 'web design columbia mo' is Missouri: unused.
 - Angle: Which Columbia? Say plainly this page is Columbia, South Carolina. Fort Jackson is the Army's largest basic training center (verify), and graduation weeks bring families to town nearly every week (verify how often), filling restaurants and hotels; plus the state capital and the University of South Carolina. Places: the Vista, Main Street, Five Points, Devine Street, Forest Acres, Lexington and Irmo. Resources: the SC SBDC (state office at USC, verify), Columbia Chamber, City of Columbia Office of Business Opportunities (verify).
 - Hero: the real photo of the city already in the repo, `image: images/cities/columbia-sc.jpg` (1280x960, Wikimedia Commons, by Billy Hathorn, CC BY-SA 3.0). Open it with Read, write an alt that describes exactly what it shows (you may name the city; name a building only if you verified it is that building), no fallback. Add one line near the sources, like the Tyler page: `<p class="small">Photo at the top of this page: Billy Hathorn, CC BY-SA 3.0, via Wikimedia Commons.</p>`
 - In-body photos: `demo-images/electrical/3.jpg` (1344x768); `images/body/designer-cost-quote-review.jpg` (1200x800); `demo-images/insurance/2.jpg` (1344x768)
@@ -512,7 +512,7 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### seattle-wa (batch C2, aim for 1,300 to 1,900 words of your own copy)
 - Main: web design seattle (2,900, SD 77)
-- Supporting: web design seattle washington (1,900); web design seattle wa (1,000); website design seattle (880); seattle web design (880, Question); web development agency seattle (590); west seattle web design (30); all seattle web design (20); seattle wordpress web design (10); web design seattle central (10). Ecommerce row: unused or honest FAQ.
+- Supporting: web design seattle washington (1,900); web design seattle wa (1,000); website design seattle (880); seattle web design (880, Question); web development agency seattle (590); west seattle web design (30); seattle wordpress web design (10). Unused: 'all seattle web design' (reads like a company name) and 'web design seattle central' (a college course). Ecommerce row: unused or honest FAQ.
 - Angle: Customers who judge websites for a living. With so many tech workers in town (verify), Seattle buyers notice a slow, clumsy site; speed, accessibility and plain writing matter. Neighborhood identity is strong: Ballard, Fremont, Capitol Hill, Columbia City, the U District, Georgetown, and West Seattle (searched on its own), plus the Eastside (Bellevue, Redmond, Kirkland). Also the city's high minimum wage and costs (verify) make every hour count for a small owner. Resources: Seattle Office of Economic Development, Washington SBDC (verify which office), Seattle Metropolitan Chamber.
 - Hero: NEW planned Artistly hero `images/heroes/seattle-wa-hero.jpg` (write `alt` and `desc` for it), `fallback: images/heroes/faq-hero.jpg`, `fallback_alt: "Shop owner leaning on a counter reading on a phone during a quiet moment in a small store"`.
 - In-body photos: `images/contractors/contractor-review.jpg` (1200x686); `demo-images/plumbing/2.jpg` (1344x768); `demo-images/cleaning/3.jpg` (1344x768)
@@ -589,7 +589,7 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### albuquerque-nm (batch C5, aim for 1,300 to 1,900 words of your own copy)
 - Main: web design in albuquerque (210, SD 30)
-- Supporting: web design albuquerque nm (210); web design albuquerque (170); website development albuquerque (30); albuquerque web design company (30, Question); affordable web design albuquerque (20).
+- Supporting: web design albuquerque nm (210); web design albuquerque (170); website development albuquerque (30); albuquerque web design company (30, Question); affordable web design albuquerque (20); web design new mexico (30, from the Nacogdoches tab).
 - Angle: Balloon Fiesta and Route 66. The International Balloon Fiesta each October brings a huge wave of visitors (verify numbers), and Central Avenue (old Route 66) runs through Nob Hill, downtown and Old Town with independent shops. Kirtland AFB and Sandia National Laboratories employ many (verify). 'affordable' is searched; incomes run below the national median (verify Census): keep it brief and do not reuse the Tucson page's wording. Resources: New Mexico SBDC at CNM (verify), Albuquerque Hispano Chamber, Greater Albuquerque Chamber.
 - Hero: NEW planned Artistly hero `images/heroes/albuquerque-nm-hero.jpg` (write `alt` and `desc` for it), `fallback: images/heroes/las-vegas-nv-hero.jpg`, `fallback_alt: "Auto shop owner at the counter of a small neighborhood repair shop at dusk, with a car on a lift behind him"`.
 - In-body photos: `demo-images/veterinary/2.jpg` (1344x768); `demo-images/hvac/2.jpg` (1344x768); `images/body/therapist-waiting-room.jpg` (1200x800)
@@ -603,7 +603,7 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### mesa-az (batch C6, aim for 1,000 to 1,400 words of your own copy)
 - Main: website design mesa (170, SD 13)
-- Supporting: mesa websites (110, Question); web design mesa az (30); web designer mesa (10, Question); web design in arizona (110); arizona web design (70, Question).
+- Supporting: mesa websites (110, Question); web design mesa az (30); web designer mesa (10, Question); web design in arizona (110); arizona web design (70, Question); web design az (140, from the Amarillo tab).
 - Angle: Not a Phoenix suburb in its own eyes. Mesa is one of the largest cities in Arizona (verify Census rank), with a revived downtown on the light rail, the Asian District along Dobson Road (verify), Falcon Field, and family neighborhoods. The Phoenix page covers service-area trades across the Valley; Mesa's page should be about Mesa's own places and customers. Use the statewide 'web design in arizona' searches in one paragraph. Resources: City of Mesa Office of Economic Development, Mesa Chamber, Maricopa SBDC (verify).
 - Hero: reuse `image: images/heroes/website-cost-per-month-hero.jpg` (no new file, no fallback), `alt: "Owner of a small shop reviewing monthly bills on a laptop at the back counter"` (keep this alt or tighten it after looking at the photo; it must not claim the city).
 - In-body photos: `demo-images/dental/2.jpg` (1344x768); `demo-images/veterinary/1.jpg` (1344x768); `demo-images/hvac/1.jpg` (1344x768)
@@ -638,7 +638,7 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### minneapolis-mn (batch C8, aim for 1,300 to 1,900 words of your own copy)
 - Main: web design minneapolis (590, SD 19)
-- Supporting: web design minneapolis mn (880); web design company minneapolis (260); minneapolis web designer (70, Question); responsive web design minneapolis (30); web design eden prairie mn (30); web design st cloud mn (30, may be supporting as a Minnesota town or unused); ecommerce / custom / professional / wordpress / small business web design minneapolis (10 each); web design in minnesota (170). Unused: target headquarters.
+- Supporting: web design minneapolis mn (880); web design company minneapolis (260); minneapolis web designer (70, Question); responsive web design minneapolis (30); web design eden prairie mn (30); ('web design st cloud mn' is a different city: unused); ecommerce / custom / professional / wordpress / small business web design minneapolis (10 each); web design in minnesota (170). Unused: target headquarters.
 - Angle: Lake Street and immigrant entrepreneurs. Lake Street's small businesses rebuilt after 2020 (verify how the city and nonprofits documented it; respectful and factual), and East African, Latino and Hmong owners (verify sources) run many shops and restaurants in Cedar-Riverside, along Lake Street and in the Twin Cities. Northeast's arts district, Uptown, North Loop, and suburbs Edina, Bloomington, Eden Prairie, St. Paul next door. Resources: City of Minneapolis small business team (verify), Minnesota SBDC (verify office), Minneapolis Regional Chamber, Lake Street Council (verify).
 - Hero: NEW planned Artistly hero `images/heroes/minneapolis-mn-hero.jpg` (write `alt` and `desc` for it), `fallback: images/heroes/web-design-packages-hero.jpg`, `fallback_alt: "Two web design proposals laid out side by side on a desk with a highlighter"`.
 - In-body photos: `demo-images/salon/3.jpg` (1344x768); `demo-images/gym/3.jpg` (1344x768); `images/body/law-office-laptop.jpg` (1200x800)
@@ -680,7 +680,7 @@ Keyword numbers verified from the Wave 4 keyword files (Ubersuggest US, pulled O
 
 #### pittsburgh-pa (batch C10, aim for 1,300 to 1,900 words of your own copy)
 - Main: web design pittsburgh pa (480, SD 12)
-- Supporting: web design pittsburgh (720). FAQ-able: web design rates (40); how much web design cost (40).
+- Supporting: web design pittsburgh (720); from keywords/Web-Design-5-Cities-Recheck.xlsx: pittsburgh web designs (720, SD 17); pittsburgh website design (480); pittsburgh web design (480, Question); pittsburgh web designer (110); website development pittsburgh (90); pittsburgh web design company (70, Question); pittsburgh web developers (30, Question); pittsburgh website design agency (10). FAQ-able: web design rates (40); how much web design cost (40).
 - Angle: Ninety neighborhoods split by rivers and hills. Pittsburgh counts about 90 neighborhoods (verify), and rivers, hills and tunnels mean customers think in neighborhoods and 'which side of the river'. The economy runs on eds and meds (UPMC, Pitt, Carnegie Mellon; verify) and robotics. Places: the Strip District, Lawrenceville, Squirrel Hill, Bloomfield, the South Side, Mt. Lebanon, Cranberry. Resources: Pennsylvania SBDC at Pitt and Duquesne (verify), Greater Pittsburgh Chamber, URA (Urban Redevelopment Authority) small business help (verify).
 - Hero: reuse `image: images/heroes/how-to-hire-a-web-designer-hero.jpg` (no new file, no fallback), `alt: "Business owner on a phone call at a workbench, taking notes while talking to a web designer"` (keep this alt or tighten it after looking at the photo; it must not claim the city).
 - In-body photos: `demo-images/auto-repair/1.jpg` (1344x768); `demo-images/plumbing/3.jpg` (1344x768); `demo-images/cleaning/4.jpg` (1344x768)

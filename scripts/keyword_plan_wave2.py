@@ -47,6 +47,11 @@ CITIES = {
 # remaining-candidates table.
 WAVE3_TABS = {"New York", "Orange County", "Tampa", "Huntsville", "Huntsville AL", "Tucson", "Richmond", "Richmond VA",
               "Louisville", "Wilmington", "Wilmington NC"}
+# Cities in this file that got Wave 4 pages (scripts/keyword_plan_wave4.py); also left out of the candidates table.
+WAVE4_TABS = {"Philadelphia", "Denver", "Seattle", "Jacksonville", "Charlotte", "Raleigh", "Memphis", "Columbus",
+              "Cincinnati", "Detroit", "Minneapolis", "Oklahoma City", "Tulsa", "Albuquerque", "Salt Lake City", "Boise",
+              "Portland", "Pittsburgh", "Birmingham", "New Orleans", "Baton Rouge", "Little Rock", "Omaha", "Des Moines",
+              "Greensboro", "Chattanooga"}
 
 U_BRAND = "names or reads like the name of another agency (other agencies' brand names are not used)"
 U_CITE = "a citation-style question (Chicago style for citing a website), nothing to do with hiring a designer"
@@ -166,14 +171,15 @@ def section():
         out.append("")
     # Remaining candidates: cities in the files with no page yet.
     out += ["### Remaining national candidates (no page yet)", "",
-            "Cities in the two national files that did not get a page in Wave 2 or Wave 3 (New York, Tampa, Tucson, "
-            "Richmond and Louisville got Wave 3 pages from the newer Wave 3 keyword file). The strongest city-specific "
+            "Cities in the two national files that did not get a page in Wave 2, 3 or 4 (New York, Tampa, Tucson, "
+            "Richmond and Louisville got Wave 3 pages from the newer Wave 3 keyword file; 26 cities in this file got Wave 4 "
+            "pages, see the Wave 4 section). The strongest city-specific "
             "web design phrase for each (10+ searches a month, other agencies' names excluded):", "",
             "| City | Best keyword | Volume | SD |", "|---|---|---:|---:|"]
     wb = openpyxl.load_workbook(NAT, read_only=True)
     cand = []
     for tab in wb.sheetnames[1:]:
-        if tab in CITIES or tab in WAVE3_TABS:
+        if tab in CITIES or tab in WAVE3_TABS or tab in WAVE4_TABS:
             continue
         first = r"\b" + re.escape(tab.lower().split()[0]) + r"\b"
         best = None
@@ -187,7 +193,7 @@ def section():
         if best:
             cand.append((tab,) + best)
     wb2 = openpyxl.load_workbook(RECHECK, read_only=True)
-    for city in ("Milwaukee", "Pittsburgh", "Greensboro", "Wichita"):
+    for city in ("Milwaukee", "Wichita"):
         best = None
         for kw, typ, vol, sd, cpc, seed in list(wb2["ALL"].iter_rows(values_only=True))[1:]:
             if kw and (vol or 0) >= 10 and city.lower() in kw.lower() and re.search(r"web|website", kw.lower()) \

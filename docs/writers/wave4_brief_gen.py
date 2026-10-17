@@ -292,7 +292,7 @@ city("charlotte-nc", "B1", FULL, "web design in charlotte nc (1,900, SD 65)",
      "Huntersville, Concord, and Fort Mill across the South Carolina line. Resources: SBTDC at UNC Charlotte (verify), Charlotte "
      "Regional Business Alliance, the City of Charlotte's small business programs (verify current names), SCORE Charlotte.",
      ("new", "images/heroes/small-business-website-redesign-hero.jpg"))
-city("greensboro-nc", "B1", MID, "web design greensboro (390, SD 28)", "web design greensboro nc (30).",
+city("greensboro-nc", "B1", MID, "web design greensboro (390, SD 28)", "web design greensboro nc (30); from keywords/Web-Design-5-Cities-Recheck.xlsx: website design greensboro (390, Question, SD 25); website designer greensboro nc (20, Question).",
      "Makers of the Piedmont Triad. Textile and furniture history (High Point's furniture market is next door, verify), NC A&T "
      "(verify its HBCU size claim), UNC Greensboro, the 1960 Woolworth sit-ins and the International Civil Rights Center and "
      "Museum, and new manufacturing nearby such as the Toyota battery plant in Liberty (verify). Small suppliers, workshops "
@@ -310,7 +310,7 @@ city("augusta-ga", "B1", MID, "web design augusta ga (140, SD 27)", "web design 
 city("raleigh-nc", "B2", FULL, "web design raleigh north carolina (590, SD 34)",
      "raleigh web design (720, Question); web design raleigh (590); raleigh web design company (50, Question); custom web design "
      "raleigh nc / raleigh (10 / 10); small business web design raleigh (10); shopify web design raleigh (10: answer honestly, "
-     "online stores are not in the INTAKE packages).",
+     "online stores are not in the INTAKE packages); web design in nc (210, SD 6, statewide, from the Nacogdoches tab).",
      "Wake County's string of towns. Raleigh plus Cary, Apex, Holly Springs, Wake Forest, Garner, Fuquay-Varina, Morrisville: "
      "each has its own identity and many residents are new homeowners (verify growth from Census). Customers search by their "
      "own town, so a business needs a page per town it really serves. Also the state government and Research Triangle Park. "
@@ -337,8 +337,8 @@ city("montgomery-al", "B2", MID, "web design montgomery al (90, SD 32)", "none a
      ("generic", "images/heroes/website-cost-per-month-hero.jpg"))
 
 city("charleston-sc", "B3", FULL, "charleston website design (1,300, SD 40)",
-     "web design charleston sc (1,000); charleston sc web design (880, Question); charleston web designer (320, Question). "
-     "FAQ-able: how much do web designers charge for a website (210).",
+     "web design charleston sc (1,000); charleston sc web design (880, Question); charleston web designer (320, Question); "
+     "web design summerville sc (30, from the Sugar Land tab; Summerville is a Charleston suburb). FAQ-able: how much do web designers charge for a website (210).",
      "Old houses, strict rules, and weddings. On the peninsula, exterior work on historic buildings goes through the city's "
      "Board of Architectural Review (verify scope), so contractors who restore old homes must explain that process; and "
      "Charleston is a big wedding and event market (verify a source), so planners, florists, photographers and venues compete "
@@ -347,8 +347,8 @@ city("charleston-sc", "B3", FULL, "charleston website design (1,300, SD 40)",
      "Metro Chamber, SCORE.",
      ("new", "images/heroes/why-small-businesses-need-a-website-hero.jpg"))
 city("columbia-sc", "B3", MID, "web design columbia (720, SD 55)",
-     "web design columbia sc (590); website design columbia sc (480, Question); columbia web design (50, Question). 'web design "
-     "columbia mo' is Missouri: unused.",
+     "web design columbia sc (590); website design columbia sc (480, Question); columbia web design (50, Question); web design lexington sc "
+     "(70, from the Lexington KY tab; Lexington, SC is a Columbia suburb). 'web design columbia mo' is Missouri: unused.",
      "Which Columbia? Say plainly this page is Columbia, South Carolina. Fort Jackson is the Army's largest basic training "
      "center (verify), and graduation weeks bring families to town nearly every week (verify how often), filling restaurants "
      "and hotels; plus the state capital and the University of South Carolina. Places: the Vista, Main Street, Five Points, "
@@ -576,8 +576,8 @@ city("fort-collins-co", "C1", MID, "web design fort collins co (320, SD 22)",
 
 city("seattle-wa", "C2", FULL, "web design seattle (2,900, SD 77)",
      "web design seattle washington (1,900); web design seattle wa (1,000); website design seattle (880); seattle web design (880, "
-     "Question); web development agency seattle (590); west seattle web design (30); all seattle web design (20); seattle wordpress "
-     "web design (10); web design seattle central (10). Ecommerce row: unused or honest FAQ.",
+     "Question); web development agency seattle (590); west seattle web design (30); seattle wordpress web design (10). Unused: 'all seattle web design' (reads like a "
+     "company name) and 'web design seattle central' (a college course). Ecommerce row: unused or honest FAQ.",
      "Customers who judge websites for a living. With so many tech workers in town (verify), Seattle buyers notice a slow, "
      "clumsy site; speed, accessibility and plain writing matter. Neighborhood identity is strong: Ballard, Fremont, Capitol "
      "Hill, Columbia City, the U District, Georgetown, and West Seattle (searched on its own), plus the Eastside (Bellevue, "
@@ -678,7 +678,7 @@ city("bakersfield-ca", "C5", MID, "bakersfield website design (480, SD 21)",
      ("generic", "images/heroes/indianapolis-in-hero.jpg"))
 city("albuquerque-nm", "C5", FULL, "web design in albuquerque (210, SD 30)",
      "web design albuquerque nm (210); web design albuquerque (170); website development albuquerque (30); albuquerque web design "
-     "company (30, Question); affordable web design albuquerque (20).",
+     "company (30, Question); affordable web design albuquerque (20); web design new mexico (30, from the Nacogdoches tab).",
      "Balloon Fiesta and Route 66. The International Balloon Fiesta each October brings a huge wave of visitors (verify "
      "numbers), and Central Avenue (old Route 66) runs through Nob Hill, downtown and Old Town with independent shops. Kirtland "
      "AFB and Sandia National Laboratories employ many (verify). 'affordable' is searched; incomes run below the national median "
@@ -695,7 +695,7 @@ city("scottsdale-az", "C6", FULL, "web design scottsdale az (880, SD 10)",
      ("new", "images/heroes/el-paso-tx-hero.jpg"))
 city("mesa-az", "C6", MID, "website design mesa (170, SD 13)",
      "mesa websites (110, Question); web design mesa az (30); web designer mesa (10, Question); web design in arizona (110); arizona "
-     "web design (70, Question).",
+     "web design (70, Question); web design az (140, from the Amarillo tab).",
      "Not a Phoenix suburb in its own eyes. Mesa is one of the largest cities in Arizona (verify Census rank), with a revived "
      "downtown on the light rail, the Asian District along Dobson Road (verify), Falcon Field, and family neighborhoods. The "
      "Phoenix page covers service-area trades across the Valley; Mesa's page should be about Mesa's own places and customers. "
@@ -741,8 +741,7 @@ city("des-moines-ia", "C7", FULL, "web design des moines (590, SD 46)",
 
 city("minneapolis-mn", "C8", FULL, "web design minneapolis (590, SD 19)",
      "web design minneapolis mn (880); web design company minneapolis (260); minneapolis web designer (70, Question); responsive web "
-     "design minneapolis (30); web design eden prairie mn (30); web design st cloud mn (30, may be supporting as a Minnesota town "
-     "or unused); ecommerce / custom / professional / wordpress / small business web design minneapolis (10 each); web design in "
+     "design minneapolis (30); web design eden prairie mn (30); ('web design st cloud mn' is a different city: unused); ecommerce / custom / professional / wordpress / small business web design minneapolis (10 each); web design in "
      "minnesota (170). Unused: target headquarters.",
      "Lake Street and immigrant entrepreneurs. Lake Street's small businesses rebuilt after 2020 (verify how the city and "
      "nonprofits documented it; respectful and factual), and East African, Latino and Hmong owners (verify sources) run many "
@@ -800,7 +799,7 @@ city("columbus-oh", "C9", FULL, "website design columbus (590, SD 22)",
      ("new", "images/heroes/website-designer-cost-hero.jpg"))
 
 city("pittsburgh-pa", "C10", FULL, "web design pittsburgh pa (480, SD 12)",
-     "web design pittsburgh (720). FAQ-able: web design rates (40); how much web design cost (40).",
+     "web design pittsburgh (720); from keywords/Web-Design-5-Cities-Recheck.xlsx: pittsburgh web designs (720, SD 17); pittsburgh website design (480); pittsburgh web design (480, Question); pittsburgh web designer (110); website development pittsburgh (90); pittsburgh web design company (70, Question); pittsburgh web developers (30, Question); pittsburgh website design agency (10). FAQ-able: web design rates (40); how much web design cost (40).",
      "Ninety neighborhoods split by rivers and hills. Pittsburgh counts about 90 neighborhoods (verify), and rivers, hills and "
      "tunnels mean customers think in neighborhoods and 'which side of the river'. The economy runs on eds and meds (UPMC, Pitt, "
      "Carnegie Mellon; verify) and robotics. Places: the Strip District, Lawrenceville, Squirrel Hill, Bloomfield, the South "
