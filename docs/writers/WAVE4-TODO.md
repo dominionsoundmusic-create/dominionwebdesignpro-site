@@ -6,6 +6,7 @@
 - mobile-al, jackson-ms (B8; notes in docs/writers/w4-b8.md)
 - montgomery-al (B2; notes in docs/writers/w4-b2.md; swap contractor-review.jpg, Apple logo)
 - fort-myers-fl (B6; notes in docs/writers/w4-b6.md; swap photography/1.jpg, shows Canon)
+- tallahassee-fl (B4; notes in docs/writers/w4-b4.md)
 - augusta-ga (B1; notes in docs/writers/w4-b1.md)
 
 ## Pages written without search research (must be researched and rechecked)
