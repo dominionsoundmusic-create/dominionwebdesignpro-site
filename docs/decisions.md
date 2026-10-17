@@ -259,3 +259,5 @@ be reversed later.
     versus Mobile shipyards and Airbus, Durham tobacco warehouses and startups versus Tulsa Greenwood and Tulsa Remote.
 64. **Writers and checkers.** Writer sub-agents work three cities each (neighbors together so one writer keeps them
     apart); separate fact-check sub-agents that wrote none of the pages check every claim per part.
+
+Wave 4 status: Part A (23 Texas pages) written and built, check.py 0 errors, similarity max 4.8%, committed; Part A fact-check and Part B writing in progress.

@@ -996,7 +996,7 @@ it, leave it out.
   text that describes what is really in it. Never write alt text that claims a photo shows the city (except the
   real city photos named above). You may swap ONE assigned photo for another from the usable pool in
   docs/WRITING-GUIDE.md if it fits the angle much better, as long as no photo repeats on the page (say so in your
-  notes file). Never use a photo that names or shows a different real city (images/cities/*, images/body/<city>-*).
+  notes file). Part A writers found readable lettering or a brand name in demo-images/default/3.jpg and photography/2.jpg: if an assigned photo shows readable text or a brand, swap it. Never use a photo that names or shows a different real city (images/cities/*, images/body/<city>-*).
 
 ## Check before you report
 ```
