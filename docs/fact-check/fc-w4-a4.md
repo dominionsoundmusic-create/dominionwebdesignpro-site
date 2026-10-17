@@ -48,7 +48,7 @@ bullet saying the Tyler SBDC also lists the county, with the ntsbdc.org county s
 | Google local ranking: relevance, distance, prominence | Confirmed | support.google.com | none |
 | Prices, AI receptionist, Starter contents | Confirmed | INTAKE.md | none |
 
-Summary: 19 checked, 14 confirmed, 0 corrected, 2 softened, 0 removed (plus 1 added fact, 1 weak source removed, 1 low-stakes item not re-verified).
+Summary: 19 checked, 15 confirmed, 0 corrected, 2 softened, 0 removed (plus 1 added fact, 1 weak source removed, 1 low-stakes item not re-verified).
 
 ## /web-design/texarkana-tx.html
 | Claim | Verdict | Source | Action |
@@ -129,7 +129,7 @@ Summary: 15 checked, 9 confirmed, 2 corrected, 2 softened, 2 removed.
 | Lone Star College SBDC, free consulting, covers The Woodlands | Confirmed (knowledge) | Community Impact | none |
 | Prices, hosting | Confirmed | INTAKE.md | none |
 
-Summary: 12 checked, 8 confirmed, 0 corrected, 2 softened, 1 removed (plus 1 weak source replaced).
+Summary: 12 checked, 9 confirmed, 0 corrected, 2 softened, 1 removed (plus 1 weak source replaced).
 
 ## Could restore with a later search (removed or softened only because of the search limit)
 Round Rock 2023 estimate and the Express deal end year; the Sports Capital trademark year; Lamar enrollment;
