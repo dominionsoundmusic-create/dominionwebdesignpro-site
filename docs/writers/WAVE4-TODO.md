@@ -1,4 +1,4 @@
-# Wave 4 open work (search budget: 200 web searches per orchestrator turn, shared by all agents)
+# Wave 4 open work: all items below were completed (Oct 17 2026); kept as a record
 
 ## Pages not written yet (search budget ran out)
 

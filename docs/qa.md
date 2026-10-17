@@ -424,3 +424,107 @@ All 51 area pages, 1,275 pairs: min 0.0%, mean 0.9%, max 4.3% (lawrenceville-ga 
 
 Pairs involving a Wave 3 page: 400 (counted from each side), range 0.0% to 3.7%. Limit 15%: none over.
 (Words = all visible words on the built page, as similarity.py counts them.)
+
+## Wave 4 (Oct 17 2026): 81 more city pages (23 Texas, 29 South and East, 29 West and Midwest)
+
+| Check | How | Result |
+|---|---|---|
+| Build | `python3 build.py` | 162 pages built; 32 planned hero images listed in docs/image-list.md (24 new Wave 4 heroes plus the 8 Wave 3 heroes still to come) |
+| Page rules | `python3 scripts/check.py` | 170 pages checked, **0 errors**, 4 warnings (word count on the short Laredo, Round Rock, San Angelo and Temple pages, short by design per CITY-PAGES-WAVE4.md) |
+| Old URLs | `python3 scripts/check_old_urls.py` | 285 old URLs checked, **0 would 404** |
+| Banned phrases, dashes, numbers | `python3 scripts/grep_check.py` | **0 hits** across 170 pages |
+| Keyword 10+ rule | `python3 scripts/keyword_plan.py` (runs keyword_plan_wave4.py) | Wave 4 tabs: 673 keyword rows at 10+ (per tab): 81 targets, 283 supporting, 22 FAQ questions, 78 assigned to another page, 1 repeat of a target, 208 unused with a reason, **0 unclassified** |
+| Responsive | `node scripts/responsive_check.js` (dist served locally; San Antonio and Denver added to the 1920/2560 sample) | 696 page loads at 1440/1024/768/390 plus 1920/2560 samples. First run flagged ten Wave 4 heroes at 729 to 764px (long H1s); H1s shortened, re-run **0 problems** (no overflow, no JS errors, no broken images, hero on the left rail, main button above the fold). San Antonio at 1440 and 2560: H1 left edge at 79px and 140px |
+| Tool pages and forms | `node scripts/tool_pages_browser.js`, `python3 scripts/check_tool_pages.py` | 10 of 10 OK: site-check, client-intake and homepage-contact forms present with original names, 0 JS errors, scripts unchanged, seo-audit function present |
+| Fact-check | 18 independent fact-check sub-agents plus 3 search rechecks and 3 research passes (docs/fact-check.md, Wave 4) | 1,460 claims: 991 confirmed, 168 corrected, 163 softened, 73 removed (remainder kept on official writer sources) |
+
+### Similarity (Jaccard, 5-word shingles, `python3 scripts/similarity.py`)
+
+All 132 area pages, 8,646 pairs: min 0.0%, mean 1.3%, **max 6.1%** (st-petersburg-fl vs tallahassee-fl). Limit 15%: none over.
+
+| New page | Words | Highest pair | Jaccard |
+|---|---:|---|---:|
+| /web-design/san-antonio-tx.html | 1,551 | /web-design/lubbock-tx.html | 4.1% |
+| /web-design/laredo-tx.html | 905 | /web-design/temple-tx.html | 2.0% |
+| /web-design/temple-tx.html | 800 | /web-design/abilene-tx.html | 3.8% |
+| /web-design/fort-worth-tx.html | 1,561 | /web-design/st-louis-mo.html | 4.9% |
+| /web-design/arlington-tx.html | 1,264 | /web-design/abilene-tx.html | 5.5% |
+| /web-design/abilene-tx.html | 1,040 | /web-design/arlington-tx.html | 5.5% |
+| /web-design/corpus-christi-tx.html | 1,524 | /web-design/abilene-tx.html | 1.5% |
+| /web-design/mcallen-tx.html | 1,195 | /web-design/brownsville-tx.html | 1.7% |
+| /web-design/brownsville-tx.html | 1,086 | /web-design/mcallen-tx.html | 1.7% |
+| /web-design/lubbock-tx.html | 1,756 | /web-design/san-antonio-tx.html | 4.1% |
+| /web-design/amarillo-tx.html | 1,297 | /web-design/sugar-land-tx.html | 3.3% |
+| /web-design/san-angelo-tx.html | 814 | /web-design/texarkana-tx.html | 1.9% |
+| /web-design/midland-tx.html | 1,313 | /web-design/abilene-tx.html | 2.3% |
+| /web-design/odessa-tx.html | 1,153 | /web-design/killeen-tx.html | 3.4% |
+| /web-design/killeen-tx.html | 999 | /web-design/texarkana-tx.html | 3.9% |
+| /web-design/sugar-land-tx.html | 1,410 | /web-design/katy-tx.html | 3.9% |
+| /web-design/katy-tx.html | 1,316 | /web-design/sugar-land-tx.html | 3.9% |
+| /web-design/cypress-tx.html | 1,179 | /web-design/beaumont-tx.html | 3.7% |
+| /web-design/the-woodlands-tx.html | 921 | /web-design/nacogdoches-tx.html | 2.9% |
+| /web-design/beaumont-tx.html | 1,154 | /web-design/texarkana-tx.html | 4.1% |
+| /web-design/round-rock-tx.html | 791 | /web-design/the-woodlands-tx.html | 2.3% |
+| /web-design/nacogdoches-tx.html | 1,186 | /web-design/abilene-tx.html | 3.2% |
+| /web-design/texarkana-tx.html | 1,139 | /web-design/beaumont-tx.html | 4.1% |
+| /web-design/charlotte-nc.html | 1,815 | /web-design/montgomery-al.html | 3.5% |
+| /web-design/greensboro-nc.html | 1,152 | /web-design/knoxville-tn.html | 4.7% |
+| /web-design/augusta-ga.html | 1,565 | /web-design/montgomery-al.html | 4.4% |
+| /web-design/raleigh-nc.html | 1,488 | /web-design/shreveport-la.html | 2.2% |
+| /web-design/durham-nc.html | 1,370 | /web-design/fort-myers-fl.html | 1.2% |
+| /web-design/montgomery-al.html | 1,247 | /web-design/augusta-ga.html | 4.4% |
+| /web-design/charleston-sc.html | 1,519 | /web-design/greenville-sc.html | 3.1% |
+| /web-design/columbia-sc.html | 1,252 | /web-design/pensacola-fl.html | 3.2% |
+| /web-design/greenville-sc.html | 1,423 | /web-design/wilmington-nc.html | 3.3% |
+| /web-design/savannah-ga.html | 1,600 | /web-design/shreveport-la.html | 3.3% |
+| /web-design/jacksonville-fl.html | 1,376 | /web-design/wilmington-nc.html | 4.2% |
+| /web-design/tallahassee-fl.html | 1,479 | /web-design/st-petersburg-fl.html | 6.1% |
+| /web-design/fort-lauderdale-fl.html | 1,812 | /web-design/west-palm-beach-fl.html | 5.2% |
+| /web-design/west-palm-beach-fl.html | 1,964 | /web-design/fort-lauderdale-fl.html | 5.2% |
+| /web-design/pensacola-fl.html | 1,295 | /web-design/wilmington-nc.html | 5.3% |
+| /web-design/st-petersburg-fl.html | 1,459 | /web-design/tallahassee-fl.html | 6.1% |
+| /web-design/sarasota-fl.html | 1,199 | /web-design/fort-myers-fl.html | 5.5% |
+| /web-design/fort-myers-fl.html | 1,436 | /web-design/sarasota-fl.html | 5.5% |
+| /web-design/new-orleans-la.html | 1,692 | /web-design/baton-rouge-la.html | 5.5% |
+| /web-design/baton-rouge-la.html | 1,519 | /web-design/new-orleans-la.html | 5.5% |
+| /web-design/shreveport-la.html | 1,163 | /web-design/baton-rouge-la.html | 5.2% |
+| /web-design/birmingham-al.html | 1,733 | /web-design/jackson-ms.html | 5.7% |
+| /web-design/mobile-al.html | 1,564 | /web-design/jackson-ms.html | 5.3% |
+| /web-design/jackson-ms.html | 1,478 | /web-design/birmingham-al.html | 5.7% |
+| /web-design/knoxville-tn.html | 1,677 | /web-design/memphis-tn.html | 5.7% |
+| /web-design/chattanooga-tn.html | 1,661 | /web-design/knoxville-tn.html | 4.2% |
+| /web-design/memphis-tn.html | 1,725 | /web-design/knoxville-tn.html | 5.7% |
+| /web-design/lexington-ky.html | 2,081 | /web-design/louisville-ky.html | 4.1% |
+| /web-design/little-rock-ar.html | 1,636 | /web-design/louisville-ky.html | 4.6% |
+| /web-design/denver-co.html | 1,680 | /web-design/fort-collins-co.html | 2.4% |
+| /web-design/colorado-springs-co.html | 1,154 | /web-design/fort-collins-co.html | 2.3% |
+| /web-design/fort-collins-co.html | 1,285 | /web-design/reno-nv.html | 3.7% |
+| /web-design/seattle-wa.html | 1,747 | /web-design/boise-id.html | 4.3% |
+| /web-design/spokane-wa.html | 1,327 | /web-design/boise-id.html | 5.0% |
+| /web-design/boise-id.html | 1,303 | /web-design/spokane-wa.html | 5.0% |
+| /web-design/portland-or.html | 1,635 | /web-design/reno-nv.html | 4.4% |
+| /web-design/salt-lake-city-ut.html | 1,340 | /web-design/des-moines-ia.html | 2.0% |
+| /web-design/reno-nv.html | 1,045 | /web-design/portland-or.html | 4.4% |
+| /web-design/san-francisco-ca.html | 1,721 | /web-design/oklahoma-city-ok.html | 3.0% |
+| /web-design/san-jose-ca.html | 1,554 | /web-design/long-beach-ca.html | 2.8% |
+| /web-design/long-beach-ca.html | 1,344 | /web-design/san-jose-ca.html | 2.8% |
+| /web-design/fresno-ca.html | 1,611 | /web-design/albuquerque-nm.html | 5.7% |
+| /web-design/bakersfield-ca.html | 1,206 | /web-design/fresno-ca.html | 5.5% |
+| /web-design/albuquerque-nm.html | 1,335 | /web-design/fresno-ca.html | 5.7% |
+| /web-design/scottsdale-az.html | 1,672 | /web-design/tulsa-ok.html | 4.9% |
+| /web-design/mesa-az.html | 1,331 | /web-design/tulsa-ok.html | 4.5% |
+| /web-design/tulsa-ok.html | 1,327 | /web-design/scottsdale-az.html | 4.9% |
+| /web-design/oklahoma-city-ok.html | 1,612 | /web-design/abilene-tx.html | 4.1% |
+| /web-design/omaha-ne.html | 1,421 | /web-design/des-moines-ia.html | 4.4% |
+| /web-design/des-moines-ia.html | 1,448 | /web-design/omaha-ne.html | 4.4% |
+| /web-design/minneapolis-mn.html | 1,790 | /web-design/madison-wi.html | 4.1% |
+| /web-design/madison-wi.html | 1,367 | /web-design/grand-rapids-mi.html | 4.6% |
+| /web-design/grand-rapids-mi.html | 1,406 | /web-design/madison-wi.html | 4.6% |
+| /web-design/detroit-mi.html | 1,701 | /web-design/columbus-oh.html | 4.2% |
+| /web-design/cincinnati-oh.html | 1,571 | /web-design/columbus-oh.html | 3.3% |
+| /web-design/columbus-oh.html | 1,681 | /web-design/detroit-mi.html | 4.2% |
+| /web-design/pittsburgh-pa.html | 1,933 | /web-design/philadelphia-pa.html | 3.2% |
+| /web-design/philadelphia-pa.html | 1,541 | /web-design/fort-worth-tx.html | 3.4% |
+
+Pairs involving a Wave 4 page: 10611 (counted from each side), range 0.0% to 6.1%, mean 1.5%.
+(Words = all visible words on the built page, as similarity.py counts them.)

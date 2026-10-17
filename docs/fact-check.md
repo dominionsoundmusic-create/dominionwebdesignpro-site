@@ -150,3 +150,73 @@ QuickFacts 2020 to 2024 ($57,073 vs $80,734) and Vail's incorporation votes date
 Addition plant dates fixed (the Coca-Cola plant is 1953) and the cidery noted as having moved. Louisville's hotel line
 limited to downtown hotels and Whiskey Row history softened to what sources support; Wilmington's Cargo District counts
 attributed to the developer as rough figures and "record" dropped from UNCW's total enrollment.
+
+## Wave 4 (Oct 17 2026): 81 city pages
+
+Run by independent sub-agents that wrote none of the pages, using docs/fact-check/BRIEF.md, docs/fact-check/BRIEF-WAVE4.md
+and the writer notes docs/writers/w4-*.md. Each checked the claims and cited sources on its pages with web searches, fixed
+the source files in place, rebuilt and re-ran check.py. Full tables (Claim | Verdict | Source | Action) are in
+docs/fact-check/fc-w4-*.md.
+
+Web searches are capped at 200 per orchestrator turn, shared by every running agent. The first Part A checkers ran out
+partway and confirmed some claims from prior knowledge; those pages then got a second, search-only recheck (fc-w4-r1,
+r2, r3). Later checkers worked with a fixed budget of about 6 searches per page and marked any claim confirmed without a
+search as "PK" (well-known geography and history) in their tables. Where a specific number could not be confirmed it was
+softened or removed, never kept on trust. Four pages written with little or no research (Little Rock, Greenville SC,
+Memphis, Chattanooga) got a research pass before their fact-check.
+
+| Checker | Pages | Checked | Confirmed | Corrected | Softened | Removed |
+|---|---|---:|---:|---:|---:|---:|
+| fc-w4-a1 | San Antonio, Laredo, Temple, Fort Worth, Arlington, Abilene | 88 | 59 | 7 | 15 | 6 |
+| fc-w4-a2 | Corpus Christi, McAllen, Brownsville, Lubbock, Amarillo, San Angelo | 98 | 56 | 7 | 9 | 7 |
+| fc-w4-a3 | Midland, Odessa, Killeen, Sugar Land, Katy, Cypress | 95 | 55 | 6 | 8 | 3 |
+| fc-w4-a4 | Nacogdoches, Texarkana, Beaumont, Round Rock, The Woodlands | 76 | 51 | 4 | 11 | 7 |
+| fc-w4-r1 (search recheck) | Temple, Fort Worth, Arlington, Abilene | 43 | 30 | 6 | 2 | 4 |
+| fc-w4-r2 (search recheck) | McAllen, Brownsville, Lubbock, Amarillo, San Angelo | 43 | 33 | 7 | 2 | 1 |
+| fc-w4-r3 (search recheck) | Killeen, Sugar Land, Katy, Cypress, Beaumont, Round Rock, The Woodlands, Texarkana | 53 | 26 | 13 | 4 | 9 |
+| fc-w4-b1 | Charlotte, Greensboro, Augusta, Raleigh, Durham | 95 | 69 | 8 | 9 | 6 |
+| fc-w4-b2 | Montgomery, Charleston, Columbia, Greenville, Savannah | 67 | 51 | 3 | 12 | 1 |
+| fc-w4-b3 | Jacksonville, Tallahassee, Fort Lauderdale, West Palm Beach, Pensacola | 68 | 51 | 6 | 6 | 3 |
+| fc-w4-b4 | St. Petersburg, Sarasota, Fort Myers, New Orleans, Baton Rouge | 91 | 65 | 10 | 12 | 3 |
+| fc-w4-b5 | Shreveport, Birmingham, Mobile, Jackson, Knoxville | 85 | 58 | 13 | 8 | 5 |
+| fc-w4-b6 | Chattanooga, Memphis, Lexington, Little Rock | 82 | 58 | 10 | 8 | 4 |
+| fc-w4-c1 | Denver, Colorado Springs, Fort Collins, Seattle, Spokane | 90 | 56 | 11 | 17 | 3 |
+| fc-w4-c2 | Boise, Portland, Salt Lake City, Reno, San Francisco | 80 | 64 | 8 | 7 | 1 |
+| fc-w4-c3 | San Jose, Long Beach, Fresno, Bakersfield, Albuquerque | 88 | 58 | 20 | 6 | 4 |
+| fc-w4-c4 | Scottsdale, Mesa, Tulsa, Oklahoma City, Omaha | 76 | 54 | 8 | 11 | 3 |
+| fc-w4-c5 | Des Moines, Minneapolis, Madison, Grand Rapids, Pittsburgh | 71 | 48 | 11 | 9 | 2 |
+| fc-w4-c6 | Philadelphia, Detroit, Cincinnati, Columbus | 71 | 49 | 10 | 7 | 1 |
+| | **Total** | **1,460** | **991** | **168** | **163** | **73** |
+
+(Rows can sum to less than "checked": a few claims per page were kept on the writer's official source without a new
+search, or left as written with the reason in the table.)
+
+**Business claims.** The most common correction across all three parts: pricing FAQs that gave hosting as "$49 a month,
+or included while you keep the AI agent" without saying the agent itself costs $297 a month after its free trial, so the
+$49 read as the only monthly cost. Every Wave 4 pricing answer now states both, as INTAKE.md requires (the phone agent
+must not read as free). Five more pages (and the existing Cedar Park page) were fixed directly. Other INTAKE fixes: an
+Oklahoma City line that said Pro "adds ten more pages" (Pro is a 10-page site); a Philadelphia FAQ with the hosting rule
+backward and another that implied Maurice answers the phone (it is the AI receptionist, which can transfer); a Baton Rouge
+line implying updates come with the build.
+
+**Notable factual corrections.** Leon County repealed the Tallahassee minority and women business certification thresholds
+the page quoted; Wellstar's Grovetown hospital opened in August 2026 (the page said "plans"); NC A&T is the largest public
+HBCU, not the largest HBCU; the Pennsylvania SBDC lead office moved to Kutztown in 2018 and Wharton's own center closed in
+2019; the Florida SBDC Network is headquartered at UWF, with FGCU as a regional office; the Birmingham SBDC at UAB closed in
+2008 (the Greater Birmingham SBDC is at Innovation Depot); Baton Rouge and Shreveport SBDC offices are hosted by Southern
+University; Montgomery's 908th Airlift Wing became the 908th Flying Training Wing in 2024; Fort Hood carries its restored
+name; the Temple page's Killeen business resource center closed in December 2024; Lubbock's Texas Tech enrollment updated
+to more than 45,000 (fall 2026); Columbus uses Ohio State's autumn 2026 figures; the Des Moines State Fair figures use the
+2026 record attendance; a Memphis FedEx claim attributed to a report that does not exist was replaced; a Lexington SBA
+percentage that was really the women-owned share was removed; San Jose's "Little Saigon designated 2007" became the true
+2007 to 2008 naming dispute; Bakersfield's Epoch Times sourced oil figure was cut; Mesa's "more people than Atlanta" was
+cut (Atlanta's estimate is higher). The St. Petersburg city photo in images/cities/ shows the 1917 Pinellas County
+Courthouse in Clearwater, so it was not used for St. Petersburg.
+
+**Weak sources removed.** Real-estate blogs, moving-company guides, commercial property listings (Crexi), travel
+listicles, sponsored newspaper content, GuideStar profiles and Wikipedia pages without a better source behind them were
+replaced with official or reputable sources, or the claim was softened or cut.
+
+**Alt text.** Every checker opened every image on its pages; dozens of alt texts were tightened to describe exactly what
+the photo shows, and none claims a generic photo shows the city. Photos with readable lettering or brand names were swapped
+out by the writers (camera brands, AC unit labels, awning signs, an Apple logo, a car maker emblem).
