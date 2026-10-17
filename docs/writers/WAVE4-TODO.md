@@ -11,6 +11,7 @@
 
 ## Pages written without search research (must be researched and rechecked)
 - little-rock-ar (B10: every claim unverified)
+- memphis-tn, chattanooga-tn (B9: thin, almost no searches; add FedEx hub, resources, Co.Lab, VW per brief)
 - greenville-sc (B3: no Greenville searches; UNSOURCED items in w4-b3.md); columbia-sc and charleston-sc geography items
 - charlotte-nc, greensboro-nc: neighborhood names cut for lack of searches (could be added back)
 
