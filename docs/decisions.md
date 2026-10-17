@@ -263,4 +263,4 @@ be reversed later.
 Wave 4 status: Parts A, B and C written (81 pages), built, check.py 0 errors, similarity max 6.1%, committed. Part A and B fact-checks done plus search rechecks; Part C fact-check in progress.
 
 65. **Search budget.** Web searches are capped at 200 per orchestrator turn, shared by every running agent. The first Part B round ran 14 agents at once and ran dry, so later rounds run about five agents at a time with a per-agent cap (12 searches per city), and pages left unwritten or written without research were redone in follow-up rounds rather than filled from memory.
-66. **Detroit hero.** The assigned shared hero (las-vegas-nv-hero.jpg) shows desert mountains through the bay door, which plainly is not Michigan, so Detroit reuses the kansas-city-mo-hero.jpg auto shop scene (houses across the street) instead.
+66. **Detroit hero.** The assigned shared hero (las-vegas-nv-hero.jpg) shows desert mountains through the bay door, which plainly is not Michigan, so Detroit reuses the why-small-businesses-need-a-website-hero.jpg bakery scene instead (the kansas-city auto shop hero was tried first, but it shows a readable car maker emblem).
