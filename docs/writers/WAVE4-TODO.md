@@ -4,7 +4,7 @@
 
 ## Pages written without search research (must be researched and rechecked)
 - DONE little-rock-ar research pass (17 searches, w4-b10.md); still needs the Part B fact-check
-- memphis-tn, chattanooga-tn (B9: thin, almost no searches; add FedEx hub, resources, Co.Lab, VW per brief)
+- DONE memphis-tn, chattanooga-tn research pass (19 searches, w4-b9.md); still need the Part B fact-check
 - greenville-sc (B3: no Greenville searches; UNSOURCED items in w4-b3.md); columbia-sc and charleston-sc geography items
 - charlotte-nc, greensboro-nc: neighborhood names cut for lack of searches (could be added back)
 
