@@ -36,6 +36,10 @@ PAGES = {
     "g-designer": "/how-much-does-a-website-designer-cost/",
     "g-builder": "/website-builder-vs-web-designer/",
     "g-need": "/why-small-businesses-need-a-website/",
+    # Wave 4 city pages (Oct 17 2026) that now cover phrases from this file
+    "greensboro": "/web-design/greensboro-nc.html", "fort-myers": "/web-design/fort-myers-fl.html",
+    "chattanooga": "/web-design/chattanooga-tn.html", "jacksonville": "/web-design/jacksonville-fl.html",
+    "greenville-sc": "/web-design/greenville-sc.html",
 }
 
 TARGETS = {
@@ -84,9 +88,12 @@ RULES = [  # (regex, page key or ("unused", reason)); first match wins
     (r"how many web|how web design goes|requirements|web design size|why city design|what website design software|why webflow", ("unused", U_TRIVIA)),
     (r"macon|marietta|athens ga|buford ga|kennesaw|columbus ga|gainesville ga|^web design gainesville$", ("unused", U_GA_WAVE2)),
     (r"^web design (kc|kansas city mo)$", "kansas-city"),
-    (r"web design (greensboro|fort myers|chattanooga|iowa city|winston salem|fairfax|deland|quad cities|eau claire|"
+    (r"^web design greensboro$", "greensboro"), (r"^web design fort myers$", "fort-myers"),
+    (r"^web design chattanooga$", "chattanooga"), (r"^web design company jacksonville fl$", "jacksonville"),
+    (r"^web design south carolina$", "greenville-sc"),
+    (r"web design (iowa city|winston salem|fairfax|deland|quad cities|eau claire|"
      r"st george utah|st george ut|missouri|wilson nc|south carolina|erie pa|south florida|fairfield ct|fairfield|hendersonville nc|kansas|"
-     r"cleveland tn|park city|ellsworth)$|web design company jacksonville fl|clayton nc web design|website design jonesboro ar", ("unused", U_OUT)),
+     r"cleveland tn|park city|ellsworth)$|clayton nc web design|website design jonesboro ar", ("unused", U_OUT)),
 ]
 
 ZERO_CITIES = ["South Fulton", "College Park", "East Point", "Union City", "Fairburn", "Stonecrest", "Lithonia",
