@@ -160,3 +160,97 @@ Summary: checked 10, confirmed 8, corrected 0, softened 1, removed 0, unsettled 
 Nineteen claims are marked UNSETTLED above (McAllen 4, Brownsville 8, Lubbock 5, Amarillo 1, San Angelo 1). They are still on
 the pages, each with the writer's official or news source, but they need a web search pass once search budget is available.
 Brownsville needs that pass most.
+
+## Search recheck (fc-w4-r2)
+
+Checker: fc-w4-r2 (independent; wrote none of these pages and none of fc-w4-a2's edits). Oct 17 2026. I re-ran every claim above that was
+UNSETTLED or confirmed only from knowledge, using 28 WebSearch queries (Brownsville 6, McAllen 5, Lubbock 6, Amarillo 6, San Angelo 5).
+WebFetch and curl were not used. I also re-read every FAQ and price line against INTAKE.md. On all five pages the FAQ about cost said only
+"$49 a month, or included with an AI agent", which could read as the only monthly cost. Each one now also says the chat widget or phone
+agent is $297 a month after its free trial if the owner keeps it. Build: `python3 build.py --out /tmp/claude-0/fc-w4-r2/dist`. check.py
+--skip-links --only on each page: 0 errors (san-angelo keeps its one low word count warning). No em or en dashes in the five source files.
+Similarity: highest area pair across the site is 6.1%.
+
+### /web-design/brownsville-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| $192.4M SH 4 widening, scheduled to let in FY2027 (city notice Aug 2026) | Confirmed (web) | City of Brownsville CivicAlert 3410; KRGV; TxDOT project page (two to four lanes, about 14 miles) | Wording now "be let for construction"; added KRGV as a source |
+| SH 4 largely two lanes east of the city | Confirmed (web) | KRGV, TxDOT | None |
+| About 7,500 peak construction and trade jobs, about 700 long-term (developer figures) | Confirmed (web) | NextDecade Rio Grande LNG page; Reuters via P&GJ: FERC approved raising the peak workforce to 7,500 | None |
+| April 2026 FERC request for three more years; trains 1 to 3 in early 2029, the rest by 2031 | Confirmed (web) | Gas Processing News, P&GJ, LNG Prime (Q1 2029 and Q2 2031; deadline Nov 22 2031) | Added that FERC granted the extension in May 2026, with the P&GJ source |
+| Five trains under construction | Confirmed (web) | NextDecade, P&GJ | None |
+| Central Brownsville Historic District listed on the NRHP in 2019 | Confirmed (web) | NPS NPGallery record 100004008 (listed May 31 2019) | Added the NPS record as a source |
+| Market Square building from the early 1850s; First Friday each month | Confirmed (web) | Texas Highways (1850; First Friday), Clio (city hall and market house from 1852) | None |
+| Community Improvement Corporation facade and interior grants and rent help ("has offered") | Confirmed (web) | Valley Business Report; BCIC Submittable portal (BIG facade, interior and rent subsidy programs) | Named the Brownsville Community Improvement Corporation and its BIG programs; added the source |
+| GBIC oversees a quarter-cent city sales tax for job incentives and grants; counseling | Confirmed (web) | City of Brownsville GBIC page | None |
+| GBIC announced in Jan 2026 it would operate as Greater Brownsville EDC | Confirmed (web) | Mexico Industry, Jan 27 2026 (legal name stays GBIC) | None |
+| Starbase vote May 2025, 212 to 6 | Confirmed (knowledge in a2; FOX 4 URL real) | FOX 4 | None (no search spent) |
+| Chamber chartered in 1937 | Confirmed (knowledge; HR 772, 2017) | Texas Legislature | None (no search spent) |
+| UTRGV SBDC: Cameron, Hidalgo, Starr, Willacy; South-West Texas Border SBDC Network | Confirmed (web, shared with McAllen) | UT System SBDC PDF | None |
+| FAQ cost answer could read as $49 the only monthly cost | Corrected | INTAKE.md | Added: chat widget and phone agent free to try, then $297 a month each |
+| Cited URLs | Checked | All source URLs appeared in search results or are the writer's official pages | Added KRGV, P&GJ, Valley Business Report, NPS |
+
+Summary: checked 14 (plus the cited-URL review), confirmed 13 (11 web, 2 knowledge), corrected 1, softened 0, removed 0. The 8 claims a2 left UNSETTLED are all settled.
+
+### /web-design/mcallen-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| 73.6% age 5+ speak a language other than English at home (ACS 2019 to 2023) | Confirmed (web) | Census QuickFacts McAllen city | None |
+| UTRGV SBDC serves Cameron, Hidalgo, Starr, Willacy; part of the South-West Texas Border SBDC Network | Confirmed (web) | UT System UTRGV SBDC PDF (2022) | None |
+| Launch McAllen with the City and MEDC; IDEAPLACE free eight-week program at the McAllen Creative Incubator | Confirmed (web) | McAllen Chamber (Launch McAllen; entrepreneur programs), Next City | None |
+| Chamber has run LatinaHope with United Way and Wells Fargo for Spanish-speaking micro-entrepreneurs | Confirmed (web) | McAllen Chamber 2016 release; 2025 event listings | None ("has run" wording already fits) |
+| McAllen EDC is a nonprofit that recruits investment and jobs | Confirmed (web) | MEDC self-description (not-for-profit under contract with the city), ProMexico Industry | None |
+| FAQ cost answer could read as $49 the only monthly cost | Corrected | INTAKE.md | Added the $297/mo agent line |
+| Cited URLs | Checked | All appeared in search results | None |
+
+Summary: checked 6 (plus the cited-URL review), confirmed 5, corrected 1, softened 0, removed 0. The 4 UNSETTLED claims are settled.
+
+### /web-design/lubbock-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| Record fall 2025 enrollment of 42,272 | Confirmed but out of date (web) | ttu.edu Sept 2025; KCBD Aug 24 2026: enrollment tops 45,000 for the first time | Kept 42,272 as the fall 2025 figure and added that enrollment topped 45,000 in August 2026; added the KCBD source |
+| AgriLife: major retail and wholesale trade area for West Texas and eastern New Mexico | Confirmed (web) | AgriLife Lubbock County | None |
+| AgriLife: Covenant and TTUHSC as the region's major health care providers | Softened (web) | AgriLife names Covenant Health System and Texas Tech among major health care and higher education institutions | Reworded to match the source |
+| THC marker: center of the South Plains cotton industry | Confirmed (web) | THC Atlas marker 18589, "Lubbock's First Cotton Gin" | None |
+| LEDA: CBD TRZ value from $106M to $297M (July 2025) | Confirmed (web) | KCBD and FOX34 (same story); attributed to LEDA on the page | None |
+| Northwest Texas SBDC at Texas Tech: 95 counties, six centers | Confirmed (web) | depts.ttu.edu/isb | None |
+| Buddy Holly Center in a former train depot, Depot District | Confirmed (web) | Texas Time Travel (THC), Clio, SAH Archipedia | Replaced the weak meetings-magazine source with Texas Time Travel |
+| FAQ cost answer could read as $49 the only monthly cost | Corrected | INTAKE.md | Added the $297/mo agent line (the contract FAQ already had it) |
+| Overton privately funded redevelopment | Confirmed (knowledge only) | HVS | None (no search left for this page) |
+
+Summary: checked 9, confirmed 6, corrected 2, softened 1, removed 0. The 5 UNSETTLED claims are settled.
+
+### /web-design/amarillo-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| Harrington complex: three acute care hospitals, nearly 1,000 beds | Not confirmed (web) | Search found conflicting bed counts for single hospitals and no source for the total | Removed the hospital count and beds; now says the complex brings hospitals and the TTUHSC Amarillo campus together. Removed the surgery-residency source |
+| Route 66 along Amarillo Boulevard and Sixth Avenue | Confirmed (web) | NRHP record; Loop 279 history; THC Atlas "Route 66 in Amarillo" | None |
+| Sixth Street Historic District: 13 blocks, San Jacinto area, NRHP 1994 | Confirmed (web) | NPS; NRHP 94000982, listed Aug 23 1994 | None |
+| Palo Duro about 29,000 acres; often called the second largest canyon in the U.S. | Corrected (web) | TPWD-cited figures say about 28,000 acres (KSAT, TPW magazine 2016); 29,182 only on a third-party site. Second largest confirmed | Changed to "about 28,000 acres"; added the TPW magazine source |
+| Large Tyson beef plant in town | Confirmed (web) | Texas Farm Bureau (Jan 2026: cut to one shift); Aug 2026: Tyson names Amarillo one of three anchor beef plants | None |
+| WTAMU SBDC: Engler College of Business, no-cost consulting, since 1987, Amarillo and Canyon | Confirmed in part (web) | wtamu.edu: since 1987, Engler College, works with WT Enterprise Center; Canyon location not shown | Reworded to the confirmed points (dropped "Amarillo and Canyon") |
+| WT Enterprise Center runs the Amarillo EnterPrize Challenge, funded by the AEDC | Softened | Search did not return it; writer's 2022 WTAMU source stands | Now "has run ... a startup competition funded by the Amarillo EDC" |
+| FAQ cost answer could read as $49 the only monthly cost | Corrected | INTAKE.md | Added the $297/mo agent line |
+
+Summary: checked 8, confirmed 4, corrected 2, softened 1, removed 1 (Harrington bed and hospital count). The 1 UNSETTLED claim is settled (removed).
+
+### /web-design/san-angelo-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| ASU SBDC since 1990, ten-county Concho Valley, no-cost advising, rural advisors travel | Confirmed (web) | angelo.edu SBDC annual report, FAQ, Rural Business Program | None |
+| Goodfellow 17th TRW trains intelligence specialists for four services; fire protection for all branches | Confirmed (web) | AETC fact sheet; Texas Comptroller 2025 | None |
+| COSADC is a Type B corporation and works with the Chamber on recruitment and marketing | Confirmed (web) | Business View 2021; COSADC 2018 and 2020 annual reports (contract with the Chamber) | None (a2's softer wording kept) |
+| THC marker: major market center for sheep, goats, wool and mohair; A&M wool and mohair lab in San Angelo | Confirmed (web) | THC Atlas 5451004664; sanangelo.tamu.edu; Britannica | None |
+| River Walk and River Stage on the Concho; Chicken Farm Art Center, a former chicken farm, artist studios | Confirmed (web) | City of San Angelo River Stage page; APA Great Places 2017; Texas Highways | None |
+| FAQ cost answer could read as $49 the only monthly cost | Corrected | INTAKE.md | Added: the agent is $297 a month after its free trial |
+
+Summary: checked 6, confirmed 5, corrected 1, softened 0, removed 0. The 1 UNSETTLED claim is settled.
+
+### Totals (fc-w4-r2)
+Checked 43, confirmed 33, corrected 7, softened 2, removed 1. No claim on these five pages is still UNSETTLED. Two remain confirmed from
+knowledge only, both low risk (Brownsville Chamber 1937 per a 2017 House resolution; Overton privately funded redevelopment in Lubbock).

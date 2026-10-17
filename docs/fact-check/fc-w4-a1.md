@@ -153,3 +153,86 @@ Summary: checked 12, confirmed 10, corrected 0, softened 1, removed 1.
 - Fort Worth: +23,442 one-year gain; "second largest employment center in Tarrant County" (Fort Worth South).
 - Abilene: the 2018 "Storybook Capital of America" trademark (single student-newspaper source).
 - All Confirmed (PK) items on the four pages checked without search should get a quick WebSearch pass when budget allows.
+
+## Search recheck (fc-w4-r1)
+
+Independent second checker (wrote none of these pages), Oct 17 2026. Rechecked every "Confirmed (PK)", softened and
+open item above on Temple, Fort Worth, Arlington and Abilene with WebSearch: 28 queries, 7 per page. Also re-read each
+page's pricing and FAQ text against INTAKE.md. All four "cost" FAQs listed $49 hosting as the only recurring cost, so
+each now also says Pro's AI chat widget is free 14 days, then $297/mo (Fort Worth's also names the phone agent's $297/mo
+after its 7-day trial). Build: `python3 build.py --out /tmp/claude-0/fc-w4-r1/dist`; check.py `--skip-links --only`:
+0 errors on all four (Temple keeps the short-page word-count WARN). Highest similarity pair touching these pages:
+abilene-tx / arlington-tx 5.5%. No em or en dashes.
+
+### /web-design/temple-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| Temple EDC calls Baylor Scott & White the largest not-for-profit health system in Texas; medical center in Temple | Confirmed | templeedc.com/doing-business-here/major-employers/ | None |
+| McLane Company based in Temple | Confirmed | Temple EDC McLane success story; Wikipedia (moved to Temple 1966) | None |
+| H-E-B and Walmart distribution centers in Temple | Confirmed | Temple EDC 2023 release; logistics page | None |
+| Olin E. Teague VA Medical Center is the main campus of Central Texas VA, 39 counties | Confirmed | templeedc.com/success-story/va-medical-center (250,000+ veterans, 39 counties); va.gov about-us | VA source URL changed to va.gov/central-texas-health-care/about-us/ |
+| 2020 Census 82,073 | Confirmed | Census QuickFacts (April 1 2020 base); Wikipedia | None |
+| EDC partners include Chamber, Bell County, Temple College and the SBDC | Confirmed | templeedc.com/about-our-partners | Open item closed |
+| Central Texas Business Resource Center in Killeen is a place to ask | Removed | Killeen Daily Herald (kdhnews.com, Dec 2024): the center closed when its funding contract ended | Sentence and the templeedc "entrepreneurship" source deleted |
+| Bell County, I-35 between Waco and Austin; Temple University is in Philadelphia | Confirmed (general geography) | None needed | None |
+| Pricing FAQ | Corrected | INTAKE.md | Added Pro chat widget $297/mo after 14-day trial |
+
+Summary: checked 9, confirmed 7, corrected 1, softened 0, removed 1.
+
+### /web-design/fort-worth-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| 1,008,106 on July 1 2024, first time over a million | Confirmed | fortworthtexas.gov/about/population; Fort Worth Inc.; CoStar | None |
+| +23,442 in that one year | Confirmed | Fort Worth Magazine, Southlake Style (July 2023 to July 2024, Census) | Open item closed |
+| Fort Worth Herd at 11:30 a.m. and 4:00 p.m. on East Exchange Avenue, Livestock Exchange Building | Confirmed | fortworthstockyards.org event page and FAQ | None |
+| Near Southside: second largest employment center in Tarrant County (per Fort Worth South) | Confirmed | fortworthsouth.org (second only to the Central Business District) | Open item closed |
+| West 7th becomes brick-paved Camp Bowie at University Drive | Confirmed | historicfortworth.org Camp Bowie brick streets (named west of University Drive, Thurber brick 1927) | Added that source |
+| Kimbell, Modern, Amon Carter nearby | Confirmed (cited source) | Fort Worth Architecture Cultural District page; search did not add more | None |
+| AllianceTexas about 27,000 acres, reaches into Haslet and Roanoke | Confirmed | AllianceTexas fact sheet; Community Impact (nine municipalities incl. Haslet, Roanoke) | None |
+| Devoyd Jennings BAC on the James E. Guinn Entrepreneurial Campus | Confirmed | fortworthtexas.gov/bac; BAC annual reports | None |
+| SBDP support services through local chambers (Hispanic, Metropolitan Black) | Confirmed in part | fortworthtexas.gov small business support page (Hispanic Chamber bilingual help at the BAC) | Kept, already says to check the city page |
+| Tarrant SBDC "hosted by Tarrant County College", "low-cost workshops" | Softened | Searches confirm North Texas SBDC network, free confidential advising for Tarrant County, on-site at the BAC; no source states TCC hosting or workshop prices | Now "part of the North Texas SBDC network ... free one-on-one advising and training ... a desk at the BAC"; TCC source replaced with the City of Arlington Tarrant SBDC page |
+| Texas has more than 3 million small businesses (SBA Advocacy) | Not re-searched | SBA 2025 Texas profile (already softened from 3.52M) | None |
+| Pricing FAQ | Corrected | INTAKE.md | Added chat widget and phone agent monthly costs |
+
+Summary: checked 12, confirmed 9, corrected 1, softened 1, removed 0, not re-searched 1.
+
+### /web-design/arlington-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| 2020 census 394,266 | Softened | Sources disagree (394,266 ACS-labeled in city budget; 394,387 / 393,985 elsewhere) | Now "about 394,000" |
+| Second largest city in Tarrant County | Confirmed | tarrantcountytx.gov cities page (Fort Worth first, Arlington second) | Added source |
+| About 20 miles from downtown Dallas and 12 from downtown Fort Worth (FAQ) | Removed | No source gave these distances | Now says I-30 and I-20 run to both downtowns |
+| AT&T Stadium, Globe Life Field, Six Flags Over Texas, Texas Live! in the district | Confirmed | arlington.org Entertainment District; Dallas Innovates | None |
+| Large city without fixed-route buses; Via by app or phone; CentrePort TRE link | Corrected | arlingtontx.gov 2017 launch release (MAX bus ended, Via served CentrePort); Fort Worth Magazine (citywide 2021) | Reworded: "long gone without a traditional fixed-route city bus system", Via since 2017, citywide since 2021, connects at CentrePort; dropped the unsourced "within a couple of blocks"; added source |
+| Cooper Street at I-20 by The Parks Mall | Confirmed | theparksmallarlington.com; Wikipedia (I-20 and South Cooper) | Added mall source |
+| EDC with LiftFund lending and SCORE mentoring | Confirmed | arlingtontxedc.com business resources (0% loans to $100,000 via LiftFund); arlingtontx.gov SCORE 2024 cohort | Added EDC source |
+| Chamber hosts a Small Business Expo | Removed | No search result tied an Expo to the chamber | Deleted with the 2024 Expo source |
+| Chamber small business awards | Confirmed | arlingtontx.com/smallbusinessawards (since 1996, members only) | Now names the Small Businesses of the Year program |
+| Tarrant SBDC free advising across Tarrant County | Confirmed | City of Arlington Tarrant SBDC page | None |
+| Pricing FAQ | Corrected | INTAKE.md | Added Pro chat widget $297/mo after 14-day trial |
+
+Summary: checked 11, confirmed 6, corrected 2, softened 1, removed 2.
+
+### /web-design/abilene-tx.html
+
+| Claim | Verdict | Source | Action |
+|---|---|---|---|
+| Dyess: 7th Bomb Wing, the Air Force's only B-1B formal training unit | Confirmed | gov.texas.gov 2020 Dyess briefing; dyess.af.mil units | None |
+| 317th Airlift Wing, C-130J | Confirmed | af.mil (activated as a wing July 6 2017) | None |
+| Three private Christian universities: ACU, Hardin-Simmons, McMurry | Confirmed | University sites; Wikipedia, encyclopedia.com | None |
+| Paramount Theatre from 1930, restored | Confirmed | paramountabilene.com history (opened May 19 1930, restored 1987) | None |
+| Frontier Texas is the official visitor center | Confirmed | abilenevisitors.com/Frontier-Texas | Added source |
+| 2015 H.C.R. 93: Storybook Capital of Texas, NCCIL and sculptures | Confirmed | capitol.texas.gov HC00093F (signed June 9 2015) | None |
+| 2018 trademark "Storybook Capital of America" by the Cultural Affairs Council and CVB | Corrected | USPTO record via Justia (Reg. 5533706, registered Aug 7 2018, owner Abilene Arts Alliance); abilenevisitors.com Storybook page (Cultural Affairs Council with CVB) | Now "the city's arts council and Convention and Visitors Bureau ... registered ... as a trademark"; added abilenevisitors source. Open item closed |
+| New sculpture each year at the Children's Art and Literacy Festival in June | Confirmed | Texas Senate bill analysis (new pieces each year at the festival); Texas Highways (June) | None |
+| Abilene SBDC, outreach program of Texas Tech, low and no-cost counseling; DCOA points owners to it | Confirmed | developabilene.com small business page; ttu.edu SBDC locations | None |
+| Chamber "recognizes local small businesses with yearly awards" | Removed | Not found in search | Replaced with the confirmed fact that the CVB is part of the chamber (abilenevisitors.com/About); source label no longer mentions Small Business Week |
+| Pricing FAQ | Corrected | INTAKE.md | Added Pro chat widget $297/mo after 14-day trial |
+
+Summary: checked 11, confirmed 8, corrected 2, softened 0, removed 1.
+
+All four pages: checked 43, confirmed 30, corrected 6, softened 2, removed 4, not re-searched 1.
