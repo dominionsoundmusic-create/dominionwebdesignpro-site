@@ -30,6 +30,8 @@
 {%- endmacro %}
 
 {% macro area_pills(exclude=None, group=None) -%}
+{# 'other-us' was one list of every city outside Texas and Georgia; it now means "the region of the excluded city" #}
+{% if group == 'other-us' and exclude %}{% set group = area(exclude).group %}{% endif %}
 <ul class="pill-list">
   <li><a href="/web-design/">All cities</a></li>
 {% for a in site.areas if a.slug != exclude and (group is none or a.group == group) %}
@@ -40,7 +42,7 @@
 
 {% macro area_directory() -%}
 {% for g in site.area_groups %}
-<h3>{{ g.name }}</h3>
+<h3 id="{{ g.key }}">{{ g.name }}</h3>
 <div class="cards cards--areas">
 {% for a in site.areas if a.group == g.key %}
   <article class="card card--text">

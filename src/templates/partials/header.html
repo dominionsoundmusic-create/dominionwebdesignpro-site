@@ -30,7 +30,8 @@
           <ul class="sub" id="sub-{{ item.menu }}">
             {% if item.menu == 'areas' %}
             <li><a href="/web-design/">All cities</a></li>
-            {% for a in items %}<li><a href="{{ a.url }}"{% if page.url == a.url %} aria-current="page"{% endif %}>{{ a.short }}{{ ', ' ~ a.state if a.slug != 'east-texas' else '' }}</a></li>{% endfor %}
+            {% for g in site.area_groups %}<li><a href="/web-design/#{{ g.key }}">{{ g.name }}</a></li>{% endfor %}
+            <li><a href="/service-areas.html">Service areas</a></li>
             {% else %}
             {% if item.menu == 'services' %}<li><a href="/services/">All services</a></li>{% endif %}
             {% for s in items %}

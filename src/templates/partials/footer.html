@@ -28,7 +28,7 @@
   </div>
   <div class="wide site-footer__citybar">
     <p class="site-footer__label">Web design by city</p>
-    <ul class="site-footer__cities"><li><a href="/web-design/">All cities</a></li><li><a href="/service-areas.html">Service areas</a></li>{% for a in site.areas %}<li><a href="{{ a.url }}">{{ a.short }}</a></li>{% endfor %}</ul>
+    <ul class="site-footer__cities"><li><a href="/web-design/">All cities</a></li><li><a href="/service-areas.html">Service areas</a></li>{% for g in site.area_groups %}<li><a href="/web-design/#{{ g.key }}">{{ g.name }}</a></li>{% endfor %}</ul>
   </div>
   <div class="site-footer__bottom">
     <p>{{ b.copyright }} <span class="dot" aria-hidden="true">·</span> {{ b.base }}</p>

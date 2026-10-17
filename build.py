@@ -44,6 +44,17 @@ DEFAULT_HERO = ""  # a missing hero shows as a brand-blue block, never a stand-i
 OG_DEFAULT = "images/og-dominion-web-design-pro.jpg"
 
 
+
+# state abbreviations used in site.json areas -> full names for structured data
+STATE_NAMES = {
+    "AL": "Alabama", "AR": "Arkansas", "AZ": "Arizona", "CA": "California", "CO": "Colorado", "FL": "Florida",
+    "GA": "Georgia", "IA": "Iowa", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "KY": "Kentucky",
+    "LA": "Louisiana", "MI": "Michigan", "MN": "Minnesota", "MO": "Missouri", "MS": "Mississippi",
+    "NC": "North Carolina", "NE": "Nebraska", "NM": "New Mexico", "NV": "Nevada", "NY": "New York", "OH": "Ohio",
+    "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania", "SC": "South Carolina", "TN": "Tennessee",
+    "TX": "Texas", "UT": "Utah", "VA": "Virginia", "WA": "Washington", "WI": "Wisconsin",
+}
+
 def image_size(path):
     """Return (width, height) for a JPEG/PNG/WebP file, or None."""
     data = path.read_bytes()
@@ -357,7 +368,7 @@ class Builder:
         org_id = origin + "/#business"
         tx = {"@type": "State", "name": "Texas"}
         areas = [{"@type": "Country", "name": "United States"}] + [
-            {"@type": "City", "name": a["name"], "containedInPlace": {"@type": "State", "name": "Georgia" if a["state"] == "GA" else "Texas"}}
+            {"@type": "City", "name": a["name"], "containedInPlace": {"@type": "State", "name": STATE_NAMES[a["state"]]}}
             for a in self.site["areas"] if a["slug"] != "east-texas"
         ]
         org = {
@@ -476,6 +487,12 @@ class Builder:
         shutil.copytree(STATIC, self.out)
         pages = self.load_pages()
         index = {p["url"]: p for p in pages}
+        # a city listed in site.json whose page is not written yet stays out of menus, pills and the directory
+        pending = [a["slug"] for a in self.site["areas"] if a["url"] not in index]
+        if pending:
+            print(f"{len(pending)} city pages listed in site.json but not written yet: {', '.join(pending)}")
+        self.site["areas"] = [a for a in self.site["areas"] if a["url"] in index]
+        self.site["area_groups"] = [g for g in self.site["area_groups"] if any(a["group"] == g["key"] for a in self.site["areas"])]
         # each city page carries its own one-line summary (front matter `summary:`) for the directory and menus
         for a in self.site["areas"]:
             if a["url"] in index and index[a["url"]].get("summary"):

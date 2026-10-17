@@ -378,7 +378,7 @@
   },
   {
    "key": "houston",
-   "name": "Houston area"
+   "name": "Houston and Southeast Texas"
   },
   {
    "key": "dfw",
@@ -389,6 +389,10 @@
    "name": "Austin and the Hill Country"
   },
   {
+   "key": "south-texas",
+   "name": "San Antonio and South Texas"
+  },
+  {
    "key": "central-west",
    "name": "Central and West Texas"
   },
@@ -397,8 +401,24 @@
    "name": "Georgia"
   },
   {
-   "key": "other-us",
-   "name": "Other U.S. cities"
+   "key": "florida",
+   "name": "Florida"
+  },
+  {
+   "key": "south",
+   "name": "The South"
+  },
+  {
+   "key": "east",
+   "name": "The Carolinas, Virginia and the Northeast"
+  },
+  {
+   "key": "west",
+   "name": "The West"
+  },
+  {
+   "key": "midwest",
+   "name": "The Midwest"
   }
  ],
  "areas": [
@@ -466,6 +486,24 @@
    "summary": ""
   },
   {
+   "slug": "nacogdoches-tx",
+   "url": "/web-design/nacogdoches-tx.html",
+   "name": "Nacogdoches",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Nacogdoches",
+   "summary": ""
+  },
+  {
+   "slug": "texarkana-tx",
+   "url": "/web-design/texarkana-tx.html",
+   "name": "Texarkana",
+   "state": "TX",
+   "group": "east-texas",
+   "short": "Texarkana",
+   "summary": ""
+  },
+  {
    "slug": "houston-tx",
    "url": "/web-design/houston-tx.html",
    "name": "Houston",
@@ -481,6 +519,51 @@
    "state": "TX",
    "group": "houston",
    "short": "Kingwood",
+   "summary": ""
+  },
+  {
+   "slug": "sugar-land-tx",
+   "url": "/web-design/sugar-land-tx.html",
+   "name": "Sugar Land",
+   "state": "TX",
+   "group": "houston",
+   "short": "Sugar Land",
+   "summary": ""
+  },
+  {
+   "slug": "katy-tx",
+   "url": "/web-design/katy-tx.html",
+   "name": "Katy",
+   "state": "TX",
+   "group": "houston",
+   "short": "Katy",
+   "summary": ""
+  },
+  {
+   "slug": "the-woodlands-tx",
+   "url": "/web-design/the-woodlands-tx.html",
+   "name": "The Woodlands",
+   "state": "TX",
+   "group": "houston",
+   "short": "The Woodlands",
+   "summary": ""
+  },
+  {
+   "slug": "cypress-tx",
+   "url": "/web-design/cypress-tx.html",
+   "name": "Cypress",
+   "state": "TX",
+   "group": "houston",
+   "short": "Cypress",
+   "summary": ""
+  },
+  {
+   "slug": "beaumont-tx",
+   "url": "/web-design/beaumont-tx.html",
+   "name": "Beaumont",
+   "state": "TX",
+   "group": "houston",
+   "short": "Beaumont",
    "summary": ""
   },
   {
@@ -526,6 +609,24 @@
    "state": "TX",
    "group": "dfw",
    "short": "Denton",
+   "summary": ""
+  },
+  {
+   "slug": "fort-worth-tx",
+   "url": "/web-design/fort-worth-tx.html",
+   "name": "Fort Worth",
+   "state": "TX",
+   "group": "dfw",
+   "short": "Fort Worth",
+   "summary": ""
+  },
+  {
+   "slug": "arlington-tx",
+   "url": "/web-design/arlington-tx.html",
+   "name": "Arlington",
+   "state": "TX",
+   "group": "dfw",
+   "short": "Arlington",
    "summary": ""
   },
   {
@@ -601,6 +702,60 @@
    "summary": ""
   },
   {
+   "slug": "round-rock-tx",
+   "url": "/web-design/round-rock-tx.html",
+   "name": "Round Rock",
+   "state": "TX",
+   "group": "austin",
+   "short": "Round Rock",
+   "summary": ""
+  },
+  {
+   "slug": "san-antonio-tx",
+   "url": "/web-design/san-antonio-tx.html",
+   "name": "San Antonio",
+   "state": "TX",
+   "group": "south-texas",
+   "short": "San Antonio",
+   "summary": ""
+  },
+  {
+   "slug": "corpus-christi-tx",
+   "url": "/web-design/corpus-christi-tx.html",
+   "name": "Corpus Christi",
+   "state": "TX",
+   "group": "south-texas",
+   "short": "Corpus Christi",
+   "summary": ""
+  },
+  {
+   "slug": "mcallen-tx",
+   "url": "/web-design/mcallen-tx.html",
+   "name": "McAllen",
+   "state": "TX",
+   "group": "south-texas",
+   "short": "McAllen",
+   "summary": ""
+  },
+  {
+   "slug": "laredo-tx",
+   "url": "/web-design/laredo-tx.html",
+   "name": "Laredo",
+   "state": "TX",
+   "group": "south-texas",
+   "short": "Laredo",
+   "summary": ""
+  },
+  {
+   "slug": "brownsville-tx",
+   "url": "/web-design/brownsville-tx.html",
+   "name": "Brownsville",
+   "state": "TX",
+   "group": "south-texas",
+   "short": "Brownsville",
+   "summary": ""
+  },
+  {
    "slug": "waco-tx",
    "url": "/web-design/waco-tx.html",
    "name": "Waco",
@@ -616,6 +771,78 @@
    "state": "TX",
    "group": "central-west",
    "short": "El Paso",
+   "summary": ""
+  },
+  {
+   "slug": "killeen-tx",
+   "url": "/web-design/killeen-tx.html",
+   "name": "Killeen",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Killeen",
+   "summary": ""
+  },
+  {
+   "slug": "temple-tx",
+   "url": "/web-design/temple-tx.html",
+   "name": "Temple",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Temple",
+   "summary": ""
+  },
+  {
+   "slug": "abilene-tx",
+   "url": "/web-design/abilene-tx.html",
+   "name": "Abilene",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Abilene",
+   "summary": ""
+  },
+  {
+   "slug": "san-angelo-tx",
+   "url": "/web-design/san-angelo-tx.html",
+   "name": "San Angelo",
+   "state": "TX",
+   "group": "central-west",
+   "short": "San Angelo",
+   "summary": ""
+  },
+  {
+   "slug": "lubbock-tx",
+   "url": "/web-design/lubbock-tx.html",
+   "name": "Lubbock",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Lubbock",
+   "summary": ""
+  },
+  {
+   "slug": "amarillo-tx",
+   "url": "/web-design/amarillo-tx.html",
+   "name": "Amarillo",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Amarillo",
+   "summary": ""
+  },
+  {
+   "slug": "midland-tx",
+   "url": "/web-design/midland-tx.html",
+   "name": "Midland",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Midland",
+   "summary": ""
+  },
+  {
+   "slug": "odessa-tx",
+   "url": "/web-design/odessa-tx.html",
+   "name": "Odessa",
+   "state": "TX",
+   "group": "central-west",
+   "short": "Odessa",
    "summary": ""
   },
   {
@@ -673,57 +900,21 @@
    "summary": ""
   },
   {
-   "slug": "st-louis-mo",
-   "url": "/web-design/st-louis-mo.html",
-   "name": "St. Louis",
-   "state": "MO",
-   "group": "other-us",
-   "short": "St. Louis",
+   "slug": "savannah-ga",
+   "url": "/web-design/savannah-ga.html",
+   "name": "Savannah",
+   "state": "GA",
+   "group": "georgia",
+   "short": "Savannah",
    "summary": ""
   },
   {
-   "slug": "kansas-city-mo",
-   "url": "/web-design/kansas-city-mo.html",
-   "name": "Kansas City",
-   "state": "MO",
-   "group": "other-us",
-   "short": "Kansas City",
-   "summary": ""
-  },
-  {
-   "slug": "chicago-il",
-   "url": "/web-design/chicago-il.html",
-   "name": "Chicago",
-   "state": "IL",
-   "group": "other-us",
-   "short": "Chicago",
-   "summary": ""
-  },
-  {
-   "slug": "indianapolis-in",
-   "url": "/web-design/indianapolis-in.html",
-   "name": "Indianapolis",
-   "state": "IN",
-   "group": "other-us",
-   "short": "Indianapolis",
-   "summary": ""
-  },
-  {
-   "slug": "cleveland-oh",
-   "url": "/web-design/cleveland-oh.html",
-   "name": "Cleveland",
-   "state": "OH",
-   "group": "other-us",
-   "short": "Cleveland",
-   "summary": ""
-  },
-  {
-   "slug": "nashville-tn",
-   "url": "/web-design/nashville-tn.html",
-   "name": "Nashville",
-   "state": "TN",
-   "group": "other-us",
-   "short": "Nashville",
+   "slug": "augusta-ga",
+   "url": "/web-design/augusta-ga.html",
+   "name": "Augusta",
+   "state": "GA",
+   "group": "georgia",
+   "short": "Augusta",
    "summary": ""
   },
   {
@@ -731,7 +922,7 @@
    "url": "/web-design/miami-fl.html",
    "name": "Miami",
    "state": "FL",
-   "group": "other-us",
+   "group": "florida",
    "short": "Miami",
    "summary": ""
   },
@@ -740,8 +931,350 @@
    "url": "/web-design/orlando-fl.html",
    "name": "Orlando",
    "state": "FL",
-   "group": "other-us",
+   "group": "florida",
    "short": "Orlando",
+   "summary": ""
+  },
+  {
+   "slug": "tampa-fl",
+   "url": "/web-design/tampa-fl.html",
+   "name": "Tampa",
+   "state": "FL",
+   "group": "florida",
+   "short": "Tampa",
+   "summary": ""
+  },
+  {
+   "slug": "jacksonville-fl",
+   "url": "/web-design/jacksonville-fl.html",
+   "name": "Jacksonville",
+   "state": "FL",
+   "group": "florida",
+   "short": "Jacksonville",
+   "summary": ""
+  },
+  {
+   "slug": "fort-lauderdale-fl",
+   "url": "/web-design/fort-lauderdale-fl.html",
+   "name": "Fort Lauderdale",
+   "state": "FL",
+   "group": "florida",
+   "short": "Fort Lauderdale",
+   "summary": ""
+  },
+  {
+   "slug": "west-palm-beach-fl",
+   "url": "/web-design/west-palm-beach-fl.html",
+   "name": "West Palm Beach",
+   "state": "FL",
+   "group": "florida",
+   "short": "West Palm Beach",
+   "summary": ""
+  },
+  {
+   "slug": "st-petersburg-fl",
+   "url": "/web-design/st-petersburg-fl.html",
+   "name": "St. Petersburg",
+   "state": "FL",
+   "group": "florida",
+   "short": "St. Petersburg",
+   "summary": ""
+  },
+  {
+   "slug": "sarasota-fl",
+   "url": "/web-design/sarasota-fl.html",
+   "name": "Sarasota",
+   "state": "FL",
+   "group": "florida",
+   "short": "Sarasota",
+   "summary": ""
+  },
+  {
+   "slug": "fort-myers-fl",
+   "url": "/web-design/fort-myers-fl.html",
+   "name": "Fort Myers",
+   "state": "FL",
+   "group": "florida",
+   "short": "Fort Myers",
+   "summary": ""
+  },
+  {
+   "slug": "tallahassee-fl",
+   "url": "/web-design/tallahassee-fl.html",
+   "name": "Tallahassee",
+   "state": "FL",
+   "group": "florida",
+   "short": "Tallahassee",
+   "summary": ""
+  },
+  {
+   "slug": "pensacola-fl",
+   "url": "/web-design/pensacola-fl.html",
+   "name": "Pensacola",
+   "state": "FL",
+   "group": "florida",
+   "short": "Pensacola",
+   "summary": ""
+  },
+  {
+   "slug": "nashville-tn",
+   "url": "/web-design/nashville-tn.html",
+   "name": "Nashville",
+   "state": "TN",
+   "group": "south",
+   "short": "Nashville",
+   "summary": ""
+  },
+  {
+   "slug": "huntsville-al",
+   "url": "/web-design/huntsville-al.html",
+   "name": "Huntsville",
+   "state": "AL",
+   "group": "south",
+   "short": "Huntsville",
+   "summary": ""
+  },
+  {
+   "slug": "louisville-ky",
+   "url": "/web-design/louisville-ky.html",
+   "name": "Louisville",
+   "state": "KY",
+   "group": "south",
+   "short": "Louisville",
+   "summary": ""
+  },
+  {
+   "slug": "birmingham-al",
+   "url": "/web-design/birmingham-al.html",
+   "name": "Birmingham",
+   "state": "AL",
+   "group": "south",
+   "short": "Birmingham",
+   "summary": ""
+  },
+  {
+   "slug": "mobile-al",
+   "url": "/web-design/mobile-al.html",
+   "name": "Mobile",
+   "state": "AL",
+   "group": "south",
+   "short": "Mobile",
+   "summary": ""
+  },
+  {
+   "slug": "montgomery-al",
+   "url": "/web-design/montgomery-al.html",
+   "name": "Montgomery",
+   "state": "AL",
+   "group": "south",
+   "short": "Montgomery",
+   "summary": ""
+  },
+  {
+   "slug": "jackson-ms",
+   "url": "/web-design/jackson-ms.html",
+   "name": "Jackson",
+   "state": "MS",
+   "group": "south",
+   "short": "Jackson",
+   "summary": ""
+  },
+  {
+   "slug": "new-orleans-la",
+   "url": "/web-design/new-orleans-la.html",
+   "name": "New Orleans",
+   "state": "LA",
+   "group": "south",
+   "short": "New Orleans",
+   "summary": ""
+  },
+  {
+   "slug": "baton-rouge-la",
+   "url": "/web-design/baton-rouge-la.html",
+   "name": "Baton Rouge",
+   "state": "LA",
+   "group": "south",
+   "short": "Baton Rouge",
+   "summary": ""
+  },
+  {
+   "slug": "shreveport-la",
+   "url": "/web-design/shreveport-la.html",
+   "name": "Shreveport",
+   "state": "LA",
+   "group": "south",
+   "short": "Shreveport",
+   "summary": ""
+  },
+  {
+   "slug": "little-rock-ar",
+   "url": "/web-design/little-rock-ar.html",
+   "name": "Little Rock",
+   "state": "AR",
+   "group": "south",
+   "short": "Little Rock",
+   "summary": ""
+  },
+  {
+   "slug": "memphis-tn",
+   "url": "/web-design/memphis-tn.html",
+   "name": "Memphis",
+   "state": "TN",
+   "group": "south",
+   "short": "Memphis",
+   "summary": ""
+  },
+  {
+   "slug": "knoxville-tn",
+   "url": "/web-design/knoxville-tn.html",
+   "name": "Knoxville",
+   "state": "TN",
+   "group": "south",
+   "short": "Knoxville",
+   "summary": ""
+  },
+  {
+   "slug": "chattanooga-tn",
+   "url": "/web-design/chattanooga-tn.html",
+   "name": "Chattanooga",
+   "state": "TN",
+   "group": "south",
+   "short": "Chattanooga",
+   "summary": ""
+  },
+  {
+   "slug": "lexington-ky",
+   "url": "/web-design/lexington-ky.html",
+   "name": "Lexington",
+   "state": "KY",
+   "group": "south",
+   "short": "Lexington",
+   "summary": ""
+  },
+  {
+   "slug": "oklahoma-city-ok",
+   "url": "/web-design/oklahoma-city-ok.html",
+   "name": "Oklahoma City",
+   "state": "OK",
+   "group": "south",
+   "short": "Oklahoma City",
+   "summary": ""
+  },
+  {
+   "slug": "tulsa-ok",
+   "url": "/web-design/tulsa-ok.html",
+   "name": "Tulsa",
+   "state": "OK",
+   "group": "south",
+   "short": "Tulsa",
+   "summary": ""
+  },
+  {
+   "slug": "new-york-ny",
+   "url": "/web-design/new-york-ny.html",
+   "name": "New York",
+   "state": "NY",
+   "group": "east",
+   "short": "New York",
+   "summary": ""
+  },
+  {
+   "slug": "richmond-va",
+   "url": "/web-design/richmond-va.html",
+   "name": "Richmond",
+   "state": "VA",
+   "group": "east",
+   "short": "Richmond",
+   "summary": ""
+  },
+  {
+   "slug": "wilmington-nc",
+   "url": "/web-design/wilmington-nc.html",
+   "name": "Wilmington",
+   "state": "NC",
+   "group": "east",
+   "short": "Wilmington",
+   "summary": ""
+  },
+  {
+   "slug": "charlotte-nc",
+   "url": "/web-design/charlotte-nc.html",
+   "name": "Charlotte",
+   "state": "NC",
+   "group": "east",
+   "short": "Charlotte",
+   "summary": ""
+  },
+  {
+   "slug": "raleigh-nc",
+   "url": "/web-design/raleigh-nc.html",
+   "name": "Raleigh",
+   "state": "NC",
+   "group": "east",
+   "short": "Raleigh",
+   "summary": ""
+  },
+  {
+   "slug": "durham-nc",
+   "url": "/web-design/durham-nc.html",
+   "name": "Durham",
+   "state": "NC",
+   "group": "east",
+   "short": "Durham",
+   "summary": ""
+  },
+  {
+   "slug": "greensboro-nc",
+   "url": "/web-design/greensboro-nc.html",
+   "name": "Greensboro",
+   "state": "NC",
+   "group": "east",
+   "short": "Greensboro",
+   "summary": ""
+  },
+  {
+   "slug": "charleston-sc",
+   "url": "/web-design/charleston-sc.html",
+   "name": "Charleston",
+   "state": "SC",
+   "group": "east",
+   "short": "Charleston",
+   "summary": ""
+  },
+  {
+   "slug": "columbia-sc",
+   "url": "/web-design/columbia-sc.html",
+   "name": "Columbia",
+   "state": "SC",
+   "group": "east",
+   "short": "Columbia",
+   "summary": ""
+  },
+  {
+   "slug": "greenville-sc",
+   "url": "/web-design/greenville-sc.html",
+   "name": "Greenville",
+   "state": "SC",
+   "group": "east",
+   "short": "Greenville",
+   "summary": ""
+  },
+  {
+   "slug": "philadelphia-pa",
+   "url": "/web-design/philadelphia-pa.html",
+   "name": "Philadelphia",
+   "state": "PA",
+   "group": "east",
+   "short": "Philadelphia",
+   "summary": ""
+  },
+  {
+   "slug": "pittsburgh-pa",
+   "url": "/web-design/pittsburgh-pa.html",
+   "name": "Pittsburgh",
+   "state": "PA",
+   "group": "east",
+   "short": "Pittsburgh",
    "summary": ""
   },
   {
@@ -749,7 +1282,7 @@
    "url": "/web-design/phoenix-az.html",
    "name": "Phoenix",
    "state": "AZ",
-   "group": "other-us",
+   "group": "west",
    "short": "Phoenix",
    "summary": ""
   },
@@ -758,7 +1291,7 @@
    "url": "/web-design/las-vegas-nv.html",
    "name": "Las Vegas",
    "state": "NV",
-   "group": "other-us",
+   "group": "west",
    "short": "Las Vegas",
    "summary": ""
   },
@@ -767,7 +1300,7 @@
    "url": "/web-design/los-angeles-ca.html",
    "name": "Los Angeles",
    "state": "CA",
-   "group": "other-us",
+   "group": "west",
    "short": "Los Angeles",
    "summary": ""
   },
@@ -776,7 +1309,7 @@
    "url": "/web-design/san-diego-ca.html",
    "name": "San Diego",
    "state": "CA",
-   "group": "other-us",
+   "group": "west",
    "short": "San Diego",
    "summary": ""
   },
@@ -785,17 +1318,8 @@
    "url": "/web-design/sacramento-ca.html",
    "name": "Sacramento",
    "state": "CA",
-   "group": "other-us",
+   "group": "west",
    "short": "Sacramento",
-   "summary": ""
-  },
-  {
-   "slug": "new-york-ny",
-   "url": "/web-design/new-york-ny.html",
-   "name": "New York",
-   "state": "NY",
-   "group": "other-us",
-   "short": "New York",
    "summary": ""
   },
   {
@@ -803,26 +1327,8 @@
    "url": "/web-design/orange-county-ca.html",
    "name": "Orange County",
    "state": "CA",
-   "group": "other-us",
+   "group": "west",
    "short": "Orange County",
-   "summary": ""
-  },
-  {
-   "slug": "tampa-fl",
-   "url": "/web-design/tampa-fl.html",
-   "name": "Tampa",
-   "state": "FL",
-   "group": "other-us",
-   "short": "Tampa",
-   "summary": ""
-  },
-  {
-   "slug": "huntsville-al",
-   "url": "/web-design/huntsville-al.html",
-   "name": "Huntsville",
-   "state": "AL",
-   "group": "other-us",
-   "short": "Huntsville",
    "summary": ""
   },
   {
@@ -830,35 +1336,278 @@
    "url": "/web-design/tucson-az.html",
    "name": "Tucson",
    "state": "AZ",
-   "group": "other-us",
+   "group": "west",
    "short": "Tucson",
    "summary": ""
   },
   {
-   "slug": "richmond-va",
-   "url": "/web-design/richmond-va.html",
-   "name": "Richmond",
-   "state": "VA",
-   "group": "other-us",
-   "short": "Richmond",
+   "slug": "denver-co",
+   "url": "/web-design/denver-co.html",
+   "name": "Denver",
+   "state": "CO",
+   "group": "west",
+   "short": "Denver",
    "summary": ""
   },
   {
-   "slug": "louisville-ky",
-   "url": "/web-design/louisville-ky.html",
-   "name": "Louisville",
-   "state": "KY",
-   "group": "other-us",
-   "short": "Louisville",
+   "slug": "colorado-springs-co",
+   "url": "/web-design/colorado-springs-co.html",
+   "name": "Colorado Springs",
+   "state": "CO",
+   "group": "west",
+   "short": "Colorado Springs",
    "summary": ""
   },
   {
-   "slug": "wilmington-nc",
-   "url": "/web-design/wilmington-nc.html",
-   "name": "Wilmington",
-   "state": "NC",
-   "group": "other-us",
-   "short": "Wilmington",
+   "slug": "fort-collins-co",
+   "url": "/web-design/fort-collins-co.html",
+   "name": "Fort Collins",
+   "state": "CO",
+   "group": "west",
+   "short": "Fort Collins",
+   "summary": ""
+  },
+  {
+   "slug": "seattle-wa",
+   "url": "/web-design/seattle-wa.html",
+   "name": "Seattle",
+   "state": "WA",
+   "group": "west",
+   "short": "Seattle",
+   "summary": ""
+  },
+  {
+   "slug": "spokane-wa",
+   "url": "/web-design/spokane-wa.html",
+   "name": "Spokane",
+   "state": "WA",
+   "group": "west",
+   "short": "Spokane",
+   "summary": ""
+  },
+  {
+   "slug": "portland-or",
+   "url": "/web-design/portland-or.html",
+   "name": "Portland",
+   "state": "OR",
+   "group": "west",
+   "short": "Portland",
+   "summary": ""
+  },
+  {
+   "slug": "boise-id",
+   "url": "/web-design/boise-id.html",
+   "name": "Boise",
+   "state": "ID",
+   "group": "west",
+   "short": "Boise",
+   "summary": ""
+  },
+  {
+   "slug": "salt-lake-city-ut",
+   "url": "/web-design/salt-lake-city-ut.html",
+   "name": "Salt Lake City",
+   "state": "UT",
+   "group": "west",
+   "short": "Salt Lake City",
+   "summary": ""
+  },
+  {
+   "slug": "reno-nv",
+   "url": "/web-design/reno-nv.html",
+   "name": "Reno",
+   "state": "NV",
+   "group": "west",
+   "short": "Reno",
+   "summary": ""
+  },
+  {
+   "slug": "san-francisco-ca",
+   "url": "/web-design/san-francisco-ca.html",
+   "name": "San Francisco",
+   "state": "CA",
+   "group": "west",
+   "short": "San Francisco",
+   "summary": ""
+  },
+  {
+   "slug": "san-jose-ca",
+   "url": "/web-design/san-jose-ca.html",
+   "name": "San Jose",
+   "state": "CA",
+   "group": "west",
+   "short": "San Jose",
+   "summary": ""
+  },
+  {
+   "slug": "fresno-ca",
+   "url": "/web-design/fresno-ca.html",
+   "name": "Fresno",
+   "state": "CA",
+   "group": "west",
+   "short": "Fresno",
+   "summary": ""
+  },
+  {
+   "slug": "bakersfield-ca",
+   "url": "/web-design/bakersfield-ca.html",
+   "name": "Bakersfield",
+   "state": "CA",
+   "group": "west",
+   "short": "Bakersfield",
+   "summary": ""
+  },
+  {
+   "slug": "long-beach-ca",
+   "url": "/web-design/long-beach-ca.html",
+   "name": "Long Beach",
+   "state": "CA",
+   "group": "west",
+   "short": "Long Beach",
+   "summary": ""
+  },
+  {
+   "slug": "scottsdale-az",
+   "url": "/web-design/scottsdale-az.html",
+   "name": "Scottsdale",
+   "state": "AZ",
+   "group": "west",
+   "short": "Scottsdale",
+   "summary": ""
+  },
+  {
+   "slug": "mesa-az",
+   "url": "/web-design/mesa-az.html",
+   "name": "Mesa",
+   "state": "AZ",
+   "group": "west",
+   "short": "Mesa",
+   "summary": ""
+  },
+  {
+   "slug": "albuquerque-nm",
+   "url": "/web-design/albuquerque-nm.html",
+   "name": "Albuquerque",
+   "state": "NM",
+   "group": "west",
+   "short": "Albuquerque",
+   "summary": ""
+  },
+  {
+   "slug": "st-louis-mo",
+   "url": "/web-design/st-louis-mo.html",
+   "name": "St. Louis",
+   "state": "MO",
+   "group": "midwest",
+   "short": "St. Louis",
+   "summary": ""
+  },
+  {
+   "slug": "kansas-city-mo",
+   "url": "/web-design/kansas-city-mo.html",
+   "name": "Kansas City",
+   "state": "MO",
+   "group": "midwest",
+   "short": "Kansas City",
+   "summary": ""
+  },
+  {
+   "slug": "chicago-il",
+   "url": "/web-design/chicago-il.html",
+   "name": "Chicago",
+   "state": "IL",
+   "group": "midwest",
+   "short": "Chicago",
+   "summary": ""
+  },
+  {
+   "slug": "indianapolis-in",
+   "url": "/web-design/indianapolis-in.html",
+   "name": "Indianapolis",
+   "state": "IN",
+   "group": "midwest",
+   "short": "Indianapolis",
+   "summary": ""
+  },
+  {
+   "slug": "cleveland-oh",
+   "url": "/web-design/cleveland-oh.html",
+   "name": "Cleveland",
+   "state": "OH",
+   "group": "midwest",
+   "short": "Cleveland",
+   "summary": ""
+  },
+  {
+   "slug": "omaha-ne",
+   "url": "/web-design/omaha-ne.html",
+   "name": "Omaha",
+   "state": "NE",
+   "group": "midwest",
+   "short": "Omaha",
+   "summary": ""
+  },
+  {
+   "slug": "des-moines-ia",
+   "url": "/web-design/des-moines-ia.html",
+   "name": "Des Moines",
+   "state": "IA",
+   "group": "midwest",
+   "short": "Des Moines",
+   "summary": ""
+  },
+  {
+   "slug": "minneapolis-mn",
+   "url": "/web-design/minneapolis-mn.html",
+   "name": "Minneapolis",
+   "state": "MN",
+   "group": "midwest",
+   "short": "Minneapolis",
+   "summary": ""
+  },
+  {
+   "slug": "madison-wi",
+   "url": "/web-design/madison-wi.html",
+   "name": "Madison",
+   "state": "WI",
+   "group": "midwest",
+   "short": "Madison",
+   "summary": ""
+  },
+  {
+   "slug": "grand-rapids-mi",
+   "url": "/web-design/grand-rapids-mi.html",
+   "name": "Grand Rapids",
+   "state": "MI",
+   "group": "midwest",
+   "short": "Grand Rapids",
+   "summary": ""
+  },
+  {
+   "slug": "detroit-mi",
+   "url": "/web-design/detroit-mi.html",
+   "name": "Detroit",
+   "state": "MI",
+   "group": "midwest",
+   "short": "Detroit",
+   "summary": ""
+  },
+  {
+   "slug": "cincinnati-oh",
+   "url": "/web-design/cincinnati-oh.html",
+   "name": "Cincinnati",
+   "state": "OH",
+   "group": "midwest",
+   "short": "Cincinnati",
+   "summary": ""
+  },
+  {
+   "slug": "columbus-oh",
+   "url": "/web-design/columbus-oh.html",
+   "name": "Columbus",
+   "state": "OH",
+   "group": "midwest",
+   "short": "Columbus",
    "summary": ""
   }
  ],
