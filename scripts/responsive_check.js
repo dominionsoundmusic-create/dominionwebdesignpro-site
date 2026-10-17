@@ -34,7 +34,7 @@ function pages(dir, out = []) {
     let errs = [];
     page.on("pageerror", (e) => errs.push(String(e)));
     page.on("console", (m) => { if (m.type() === "error") errs.push(m.text()); });
-    const SAMPLE = ["/", "/web-design/houston-tx.html", "/web-design/tyler-tx.html", "/pricing/", "/web-design-for-plumbers/", "/web-design/new-york-ny.html"];
+    const SAMPLE = ["/", "/web-design/houston-tx.html", "/web-design/tyler-tx.html", "/pricing/", "/web-design-for-plumbers/", "/web-design/new-york-ny.html", "/web-design/san-antonio-tx.html", "/web-design/denver-co.html"];
     const list = width > 1440 ? urls.filter((u) => SAMPLE.includes(u)) : urls;
     for (const u of list) {
       errs = [];

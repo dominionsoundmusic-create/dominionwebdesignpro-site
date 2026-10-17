@@ -120,5 +120,5 @@ Summary: 5 checked, 4 confirmed (3 of them restored), 1 corrected. TAMUT fall 20
 
 ## Totals
 53 claims checked across 8 pages: 26 confirmed (7 of them restored after earlier softening or removal), 13
-corrected (9 of them pricing or FAQ fixes to match INTAKE.md), 4 softened, 9 removed, 1 kept from knowledge and
+corrected (8 of them pricing or FAQ fixes to match INTAKE.md), 4 softened, 9 removed, 1 kept from knowledge and
 flagged (The Woodlands board size).
