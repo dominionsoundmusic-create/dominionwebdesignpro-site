@@ -5,6 +5,7 @@
 - baton-rouge-la, shreveport-la (B7; notes in docs/writers/w4-b7.md)
 - mobile-al, jackson-ms (B8; notes in docs/writers/w4-b8.md)
 - montgomery-al (B2; notes in docs/writers/w4-b2.md; swap contractor-review.jpg, Apple logo)
+- fort-myers-fl (B6; notes in docs/writers/w4-b6.md; swap photography/1.jpg, shows Canon)
 - augusta-ga (B1; notes in docs/writers/w4-b1.md)
 
 ## Pages written without search research (must be researched and rechecked)
@@ -17,3 +18,8 @@
 - mcallen-tx, brownsville-tx, lubbock-tx, amarillo-tx, san-angelo-tx (fc-w4-a2, UNSETTLED items)
 - killeen-tx, sugar-land-tx, katy-tx, cypress-tx (fc-w4-a3)
 - beaumont-tx, round-rock-tx, the-woodlands-tx, texarkana-tx (fc-w4-a4)
+
+## Other
+- images/cities/st-petersburg-fl.jpg shows the 1917 Pinellas County Courthouse (Clearwater, not St. Petersburg): do not use it for St. Petersburg.
+- sarasota-fl, st-petersburg-fl: general-knowledge place names flagged in w4-b6.md.
+- photography/1.jpg and photography/2.jpg show camera brand lettering (wilmington-nc uses photography/1).
