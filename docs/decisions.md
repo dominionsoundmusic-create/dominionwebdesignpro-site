@@ -260,4 +260,5 @@ be reversed later.
 64. **Writers and checkers.** Writer sub-agents work three cities each (neighbors together so one writer keeps them
     apart); separate fact-check sub-agents that wrote none of the pages check every claim per part.
 
-Wave 4 status: Part A (23 Texas pages) written and built, check.py 0 errors, similarity max 4.8%, committed; Part A fact-check and Part B writing in progress.
+Wave 4 status: Part A (23 Texas pages) and Part B (29 South and East pages) written and built, check.py 0 errors, similarity max 6.1%, committed. Part A fact-check done (partly from prior knowledge after the search limit; rechecks listed in docs/writers/WAVE4-TODO.md). Next: Part C writing, then Part B and C fact-checks and the rechecks.
+65. **Search budget.** Web searches are capped at 200 per orchestrator turn, shared by every running agent. The first Part B round ran 14 agents at once and ran dry, so later rounds run about five agents at a time with a per-agent cap (12 searches per city), and pages left unwritten or written without research were redone in follow-up rounds rather than filled from memory.

@@ -1,7 +1,6 @@
 # Wave 4 open work (search budget: 200 web searches per orchestrator turn, shared by all agents)
 
 ## Pages not written yet (search budget ran out)
-- west-palm-beach-fl, pensacola-fl (B5; notes in docs/writers/w4-b5.md)
 
 ## Pages written without search research (must be researched and rechecked)
 - little-rock-ar (B10: every claim unverified)
