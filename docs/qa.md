@@ -393,3 +393,34 @@ All 43 city pages, 903 pairs: min 0.0%, mean 0.9%, max 4.3%.
 | /web-design/cleveland-oh.html | 1,458 | /web-design/orlando-fl.html | 4.0% |
 
 Pairs involving a Wave 2 page: 546 (pairs counted from each side), range 0.0% to 4.0%. Limit 15%: none over.
+
+## Wave 3 (Oct 17 2026): 8 national city pages
+
+| Check | How | Result |
+|---|---|---|
+| Build | `python3 build.py` | 81 pages built, 8 planned hero images listed in docs/image-list.md |
+| Page rules | `python3 scripts/check.py` | 89 pages checked, **0 errors, 0 warnings** |
+| Old URLs | `python3 scripts/check_old_urls.py` | 285 old URLs checked, **0 would 404** |
+| Banned phrases, dashes, numbers | `python3 scripts/grep_check.py` | **0 hits** across 89 pages |
+| Keyword 10+ rule | `python3 scripts/keyword_plan.py` (runs keyword_plan_wave3.py) | 110 Wave 3 keywords at 10+ (per city tab, 8 targets included): 75 on a page (8 targets, 60 supporting, 7 FAQ questions), 35 unused with a reason, 0 unclassified |
+| Responsive | `node scripts/responsive_check.js` (dist served locally; New York page added to the 1920/2560 sample) | 368 page loads at 1440/1024/768/390 plus 1920/2560 samples. First run flagged the New York hero at 764px (long H1); H1 shortened, re-run **0 problems** (no overflow, no JS errors, no broken images, hero on the left rail, main button above the fold). New York screenshot at 1440 reviewed |
+| Tool pages and forms | `node scripts/tool_pages_browser.js`, `python3 scripts/check_tool_pages.py` | all OK: site-check, client-intake and homepage-contact forms present with original names, 0 JS errors, scripts unchanged, seo-audit function present |
+| Fact-check | 4 independent sub-agents (docs/fact-check.md, Wave 3) | 194 claims: 153 confirmed, 13 corrected, 25 softened, 2 removed |
+
+### Similarity (Jaccard, 5-word shingles, `python3 scripts/similarity.py`)
+
+All 51 area pages, 1,275 pairs: min 0.0%, mean 0.9%, max 4.3% (lawrenceville-ga vs plano-tx, unchanged from earlier waves).
+
+| New page | Words | Highest pair | Jaccard |
+|---|---:|---|---:|
+| /web-design/new-york-ny.html | 2,031 | /web-design/orange-county-ca.html | 3.6% |
+| /web-design/orange-county-ca.html | 1,886 | /web-design/new-york-ny.html | 3.6% |
+| /web-design/tampa-fl.html | 2,102 | /web-design/st-louis-mo.html | 2.5% |
+| /web-design/huntsville-al.html | 1,927 | /web-design/indianapolis-in.html | 3.4% |
+| /web-design/tucson-az.html | 1,560 | /web-design/louisville-ky.html | 1.1% |
+| /web-design/richmond-va.html | 1,561 | /web-design/indianapolis-in.html | 2.2% |
+| /web-design/louisville-ky.html | 1,671 | /web-design/miami-fl.html | 3.7% |
+| /web-design/wilmington-nc.html | 1,493 | /web-design/louisville-ky.html | 3.2% |
+
+Pairs involving a Wave 3 page: 400 (counted from each side), range 0.0% to 3.7%. Limit 15%: none over.
+(Words = all visible words on the built page, as similarity.py counts them.)

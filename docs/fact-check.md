@@ -119,3 +119,34 @@ chat trial, 7-day phone agent trial then $297/mo for up to 750 minutes, $49/mo h
 AI receptionist wording, no office or clients in the city). The Sacramento page states that Dominion does
 not hold California's Small Business certification; the Miami page states the site's EN/ES button is
 machine translation and does not claim Maurice writes Spanish.
+
+## Wave 3 (Oct 17 2026): 8 national city pages
+
+Run by four independent sub-agents that did not write the pages, using docs/fact-check/BRIEF.md and the
+writer notes docs/writers/w3-a.md to w3-d.md (each writer also flagged its weakest claims for them). Each checked
+every factual claim and every source URL with web searches, fixed the source file in place, rebuilt and re-ran
+check.py. Full tables (Claim | Verdict | Source | Action): docs/fact-check/fc-w3-a.md, fc-w3-b.md, fc-w3-c.md, fc-w3-d.md.
+
+| Checker | Page | Checked | Confirmed | Corrected | Softened | Removed |
+|---|---|---:|---:|---:|---:|---:|
+| fc-w3-a | /web-design/new-york-ny.html | 25 | 18 | 5 | 2 | 0 |
+| fc-w3-a | /web-design/orange-county-ca.html | 23 | 19 | 1 | 2 | 1 |
+| fc-w3-b | /web-design/tampa-fl.html | 28 | 26 | 1 | 1 | 0 |
+| fc-w3-b | /web-design/huntsville-al.html | 25 | 20 | 3 | 2 | 0 |
+| fc-w3-c | /web-design/tucson-az.html | 17 | 13 | 2 | 1 | 0 (1 figure cut inside a corrected row) |
+| fc-w3-c | /web-design/richmond-va.html | 27 | 18 | 1 | 7 | 1 |
+| fc-w3-d | /web-design/louisville-ky.html | 24 | 19 | 0 | 5 | 0 |
+| fc-w3-d | /web-design/wilmington-nc.html | 25 | 20 | 0 | 5 | 0 |
+| | **Total** | **194** | **153** | **13** | **25** | **2** |
+
+**Notable corrections:** New York's Business Improvement District numbers updated to the FY25 report (78 BIDs, more
+than $216 million, nearly 25,000 storefronts) and Census figures to the July 2025 estimate; an unverified court-rule PDF
+link replaced with the court system's Part 1200 page; the Irvine HOA claim (sourced to a remodeler blog) softened and the
+blog removed; Orange County SCORE wording corrected. Tampa's storm-surge line now separates surge height (6.3 ft gauge)
+from flooding; an unconfirmed Seminole Heights corridor dropped; SAM.gov and UEI facts on the Huntsville page now cite
+sam.gov, gsa.gov and sba.gov; Marshall Space Flight Center's workforce replaced with NASA's own figure; Lowe Mill dated to
+1901 with "more than 150 studios"; SCORE Alabama described as a virtual chapter. Tucson's income figures updated to
+QuickFacts 2020 to 2024 ($57,073 vs $80,734) and Vail's incorporation votes dated (2013 and 2023); Richmond's Scott's
+Addition plant dates fixed (the Coca-Cola plant is 1953) and the cidery noted as having moved. Louisville's hotel line
+limited to downtown hotels and Whiskey Row history softened to what sources support; Wilmington's Cargo District counts
+attributed to the developer as rough figures and "record" dropped from UNCW's total enrollment.
