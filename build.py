@@ -166,6 +166,7 @@ class Builder:
         )
         self.env.globals.update(
             site=self.site,
+            site_css=(SRC / "static" / "css" / "site.css").read_text().replace("</style", "<\\/style"),
             img=self.img,
             webp_srcset=self.webp_srcset,
             picture=self.picture,
