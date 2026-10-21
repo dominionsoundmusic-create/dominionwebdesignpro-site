@@ -468,6 +468,19 @@ class Builder:
                 "mainEntityOfPage": {"@id": url + "#webpage"},
                 "inLanguage": "en-US",
             })
+        vid = page.get("video")
+        if vid:
+            graph.append({
+                "@type": "VideoObject",
+                "@id": url + "#video",
+                "name": vid["name"],
+                "description": vid["description"],
+                "thumbnailUrl": "https://i.ytimg.com/vi/" + vid["id"] + "/hqdefault.jpg",
+                "uploadDate": vid["upload_date"],
+                "duration": vid["duration"],
+                "contentUrl": "https://youtu.be/" + vid["id"],
+                "embedUrl": "https://www.youtube-nocookie.com/embed/" + vid["id"],
+            })
         faqs = page.get("faqs") or []
         if faqs:
             graph.append({
