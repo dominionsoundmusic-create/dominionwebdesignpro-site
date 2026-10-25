@@ -13,7 +13,7 @@
       <p class="site-footer__label">Services</p>
       <ul><li><a href="/services/">All services</a></li>{% for s in site.services %}<li><a href="{{ s.url }}">{{ s.short }}</a></li>{% endfor %}</ul>
       <p class="site-footer__label">Free tools</p>
-      <ul>{% for t in site.tools if t.slug in ('demo', 'site-check', 'compare', 'tools') %}<li><a href="{{ t.url }}">{{ t.short }}</a></li>{% endfor %}</ul>
+      <ul>{% for t in site.tools if t.slug in ('demo', 'maps-check', 'site-check', 'compare', 'tools') %}<li><a href="{{ t.url }}">{{ t.short }}</a></li>{% endfor %}</ul>
     </div>
     <div>
       <p class="site-footer__label">Guides</p>

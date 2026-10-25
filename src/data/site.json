@@ -165,6 +165,12 @@
    "short": "Free website demo"
   },
   {
+   "slug": "maps-check",
+   "url": "https://dominion-map-scanner.netlify.app/check",
+   "name": "Free Google Maps check",
+   "short": "Free Google Maps check"
+  },
+  {
    "slug": "site-check",
    "url": "/site-check/",
    "name": "Free Site Check (SEO and speed audit)",
