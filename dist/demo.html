@@ -167,10 +167,6 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
           <input id="state" name="state" type="text" placeholder="TX" maxlength="20">
         </div>
       </div>
-      <div class="field">
-        <label for="bizPhone">Your business phone <span style="text-transform:none;letter-spacing:0">(optional, shows on your demo)</span></label>
-        <input id="bizPhone" name="phone" type="tel" autocomplete="tel" placeholder="(903) 555-0123">
-      </div>
       <fieldset>
         <legend>Your services <span style="text-transform:none;letter-spacing:0">(up to 6, optional)</span></legend>
         <div class="svcgrid">
@@ -215,20 +211,16 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
 
     <div class="claim" id="claim">
       <h3>Want this to be your real website?</h3>
-      <p>Leave your name and number and Maurice will call you to go over it. No obligation.</p>
+      <p>Leave your name and email and Maurice will get back to you to go over it. No obligation.</p>
       <form id="claimForm" novalidate>
         <div class="row">
           <div class="field">
             <label for="cname">Your name</label>
             <input id="cname" type="text" autocomplete="name">
           </div>
-          <div class="field">
-            <label for="cphone">Phone</label>
-            <input id="cphone" type="tel" autocomplete="tel">
-          </div>
         </div>
         <div class="field">
-          <label for="cemail">Email <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <label for="cemail">Email</label>
           <input id="cemail" type="email" autocomplete="email">
         </div>
         <button class="btn btn-green" type="submit" id="claimBtn" style="width:100%">Claim this website</button>
@@ -305,7 +297,7 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
         city: city.value.trim(),
         state: document.getElementById("state").value.trim(),
         customRequest: document.getElementById("customRequest").value.trim(),
-        phone: document.getElementById("bizPhone").value.trim(),
+        phone: "",
         services: [].slice.call(document.querySelectorAll('input[name="service"]')).map(function (i) { return i.value.trim(); }).filter(Boolean).slice(0, 6)
       })
     })
@@ -378,11 +370,11 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
   document.getElementById("claimForm").addEventListener("submit", function (e) {
     e.preventDefault();
     var n = document.getElementById("cname");
-    var p = document.getElementById("cphone");
+    var p = document.getElementById("cemail");
     [n, p].forEach(clear);
     var ok = true;
     if (!n.value.trim()) { err(n, "Your name, please"); ok = false; }
-    if (p.value.replace(/\D/g, "").length < 10) { err(p, "A 10-digit phone number"); ok = false; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.value.trim())) { err(p, "Your email address, please"); ok = false; }
     if (!ok) return;
 
     var btn = document.getElementById("claimBtn");
@@ -394,14 +386,14 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
       body: JSON.stringify({
         refCode: currentRef,
         name: n.value.trim(),
-        phone: p.value.trim(),
-        email: document.getElementById("cemail").value.trim(),
+        phone: "",
+        email: p.value.trim(),
         businessName: document.getElementById("businessName").value.trim()
       })
     })
     .then(function () {
       document.getElementById("claim").innerHTML =
-        '<div class="done"><h3>Got it.</h3><p>Maurice will call you shortly. ' +
+        '<div class="done"><h3>Got it.</h3><p>Maurice will get back to you shortly. ' +
         'If you\'d rather not wait, ring 903-636-7511.</p></div>';
     })
     .catch(function () {
@@ -420,5 +412,6 @@ document.querySelectorAll(".dlang__btn").forEach(function(b){b.setAttribute("ari
 b.addEventListener("click",function(){var w=b.getAttribute("data-lang");if(w===cur())return;setCookie(w==="es"?"/en/es":"");location.reload();});});
 if(lang==="es"){document.documentElement.lang="es";window.googleTranslateElementInit=function(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"es",autoDisplay:false},"google_translate_element");};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";s.async=true;document.body.appendChild(s);}
 })();</script>
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6adfe38c912bacec1590935c" data-source="WEB_USER"></script>
 </body>
 </html>

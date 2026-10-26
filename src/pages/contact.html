@@ -15,7 +15,7 @@ faqs:
   - q: "How do I find a web designer near me I can trust?"
     a: "<p>Look for three things: you can reach the person who builds the site, you can see work for your own business before paying, and you will own the site and the domain at the end. Ask each designer about all three. Here, the answer is yes to each, and the free demo lets you check before spending anything.</p>"
   - q: "How quickly will I hear back?"
-    a: "<p>Form messages and email go to Maurice, and he gets back to you by phone or email. If it is urgent, call (903) 636-7511. The AI receptionist answers any hour and can transfer you to Maurice.</p>"
+    a: "<p>Chat messages and email go to Maurice, and he gets back to you by phone or email. If it is urgent, call (903) 636-7511. The AI receptionist answers any hour and can transfer you to Maurice.</p>"
   - q: "Is it a real person or a bot on the phone?"
     a: "<p>The phone is answered first by an AI receptionist, any hour of the day. If you ask about a website preview, or ask for Maurice or a person, it transfers you to Maurice. We say so up front because you should know who you are talking to.</p>"
   - q: "What should I include in my message?"
@@ -25,17 +25,10 @@ cta_title: "Rather see it than talk about it?"
 {% block content %}
 <section class="prose" id="contact-form" aria-labelledby="contact-h">
   <h2 id="contact-h">Send a message to find a web designer near you</h2>
-  <p>If you are trying to find a web designer near me who will pick up the phone and look at your business properly, start here. Leave your details and Maurice will get back to you about a free demo site. There is no obligation and nothing to sign.</p>
-  <form class="lead-form" name="homepage-contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="company_url">
-    <input type="hidden" name="form-name" value="homepage-contact">
-    <p class="hp"><label>Leave blank <input name="company_url"></label></p>
-    <label>Your name <input name="name" required autocomplete="name"></label>
-    <label>Business name <input name="business" autocomplete="organization"></label>
-    <label>Phone <input name="phone" type="tel" required autocomplete="tel"></label>
-    <label>Email <input name="email" type="email" autocomplete="email"></label>
-    <label class="full">What kind of business is it, and what do you need? <textarea name="message" rows="3"></textarea></label>
-    <div class="full"><button type="submit" class="btn btn--blue">Send it to Maurice</button></div>
-  </form>
+  <p>If you are trying to find a web designer near me who will pick up the phone and look at your business properly, start here. Send a message through the chat and Maurice will get back to you about a free demo site. There is no obligation and nothing to sign.</p>
+  <div class="chat-cta">
+    <p><strong>Click the chat bubble at the bottom right of this page</strong> and type your question. Maurice gets your message and replies. You can also call <a href="tel:+19036367511">(903) 636-7511</a> or email <a href="mailto:maurice@dominionwebdesignpro.com">maurice@dominionwebdesignpro.com</a>.</p>
+  </div>
   <p class="small">What you send is used to reply to you and is never sold. See the <a href="/privacy-policy.html">privacy policy</a>.</p>
 </section>
 
