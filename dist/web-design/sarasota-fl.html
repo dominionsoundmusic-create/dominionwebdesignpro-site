@@ -601,6 +601,10 @@ body > .skiptranslate { display: none !important; }
 @media (min-width: 900px) { .lead-form { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .lead-form input, .lead-form textarea { width: 100%; min-width: 0; }
 .how-strip + p, .how-strip ~ p { margin-top: 22px; }
+
+/* Balanced card rows (Oct 27 2026): no lonely last card on wide screens */
+@media (min-width:1100px){.facts:has(> :nth-child(3):last-child),.facts:has(> :nth-child(6):last-child),.facts:has(> :nth-child(9):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}.facts:has(> :nth-child(4):last-child),.facts:has(> :nth-child(7):last-child),.facts:has(> :nth-child(8):last-child),.facts:has(> :nth-child(11):last-child),.facts:has(> :nth-child(12):last-child),.facts:has(> :nth-child(16):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}.facts:has(> :nth-child(5):last-child),.facts:has(> :nth-child(10):last-child),.facts:has(> :nth-child(13):last-child),.facts:has(> :nth-child(14):last-child),.facts:has(> :nth-child(15):last-child){grid-template-columns:repeat(5,minmax(0,1fr))}}
+
 </style>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
