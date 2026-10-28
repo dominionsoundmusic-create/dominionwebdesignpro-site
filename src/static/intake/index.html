@@ -85,7 +85,7 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
 
 <div class="note">
   <p><b>Please answer as much as you can.</b> Every answer goes straight into your website. Real details about your services, the towns you work in, and the jobs you have done are what make a site rank on Google and win customers.</p>
-  <p>Only your name and email are required. Skip anything you don't know yet. If something important is missing, we will reach out to ask, but the more you fill in here, the faster your site gets built.</p>
+  <p>Only your name, phone number and email are required. Skip anything you don't know yet. If something important is missing, we will reach out to ask, but the more you fill in here, the faster your site gets built.</p>
   <p>We never make anything up. If you don't tell us about a license, warranty or review, it won't appear on your site.</p>
 </div>
 
@@ -98,10 +98,11 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
   <p class="hint">So we can reach you with questions and send you your preview.</p>
   <label><span>Your name <em class="req">(required)</em></span><input name="Your name" autocomplete="name" required></label>
   <div class="two">
+    <label><span>Your phone number <em class="req">(required)</em></span><input name="Your phone" type="tel" autocomplete="tel" required></label>
     <label><span>Your email <em class="req">(required)</em></span><input name="Your email" type="email" autocomplete="email" required></label>
   </div>
   <label><span>Best time to reach you</span><input name="Best time to reach you"></label>
-  <label><span>Who approves the website, if not you <em>name and email</em></span><input name="Who approves the site"></label>
+  <label><span>Who approves the website, if not you <em>name and phone</em></span><input name="Who approves the site"></label>
 </fieldset>
 
 <fieldset>
@@ -144,7 +145,7 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
   <label><span>Should the address show on your website?</span>
     <select name="Show address publicly"><option value="">Choose one</option><option>Yes</option><option>No, I work from home or go to customers</option></select></label>
   <div class="two">
-    
+    <label><span>Phone number customers should call <em>if different from yours</em></span><input name="Public phone" type="tel"></label>
     <label><span>Email customers should use <em>if different</em></span><input name="Public email" type="email"></label>
   </div>
   <label><span>Business hours</span><input name="Business hours"></label>
@@ -329,7 +330,7 @@ footer{background:var(--dark2);border-top:1px solid var(--line);padding-block:28
   <label><span>The main thing you want a visitor to do</span>
     <select name="Main action"><option value="">Choose one</option><option>Call me</option><option>Text me</option><option>Fill in a quote form</option><option>Book online</option><option>Other (explain below)</option></select></label>
   <div class="two">
-    
+    <label><span>Phone that should get new-lead texts</span><input name="Lead text phone" type="tel"></label>
     <label><span>Email that should get new leads</span><input name="Lead email" type="email"></label>
   </div>
   <label><span>Booking or scheduling link, if you have one</span><input name="Booking link"></label>
