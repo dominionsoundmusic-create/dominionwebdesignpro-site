@@ -60,17 +60,18 @@
 
 # Sep 11 2026 - templated city pages retired; wildcards send them to the service hub.
 # Netlify serves real files first, so the hand-written pages below are unaffected.
-# Oct 29 2026: targets have NO trailing slash. A target inside its own splat folder
-# (/web-design/* -> /web-design/) is skipped by Netlify as a loop and the old URL 404s.
-/small-business-website/*  /small-business-website  301
-/seo-web-design/*  /seo-web-design  301
+# Oct 29 2026: a target inside its own splat folder (/web-design/* -> /web-design/ or /web-design)
+# never matches in Netlify's redirect engine, so old URLs 404ed. Full https:// targets match
+# (tested with netlify-redirector). Real files still win (shadowing), so live pages are unaffected.
+/small-business-website/*  https://dominionwebdesignpro.com/small-business-website/  301
+/seo-web-design/*  https://dominionwebdesignpro.com/seo-web-design/  301
 /restaurant-website-design/*  /small-business-website/  301
 /real-estate-website-design/*  /small-business-website/  301
 /professional-website-design/*  /small-business-website/  301
 /medical-website-design/*  /web-design-for-therapists/  301
 /ecommerce-website-design/*  /small-business-website/  301
-/contractor-website-design/*  /contractor-website-design  301
-/web-design/*  /web-design  301
+/contractor-website-design/*  https://dominionwebdesignpro.com/contractor-website-design/  301
+/web-design/*  https://dominionwebdesignpro.com/web-design/  301
 
 # Oct 12 2026 (Playbook 2.0 rebuild): hubs the keyword data does not support are retired to the
 # closest page (docs/decisions.md); the contractor guide is folded into the contractor service page.
