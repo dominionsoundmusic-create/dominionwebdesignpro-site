@@ -5,14 +5,30 @@
 // them to the GoHighLevel workflow "Website Form - Text Maurice", which saves the lead as
 // a contact and sends the text from the A2P-approved number.
 //
-// The workflow address lives in the FORM_TEXT_WEBHOOK environment variable in Netlify,
-// not in this public repo. If it is missing or GoHighLevel is down, the form still saves
-// and the usual email still goes out; this function never blocks a submission.
+// The same file is used on every Dominion site with forms. The workflow address lives in
+// the FORM_TEXT_WEBHOOK environment variable in Netlify, not in the repo. If it is missing
+// or GoHighLevel is down, the form still saves and the usual email still goes out; this
+// function never blocks a submission.
+
+const BRANDS = {
+  "dominionwebdesignpro.com": "Dominion Web Design Pro",
+  "houstonexpertroofers.com": "Houston Expert Roofers",
+  "dfwexpertroofers.com": "DFW Expert Roofers",
+  "houstonairandheating.com": "Houston Air & Heating",
+  "dallasairandheating.com": "Dallas Air & Heating",
+  "austinacservice.com": "Austin AC Service",
+  "houstonpowerwashingpro.com": "Houston Power Washing Pro",
+  "dallaspowerwashingpro.com": "Dallas Metro Power Washing Pro",
+};
 
 const FORM_LABELS = {
   "homepage-contact": "Contact form",
   "site-check": "Free Site Check",
   "client-intake": "Client intake form",
+  "free-ac-guide": "Free AC guide download",
+  "austin-free-ac-guide": "Free AC guide download",
+  "houston-hail-checklist": "Hail checklist download",
+  "dallas-hail-checklist": "Hail checklist download",
 };
 
 const pick = (data, keys) => {
@@ -33,39 +49,47 @@ const toE164 = (raw) => {
 export function buildLead(payload) {
   const data = payload.data || {};
   const formName = payload.form_name || data["form-name"] || "form";
-  const label = FORM_LABELS[formName] || formName;
-  let host = "your website";
+  const label = FORM_LABELS[formName] || (/contact/.test(formName) ? "Quote request" : formName);
+
+  let host = "";
   try { host = new URL(payload.site_url || data.referrer || "").hostname.replace(/^www\./, ""); } catch {}
+  const brand = BRANDS[host] || host || "your website";
 
   const name = pick(data, ["name", "Your name"]) || pick(data, ["business", "Business name"]);
   const [first, ...rest] = name.split(/\s+/);
   const phone = toE164(pick(data, ["phone", "Your phone", "Lead text phone", "Public phone"]));
   const email = pick(data, ["email", "Your email", "Lead email"]);
 
-  let message = pick(data, ["message", "Anything else", "Your story"]);
+  const need = pick(data, ["need", "situation"]);
+  const where = pick(data, ["city", "location", "zip"]);
+  let note = pick(data, ["message", "Anything else", "Your story"]);
   if (formName === "site-check") {
     const site = pick(data, ["website"]);
     const grade = pick(data, ["grade"]);
-    message = [site && `Checked ${site}`, grade && `grade ${grade}`].filter(Boolean).join(", ") || message;
+    note = [site && `Checked ${site}`, grade && `grade ${grade}`].filter(Boolean).join(", ") || note;
   }
   if (formName === "client-intake") {
     const pkg = pick(data, ["Package"]);
     const biz = pick(data, ["Business name"]);
-    message = [biz, pkg && `package ${pkg}`].filter(Boolean).join(", ") || message;
+    note = [biz, pkg && `package ${pkg}`].filter(Boolean).join(", ") || note;
   }
-  const business = pick(data, ["business", "Business name"]);
+  const needs = [need, where && `in ${where}`].filter(Boolean).join(" ");
+  let message = [needs, note].filter(Boolean).join(". ");
   if (message.length > 300) message = message.slice(0, 297) + "...";
 
   return {
+    brand,
     form: label,
     site: host,
-    summary: `${label} on ${host}`,
+    summary: `${label} from ${brand}`,
     name: name || "(no name given)",
     first_name: first || "",
     last_name: rest.join(" "),
     phone: phone || "",
     email: email || "",
-    business,
+    business: pick(data, ["business", "Business name"]),
+    need,
+    city: where,
     message: message || "(no message)",
   };
 }
