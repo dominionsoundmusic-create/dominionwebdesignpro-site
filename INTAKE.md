@@ -43,7 +43,7 @@ FAITH: the top bar carries "John 3:16", and the quote below appears near the top
 Starter $497 one-time: 5-page website (home, services, about, contact, service area); every page
   written for the business by hand, never filled into a template; works on phones, tablets and
   desktop; contact form that emails every lead; page titles, descriptions and sitemap submitted to
-  Google; Google Maps and hours on the page; links to Facebook and Instagram; ready to review in about 3 business days;
+  Google; Google Maps and hours on the page; links to Facebook and Instagram; ready to review in about 2 days;
   the client owns it outright. Buy button: https://buy.stripe.com/bJecN59ERe8u6OB4RwcMM0b
 Pro $997 one-time (Most Popular): everything in Starter plus a 10-page website with photo gallery;
   lead capture on every page; local SEO (schema markup and Google Business Profile setup); 10 city
