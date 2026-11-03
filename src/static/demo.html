@@ -171,6 +171,10 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
         <label for="bizPhone">Your business phone <span style="text-transform:none;letter-spacing:0">(optional, shows on your demo)</span></label>
         <input id="bizPhone" name="phone" type="tel" autocomplete="tel" placeholder="(903) 555-0123">
       </div>
+      <div class="field">
+        <label for="menuColor">Menu color</label>
+        <select id="menuColor" name="menuColor"><option value="">Surprise me</option><option value="blue">Royal blue with gold strip</option><option value="maroon">Maroon with gold strip</option><option value="green">Forest green with gold strip</option><option value="black">Black with gold strip</option></select>
+      </div>
       <fieldset>
         <legend>Your services <span style="text-transform:none;letter-spacing:0">(up to 6, optional)</span></legend>
         <div class="svcgrid">
@@ -303,6 +307,7 @@ footer{border-top:1px solid var(--dark3);color:var(--muted);text-align:center;pa
         businessName: name.value.trim(),
         businessType: type.value.trim(),
         city: city.value.trim(),
+        menuColor: document.getElementById("menuColor").value,
         state: document.getElementById("state").value.trim(),
         customRequest: document.getElementById("customRequest").value.trim(),
         phone: document.getElementById("bizPhone").value.trim(),

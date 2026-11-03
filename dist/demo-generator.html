@@ -136,6 +136,7 @@ nav{padding:0 16px}.hero{padding:40px 20px}.form-wrap{padding:24px 16px}
 <input type="text" id="city" placeholder="e.g. Longview, TX" maxlength="60">
 </div>
 </div>
+<div class="form-group"><label for="menuColor">Menu color</label><select id="menuColor"><option value="">Surprise me</option><option value="blue">Royal blue with gold strip</option><option value="maroon">Maroon with gold strip</option><option value="green">Forest green with gold strip</option><option value="black">Black with gold strip</option></select></div>
 <div class="form-group">
 <label>Special Request <span style="font-weight:400;color:rgba(255,255,255,0.35)">(optional)</span></label>
 <input type="text" id="customRequest" placeholder="e.g. focus on emergency services, bilingual" maxlength="120">
@@ -213,7 +214,8 @@ const customRequest = document.getElementById('customRequest').value.trim();
 if (!businessName) return showError('Please enter your business name.');
 if (!businessType) return showError('Please select your business type.');
 if (!city) return showError('Please enter your city.');
-lastParams = {businessName,businessType,city,customRequest};
+const menuColor = document.getElementById('menuColor').value;
+lastParams = {businessName,businessType,city,customRequest,menuColor};
 hideError();
 showLoading();
 animateSteps();
@@ -224,7 +226,7 @@ let res;
 try {
   res = await fetch(`${BACKEND}/generate-demo`,{
     method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({businessName,businessType,city,customRequest}),
+    body:JSON.stringify({businessName,businessType,city,customRequest,menuColor}),
     signal: ctl.signal
   });
 } finally { clearTimeout(bail); }
