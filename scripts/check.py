@@ -202,9 +202,12 @@ def main():
         for mt in re.finditer(r"[^.]*\b(?:phone|AI) agent\b[^.]*\.", visible, re.I):
             if re.search(r"14 days|fourteen days", mt.group(0), re.I) and not re.search(r"chat", mt.group(0), re.I):
                 err(f"AI phone agent trial is 7 days, not 14: {mt.group(0).strip()[:160]}")
+        # Nov 7 2026: chat widget trial is 7 days (was 14); phone agent includes 500 minutes, then 25 cents a minute (was 750).
         for mt in re.finditer(r"[^.]*\bchat widget\b[^.]*\.", visible, re.I):
-            if re.search(r"\b7 days|seven days", mt.group(0), re.I) and not re.search(r"phone", mt.group(0), re.I):
-                err(f"AI chat widget trial is 14 days, not 7: {mt.group(0).strip()[:160]}")
+            if re.search(r"14 days|fourteen days", mt.group(0), re.I):
+                err(f"AI chat widget trial is 7 days, not 14: {mt.group(0).strip()[:160]}")
+        for mt in re.finditer(r"750 minutes", visible, re.I):
+            err(f"phone agent now includes 500 minutes, not 750: ...{visible[max(0, mt.start()-60): mt.end()+40]}...")
         for mt in re.finditer(r"\$\s?(\d[\d,]*)", visible):
             pass
         if re.search(r'class="[^"]*(?:eyebrow|kicker|overline|badge)', raw):

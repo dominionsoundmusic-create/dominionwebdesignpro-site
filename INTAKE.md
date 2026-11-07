@@ -48,13 +48,13 @@ Starter $497 one-time: 5-page website (home, services, about, contact, service a
 Pro $997 one-time (Most Popular): everything in Starter plus a 10-page website with photo gallery;
   lead capture on every page; local SEO (schema markup and Google Business Profile setup); 10 city
   pages, each town researched then written from scratch; Google reviews displayed on the site;
-  AI chat widget (answers visitors 24/7 and takes name and number), free 14 days then $297/mo.
+  AI chat widget (answers visitors 24/7 and takes name and number), free 7 days then $297/mo.
   Buy button: https://buy.stripe.com/eVq8wP9ERc0m1uh3NscMM0c
 Agency $1,997 one-time: everything in Pro plus keyword research across the whole service area
   first; a hand-written page for every town-and-service combination the research says is worth
   having, usually 30 to 60 pages, delivered in waves with the first live inside about a week; custom
-  design for the brand; AI phone agent SETUP, then the agent is free for 7 days and $297/mo for up
-  to 750 minutes, cancel any time. The phone agent must NOT read as included free with the
+  design for the brand; AI phone agent SETUP, then the agent is free for 7 days and $297/mo with 500
+  minutes included, then 25 cents a minute, cancel any time. The phone agent must NOT read as included free with the
   one-time price. Buy button: https://buy.stripe.com/bJe4gz2cpfcy0qdbfUcMM0d
 Hosting, maintenance and updates: included while the client has the AI agent; without it $49/mo.
 Every plan card keeps a secondary "Or get a free demo first" link.
