@@ -145,6 +145,10 @@
    "menu": "guides"
   },
   {
+   "label": "Blog",
+   "href": "/blog/"
+  },
+  {
    "label": "Free Tools",
    "menu": "tools"
   },
@@ -221,6 +225,10 @@
   {
    "label": "Black-Owned Web Design",
    "href": "/black-owned-web-design/"
+  },
+  {
+   "label": "Blog",
+   "href": "/blog/"
   },
   {
    "label": "FAQ",

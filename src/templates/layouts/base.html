@@ -14,7 +14,7 @@
 {% else %}
 <link rel="canonical" href="{{ canonical }}">
 {% endif %}
-<meta property="og:type" content="{{ 'article' if page.type == 'guide' else 'website' }}">
+<meta property="og:type" content="{{ 'article' if page.type in ('guide', 'post') else 'website' }}">
 <meta property="og:site_name" content="{{ b.name }}">
 <meta property="og:title" content="{{ page.og_title | default(page.title) }}">
 <meta property="og:description" content="{{ page.description }}">
