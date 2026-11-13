@@ -1,0 +1,71 @@
+---
+title: "Small Business Website Blog | Dominion Web Design Pro"
+description: "A weekly blog for small business owners about websites: what things cost, who should own what, and how to get found on Google. Researched, sourced and written by hand."
+h1: "The small business website blog"
+type: page
+crumb: "Blog"
+hero:
+  image: images/heroes/how-to-hire-a-web-designer-hero.jpg
+  alt: "Woodworker on the phone at his workbench with the shop door open to the street"
+  lead: "One new post every week, written for owners who would rather run their business than read about websites. Every price and rule is checked against a real source, and every post lists them."
+  primary_label: "Read the newest post"
+  primary_href: "#posts"
+  secondary_label: "See a free demo of your site"
+  secondary_href: "/demo.html"
+faqs:
+  - q: "How often is the blog updated?"
+    a: "<p>A new post goes up every week. Each one answers a question small business owners search for about websites, and the date at the top of each post tells you when its facts were checked.</p>"
+  - q: "Who writes the posts?"
+    a: "<p>The posts are written for Dominion Web Design Pro and published under Maurice Johnson, who builds every site we sell. Each post is researched first, and the sources are listed at the bottom so you can check them yourself.</p>"
+  - q: "Are the prices in the posts current?"
+    a: "<p>They are current on the date shown in each post. Registrars, hosts and software companies change prices often, so check the company's own pricing page before you buy anything.</p>"
+  - q: "Can I ask a question for a future post?"
+    a: "<p>Yes. Call (903) 636-7511 or use the <a href=\"/contact/\">contact page</a>. Our AI receptionist answers the phone any hour and can put you through to Maurice.</p>"
+cta_title: "Want to see what your own site could look like?"
+---
+{% block content %}
+{% set posts = pages.values() | selectattr("type", "equalto", "post") | sort(attribute="published", reverse=True) | list %}
+<section class="prose">
+  <h2>Plain answers about websites, one question at a time</h2>
+  <p>Most of what gets written about websites is written for marketers. This blog is written for the person who owns the shop, runs the crew or answers the office phone. Each post takes one question you would actually type into Google, such as what a domain should cost or who should hold the keys to your site, and answers it with numbers you can check.</p>
+  <p>If you want the bigger picture first, the <a href="/small-business-website-cost.html">small business website cost guide</a> and the <a href="/how-to-hire-a-web-designer/">guide to hiring a web designer</a> are the two longest reads on this site.</p>
+</section>
+
+<section class="band band--tint" id="posts">
+  <div class="wide">
+    <h2>Latest posts</h2>
+    <p class="section-intro">{{ posts | length }} post{{ '' if posts | length == 1 else 's' }} so far, newest first.</p>
+    <div class="cards">
+    {% for p in posts %}
+      <article class="card">
+        {% if p.hero and p.hero.image and image_exists(p.hero.image) %}{% set sz = img_size(p.hero.image) %}{{ picture(p.hero.image, p.hero.alt, sz[0], sz[1], "(max-width: 700px) 100vw, 400px", ' loading="lazy" decoding="async"') }}{% endif %}
+        <div class="card__body">
+          <h3><a href="{{ p.url }}">{{ p.h1 }}</a></h3>
+          <p class="card__date"><time datetime="{{ p.published }}">{{ p.published_label }}</time></p>
+          <p>{{ p.summary }}</p>
+          <p class="card__more" aria-hidden="true">Read the post</p>
+        </div>
+      </article>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="prose">
+  <div class="split">
+    <div>
+      <h2>How each post is put together</h2>
+      <p>Every post starts with research, not a template. Prices come from the companies that set them or from comparison sites that show when they checked. Rules come from the organization that writes them, such as ICANN for domain names or Google for search. When something cannot be verified, it stays out.</p>
+      <p>Each post also says what we sell where it is relevant, with the real prices, so you never have to guess. A Dominion website is a one-time price of $497, $997 or $1,997, and you can see a <a href="/demo.html">free demo</a> before you pay anything.</p>
+    </div>
+    {{ img("images/body/builder-vs-designer-desk.jpg", "Laptop and notebook on a desk next to a desk lamp, set up for an evening of reading", 1200, 800) }}
+  </div>
+</section>
+
+<section class="prose">
+  <h2>Topics you will find here</h2>
+  <p>What websites cost to build and to keep. Domains, hosting, email and who should own each one. How customers find a local business on Google and in the newer AI search tools. What to ask a web designer before you sign, and the small things that make a site bring in calls. If a question comes up again and again on our phone line, it ends up here.</p>
+  {{ img("images/body/austin-shop-owner-laptop.jpg", "Shop owner working on a laptop at the front counter of a small store with shelves of goods behind him", 1200, 800) }}
+  {{ m.related(['small-business-website', 'guide:small-business-website-cost', 'guide:website-cost-per-month', 'guide:how-to-hire-a-web-designer'], 'Guides worth reading next') }}
+</section>
+{% endblock %}

@@ -320,6 +320,16 @@ class Builder:
             meta["url"] = meta.get("url") or url_for_source(rel)
             meta["source"] = str(rel)
             meta["body"] = text[m.end():]
+            if meta.get("type") == "post":
+                # blog posts: dates as text, plus a reader-friendly label ("November 12, 2026")
+                import datetime
+                for k in ("published", "modified"):
+                    if meta.get(k):
+                        meta[k] = str(meta[k])
+                if not meta.get("published"):
+                    raise SystemExit(f"{rel}: blog post needs a published date")
+                d = datetime.date.fromisoformat(meta["published"])
+                meta["published_label"] = f"{d:%B} {d.day}, {d.year}"
             pages.append(meta)
         return pages
 
@@ -359,6 +369,8 @@ class Builder:
             crumbs.append({"label": "Web Design by City", "href": "/web-design/"})
         if page.get("type") == "service":
             crumbs.append({"label": "Services", "href": "/services/"})
+        if page.get("type") == "post":
+            crumbs.append({"label": "Blog", "href": "/blog/"})
         crumbs.append({"label": page.get("crumb", page.get("h1", page["title"])), "href": url})
         return crumbs
 
@@ -455,9 +467,9 @@ class Builder:
                     for p in self.site["pricing"]["plans"]
                 ],
             })
-        if page.get("type") == "guide":
+        if page.get("type") in ("guide", "post"):
             graph.append({
-                "@type": "Article",
+                "@type": "BlogPosting" if page.get("type") == "post" else "Article",
                 "@id": url + "#article",
                 "headline": page["h1"],
                 "description": page["description"],
@@ -538,9 +550,17 @@ class Builder:
         urls = [p for p in pages if not p.get("noindex") and p["url"] != "/404.html"]
         lines = ['<?xml version="1.0" encoding="UTF-8"?>',
                  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        posts = [p for p in urls if p.get("type") == "post"]
+        newest = max((str(p.get("modified") or p.get("published")) for p in posts), default=BUILD_DATE)
+        dates = {}
+        for p in urls:
+            if p.get("type") == "post":
+                dates[p["url"]] = str(p.get("modified") or p.get("published") or BUILD_DATE)
+            elif p["url"] == "/blog/":
+                dates[p["url"]] = newest
         locs = [p["url"] for p in urls] + self.site.get("tool_sitemap", [])
         for u in sorted(locs, key=lambda u: (u != "/", u)):
-            lines.append(f"  <url><loc>{origin}{u}</loc><lastmod>{BUILD_DATE}</lastmod></url>")
+            lines.append(f"  <url><loc>{origin}{u}</loc><lastmod>{dates.get(u, BUILD_DATE)}</lastmod></url>")
         lines.append("</urlset>")
         (self.out / "sitemap.xml").write_text("\n".join(lines) + "\n")
 

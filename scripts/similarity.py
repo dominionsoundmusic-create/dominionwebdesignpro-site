@@ -96,9 +96,11 @@ def main():
         if args.only and args.only not in (u1, u2):
             continue
         j = jac(s1, s2)
-        group = k1 if k1 == k2 and k1 in ("area", "service", "guide") else ""
+        group = k1 if k1 == k2 and k1 in ("area", "service", "guide", "post") else ""
+        if {k1, k2} == {"post", "guide"}:  # a blog post must not repeat a guide
+            group = "post/guide"
         rows.append((j, u1, u2, k1, k2))
-        if group in ("area", "service", "guide") and j > args.limit:
+        if group and j > args.limit:
             fails.append(f"{group} pair above {args.limit:.0%}: {u1} vs {u2} = {j:.1%}")
     rows.sort(reverse=True)
     by_group = {}
