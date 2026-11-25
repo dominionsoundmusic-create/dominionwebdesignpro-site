@@ -80,3 +80,10 @@
 /professional-website-design/  /small-business-website/  301
 /ecommerce-website-design/  /small-business-website/  301
 /medical-website-design/  /web-design-for-therapists/  301
+
+# Nov 25 2026 - old generated /cities/ pages and /portfolio still return 404 in Search Console; send them to the closest real page.
+/cities/*  /web-design/  301
+/cities/  /web-design/  301
+/cities  /web-design/  301
+/portfolio  /demo.html  301
+/portfolio/*  /demo.html  301
