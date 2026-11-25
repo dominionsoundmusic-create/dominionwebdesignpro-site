@@ -180,12 +180,28 @@ export function analyze(page, extras = {}) {
   add("Local business", "schema", "Business details for Google (schema)", localTypes.length || (!isHome && types.size) ? "pass" : types.size ? "warn" : "fail",
     localTypes.length ? `Found: ${localTypes.join(", ")}` : (!isHome && types.size) ? `Found: ${[...types].slice(0, 5).join(", ")}` : types.size ? `Found schema (${[...types].slice(0, 5).join(", ")}) but no LocalBusiness details.` : "No structured data. Google has to guess the business name, address, phone and hours.",
     "Add LocalBusiness schema with the name, address, phone, hours, service area and website.", 2);
-  add("Local business", "phone", "Phone number on the page", phoneText ? "pass" : "fail",
-    phoneText ? "A phone number is shown on the page." : "No phone number found in the page text.", "Show the phone number at the top of every page.", 2);
-  add("Local business", "tel", "Tap to call on phones", telLink ? "pass" : "warn",
-    telLink ? "Has a tap-to-call link." : "The phone number is not a tap-to-call link, so mobile visitors have to copy it.", "Make the phone number a tel: link so one tap calls the business.", 2);
-  add("Local business", "form", "Contact or quote form", forms ? "pass" : "warn",
-    forms ? `${forms} form${forms > 1 ? "s" : ""} on the page.` : "No form on this page.", "Add a short quote or contact form for people who would rather not call.", 1);
+  // Book, Bible study and blog sites (Maurice's book sites, for example) are not local businesses: they have no phone,
+  // address or quote form on purpose. Counting those as problems unfairly lowers their grade, so the three contact checks
+  // are skipped (one note row, weight 0, so it does not move the score) when the page shows NO sign of a local business
+  // (no local-business schema, phone, tap-to-call link, form or street address) AND shows a positive sign of a book or
+  // teaching site (Book/Article/blog schema, or book/Bible/blog words in the title or main headline).
+  // A local business with a weak site has a phone, a form or business schema, so it is still checked as before.
+  const strictLocal = [...types].filter((t) => /LocalBusiness|Store|Contractor|Plumber|Electrician|Dentist|Attorney|LegalService|Restaurant|HomeAndConstructionBusiness|HVACBusiness|AutoRepair|BeautySalon|HairSalon|NailSalon|MedicalBusiness|ProfessionalService|RealEstateAgent|PostalAddress/.test(t));
+  const infoTypes = [...types].filter((t) => /^(Book|Article|BlogPosting|NewsArticle|Blog|Course|ScholarlyArticle|Periodical|PodcastSeries|Chapter)$/.test(t));
+  const infoWords = /\b(books?|bible|scripture|kjv|king james|devotional|novel|author|blog|sermons?|recipes?|cookbook)\b/i.test(`${title} ${h1s[0] || ""}`);
+  const nonLocal = !strictLocal.length && !phoneText && !telLink && !forms && (infoTypes.length > 0 || infoWords);
+  if (nonLocal) {
+    add("Local business", "contact", "Phone, tap-to-call and contact form", "pass",
+      "Not needed here: this looks like a book, Bible study or blog site rather than a local business (no business details, phone number, address or form), so these three checks were skipped and do not count against the grade. If it is a local business, add a phone number, a tap-to-call link and a contact form.",
+      "", 0);
+  } else {
+    add("Local business", "phone", "Phone number on the page", phoneText ? "pass" : "fail",
+      phoneText ? "A phone number is shown on the page." : "No phone number found in the page text.", "Show the phone number at the top of every page.", 2);
+    add("Local business", "tel", "Tap to call on phones", telLink ? "pass" : "warn",
+      telLink ? "Has a tap-to-call link." : "The phone number is not a tap-to-call link, so mobile visitors have to copy it.", "Make the phone number a tel: link so one tap calls the business.", 2);
+    add("Local business", "form", "Contact or quote form", forms ? "pass" : "warn",
+      forms ? `${forms} form${forms > 1 ? "s" : ""} on the page.` : "No form on this page.", "Add a short quote or contact form for people who would rather not call.", 1);
+  }
   add("Local business", "analytics", "Visitor tracking", analytics ? "pass" : "warn",
     analytics ? "A tracking tool (such as Google Analytics) is installed." : "No visitor tracking found, so there is no record of how many people visit or call.",
     "Install Google Analytics or a similar tool and connect Google Search Console.", 1);
